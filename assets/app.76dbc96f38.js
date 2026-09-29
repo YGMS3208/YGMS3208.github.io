@@ -45,7 +45,7 @@ function suggest(){
     IDX.k.forEach(function(k){ if(out.length < 10 && has(k[0], q)) out.push("<a href=\"" + k[1] + "\">" + hl(k[0], q) + " <small>加工法</small></a>"); });
     IDX.o.forEach(function(o){ if(out.length < 12 && has(o[2], q)) out.push("<a href=\"" + o[5] + "\">" + hl(o[2], q) + " <small>" + esc(o[0]) + "・" + o[1] + "</small></a>"); });
     var all = "/search/?q=" + encodeURIComponent(raw);
-    qs.innerHTML = "<p>SUGGESTIONS</p>" + (out.join("") || "<a href=\"" + all + "\">「" + esc(raw) + "」で全体を検索</a>") + (out.length ? "<a class=\"all\" href=\"" + all + "\">すべての結果を見る</a>" : "");
+    qs.innerHTML = "<p lang=\"en\">SUGGESTIONS</p>" + (out.join("") || "<a href=\"" + all + "\">「" + esc(raw) + "」で全体を検索</a>") + (out.length ? "<a class=\"all\" href=\"" + all + "\">すべての結果を見る</a>" : "");
   });
 }
 qIn.addEventListener("compositionstart", function(){ composing = true; });
