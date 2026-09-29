@@ -63,3 +63,15 @@ figure.stage figcaption{position:relative;padding:0 16px 16px;text-align:center;
 .foot .lic{margin-top:14px;font-size:12px}
 .foot .lic a{text-decoration:underline;text-underline-offset:3px}
 .hd.row>.arrows{flex-direction:row;gap:10px}
+/* type: body in the system Japanese face, display type in Zen Kaku (fewer font downloads) */
+:root{--f-jp:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Yu Gothic","Meiryo","Noto Sans JP",system-ui,sans-serif;
+  --f-head:"Zen Kaku Gothic New","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo","Noto Sans JP",system-ui,sans-serif;
+  --f-en:"Jost","Futura","Avenir Next","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic UI","Meiryo","Noto Sans JP",sans-serif;
+  --muted:#66666B;--f0:#A5572D;--f2:#BF3A27;--f3:#0E7C6B;--f4:#686D76}
+h1,h2,h3,h4,.d1,.d2,.d3,.brand b,.foot b{font-family:var(--f-head)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .cells a{color:#0B0B0C}}
+:root[data-theme="dark"] .cells a{color:#0B0B0C}
+.kicker{font-size:clamp(15px,1.4vw,17px);font-weight:700;letter-spacing:.06em;line-height:1.5;color:var(--ink2)}
+.night .kicker{color:#D2D2D7}
+.page>.crumbs:has(+ .hero.night){background:var(--night);box-shadow:0 0 0 100vmax var(--night);clip-path:inset(0 -100vmax);color:#8E8E93}
+.page>.crumbs:has(+ .hero.night) a:hover{color:#F5F5F7}

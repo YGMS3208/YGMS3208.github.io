@@ -669,7 +669,7 @@ function typeDiff(ti){
   add.sort(function(x, y){ return (MET[ti].eq[y] || 0) - (MET[ti].eq[x] || 0); });
   gone.sort(function(x, y){ return (BASE.eq[y] || 0) - (BASE.eq[x] || 0); });
   function names(l){ return l.slice(0, 5).map(function(ci){ return "<a href=\"" + he(ci) + "\">" + esc(C[ci].n) + "</a>"; }).join("、") + (l.length > 5 ? " ほか" : ""); }
-  return "<div class=\"tdiff\"><div><b class=\"tn up\">+" + add.length + "</b><span>新たに必要になる設備の種類</span><p>" + (add.length ? names(add) : "なし") + "</p></div><div><b class=\"tn dn\">−" + gone.length + "</b><span>使わなくなる設備の種類</span><p>" + (gone.length ? names(gone) : "なし") + "</p></div></div>";
+  return "<div class=\"tdiff\"><div><b class=\"tn up\">" + (add.length ? "+" : "") + add.length + "</b><span>新たに必要になる設備の種類</span><p>" + (add.length ? names(add) : "なし") + "</p></div><div><b class=\"tn dn\">" + (gone.length ? "−" : "") + gone.length + "</b><span>使わなくなる設備の種類</span><p>" + (gone.length ? names(gone) : "なし") + "</p></div></div>";
 }
 function ptSeg(id){ return "<div class=\"seg\" role=\"tablist\" aria-label=\"パワートレイン\" id=\"" + id + "\">" + TY.map(function(t, ti){ return "<button type=\"button\" role=\"tab\" data-pt=\"" + ti + "\" aria-selected=\"" + (ti === state.pt) + "\">" + esc(t.n) + "</button>"; }).join("") + "</div>"; }
 function kpiBlock(ti){
@@ -895,7 +895,7 @@ function usageList(items, withSpec){
 function eqView(ci){
   var c = C[ci], u = use[ci], mk = {};
   u.forEach(function(x){ (x.r[2] || "").split("・").forEach(function(m){ m = m.trim(); if(m) mk[m] = (mk[m] || 0) + 1; }); });
-  var mkeys = Object.keys(mk).sort(function(a, b){ return mk[b] - mk[a]; });
+  var mkeys = Object.keys(mk).sort(function(a, b){ return a.localeCompare(b, "ja"); });
   var sysN = uniq(u.map(function(x){ return x.o.p.s.id; })).length;
   var ptv = TY.map(function(t, ti){ return MET[ti].eq[ci] || 0; });
   var h = "<section class=\"wrap ehero\"><div><p class=\"eyebrow\">" + esc(G[c.g]) + "</p><h1 class=\"d2" + (c.n.length > 7 ? " long" : "") + "\" style=\"margin:14px 0 20px\">" + esc(c.n) + "</h1><p class=\"desc\">" + esc(c.d) + "</p><div class=\"stats\" style=\"margin-top:32px\"><div><b>" + u.length + "</b><span>工程で使用</span></div><div><b>" + partsOf(ci) + "</b><span>部品</span></div><div><b>" + sysN + "</b><span>系統</span></div></div></div><div class=\"stage\">" + catPic(ci) + "</div></section>";
@@ -904,7 +904,7 @@ function eqView(ci){
     h += "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">BY POWERTRAIN</p><h2 class=\"d3\">パワートレイン別の必要量</h2><p class=\"sub\" style=\"font-size:16px\">使用する工程の数に、部品の搭載数量を掛けた目安です。</p></div>" +
       TY.map(function(t, ti){ var v = ptv[ti], b = ptv[0]; var cl = ti ? dcls(v, b) : ""; return "<div class=\"brow " + cl + "\" style=\"grid-template-columns:9em minmax(0,1fr) 88px\"><span>" + esc(t.n) + "</span><span class=\"b\"><i style=\"width:" + (v / mx * 100).toFixed(1) + "%\"></i></span><span class=\"n\">" + v + (ti && v !== b ? " <small>(" + (v > b ? "+" : "−") + Math.abs(v - b) + ")</small>" : "") + "</span></div>"; }).join("") + "</div></section>";
   }
-  if(mkeys.length) h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">MAKERS</p><h2 class=\"d3\">代表メーカー（例）</h2></div><div class=\"pills\">" + mkeys.map(function(m){ return "<a class=\"pill\" href=\"#q\" data-q=\"" + esc(m) + "\">" + esc(m) + "<span class=\"n\">" + mk[m] + "</span></a>"; }).join("") + "</div></div></section>";
+  if(mkeys.length) h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">MAKERS</p><h2 class=\"d3\">代表メーカー（例）</h2><p class=\"sub\" style=\"font-size:14px\">この設備分野でよく知られるメーカーの例です。並びは五十音・アルファベット順で、推奨や順位を示すものではありません。</p></div><div class=\"pills\">" + mkeys.map(function(m){ return "<a class=\"pill\" href=\"#q\" data-q=\"" + esc(m) + "\">" + esc(m) + "</a>"; }).join("") + "</div></div></section>";
   h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><div class=\"hd\" style=\"margin-bottom:0\"><p class=\"eyebrow\">WHERE IT'S USED</p><h2 class=\"d3\">使われている部品と工程</h2></div>" + usageList(u, true) + "</div></section>";
   show(h, [["設備", "#eq"], [c.n]], "eq");
 }

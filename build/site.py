@@ -444,7 +444,10 @@ def ranges(ur):
 
 
 font_css, nfiles, fbytes = [], 0, 0
-for fam, fdir, weights in (("Zen Kaku Gothic New", "zen-kaku-gothic-new", (400, 500, 700)), ("Jost", "jost", (200, 300, 400, 500, 600))):
+HEAD_TXT = "".join(re.findall(r"<h[1-4][^>]*>(.*?)</h[1-4]>", "".join(r["html"] for r in ROUTES), re.S)) + "工程図鑑自動車製造工程図鑑"
+HEAD_USED = set(ord(ch) for ch in html.unescape(re.sub(r"<[^>]+>", "", HEAD_TXT))) | set(range(0x20, 0x7F))
+for fam, fdir, weights in (("Zen Kaku Gothic New", "zen-kaku-gothic-new", (700,)), ("Jost", "jost", (200, 300, 400, 500))):
+    need_cp = HEAD_USED if fam != "Jost" else USED
     for w in weights:
         src = open("%s/%s/%d.css" % (FONTS, fdir, w), encoding="utf-8").read()
         for blk in re.findall(r"@font-face\s*{[^}]*}", src):
@@ -456,7 +459,7 @@ for fam, fdir, weights in (("Zen Kaku Gothic New", "zen-kaku-gothic-new", (400, 
                 continue
             if ur:
                 rg = ranges(ur.group(1))
-                if not any(a <= cp <= b for cp in USED for a, b in rg):
+                if not any(a <= cp <= b for cp in need_cp for a, b in rg):
                     continue
             fn = m.group(1)
             shutil.copy("%s/%s/files/%s" % (FONTS, fdir, fn), OUT + "/assets/fonts/" + fn)
@@ -680,10 +683,21 @@ def esc_a(s):
     return html.escape(s, quote=True)
 
 
+HUB_H1 = {"/systems/": "自動車の部品一覧（系統別）", "/map/": "自動車部品の全工程マップ", "/equipment/": "自動車部品の生産設備・検査装置一覧",
+          "/methods/": "自動車部品の加工法一覧", "/powertrain/": "パワートレイン別 部品・工程・設備の比較"}
+HUB_H2 = {"/systems/": ('<div class="grid-cards">', "系統の一覧"), "/map/": ('<div class="msys">', "部品ごとの工程")}
+
+
 def page(r):
     url = BASE + (r["u"] if r["u"] != "/404.html" else "/404.html")
     body = r["html"]
-    body = re.sub(r'<p class="eyebrow">([ -~]+)</p>', r'<p class="eyebrow" lang="en">\1</p>', body)
+    if r["u"] in HUB_H1:
+        # the subject name is the h1; the tagline stays as the big display line
+        body = re.sub(r'<h1 class="(d[12])"([^>]*)>(.*?)</h1>', lambda m: '<h1 class="kicker">%s</h1><p class="%s"%s>%s</p>' % (HUB_H1[r["u"]], m.group(1), m.group(2), m.group(3)), body, count=1, flags=re.S)
+    if r["u"] in HUB_H2:
+        a, t = HUB_H2[r["u"]]
+        body = body.replace(a, '<h2 class="sr">%s</h2>' % t + a, 1)
+    body = re.sub(r'<(p|span|small|b|div)( class="[^"]*")?>([A-Z0-9][A-Z0-9 &\'·.,/()=\-]*[A-Z])</\1>', r'<\1\2 lang="en">\3</\1>', body)
     if r["t"] not in ("search", "404", "home"):
         body += '<div class="wrap mfoot"><p>文・図：<a href="/about/">%s</a>　公開 <time datetime="%s">%s</time>　更新 <time datetime="%s">%s</time></p></div>' % (
             html.escape(CFG["handle"]), r["pub"], ja_date(r["pub"]), r["mod"], ja_date(r["mod"]))
@@ -735,7 +749,7 @@ for r in idx:
     sm.append("<url><loc>%s</loc><lastmod>%s</lastmod></url>" % (BASE + r["u"], r["mod"]))
 sm.append("</urlset>")
 open(OUT + "/sitemap.xml", "w", encoding="utf-8").write("\n".join(sm) + "\n")
-BLOCK = ["GPTBot", "Google-Extended", "CCBot", "ClaudeBot", "anthropic-ai", "Applebot-Extended", "Bytespider", "meta-externalagent", "Meta-ExternalAgent", "cohere-training-data-crawler", "Diffbot", "Omgilibot", "Amazonbot"]
+BLOCK = ["GPTBot", "Google-Extended", "CCBot", "ClaudeBot", "anthropic-ai", "Applebot-Extended", "Bytespider", "meta-externalagent", "Meta-ExternalAgent", "cohere-training-data-crawler", "Diffbot", "Omgilibot", "Amazonbot", "cohere-ai", "AI2Bot", "FacebookBot", "Timpibot", "PanguBot", "ImagesiftBot"]
 robots = "# 検索エンジンとAI検索は歓迎します。AIの学習用クローラーはお断りしています。\n\n" + "".join("User-agent: %s\nDisallow: /\n\n" % b for b in BLOCK) + "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE
 open(OUT + "/robots.txt", "w", encoding="utf-8").write(robots)
 L = ["# %s（AUTOMOTIVE ATLAS）" % SITE, "", "> 自動車の部品がどんな工程と工作機械・検査機でつくられるかを図解で解説する日本語の図鑑。%d部品・%d工程・%d設備（数はこの図鑑の分類による）と、パワートレイン別の比較を収録。運営：%s。文章と図解は CC BY-NC 4.0。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats), CFG["handle"]), ""]
