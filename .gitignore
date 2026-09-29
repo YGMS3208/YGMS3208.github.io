@@ -1,0 +1,8 @@
+out/
+_pub/
+build/.cache/
+build/node_modules/
+build/__pycache__/
+build/site_tpl.html
+build/auto-atlas.html
+build/*.png

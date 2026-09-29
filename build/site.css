@@ -1,0 +1,65 @@
+/* ===================================================================== website additions */
+.skip{position:absolute;left:-9999px;top:0;z-index:200;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:0 0 10px 0;font-size:14px}
+.skip:focus{left:0}
+figure.stage figcaption{position:relative;padding:0 16px 16px;text-align:center;font-size:12px;color:var(--muted);letter-spacing:.04em}
+.hnote{text-align:center;font-size:12px;color:#8E8E93;padding:0 0 30px;letter-spacing:.04em}
+.ptpanel[hidden]{display:none}
+.matrix.only tr.same{display:none}
+.dl{margin-top:22px}
+/* operations inside the part page */
+.oplist{border-top:1px solid var(--ink)}
+.opx{display:grid;grid-template-columns:76px minmax(0,1fr);gap:0 20px;padding:28px 0;border-bottom:1px solid var(--hair);scroll-margin-top:calc(var(--gn) + 16px)}
+.opx .no{font:200 34px/1.1 var(--f-en);color:var(--muted);letter-spacing:.02em}
+.opx .hrow{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.opx h3{font-size:19px;line-height:1.45}
+.opx p{margin-top:8px;color:var(--ink2);font-size:15px;line-height:1.85;max-width:46em}
+.opx dl{display:grid;gap:6px;margin-top:14px;font-size:14px}
+.opx dl div{display:grid;grid-template-columns:7.5em minmax(0,1fr);gap:12px}
+.opx dt{color:var(--muted);font-size:12.5px;letter-spacing:.08em;padding-top:1px}
+.opx dd{color:var(--ink2);line-height:1.75}
+.opx dd a{color:var(--accent)}
+.opx dd a:hover{text-decoration:underline}
+.opx .lnk.sm{display:inline-flex;margin-top:14px;font-size:13.5px}
+.opx:target{background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 9%,transparent),transparent 70%)}
+@media (max-width:640px){.opx{grid-template-columns:44px minmax(0,1fr);gap:0 12px}.opx .no{font-size:24px}.opx dl div{grid-template-columns:1fr;gap:0}}
+/* long-form text */
+.prose{max-width:760px}
+.prose h2{font-size:clamp(22px,2.4vw,28px);margin:60px 0 18px;line-height:1.4}
+.prose h2.d3{font-size:clamp(24px,2.8vw,34px);margin-top:0}
+.prose h2:first-child{margin-top:0}
+.prose p{font-size:16.5px;line-height:2;color:var(--ink2);margin:0 0 1.15em}
+.prose ul{margin:0 0 1.3em;padding-left:1.25em;list-style:disc}
+.prose li{margin:.4em 0;line-height:1.9;color:var(--ink2);font-size:16px}
+.prose a{color:var(--accent);text-decoration:underline;text-underline-offset:3px;text-decoration-thickness:1px}
+.prose .tw{overflow-x:auto;margin:8px 0 30px;border-top:1px solid var(--ink);-webkit-overflow-scrolling:touch}
+.prose table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+.prose th{text-align:left;font-weight:700;padding:12px 14px 12px 0;border-bottom:1px solid var(--hair);white-space:nowrap;font-size:13px;letter-spacing:.04em}
+.prose td{padding:12px 14px 12px 0;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.75;color:var(--ink2)}
+.prose td:first-child{font-weight:700;color:var(--ink);white-space:nowrap}
+.prose .refs li{font-size:14px;color:var(--muted)}
+.prose .cite{font-size:14px;padding:14px 18px;background:var(--paper);border-radius:12px}
+.sub.lead{max-width:46em}
+/* equipment hubs */
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:20px}
+.gcard{background:var(--paper);border-radius:22px;overflow:hidden;display:flex;flex-direction:column}
+.gcard .gh{display:block}
+.gcard .gh .stage{display:block}
+.gcard .gh .t{display:flex;flex-direction:column;gap:6px;padding:20px 22px 4px}
+.gcard h2{font-size:21px;line-height:1.35}
+.gcard .gh:hover h2{color:var(--accent)}
+.gcard .n{font:400 13px var(--f-en);color:var(--muted);letter-spacing:.04em}
+.gcard .gl{padding:10px 22px 24px;display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13.5px;line-height:1.7}
+.gcard .gl a{color:var(--ink2)}
+.gcard .gl a:hover{color:var(--accent)}
+.gdesc .erow{align-items:start}
+.gdesc .erow .w{white-space:normal;line-height:1.75;color:var(--ink2)}
+.gdesc .erow .w small{display:block;margin-top:6px;color:var(--muted);font-size:12.5px}
+/* page meta + search */
+.mfoot{padding-top:8px;padding-bottom:64px;font-size:13px;color:var(--muted);letter-spacing:.02em}
+.mfoot a{text-decoration:underline;text-underline-offset:3px}
+.sform{display:flex;gap:10px;max-width:640px;width:100%}
+.sform input{flex:1;min-width:0;font:inherit;font-size:17px;padding:12px 18px;border-radius:999px;border:1px solid var(--hair);background:var(--paper);color:var(--ink)}
+.sres-h{margin-top:44px}
+.foot .lic{margin-top:14px;font-size:12px}
+.foot .lic a{text-decoration:underline;text-underline-offset:3px}
+.hd.row>.arrows{flex-direction:row;gap:10px}

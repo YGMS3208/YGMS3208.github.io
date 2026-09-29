@@ -1,0 +1,5636 @@
+{
+"/": {
+"h": "1818654831bad5b0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/404.html": {
+"h": "41987f9a6ec21f0d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/about/": {
+"h": "f9e55a1b838b0019",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/": {
+"h": "41987f9a6ec21f0d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/5-axis-machining-center/": {
+"h": "89692cee1ad09671",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/active-alignment-system/": {
+"h": "0f15457ea6d1137e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/adas-calibration-system/": {
+"h": "e9a8eb821a3b9bc1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/agv-material-handling/": {
+"h": "58aa496832fec911",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/airbag-deployment-testing/": {
+"h": "510a7481f1c55fcf",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/aluminum-profile-machining-center/": {
+"h": "12603efa51c2dd89",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/annealing-normalizing-furnace/": {
+"h": "cda0b5a8757c8663",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/arc-welding-robot/": {
+"h": "3cc8823e49283415",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/assembly-conveyor/": {
+"h": "88dbb63f7443fe01",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/autoclave/": {
+"h": "01bb9068578943a9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/autofrettage-machine/": {
+"h": "b9400a96dc764094",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/automated-optical-inspection/": {
+"h": "d277e1c3e3751683",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/automatic-cutting-machine/": {
+"h": "e1361d5e4aa44214",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/automatic-gauging-system/": {
+"h": "838def363c954f1f",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/balancing-machine/": {
+"h": "71cc1e0f985adfb1",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/ball-track-grinder/": {
+"h": "84a9adfb160b049f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/battery-cell-tester/": {
+"h": "2a0c5106ad359450",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/battery-formation-system/": {
+"h": "11a8b25a49baaeed",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/bead-winding-machine/": {
+"h": "e0beb8bb02e5ed9b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/bearing-noise-tester/": {
+"h": "452ea4fd0a20fc91",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/billet-cutting-machine/": {
+"h": "c45e64eceb6529c6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/blanking-line/": {
+"h": "c7dad3c54049d197",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/blow-molding-machine/": {
+"h": "dde46586459b846c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/body-framing-system/": {
+"h": "e1eb0b96d1165d4b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/brazing-furnace/": {
+"h": "19c3c6f170159f32",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/broaching-machine/": {
+"h": "9da68dad09b49b72",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/camera-calibration-system/": {
+"h": "2f0e6fce6944c691",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/camshaft-grinder/": {
+"h": "5c4e21d51aaf93a3",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/carburizing-furnace/": {
+"h": "477aa477874f0f76",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/catalyst-canning-machine/": {
+"h": "79fabd51ce94aaa0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/cell-winding-stacking-machine/": {
+"h": "31ec1f6f4002febd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/centerless-grinder/": {
+"h": "9dc9f286f6950609",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/ceramic-firing-kiln/": {
+"h": "7d9b0a4e65119d28",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/cleanliness-analysis-system/": {
+"h": "66f3910e86020177",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/cnc-lathe/": {
+"h": "b14ebff5fb64a39d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/coating-machine/": {
+"h": "7751bc6edafafd7d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/coating-thickness-gauge/": {
+"h": "14e17dbfc496194e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/coating-weight-gauge/": {
+"h": "f4cb508750d3ddaa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/coil-handling-system/": {
+"h": "5a61114e9e533b2b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/coil-winding-machine/": {
+"h": "5ce48cae8cbd5531",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/cold-forging-press/": {
+"h": "f75b24f8a347890f",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/cold-former/": {
+"h": "5707570356b2d53e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/color-gloss-meter/": {
+"h": "84a356630a073260",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/compact-machining-center/": {
+"h": "5b63ff70fa258274",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/compression-molding-press/": {
+"h": "3dc39cfa52f0b41c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/conduction-hardening-machine/": {
+"h": "ce52c5ff226f1f04",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/continuity-tester/": {
+"h": "a031346a720fa04b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/continuous-hardening-furnace/": {
+"h": "ed8bdb5d8b51736d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/controlled-cooling-system/": {
+"h": "5927d20ab23d54cd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/conversion-coating-line/": {
+"h": "751b994c4da5a064",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/coordinate-measuring-machine/": {
+"h": "989d5bd83b012392",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/core-shooter/": {
+"h": "c831d53084bcd9ed",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/crankshaft-grinder/": {
+"h": "0dd1bb6c1f277cb9",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/crankshaft-milling-machine/": {
+"h": "29f1d567f09fb7c2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/crimp-force-monitor/": {
+"h": "055257a546ab95d4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/cylindrical-grinder/": {
+"h": "703aa147250cf82d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/damper-tester/": {
+"h": "c2f5d3a15409a874",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/deburring-machine/": {
+"h": "f4a5589095c5da79",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/dedicated-assembly-machine/": {
+"h": "3834d18385f1505a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/deep-hole-drilling-machine/": {
+"h": "4317f09fd088fb27",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/destructive-weld-testing/": {
+"h": "6cb591af88878d62",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/dicing-saw/": {
+"h": "1a356502f2a13784",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/die-bonder/": {
+"h": "ad3e549a44ffc5da",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/die-casting-machine/": {
+"h": "7d0d96abbd6673e8",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/die-spotting-press/": {
+"h": "606fcbe848e2dd29",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/dip-spin-coater/": {
+"h": "865222257432cb59",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/double-column-machining-center/": {
+"h": "e574fea77cc5f6d4",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/double-disc-grinder/": {
+"h": "9f75b15c5df4803e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/drivetrain-nvh-test-bench/": {
+"h": "956a0639bb464f05",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/dry-room/": {
+"h": "6724c45361ad43b6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/dye-penetrant-inspection/": {
+"h": "1dba2fe35f5cfd8d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/dyeing-heat-setting-line/": {
+"h": "b7eb6b7e0deb2528",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/eddy-current-tester/": {
+"h": "892943cbba6afcd4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electric-upsetter/": {
+"h": "d7da70b54a5f8894",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electrical-discharge-machine/": {
+"h": "0439b029039030a8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electrocoating-line/": {
+"h": "f3c21e2eebb34269",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electrode-coater/": {
+"h": "74bbde6b63b390d2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electrode-roll-press/": {
+"h": "5f56dea4bcdb0370",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electrode-slitter/": {
+"h": "c65cba86b2d0e3e8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electrode-slurry-mixer/": {
+"h": "d745c7f6bb8f1bf1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electrolyte-filling-machine/": {
+"h": "6c9597aa5b510bb4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/electron-beam-welding-machine/": {
+"h": "6aadb1a8cf840194",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/engine-test-bench/": {
+"h": "3bf71e39e27ba1d4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/environmental-test-chamber/": {
+"h": "9859a6b5054ab61b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/exhaust-gas-analyzer/": {
+"h": "6477b095b5b4038b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/extruder/": {
+"h": "2e5f84d59fd56426",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/fatigue-testing-machine/": {
+"h": "476c10882459572f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/fillet-rolling-machine/": {
+"h": "f07a775f035eb7a9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/fin-forming-machine/": {
+"h": "923731b1ff489128",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/fine-blanking-press/": {
+"h": "a5fa9c7ab4dec822",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/fine-boring-machine/": {
+"h": "d1489efaaaf4d36d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/flame-plasma-treatment-system/": {
+"h": "c7706eb0f768263c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/flow-test-bench/": {
+"h": "cb32eb1e33758a29",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/fluid-filling-machine/": {
+"h": "0e6451a73e071297",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/form-rolling-machine/": {
+"h": "ddb1fcb897ca5150",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/fracture-splitting-machine/": {
+"h": "df2720e72425a48e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/friction-stir-welding-machine/": {
+"h": "d42650dc39c7d608",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/friction-welding-machine/": {
+"h": "4aaa5ee3b28755b0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/functional-tester/": {
+"h": "e10db22676684869",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gap-flush-measuring-system/": {
+"h": "84b318e526e365ad",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-chamfering-machine/": {
+"h": "577bbccbb5893800",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-grinding-machine/": {
+"h": "95ffb44a5043a607",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-hobbing-machine/": {
+"h": "24fbf9ba0dc1f194",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-honing-machine/": {
+"h": "0cb7cb125deb5fbf",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-measuring-machine/": {
+"h": "51bcd8ac11260d9b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-rolling-tester/": {
+"h": "003b58432141e500",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-shaping-machine/": {
+"h": "711ed442ad450a97",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-shaving-machine/": {
+"h": "0f6157e3661129d3",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gear-skiving-machine/": {
+"h": "4f6f724279ea5296",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/glass-bending-tempering-furnace/": {
+"h": "ae03af36b74e4521",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/glass-cutting-edging-machine/": {
+"h": "5997f161dc4efcb6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/gravity-die-casting-machine/": {
+"h": "6c7666b118e7d717",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/green-sand-molding-line/": {
+"h": "24df8374c011365a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/assembly-handling/": {
+"h": "c593a407d223f460",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/dimensional-metrology/": {
+"h": "a5bcbce437680eed",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/electronics-battery-motor/": {
+"h": "c87148e97458377d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/forging-forming/": {
+"h": "c9bcedb1101c18c8",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/foundry/": {
+"h": "30b69c2745cd7312",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/gear-machining/": {
+"h": "b1c1828dde1862f2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/grinding-finishing/": {
+"h": "94f39b210ce0bbc7",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/heat-treatment-equipment/": {
+"h": "05b56816b97d9183",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/machining-centers/": {
+"h": "d1d49e4887434ead",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/ndt-material-testing/": {
+"h": "0f7878b44bea59b0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/painting-equipment/": {
+"h": "e9c7172cc461456e",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/performance-testing/": {
+"h": "f73a330ffbe69d83",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/plastics-rubber-glass/": {
+"h": "43b92df914e8e9a3",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/presses-sheet-metal/": {
+"h": "d23a08b0791702f9",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/surface-treatment-cleaning/": {
+"h": "53f0f081511db293",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/turning/": {
+"h": "638191b5b6517d1b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/group/welding-joining/": {
+"h": "98384ba7c03a2f8d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hairpin-winding-line/": {
+"h": "ef475d1c355717eb",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hard-coating-system/": {
+"h": "d56b6da4b7a10c67",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hardness-tester/": {
+"h": "e934aa0e0b037595",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/harness-assembly-board/": {
+"h": "03c2f561316d78f5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/headlamp-tester/": {
+"h": "41683b6957d93f41",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/helium-leak-detector/": {
+"h": "603c67e5b1ccf168",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hemming-machine/": {
+"h": "72cae038fbdc388f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/high-speed-press/": {
+"h": "0b9c87d9dc92143d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/honing-machine/": {
+"h": "8831fc2e6329094b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/horizontal-machining-center/": {
+"h": "4a6110503c6fd7ef",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hot-forging-press/": {
+"h": "bc0f6ad541e9bf2f",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hot-stamping-line/": {
+"h": "41b08d367ce31886",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hypoid-gear-cutting-machine/": {
+"h": "7a8b19a56d74834d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/hypoid-gear-lapping-machine/": {
+"h": "0603fca1a8da70ea",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/in-circuit-tester/": {
+"h": "27fb5ce3c8b0e6a7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/in-process-gauge/": {
+"h": "40eeb0c858f52c99",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/incoming-material-inspection/": {
+"h": "35130b9efc8cab30",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/induction-hardening-machine/": {
+"h": "467b0ec154c14944",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/induction-heater/": {
+"h": "6119a5349772aeed",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/industrial-ct-scanner/": {
+"h": "becfed114caaec8c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/industrial-sewing-machine/": {
+"h": "5f747803a357081e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/injection-molding-machine/": {
+"h": "f963e7d3678e613a",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/inline-body-measuring-system/": {
+"h": "6a1289da8b624f76",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/insulation-hipot-tester/": {
+"h": "3aaf49b8d6a26596",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/internal-grinder/": {
+"h": "18965e5c5c86e3cc",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/internal-mixer/": {
+"h": "a350f94ea96440a8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/investment-casting-equipment/": {
+"h": "b55ab59bf81d27d6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/lapping-machine/": {
+"h": "fe4470575c3c968f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/laser-cladding-system/": {
+"h": "d570424cc183b09c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/laser-processing-machine/": {
+"h": "1b32e10da71b895b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/laser-welding-machine/": {
+"h": "796358f09af495e3",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/leak-tester/": {
+"h": "120f3236648437b3",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/load-testing-machine/": {
+"h": "91fa300e6e408e8c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/low-pressure-casting-machine/": {
+"h": "a3ffa68cf428e1f1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/magnetic-particle-inspection/": {
+"h": "d25bb88d282f55b2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/magnetization-inspection-system/": {
+"h": "1c0e392f57b1305f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/magnetizer/": {
+"h": "23d4d3f3de62beca",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/mass-centering-machine/": {
+"h": "947f9ecd9c3a8543",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/material-handling-robot/": {
+"h": "b164ec13a57109b0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/mechanical-joining-system/": {
+"h": "547823a08ecd061e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/melt-quality-testing/": {
+"h": "85226b003cef6dc8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/melt-treatment-equipment/": {
+"h": "9a36326d1a82aaaf",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/melting-furnace/": {
+"h": "68ecf2554a01bcb7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/metallographic-microscope/": {
+"h": "70df625eae18ce4a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/motor-test-bench/": {
+"h": "0ae971113fd45c8e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/nitriding-furnace/": {
+"h": "7bff245547f42992",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/noise-vibration-analyzer/": {
+"h": "2eeb8eaa2f686f33",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/non-circular-turning-lathe/": {
+"h": "2421d8900ad5c2c9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/nutrunner/": {
+"h": "a83f7cf8767d66ef",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/optical-3d-scanner/": {
+"h": "6b801a7736526126",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/optical-distortion-inspection/": {
+"h": "c2ced4ba5a8116cd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/paint-booth/": {
+"h": "3d800f3cfcbd2390",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/paint-curing-oven/": {
+"h": "4198a3c8613ed2df",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/paint-inspection-system/": {
+"h": "fbb37b9c2b6f818b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/paint-repair-station/": {
+"h": "19dc94b72e3617f2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/painting-robot/": {
+"h": "4147668230c0e410",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/panel-surface-inspection/": {
+"h": "5d194cbeef58aeff",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/parts-washer/": {
+"h": "a19d78193ee33d18",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/pick-and-place-machine/": {
+"h": "c4d4a441f5557371",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/plastic-welding-machine/": {
+"h": "d2750d8d7c3db5f3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/plating-line/": {
+"h": "7a8f914ef93704d0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/polyurethane-foaming-machine/": {
+"h": "1d30895c59a6b15f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/post-curing-oven/": {
+"h": "ff1477d2a6be6a58",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/powder-coating-line/": {
+"h": "3aeafcf1699c98c2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/powder-compacting-press/": {
+"h": "6503697418cad693",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/powder-mixer/": {
+"h": "70d2cd9fd7d4e655",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/power-semiconductor-tester/": {
+"h": "4220b19d32cd1a57",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/press-fit-machine/": {
+"h": "c6da9d2c5ed751dc",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/progressive-die-press/": {
+"h": "dd645f2c7e66943e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/pta-hardfacing-machine/": {
+"h": "4d5a1da73aa556a4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/quench-press/": {
+"h": "34d3cd34cc3ed50d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/reflow-oven/": {
+"h": "e83ed992dd189933",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/resin-dispensing-system/": {
+"h": "14ed4b1034c92231",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/resistance-welding-machine/": {
+"h": "f98c0f73fc71f89a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/ring-rolling-mill/": {
+"h": "c845fd22fcaa8790",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/roll-forming-machine/": {
+"h": "b1bd5777614ab32f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/roller-brake-tester/": {
+"h": "ae6b10454d6badc1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/roundness-measuring-machine/": {
+"h": "157052e514070b28",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/rubber-calender/": {
+"h": "7319cb7699de6c4b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/screen-printer/": {
+"h": "33aaccb2e1c50cdb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/sealer-adhesive-dispenser/": {
+"h": "f970ad97297bea57",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/selective-soldering-machine/": {
+"h": "b849beffb60a81ce",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/servo-press/": {
+"h": "33b54539cf981d8b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/shaft-measuring-machine/": {
+"h": "6641186b44f69ec6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/shakeout-degating-machine/": {
+"h": "bda4430db2ef6ace",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/shot-blasting-machine/": {
+"h": "15575d109685fd3a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/shot-peening-machine/": {
+"h": "f100477df2a23d4f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/sintering-furnace/": {
+"h": "d13251d8941a2357",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/skin-forming-machine/": {
+"h": "5dcddb4f37085400",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/slurry-analyzer/": {
+"h": "78d0f2d820d68edc",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/solder-paste-inspection/": {
+"h": "eb6d1080662f300e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/solder-paste-printer/": {
+"h": "20efd2744179ada3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/solution-aging-furnace/": {
+"h": "ca24f203819bf304",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/spot-welding-robot/": {
+"h": "c10113916a5db0e0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/spring-coiling-machine/": {
+"h": "1326e1c3addcd597",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/spring-presetting-machine/": {
+"h": "d19b5b0e3113e2bb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/staking-machine/": {
+"h": "17fc73c9ecefb3c4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/stamping-die/": {
+"h": "d57cc6e0853be306",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/steel-ball-grinder/": {
+"h": "b259e26cf769b7e9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/straightening-machine/": {
+"h": "388826c05cb18011",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/superfinishing-machine/": {
+"h": "edc7f5ac31b820bf",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/surface-grinder/": {
+"h": "bc8a91508d4d84cf",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/surface-profilometer/": {
+"h": "1894c5d039005ae0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/swiss-type-lathe/": {
+"h": "3a6b71e036b9c8f2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/tandem-press-line/": {
+"h": "5708198db17bf227",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/taping-machine/": {
+"h": "649371389ff76207",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/tempering-furnace/": {
+"h": "38498988854d4bda",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/thermal-spray-system/": {
+"h": "ca2a73813593f90e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/thin-ring-rolling-mill/": {
+"h": "f073638bbf5bd56a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/thread-grinder/": {
+"h": "c58d99abd7e082d3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/tire-building-machine/": {
+"h": "769c8735e4551130",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/tire-curing-press/": {
+"h": "01f99c4186e21436",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/tire-uniformity-machine/": {
+"h": "3a080db05998f374",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/transfer-machine/": {
+"h": "44053f3a8ea75fbe",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/transfer-molding-machine/": {
+"h": "0f6919a29e55a495",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/transfer-press/": {
+"h": "79adc06082cb752c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/trim-press/": {
+"h": "c19be2e29c095222",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/tube-bender/": {
+"h": "84a0becfd0bc3726",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/tube-drawing-machine/": {
+"h": "67f0d13f43efb2aa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/turbocharger-test-bench/": {
+"h": "a35890a386e90b42",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/ultrasonic-flaw-detector/": {
+"h": "1ece808c21922a3b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/ultrasonic-waterjet-cutter/": {
+"h": "be82b413c29ba921",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/ultrasonic-welding-machine/": {
+"h": "962ddc6d7ad751ed",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vacuum-carburizing-furnace/": {
+"h": "b9cd701b5b8e6e33",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vacuum-drying-oven/": {
+"h": "46622c805ea23786",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vacuum-impregnation-system/": {
+"h": "287c7d83784089b2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vacuum-metallizing-system/": {
+"h": "374493da81e519dd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vertical-machining-center/": {
+"h": "2edb697f11325872",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vertical-turning-lathe/": {
+"h": "04d466a10add0926",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vision-inspection-system/": {
+"h": "c7fbb3b37203ca74",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/vulcanizing-equipment/": {
+"h": "9f3b2934d98e11e7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/water-leak-test-booth/": {
+"h": "0313724490b4a940",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/weaving-machine/": {
+"h": "21937e23f4663656",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/weight-sorting-machine/": {
+"h": "1ca8abf4bfbb9507",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/wheel-alignment-tester/": {
+"h": "1ed7822791eca4cc",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/wire-bonder/": {
+"h": "bab8f9e917c3d3d5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/wire-cutting-crimping-machine/": {
+"h": "9ffee0015eab9c28",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/wire-drawing-machine/": {
+"h": "4f6ab6d3d9f40e1b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/x-ray-inspection-system/": {
+"h": "d9b7304f9e3ac889",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/equipment/x-ray-residual-stress-analyzer/": {
+"h": "3e019a5f492c088e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/map/": {
+"h": "41987f9a6ec21f0d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/": {
+"h": "41987f9a6ec21f0d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/assembly/": {
+"h": "91afe1aa8ac0ce46",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/casting/": {
+"h": "8e3f1d5e765ce8ca",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/chemical-processing/": {
+"h": "f9a52b8638f5d835",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/coil-winding/": {
+"h": "5e39e8bc89208cf2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/electronics-assembly/": {
+"h": "e3fa978be16a0ac8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/forging/": {
+"h": "1b5ef8944a3c3dd2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/gear-cutting/": {
+"h": "669fc54e7dd98bb0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/grinding/": {
+"h": "fe7aa396cafbb1d6",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/heat-treatment/": {
+"h": "0f02c8d4bf2ffbe2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/inspection/": {
+"h": "1576628e160d2320",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/joining/": {
+"h": "c5f0df57f73f82af",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/logistics/": {
+"h": "0d2cbfc06b9a3d40",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/machining/": {
+"h": "82ce0da4d4098a1f",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/maintenance/": {
+"h": "a8bf9c3267a94f6b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/material-preparation/": {
+"h": "6b74ae45db6f629c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/molding/": {
+"h": "94fada688ec87bd0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/painting/": {
+"h": "86a24328f421a333",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/stamping/": {
+"h": "96e9ef3fd003a18b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/methods/surface-treatment/": {
+"h": "7a56e86025d52b48",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/abs-esc-hydraulic-unit/": {
+"h": "dc3040db756bfccb",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/abs-esc-hydraulic-unit/op10/": {
+"h": "3157d2f5dd466a7a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/abs-esc-hydraulic-unit/op20/": {
+"h": "a9d4e11fe1b55f7a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/abs-esc-hydraulic-unit/op30/": {
+"h": "c7681083c65451f6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/abs-esc-hydraulic-unit/op40/": {
+"h": "4b311b74baf9babe",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/abs-esc-hydraulic-unit/op50/": {
+"h": "6b8e465f1ce49deb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/abs-esc-hydraulic-unit/op60/": {
+"h": "5415f5af6c151170",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/adas-camera/": {
+"h": "e8fe488284439e6b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/adas-camera/op10/": {
+"h": "267077da506b50e9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/adas-camera/op20/": {
+"h": "cc35da38fff28b1b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/adas-camera/op30/": {
+"h": "91ad40ecf8cdb0f0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/adas-camera/op40/": {
+"h": "69b88a5a0b88c59a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/adas-camera/op50/": {
+"h": "1673689d9a0852f1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/": {
+"h": "a5045523534fbad2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/op10/": {
+"h": "541c2a820073d229",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/op20/": {
+"h": "f68c7ffc7d14ed43",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/op30/": {
+"h": "34feb88fd247398e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/op40/": {
+"h": "bc82a8a9255fd5a3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/op50/": {
+"h": "c2990c79a9223b65",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/op60/": {
+"h": "41277e7dec66b2ad",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/airbag/op70/": {
+"h": "5c91f245fb4e410b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-closure-panels/": {
+"h": "83d718c110d1a0ec",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-closure-panels/op10/": {
+"h": "3363687c900551cd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-closure-panels/op20/": {
+"h": "a4d97d750ca56dce",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-closure-panels/op30/": {
+"h": "39ab525040630c79",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-closure-panels/op40/": {
+"h": "ae4c4f5e2c4328b8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/": {
+"h": "bfad28269f3d4e3e",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op10/": {
+"h": "bddb64fed640c875",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op20/": {
+"h": "574ccf62a6b16f06",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op30/": {
+"h": "18096441d5a14cb8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op40/": {
+"h": "9a5692eef2a4936b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op50/": {
+"h": "068dbe5cd32a55af",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op60/": {
+"h": "78f4a6ffc7a31909",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op70/": {
+"h": "bd4d2759c7b11901",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op80/": {
+"h": "d9c91ec9d3d8294f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/aluminum-wheel/op90/": {
+"h": "2cfc5176408a1b46",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/": {
+"h": "4e85dc48ac01b6e9",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/op10/": {
+"h": "976a8254f73baec6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/op20/": {
+"h": "9a4e73d2b8d59395",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/op30/": {
+"h": "da779a8c89e2453e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/op40/": {
+"h": "0a46ce0a360bb347",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/op50/": {
+"h": "981074c71341b9b2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/op60/": {
+"h": "383efa97780d86e8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ball-bearing/op70/": {
+"h": "3a0a49befeb209c8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/": {
+"h": "00dffa8f20380e69",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op10/": {
+"h": "91732f74278ef414",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op20/": {
+"h": "85e0b4a4c5bc0db9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op30/": {
+"h": "db0c3ad2d72a7ac1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op40/": {
+"h": "eb6796604051d6a5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op50/": {
+"h": "6fd5ff529b8d3427",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op60/": {
+"h": "6d22aa5ab24bc74b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op70/": {
+"h": "2444f2ec730108f3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-case/op80/": {
+"h": "2c6512b4164f875f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/": {
+"h": "7da28725e6a138f7",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op10/": {
+"h": "2e112b0e34d11fc3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op20/": {
+"h": "07010370f87b3f58",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op30/": {
+"h": "035fea96ccecce76",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op40/": {
+"h": "4f7bb7519897ac87",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op50/": {
+"h": "71842f5b6371b374",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op60/": {
+"h": "f55793abb15afaf6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op70/": {
+"h": "b478738eebc7866f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/battery-pack/op80/": {
+"h": "b23cb364fb9ee367",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/body-shop/": {
+"h": "832149dd8241ea53",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/body-shop/op10/": {
+"h": "d04325209704aa1f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/body-shop/op20/": {
+"h": "5471d389bef15848",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/body-shop/op30/": {
+"h": "d62610bc74fea2df",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/body-shop/op40/": {
+"h": "21dab8a91d30826a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/body-shop/op50/": {
+"h": "ebf7b419adaf008f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/body-shop/op60/": {
+"h": "27648db5cb6b4c2e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-caliper/": {
+"h": "2faa85e7b52d5edf",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-caliper/op10/": {
+"h": "dfaa02647893be2c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-caliper/op20/": {
+"h": "1904e8c7e0917333",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-caliper/op30/": {
+"h": "a4d26902aaa12934",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-caliper/op40/": {
+"h": "1e4aa2fbd8fed417",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-caliper/op50/": {
+"h": "89494e2e501e1c21",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-caliper/op60/": {
+"h": "a4c1f53904a09a9f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/": {
+"h": "6a6b72d40f70068c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/op10/": {
+"h": "180b93d125c670d8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/op20/": {
+"h": "b025414b6fbd0be8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/op30/": {
+"h": "e282c2b7d4f2a249",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/op40/": {
+"h": "4924ef45bad02400",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/op50/": {
+"h": "7472404dbb0b8b28",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/op60/": {
+"h": "0526f954103ce213",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-pad/op70/": {
+"h": "e93362cb7cb5b97b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-rotor/": {
+"h": "6e8f96f6a59f4e88",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-rotor/op10/": {
+"h": "e7ddd223a0011217",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-rotor/op20/": {
+"h": "8cb62691ee187a10",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-rotor/op30/": {
+"h": "1cd0e4c2dd55c854",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-rotor/op40/": {
+"h": "eaf4e98314d08a6d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-rotor/op50/": {
+"h": "43b2f9e427797b5a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/brake-rotor/op60/": {
+"h": "2413d722db73c22f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/bumper/": {
+"h": "a85e1f18975024b3",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/bumper/op10/": {
+"h": "9350ea2982e87256",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/bumper/op20/": {
+"h": "fb4d8202942baef1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/bumper/op30/": {
+"h": "f0435a8eaa34794c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/bumper/op40/": {
+"h": "0ecc79158ce49925",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/bumper/op50/": {
+"h": "27e8c851fcd40d28",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/bumper/op60/": {
+"h": "59013ddd80410c27",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/": {
+"h": "56eecc55cb1ebc00",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/op10/": {
+"h": "bb2efe258857eace",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/op20/": {
+"h": "45b4d7734151882e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/op30/": {
+"h": "c46e1da85b20ed3c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/op40/": {
+"h": "1f85aa49f9747ab7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/op50/": {
+"h": "5f35558a44daabe1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/op60/": {
+"h": "4544f51eb476e7f2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/camshaft/op70/": {
+"h": "122b71baf40136c3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/catalytic-converter/": {
+"h": "9cf9a57925f0b278",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/catalytic-converter/op10/": {
+"h": "ab9a05588dedfa36",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/catalytic-converter/op20/": {
+"h": "069e684629b7f1fd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/catalytic-converter/op30/": {
+"h": "8bb1086b0ae6343b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/catalytic-converter/op40/": {
+"h": "71809ae222155b8a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/catalytic-converter/op50/": {
+"h": "57d122a115ab97f5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/catalytic-converter/op60/": {
+"h": "5a7a539281f39562",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/": {
+"h": "c87dcd4acf8b60b4",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op10/": {
+"h": "09fb7ab9d404b646",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op20/": {
+"h": "27b889c73f2b1cdf",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op30/": {
+"h": "4a907fd94a461a41",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op40/": {
+"h": "82ae9b7c953fb48c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op50/": {
+"h": "3cd53410cd900ec0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op60/": {
+"h": "c88066d8f7acd48f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op70/": {
+"h": "e60b314405494c47",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/coil-spring/op80/": {
+"h": "dc8ff96801f3c14a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cold-stamped-uhss-parts/": {
+"h": "5d5bc4287c09bae4",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cold-stamped-uhss-parts/op10/": {
+"h": "2fbc5a40bb3909a1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cold-stamped-uhss-parts/op20/": {
+"h": "dc74236c7137ae3a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cold-stamped-uhss-parts/op30/": {
+"h": "d3d8e27d90cf6bb8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cold-stamped-uhss-parts/op40/": {
+"h": "cd264d6d09631b4d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/": {
+"h": "8bbd3544fc3d98eb",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/op10/": {
+"h": "6e1bedade71fe68c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/op20/": {
+"h": "8bd0649ac3477e06",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/op30/": {
+"h": "26e5d4a49c170907",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/op40/": {
+"h": "fbda496935168678",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/op50/": {
+"h": "2c676f45ab6bd52f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/op60/": {
+"h": "50fdac75aba0c89e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connecting-rod/op70/": {
+"h": "453a442a8b35facd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connector/": {
+"h": "812037aad284198c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connector/op10/": {
+"h": "2c1bee4cba57d6e4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connector/op20/": {
+"h": "2f59b2b06dee0827",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connector/op30/": {
+"h": "43945893f4723b41",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/connector/op40/": {
+"h": "e439e2200743f5ef",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/": {
+"h": "adf3babed2aa70c6",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op10/": {
+"h": "3d33607a942290c0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op100/": {
+"h": "fa99bd3748e8383a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op110/": {
+"h": "d7ebad2728e72ce9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op120/": {
+"h": "a99406b54310dda3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op130/": {
+"h": "09cb7d05cdb719e0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op140/": {
+"h": "93737abde13cbc61",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op150/": {
+"h": "c2e538a82b3a4088",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op160/": {
+"h": "f344344a09306ed5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op20/": {
+"h": "7138efd9539c2c14",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op30/": {
+"h": "80ebcf4b71147dbe",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op40/": {
+"h": "ce8a0bcef7c6d744",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op50/": {
+"h": "59bfd8995ee5c104",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op60/": {
+"h": "e7cef1c2768c3e7e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op70/": {
+"h": "b29466ffbd1300dc",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op80/": {
+"h": "dd9b4584549b6bdd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/crankshaft/op90/": {
+"h": "6374cc4434505f48",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/": {
+"h": "b82ce35dcc56c4d0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/op10/": {
+"h": "537622a44f332425",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/op20/": {
+"h": "39d93aa68ce2a995",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/op30/": {
+"h": "e18a9f0afeade952",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/op40/": {
+"h": "9dbe8237038a75f3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/op50/": {
+"h": "b471cbd74883bc9e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/op60/": {
+"h": "707c73738e9c126b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-pulley/op70/": {
+"h": "85b6589c34b6cb89",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-steel-belt/": {
+"h": "cc445c3833786caa",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-steel-belt/op10/": {
+"h": "7921808928af1a3c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-steel-belt/op20/": {
+"h": "814d3a6b04e76aec",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-steel-belt/op30/": {
+"h": "4ddc41aecd6140d0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-steel-belt/op40/": {
+"h": "86efd2bf8cf676bd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cvt-steel-belt/op50/": {
+"h": "bded0e75cc5e42f2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/": {
+"h": "894162c35f4f46b0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op10/": {
+"h": "8649036269ce0157",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op100/": {
+"h": "b880cfebc66398b3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op110/": {
+"h": "b2971650233905ec",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op120/": {
+"h": "9f3b5e86f321aca2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op130/": {
+"h": "6f9b9dc038a2e5c8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op140/": {
+"h": "e06f9a4745f2aaac",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op20/": {
+"h": "ceacebf8ba149f3c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op30/": {
+"h": "df98bd37dad15c28",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op40/": {
+"h": "1db44aa1d6d6eff8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op50/": {
+"h": "95142f1d36914a16",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op60/": {
+"h": "51fcbf65a7f44cf7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op70/": {
+"h": "6b6b53c2ead9e6ea",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op80/": {
+"h": "f6d54fae98de2394",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-block/op90/": {
+"h": "f06008978d779b8f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/": {
+"h": "c457fc7e1c74fc50",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op10/": {
+"h": "d181691b472f892e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op100/": {
+"h": "1214d6b32c05f98f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op110/": {
+"h": "c9a31f4ea3ab6bec",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op20/": {
+"h": "3267f22db9ee1576",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op30/": {
+"h": "f392b9882c3a2987",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op40/": {
+"h": "fbc90f755a1d0d5f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op50/": {
+"h": "832f3f25493d4fe0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op60/": {
+"h": "fdde34a11a90b40d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op70/": {
+"h": "d9e1466278d9839d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op80/": {
+"h": "9e0cdf5124ad035b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/cylinder-head/op90/": {
+"h": "36b309de42531cc6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/": {
+"h": "1be870f30cda1a6c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op10/": {
+"h": "581698c4499895ef",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op20/": {
+"h": "1acc4233aecdbcca",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op30/": {
+"h": "d48d9788a2c2c15c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op40/": {
+"h": "f003afa923060962",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op50/": {
+"h": "9637515b5206495a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op60/": {
+"h": "803882081c0cf895",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op70/": {
+"h": "32bbc498abfcdef9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/diesel-common-rail/op80/": {
+"h": "89aed049f4e545cb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/differential-case/": {
+"h": "38a6478a3870be9f",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/differential-case/op10/": {
+"h": "0034abf195ddc179",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/differential-case/op20/": {
+"h": "876d8753efd05ffa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/differential-case/op30/": {
+"h": "b5e4be0f8688590a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/differential-case/op40/": {
+"h": "0610a400610868a3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/differential-case/op50/": {
+"h": "b2d68a2fabe815b3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/differential-case/op60/": {
+"h": "e50769182d0466aa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/door-trim/": {
+"h": "d167062e9fe6f743",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/door-trim/op10/": {
+"h": "93e3f5bc8276dd65",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/door-trim/op20/": {
+"h": "3437ae623b1732e9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/door-trim/op30/": {
+"h": "710072a19c02ea56",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/door-trim/op40/": {
+"h": "8f178962af9ed43f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/door-trim/op50/": {
+"h": "be8c151abc2fbf5b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/": {
+"h": "81d3ca92012b0a65",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op10/": {
+"h": "d3ca93cc93728892",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op20/": {
+"h": "eac80c3721f4562d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op30/": {
+"h": "3cf68706484ca856",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op40/": {
+"h": "64ac25b9ef8ec665",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op50/": {
+"h": "90a256ce2146acea",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op60/": {
+"h": "93e1ef74a83f75ca",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op70/": {
+"h": "478f0ecee4c00e1a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/driveshaft-cv-joint/op80/": {
+"h": "5ff1cef84789e4ce",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-assembly/": {
+"h": "56952feaef4c1da0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-assembly/op10/": {
+"h": "fb7bd341a4ffcc2f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-assembly/op20/": {
+"h": "a3713289562b49d4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-assembly/op30/": {
+"h": "1d23660563600589",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-assembly/op40/": {
+"h": "fe6fee4c8c37f569",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-assembly/op50/": {
+"h": "f38c80ecc510dcd7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-housing/": {
+"h": "6bebfe6cee15ed07",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-housing/op10/": {
+"h": "37d3e9edce94d6de",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-housing/op20/": {
+"h": "85e63a969c69a3c8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-housing/op30/": {
+"h": "c9da9873cd6dbe85",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-housing/op40/": {
+"h": "1db5b7203fffb21e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-housing/op50/": {
+"h": "bb279a5ae34115b4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/": {
+"h": "e9915c7949df840c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/op10/": {
+"h": "981327a79ab69d6b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/op20/": {
+"h": "d5d6188de1bbd823",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/op30/": {
+"h": "b1f850bb3dae75e7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/op40/": {
+"h": "9a35f391f76e68ef",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/op50/": {
+"h": "77b4d262c8dc21ee",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/op60/": {
+"h": "e3e30d4742f44677",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/e-axle-reduction-gear/op70/": {
+"h": "a5f77179e68c8921",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/": {
+"h": "2eaa73668c30dba6",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op10/": {
+"h": "110623e787df832f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op100/": {
+"h": "8e7c1cf394d40abe",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op20/": {
+"h": "2c0b868e9561b01e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op30/": {
+"h": "57212063b0d91cc6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op40/": {
+"h": "268df63ecd2b7660",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op50/": {
+"h": "ee1ab2e3da9f19af",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op60/": {
+"h": "31f626abe6809ff3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op70/": {
+"h": "eb9f1c735d0a8dba",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op80/": {
+"h": "3f75393f48470e50",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/ecu/op90/": {
+"h": "977915c923da773e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-compressor/": {
+"h": "f91a06541681494a",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-compressor/op10/": {
+"h": "058bebd39ff1f1c5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-compressor/op20/": {
+"h": "a031edac47cdeccb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-compressor/op30/": {
+"h": "e4fd18bcff3f60f7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-compressor/op40/": {
+"h": "235ef62ce69fabff",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-compressor/op50/": {
+"h": "19e6e13dc9060937",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/": {
+"h": "97f2f6a71927c4a5",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op10/": {
+"h": "fb8cd3fb3dce0562",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op20/": {
+"h": "6c64db45a402022b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op30/": {
+"h": "7f18a95ec3924e87",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op40/": {
+"h": "c3772dd876726f4a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op50/": {
+"h": "d2afd9d5fd0c287a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op60/": {
+"h": "65d8dbc7493b0a84",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op70/": {
+"h": "0620d8fa8614d4a5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/electric-power-steering/op80/": {
+"h": "35742f3fc44e5af7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/": {
+"h": "d5e06b06bae8a189",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/op10/": {
+"h": "7d5b04d69ea69b55",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/op20/": {
+"h": "d84d0cba23266c1d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/op30/": {
+"h": "a4b59c11f0589e44",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/op40/": {
+"h": "48ca45248dc67919",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/op50/": {
+"h": "7408d747ef6abc88",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/op60/": {
+"h": "e48f366aa66233ff",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-assembly/op70/": {
+"h": "cdf9964967b8c225",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/": {
+"h": "7f6197d6f99b02e1",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op10/": {
+"h": "d0fa81f17da5d39f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op20/": {
+"h": "d7a6a8af2e5d39de",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op30/": {
+"h": "c946505bf4c82cc7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op40/": {
+"h": "c4b715d1752342da",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op50/": {
+"h": "bde904b97e35bed2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op60/": {
+"h": "461928b95494d5fa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op70/": {
+"h": "6e41256033d8469f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/engine-valve/op80/": {
+"h": "761a50c6ff23e663",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/": {
+"h": "06469e2da67be169",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/op10/": {
+"h": "ea33e02eb9724d5e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/op20/": {
+"h": "6af75ad06eda183d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/op30/": {
+"h": "3b105fde8850503e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/op40/": {
+"h": "2f1488ea5e7dae09",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/op50/": {
+"h": "c61b920eb9a9ac1b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/op60/": {
+"h": "4feab8a82723fa1c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-assembly/op70/": {
+"h": "dc7dfd623dc1db4f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/": {
+"h": "59d7b4eb81c895f2",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/op10/": {
+"h": "d8cb3d39663b39e1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/op20/": {
+"h": "c6cd72a4a4358b51",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/op30/": {
+"h": "ae67ac28d8c98910",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/op40/": {
+"h": "f980806481081a0a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/op50/": {
+"h": "e74fe59990af1dea",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/op60/": {
+"h": "46eae45b43c0076a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/final-inspection/op70/": {
+"h": "d6bb09693beb771b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/forged-aluminum-control-arm/": {
+"h": "4e6a598d5619f990",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/forged-aluminum-control-arm/op10/": {
+"h": "ba3fb1b6ae993a30",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/forged-aluminum-control-arm/op20/": {
+"h": "8d559097a1ec0ebf",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/forged-aluminum-control-arm/op30/": {
+"h": "2a1dd053ab319408",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/forged-aluminum-control-arm/op40/": {
+"h": "68170d2a39179d78",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/forged-aluminum-control-arm/op50/": {
+"h": "0537687e6ef88a9f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/forged-aluminum-control-arm/op60/": {
+"h": "36e2c70cd21e8f03",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/fuel-injector/": {
+"h": "2f31fcf1ba74be91",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/fuel-injector/op10/": {
+"h": "1c215529efb24976",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/fuel-injector/op20/": {
+"h": "b1a9dc9c918f8105",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/fuel-injector/op30/": {
+"h": "4e6cc7b7986f66a0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/fuel-injector/op40/": {
+"h": "b463784462184f58",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/fuel-injector/op50/": {
+"h": "bd98931e2079ba02",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/fuel-injector/op60/": {
+"h": "285b26ad0bb46c6b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/gigacast-underbody/": {
+"h": "356010429bbbbff6",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/gigacast-underbody/op10/": {
+"h": "bf0b3ec66b1bb067",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/gigacast-underbody/op20/": {
+"h": "6ad3ee3d552a5a78",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/gigacast-underbody/op30/": {
+"h": "c996205e4ff9df79",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/gigacast-underbody/op40/": {
+"h": "f2440f035b1ef7fc",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/gigacast-underbody/op50/": {
+"h": "070ec46a8a825aaa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/gigacast-underbody/op60/": {
+"h": "27c6f232e1d31835",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/": {
+"h": "a3b3d3bf7e2662cb",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/op10/": {
+"h": "b68b142301e864be",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/op20/": {
+"h": "74fd36168546c031",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/op30/": {
+"h": "1e464bde1c540a4a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/op40/": {
+"h": "cfa3d3b874b0e8ab",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/op50/": {
+"h": "7e01dbd9e3962ae8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/op60/": {
+"h": "84ecfc8f98ed5c02",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/headlamp/op70/": {
+"h": "9e5339f7bf40be2c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/high-strength-bolt/": {
+"h": "bf24b69fff1b2ca1",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/high-strength-bolt/op10/": {
+"h": "66de3dec3a9ddc00",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/high-strength-bolt/op20/": {
+"h": "3e550db3c32b6f32",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/high-strength-bolt/op30/": {
+"h": "2a11eb9351e7a5ea",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/high-strength-bolt/op40/": {
+"h": "48498a8d51056b0b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/high-strength-bolt/op50/": {
+"h": "a73887942b759af1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/high-strength-bolt/op60/": {
+"h": "590dca48c2d7c05f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hot-stamped-parts/": {
+"h": "30bc80ae490eecb8",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hot-stamped-parts/op10/": {
+"h": "4b0adbe2a737dab7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hot-stamped-parts/op20/": {
+"h": "ed8a4a303e7514c8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hot-stamped-parts/op30/": {
+"h": "51f31e903de217a3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hot-stamped-parts/op40/": {
+"h": "83d5338614698747",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hot-stamped-parts/op50/": {
+"h": "d0066b1c783299c3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/": {
+"h": "6fb568a34f71b040",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/op10/": {
+"h": "39a4dea92b58b6ee",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/op20/": {
+"h": "65237db4ae49c731",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/op30/": {
+"h": "a9dc79ed34caf0c0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/op40/": {
+"h": "39b21423cfca12a4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/op50/": {
+"h": "3011bff32f26878d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/op60/": {
+"h": "216b916bf5619510",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hub-bearing/op70/": {
+"h": "5d0651f075e19904",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/": {
+"h": "caa0b023c697f940",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/op10/": {
+"h": "e366c99ebb10d1ab",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/op20/": {
+"h": "15606e31644b69a5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/op30/": {
+"h": "8468e7e817b60f76",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/op40/": {
+"h": "d6e2098df493acfa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/op50/": {
+"h": "1cc036b7db8ea1ce",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/op60/": {
+"h": "9c970f4135250e23",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/hypoid-gear/op70/": {
+"h": "98032c488f349370",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/": {
+"h": "637f4d81e50777f1",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/op10/": {
+"h": "6b807cc0e0570474",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/op20/": {
+"h": "a5fc4fb3578e31ae",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/op30/": {
+"h": "aaf48b89c7f605d1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/op40/": {
+"h": "51a5ab3cd315254a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/op50/": {
+"h": "01ed53bebb7cf36c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/op60/": {
+"h": "7df0f0c40f40fabe",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/instrument-panel/op70/": {
+"h": "878b1d4f55740faf",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/inverter/": {
+"h": "c314399a05e78ea3",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/inverter/op10/": {
+"h": "519d39c627e5ae22",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/inverter/op20/": {
+"h": "1f3f943f2659d33d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/inverter/op30/": {
+"h": "b024365ac49c20b4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/inverter/op40/": {
+"h": "c56f2f6c17494c31",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/inverter/op50/": {
+"h": "7706b6fca78c6fc8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/": {
+"h": "ab7981346e99ea65",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/op10/": {
+"h": "2ad2ca19bc9877e2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/op20/": {
+"h": "7de93ef1c08c4291",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/op30/": {
+"h": "e1457ec1b292bb2b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/op40/": {
+"h": "12cca749ee7de91f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/op50/": {
+"h": "3df957e40a85d672",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/op60/": {
+"h": "59dca25b4117ce44",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/motor-shaft-resolver/op70/": {
+"h": "ad34a8cd490f707f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/": {
+"h": "0f1087d138c391cb",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op10/": {
+"h": "8a87f20582210c4e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op20/": {
+"h": "101b5e3ab5fe99a7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op30/": {
+"h": "8827e42c550cbb0c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op40/": {
+"h": "ba205aad32fc9690",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op50/": {
+"h": "baddd1d78121e2c6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op60/": {
+"h": "b3b65be730bef86b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op70/": {
+"h": "2887ca2c106212dd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/paint-shop/op80/": {
+"h": "007d087dc8825f36",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/": {
+"h": "a157f006c9ac9410",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op10/": {
+"h": "fa018de49e0a888e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op20/": {
+"h": "f820c2258a455aec",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op30/": {
+"h": "a855d54a0fab20ec",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op40/": {
+"h": "dba9124e001c703b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op50/": {
+"h": "ee1d66ffa9c726ea",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op60/": {
+"h": "d2a446292c974536",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op70/": {
+"h": "dee34b0678412ccc",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/piston/op80/": {
+"h": "2d940c63ddf35dc9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/plastic-fuel-tank/": {
+"h": "225cda2f1ff09d86",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/plastic-fuel-tank/op10/": {
+"h": "7e7c2a5240089e0a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/plastic-fuel-tank/op20/": {
+"h": "6d35ef912e48c28b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/plastic-fuel-tank/op30/": {
+"h": "86b20e79021c5eb2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-module/": {
+"h": "f73c6b6906715000",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-module/op10/": {
+"h": "096c6d9b076c99ce",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-module/op20/": {
+"h": "aef9756751670f5d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-module/op30/": {
+"h": "8e917a5d751d91be",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-module/op40/": {
+"h": "8b1c471390ba8344",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-module/op50/": {
+"h": "2d827e8db51afbbf",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-module/op60/": {
+"h": "8867772a2af07032",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/": {
+"h": "305fbfd6c8687513",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op10/": {
+"h": "7f961577a1eda80a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op20/": {
+"h": "5a76bf291f39a198",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op30/": {
+"h": "df3a8ee1838b5253",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op40/": {
+"h": "c8c644e3e9e83462",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op50/": {
+"h": "f092233ab07e156b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op60/": {
+"h": "50f6dedb4b1b14e9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op70/": {
+"h": "00f8b27ccc355d9b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/power-split-device/op80/": {
+"h": "da8a5180ad1bcc85",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/": {
+"h": "5ef8553a92c4a222",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op10/": {
+"h": "57c2c357b379dada",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op20/": {
+"h": "00822f1506e1329e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op30/": {
+"h": "549dfaf2cb2b3808",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op40/": {
+"h": "f62b70e3bd2684ff",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op50/": {
+"h": "06b4dffc8f328d2d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op60/": {
+"h": "76f1020c75e2062f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op70/": {
+"h": "b1c556c511a075f7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/press-shop/op80/": {
+"h": "a47f522c660279c4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/": {
+"h": "47c28faa6412e4db",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op10/": {
+"h": "d0d0aaf8b80e9ec9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op100/": {
+"h": "11c2ac5ad9b8d994",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op110/": {
+"h": "2ca7bdf124503b5c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op20/": {
+"h": "39aa322f8b837aaa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op30/": {
+"h": "86b52cebe6c6a923",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op40/": {
+"h": "ba94b35e93848761",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op50/": {
+"h": "2807ff4d27921bba",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op60/": {
+"h": "368859059f9e7ca9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op70/": {
+"h": "b6a4f5ed6bc0a25c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op80/": {
+"h": "53c5bafb8d2dcb9e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/prismatic-lithium-ion-cell/op90/": {
+"h": "ab879c09e85e4aad",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-grille/": {
+"h": "e41433dbfe8918a6",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-grille/op10/": {
+"h": "23ef60cf32816e8d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-grille/op20/": {
+"h": "f4ead013d841d84a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-grille/op30/": {
+"h": "ae888157ea480a9a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-grille/op40/": {
+"h": "866e7abe5d2307e2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-heat-exchanger/": {
+"h": "1adbc373457d990b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-heat-exchanger/op10/": {
+"h": "18ba39ad895b8c2d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-heat-exchanger/op20/": {
+"h": "466993c2d4935021",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-heat-exchanger/op30/": {
+"h": "d6b6049dc3759caa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-heat-exchanger/op40/": {
+"h": "5b3ad1f40d8138d6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-heat-exchanger/op50/": {
+"h": "c0285317970cf9ba",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/radiator-heat-exchanger/op60/": {
+"h": "5f3beb11bfc32c47",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat-belt/": {
+"h": "dca94f74a154543c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat-belt/op10/": {
+"h": "bb31b5872dd7e322",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat-belt/op20/": {
+"h": "5fe239808472cf60",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat-belt/op30/": {
+"h": "e866a9d0a8d6fef9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat-belt/op40/": {
+"h": "7f548d3cd835f87b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat-belt/op50/": {
+"h": "50464d451a615ca3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/": {
+"h": "970ff89bbc977725",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op10/": {
+"h": "ccb297ba87925f6e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op100/": {
+"h": "5897af309c8bf338",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op20/": {
+"h": "b4d21ab1843e031e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op30/": {
+"h": "6bfc0deb30bd8d1f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op40/": {
+"h": "11641027099e5b40",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op50/": {
+"h": "982d03dd373fe669",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op60/": {
+"h": "94f31f88ea6654f5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op70/": {
+"h": "b6a6e85efe25ff49",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op80/": {
+"h": "b4ffe1427807e751",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/seat/op90/": {
+"h": "dab0a1f1ac0fc3e3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/": {
+"h": "241ab242ff82ad97",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/op10/": {
+"h": "376064ebc0d63284",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/op20/": {
+"h": "a391d39cedf8c049",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/op30/": {
+"h": "6bbfb58d3ba8f48d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/op40/": {
+"h": "0ee6699dd31009c4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/op50/": {
+"h": "82323a6ba74f4f28",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/op60/": {
+"h": "492d7554cea16b19",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/shock-absorber/op70/": {
+"h": "a00a39a594854353",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/side-and-rear-glass/": {
+"h": "2b45655dba837c2d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/side-and-rear-glass/op10/": {
+"h": "779edf52ce1e0f33",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/side-and-rear-glass/op20/": {
+"h": "43806c266ccb1375",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/side-and-rear-glass/op30/": {
+"h": "1ce06266dc348ce3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/side-and-rear-glass/op40/": {
+"h": "ab6a150a884f5314",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/sintered-parts/": {
+"h": "9d20a34a2b66e6df",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/sintered-parts/op10/": {
+"h": "b6905fad7315d4d4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/sintered-parts/op20/": {
+"h": "3fc3ef2f407c4020",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/sintered-parts/op30/": {
+"h": "bf84b1b190169141",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/sintered-parts/op40/": {
+"h": "6494861d374b9194",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/sintered-parts/op50/": {
+"h": "fdfd6aeceaefb0d6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/sintered-parts/op60/": {
+"h": "8f829474956ec3ed",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stabilizer-bar/": {
+"h": "c1e45b2a7e87377c",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stabilizer-bar/op10/": {
+"h": "0088138e32e9b27f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stabilizer-bar/op20/": {
+"h": "e6aabfc1c636051c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stabilizer-bar/op30/": {
+"h": "6a4d7ffcc8c66090",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stabilizer-bar/op40/": {
+"h": "a7d145904f5a051f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stabilizer-bar/op50/": {
+"h": "b2d5c758b756a081",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stabilizer-bar/op60/": {
+"h": "a50d2cba836cf344",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stamped-lower-control-arm/": {
+"h": "425a1ef1828c8809",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stamped-lower-control-arm/op10/": {
+"h": "b084fa3db41ca0ae",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stamped-lower-control-arm/op20/": {
+"h": "c9d841c0394bcc41",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stamped-lower-control-arm/op30/": {
+"h": "e0d09a86224fee4b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stamped-lower-control-arm/op40/": {
+"h": "e20c2002debc3eb1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/stamped-lower-control-arm/op50/": {
+"h": "8e15af19c368f340",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/steering-knuckle/": {
+"h": "e4bd7a069c7b24d9",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/steering-knuckle/op10/": {
+"h": "831f5e435e448236",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/steering-knuckle/op20/": {
+"h": "3880e900032fb0f4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/steering-knuckle/op30/": {
+"h": "8395af64eb387c66",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/steering-knuckle/op40/": {
+"h": "d6cca88a31470c83",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/steering-knuckle/op50/": {
+"h": "45f6a4acb6b9fad1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/subframe/": {
+"h": "ef33375e5ed218fb",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/subframe/op10/": {
+"h": "c2e83a5e36f02666",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/subframe/op20/": {
+"h": "2cc2ab3241944d71",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/subframe/op30/": {
+"h": "d72170e12dd975ef",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/subframe/op40/": {
+"h": "8ac137f9fa27f75a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/subframe/op50/": {
+"h": "758c9350c6807d5d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tie-rod-ball-joint/": {
+"h": "d299b75d106206ce",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tie-rod-ball-joint/op10/": {
+"h": "97b51808242f33aa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tie-rod-ball-joint/op20/": {
+"h": "fde8e8a48a552fec",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tie-rod-ball-joint/op30/": {
+"h": "018f3c2c1e421b9d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tie-rod-ball-joint/op40/": {
+"h": "d2c5f35bf615cc86",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tie-rod-ball-joint/op50/": {
+"h": "4b3079296ef0bfd0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/": {
+"h": "dd550badb1a665f1",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/op10/": {
+"h": "68c3a971cfb8a043",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/op20/": {
+"h": "10742e8f7b400308",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/op30/": {
+"h": "878cea08ce7b3bab",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/op40/": {
+"h": "32139292269aae81",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/op50/": {
+"h": "89839e0f1c90a0d2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/op60/": {
+"h": "f3a3b72f9869209e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/tire/op70/": {
+"h": "9f0031559de1b60a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/torque-converter/": {
+"h": "0a52434a661ca279",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/torque-converter/op10/": {
+"h": "88c7b9566e0e57d2",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/torque-converter/op20/": {
+"h": "5e22fdbcd3dde245",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/torque-converter/op30/": {
+"h": "07f981634a7994ff",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/torque-converter/op40/": {
+"h": "4677e175f4fd9f71",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/torque-converter/op50/": {
+"h": "9c91c20c6ca73a9a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-rotor/": {
+"h": "3e415a3fa1146a61",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-rotor/op10/": {
+"h": "2ff49b182a5e7a7e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-rotor/op20/": {
+"h": "45f74da8f205f908",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-rotor/op30/": {
+"h": "652824d3a110aaba",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-rotor/op40/": {
+"h": "3d33481d8ab6de4b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-rotor/op50/": {
+"h": "4161dc7822f92554",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/": {
+"h": "5842d8c666cac844",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/op10/": {
+"h": "42c31db81884f8c6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/op20/": {
+"h": "6fbf88258832cd0a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/op30/": {
+"h": "071f15d7bc90bca0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/op40/": {
+"h": "58e032629233b4c4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/op50/": {
+"h": "7cd311dd2f83caf7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/op60/": {
+"h": "008d20bb51cd5192",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/traction-motor-stator/op70/": {
+"h": "fa175ff7a235e3a4",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-assembly/": {
+"h": "1a799a1bfe1f9522",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-assembly/op10/": {
+"h": "33b9dc041ec9dd89",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-assembly/op20/": {
+"h": "23590b6af7de0976",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-assembly/op30/": {
+"h": "a05bbaa5b4553a09",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-assembly/op40/": {
+"h": "758225691a020cbb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-assembly/op50/": {
+"h": "e1b7fbe3d5a6b28c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-assembly/op60/": {
+"h": "3d2b7f4408458d5f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/": {
+"h": "6e368ccec81bd577",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/op10/": {
+"h": "e8386a476bce5e8d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/op20/": {
+"h": "4c7e8e72c024aa60",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/op30/": {
+"h": "3278c7e0a184a9c1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/op40/": {
+"h": "5125e85c4f0a88df",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/op50/": {
+"h": "74d76e476dde62e6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/op60/": {
+"h": "704e64a73d3810ad",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-case/op70/": {
+"h": "6bf8023d80717cb1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/": {
+"h": "db6b8b89c0a8fe89",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op10/": {
+"h": "83d2e93b339e84fa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op100/": {
+"h": "cec554f682d48fc0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op110/": {
+"h": "3f8eb6101fad7855",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op120/": {
+"h": "b3904ef390e367eb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op20/": {
+"h": "825b0b83caf19f78",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op30/": {
+"h": "e3b76306d78ba256",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op40/": {
+"h": "9ebc4091b64033be",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op50/": {
+"h": "da857f2bed5c6a87",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op60/": {
+"h": "4951b8d26a278c2d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op70/": {
+"h": "ff119280c5ed1d57",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op80/": {
+"h": "6e2757e6b44aa3ce",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-gear/op90/": {
+"h": "8154e35d59ad98e8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/": {
+"h": "70c76c62d16185b0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/op10/": {
+"h": "cf56c82146cdea6d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/op20/": {
+"h": "d594f242fc8cbc02",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/op30/": {
+"h": "048845109fb59a0b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/op40/": {
+"h": "a0bb4eba12f3a25c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/op50/": {
+"h": "7fb2da02a1488853",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/op60/": {
+"h": "dd5e7e71762ec397",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/transmission-shaft/op70/": {
+"h": "e9ec4300828ef60c",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/": {
+"h": "cdab4f591042f1ae",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/op10/": {
+"h": "6acd39efce52c6fd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/op20/": {
+"h": "732b795063854adb",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/op30/": {
+"h": "5ca5ec5256efa274",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/op40/": {
+"h": "46531a50f79491dd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/op50/": {
+"h": "b833599667a698f7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/op60/": {
+"h": "0e9fa51b6b07e8ad",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/turbocharger/op70/": {
+"h": "cb48489396adebe5",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/": {
+"h": "2b959a2951662bf1",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/op10/": {
+"h": "e1cd3ef7ba001aaa",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/op20/": {
+"h": "910ef77273ec79e1",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/op30/": {
+"h": "8173e0a5a8d233af",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/op40/": {
+"h": "05beddc31c23c858",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/op50/": {
+"h": "1f7878474fdbb1e9",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/op60/": {
+"h": "6a0f4a33ce988666",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/valve-body/op70/": {
+"h": "49cee37011ea302f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/weatherstrip/": {
+"h": "81980f6ef57db1c0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/weatherstrip/op10/": {
+"h": "717678c6b4a9a74f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/weatherstrip/op20/": {
+"h": "a1c87c23c1fea8b0",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/weatherstrip/op30/": {
+"h": "3319b614de64255d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/weatherstrip/op40/": {
+"h": "49467b9290c19f85",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/weatherstrip/op50/": {
+"h": "453568cef48bd9e8",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/weatherstrip/op60/": {
+"h": "8f224e4b29fc3860",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/": {
+"h": "cb37d09d43d0c739",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/op10/": {
+"h": "5538d9f08d0a141e",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/op20/": {
+"h": "390bf9f7662f8107",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/op30/": {
+"h": "9787ebd3f606a211",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/op40/": {
+"h": "7bd6f0dd4910ccd6",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/op50/": {
+"h": "b8a30b39546c297b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/op60/": {
+"h": "5372ce9e63ca20e3",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/windshield/op70/": {
+"h": "1de75ed00bdc4b91",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/wire-harness/": {
+"h": "b7da288bb61d71ce",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/wire-harness/op10/": {
+"h": "4c74633f59dae86b",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/wire-harness/op20/": {
+"h": "c638ceb5077146fd",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/wire-harness/op30/": {
+"h": "60867a0c1dcacf9a",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/wire-harness/op40/": {
+"h": "7688c6bd52eea38d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/wire-harness/op50/": {
+"h": "8ff923891214787f",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/parts/wire-harness/op60/": {
+"h": "8b52948cbdb6b0a7",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/powertrain/": {
+"h": "1818654831bad5b0",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/search/": {
+"h": "41987f9a6ec21f0d",
+"idx": false,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/": {
+"h": "41987f9a6ec21f0d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/body/": {
+"h": "a6f0214e7ef821b6",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/chassis/": {
+"h": "d5e905ea98f18256",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/drivetrain/": {
+"h": "403f627d550d6ead",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/electrical-electronics/": {
+"h": "64cddcc1fe81abbb",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/electrified-powertrain/": {
+"h": "a96c84994b7acbff",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/engine/": {
+"h": "558e8880658c867d",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/exterior/": {
+"h": "be28165656721003",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/fasteners-components/": {
+"h": "1d556adc7c2d37ce",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/interior-safety/": {
+"h": "891e0e6eb10574a8",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/thermal-management/": {
+"h": "50d293af12b4f94f",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/tires-wheels/": {
+"h": "3a3b851ba9e4fc4b",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+},
+"/systems/vehicle-assembly/": {
+"h": "6c2fcf8320bbbced",
+"idx": true,
+"mod": "2026-09-29",
+"pub": "2026-09-29"
+}
+}

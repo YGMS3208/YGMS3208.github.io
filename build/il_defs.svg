@@ -1,0 +1,28 @@
+<svg class="ildefs" width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0;overflow:hidden"><defs>
+<linearGradient id="g-st" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#EEF1F4"/><stop offset=".16" stop-color="#FFFFFF"/><stop offset=".46" stop-color="#D3D9DF"/><stop offset=".84" stop-color="#9BA4AD"/><stop offset="1" stop-color="#BAC1C8"/></linearGradient>
+<linearGradient id="g-st2" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#D5DBE1"/><stop offset=".22" stop-color="#E2E6EA"/><stop offset=".6" stop-color="#A8B1BA"/><stop offset="1" stop-color="#8A949E"/></linearGradient>
+<linearGradient id="g-st3" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#A1AAB3"/><stop offset="1" stop-color="#6E7882"/></linearGradient>
+<linearGradient id="g-al" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#F6F6F4"/><stop offset=".15" stop-color="#FFFFFF"/><stop offset=".5" stop-color="#E2E3E0"/><stop offset=".86" stop-color="#B9BBB8"/><stop offset="1" stop-color="#D0D2CF"/></linearGradient>
+<linearGradient id="g-al2" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#E3E4E1"/><stop offset=".6" stop-color="#B8BAB7"/><stop offset="1" stop-color="#9EA09D"/></linearGradient>
+<linearGradient id="g-al3" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#A9ABA8"/><stop offset="1" stop-color="#7E807D"/></linearGradient>
+<linearGradient id="g-fe" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#B9BEC3"/><stop offset=".18" stop-color="#C9CDD1"/><stop offset=".55" stop-color="#8F959B"/><stop offset="1" stop-color="#6A7076"/></linearGradient>
+<linearGradient id="g-fe2" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#8E949A"/><stop offset="1" stop-color="#62686E"/></linearGradient>
+<linearGradient id="g-fe3" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#60666C"/><stop offset="1" stop-color="#43494F"/></linearGradient>
+<linearGradient id="g-pl" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#70747A"/><stop offset=".45" stop-color="#43474C"/><stop offset="1" stop-color="#26292C"/></linearGradient>
+<linearGradient id="g-pl2" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#4C5055"/><stop offset="1" stop-color="#2B2E32"/></linearGradient>
+<linearGradient id="g-pl3" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#35383C"/><stop offset="1" stop-color="#1C1E21"/></linearGradient>
+<linearGradient id="g-cu" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#FBDCC0"/><stop offset=".25" stop-color="#F2B687"/><stop offset=".7" stop-color="#C77F4E"/><stop offset="1" stop-color="#9B5B2F"/></linearGradient>
+<linearGradient id="g-cu2" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#DA9764"/><stop offset="1" stop-color="#9C5C30"/></linearGradient>
+<linearGradient id="g-cu3" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#A9693B"/><stop offset="1" stop-color="#6F3E1E"/></linearGradient>
+<linearGradient id="g-m" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#EEF0F2"/><stop offset="1" stop-color="#D5D9DD"/></linearGradient>
+<linearGradient id="g-m2" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#E1E5E9"/><stop offset="1" stop-color="#B5BBC1"/></linearGradient>
+<linearGradient id="g-m3" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#626970"/><stop offset=".5" stop-color="#3C4249"/><stop offset="1" stop-color="#2A2F35"/></linearGradient>
+<linearGradient id="g-t" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#F8EBC8"/><stop offset=".14" stop-color="#FFF7E3"/><stop offset=".48" stop-color="#E6CC92"/><stop offset=".86" stop-color="#BF9F62"/><stop offset="1" stop-color="#D3B97E"/></linearGradient>
+<linearGradient id="g-gw" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#F8F5F0"/><stop offset=".5" stop-color="#E4DED3"/><stop offset="1" stop-color="#C6BEAF"/></linearGradient>
+<linearGradient id="g-bg" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#3B4148"/><stop offset="1" stop-color="#16191C"/></linearGradient>
+<linearGradient id="g-rb" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#50545A"/><stop offset="1" stop-color="#1D1F22"/></linearGradient>
+<linearGradient id="g-hot" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#FFEAB5"/><stop offset=".45" stop-color="#FFB15A"/><stop offset="1" stop-color="#EE7430"/></linearGradient>
+<radialGradient id="g-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#000" stop-opacity=".3"/><stop offset=".6" stop-color="#000" stop-opacity=".1"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+<radialGradient id="g-ball" cx=".5" cy=".5" r=".55" fx=".34" fy=".3"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".45" stop-color="#D6DCE1"/><stop offset="1" stop-color="#848E98"/></radialGradient>
+<pattern id="p-cut" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="#C9CFD5"/><line x1="0" y1="0" x2="0" y2="6" stroke="#7F8891" stroke-width="1.1"/></pattern>
+</defs></svg>
