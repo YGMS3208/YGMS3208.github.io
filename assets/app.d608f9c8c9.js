@@ -43,6 +43,7 @@ function suggest(){
     IDX.p.forEach(function(p){ if(out.length < 5 && (has(p[0], q) || has(p[1], q))) out.push("<a href=\"" + p[3] + "\">" + hl(p[0], q) + " <small>部品</small></a>"); });
     IDX.c.forEach(function(c){ if(out.length < 9 && has(c[0], q)) out.push("<a href=\"" + c[2] + "\">" + hl(c[0], q) + " <small>設備</small></a>"); });
     IDX.k.forEach(function(k){ if(out.length < 10 && has(k[0], q)) out.push("<a href=\"" + k[1] + "\">" + hl(k[0], q) + " <small>加工法</small></a>"); });
+    (IDX.m || []).forEach(function(m){ if(out.length < 11 && has(m[0], q)) out.push("<a href=\"" + m[2] + "\">" + hl(m[0], q) + " <small>" + esc(m[1]) + "</small></a>"); });
     IDX.o.forEach(function(o){ if(out.length < 12 && has(o[2], q)) out.push("<a href=\"" + o[5] + "\">" + hl(o[2], q) + " <small>" + esc(o[0]) + "・" + o[1] + "</small></a>"); });
     var all = "/search/?q=" + encodeURIComponent(raw);
     qs.innerHTML = "<p lang=\"en\">SUGGESTIONS</p>" + (out.join("") || "<a href=\"" + all + "\">「" + esc(raw) + "」で全体を検索</a>") + (out.length ? "<a class=\"all\" href=\"" + all + "\">すべての結果を見る</a>" : "");
@@ -68,8 +69,10 @@ if(sres){
       var ro = IDX.o.filter(function(o){ return has(o[2], q) || has(o[3], q) || has(o[4], q); });
       var rm = IDX.r.filter(function(r){ return has(r[1], q) || has(r[2], q); });
       var rk = IDX.k.filter(function(k){ return has(k[0], q); });
+      var rmt = (IDX.m || []).filter(function(m){ return has(m[0], q); });
       var h = "<h2 class=\"sr\">検索結果</h2><div class=\"stats\" style=\"margin-bottom:12px\"><div><b>" + rp.length + "</b><span>部品</span></div><div><b>" + rc.length + "</b><span>設備</span></div><div><b>" + ro.length + "</b><span>工程</span></div><div><b>" + rm.length + "</b><span>仕様・メーカー</span></div></div>";
-      if(!(rp.length + rc.length + ro.length + rm.length + rk.length)){ sres.innerHTML = h + "<p class=\"sub\" style=\"margin-top:32px\">当てはまる項目がありません。表記を変えるか、短い言葉で試してください（例：研削、プレス）。</p>"; return; }
+      if(!(rp.length + rc.length + ro.length + rm.length + rk.length + rmt.length)){ sres.innerHTML = h + "<p class=\"sub\" style=\"margin-top:32px\">当てはまる項目がありません。表記を変えるか、短い言葉で試してください（例：研削、プレス）。</p>"; return; }
+      if(rmt.length) h += "<div class=\"gblock\"><h3>工作機械図鑑<small>" + rmt.length + "</small></h3>" + rmt.map(function(m){ return "<a class=\"use\" href=\"" + m[2] + "\"><span class=\"w\"><b>" + hl(m[0], q) + "</b><small>" + esc(m[1]) + "</small></span></a>"; }).join("") + "</div>";
       if(rk.length) h += "<div class=\"gblock\"><h3>加工法<small>" + rk.length + "</small></h3>" + rk.map(function(k){ return "<a class=\"use\" href=\"" + k[1] + "\"><span class=\"w\"><b>" + hl(k[0], q) + "</b></span></a>"; }).join("") + "</div>";
       if(rc.length) h += "<div class=\"gblock\"><h3>設備<small>" + rc.length + "</small></h3>" + rc.map(function(c){ return "<a class=\"use\" href=\"" + c[2] + "\"><span class=\"w\"><b>" + hl(c[0], q) + "</b><small>" + esc(c[3]) + "</small></span><span class=\"s\">" + hl(c[1], q) + "</span><span class=\"m\"></span></a>"; }).join("") + "</div>";
       if(rp.length) h += "<div class=\"gblock\"><h3>部品<small>" + rp.length + "</small></h3>" + rp.map(function(p){ return "<a class=\"use\" href=\"" + p[3] + "\"><span class=\"w\"><b>" + hl(p[0], q) + "</b><small>" + esc(p[4]) + "</small></span><span class=\"s\">" + hl(p[2], q) + "</span><span class=\"m\">" + hl(p[1], q) + "</span></a>"; }).join("") + "</div>";
@@ -78,6 +81,32 @@ if(sres){
       sres.innerHTML = h;
     });
   }
+}
+
+/* ---------- machine-tool finder ---------- */
+var selF = $("#selector"), selD = $("#seldata");
+if(selF && selD){
+  var SD = JSON.parse(selD.textContent), NM = {};
+  SD.names.forEach(function(x){ NM[x[0]] = x; });
+  function val(name){ var e = selF.querySelector("input[name=" + name + "]:checked"); return e ? e.value : ""; }
+  function runSel(){
+    var a = { shape: val("shape"), prec: val("prec"), vol: val("vol"), size: val("size") }, res = [];
+    Object.keys(SD.t).forEach(function(slug){
+      var t = SD.t[slug], sc = 0;
+      if(t[0].indexOf(a.shape) < 0) return;
+      sc += 4;
+      if(a.prec === "high") sc += t[1].indexOf("high") >= 0 ? 2 : -3; else if(t[1].indexOf("std") < 0) sc -= 1;
+      sc += t[2].indexOf(a.vol) >= 0 ? 2 : -1;
+      sc += t[3].indexOf(a.size) >= 0 ? 1 : -2;
+      if(sc >= 2) res.push([sc, slug]);
+    });
+    res.sort(function(x, y){ return y[0] - x[0]; });
+    var box = $("#selres");
+    if(!res.length){ box.innerHTML = "<p class=\"sub\">この組み合わせに合う機種は、この図鑑の範囲では見つかりませんでした。条件を1つ変えて試してください。</p>"; return; }
+    box.innerHTML = "<p class=\"selh\">まず検討したい機種</p><div class=\"list\">" + res.slice(0, 4).map(function(x, i){ var n = NM[x[1]]; return "<a class=\"li" + (i ? "" : " top") + "\" href=\"" + n[2] + "\"><span class=\"t\">" + esc(n[1]) + "</span><span class=\"n\">" + esc(SD.t[x[1]][4]) + "</span></a>"; }).join("") + "</div><p class=\"selnote\">目安です。実際には、試し削りやメーカーへの相談で確認してください。</p>";
+  }
+  selF.addEventListener("change", runSel);
+  runSel();
 }
 
 /* ---------- carousels ---------- */
