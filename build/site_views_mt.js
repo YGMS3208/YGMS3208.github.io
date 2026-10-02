@@ -90,7 +90,7 @@ function mtIndex(kind){
   var h = "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\" lang=\"en\">" + (comp ? "COMPONENTS" : "AUTOMATION") + "</p><h1 class=\"d2\">" + (comp ? "工作機械の構成部品" : "工作機械の自動化・周辺機器") + "</h1><p class=\"sub\">" +
     (comp ? "工作機械の精度・速さ・寿命は、主軸、送り軸（サーボモータ・ボールねじ・リニアガイド）、構造体、制御（NC装置）、工具とワークの保持（ツールホルダ・チャック）で決まります。それぞれの仕組みと役割を図解します。"
           : "量産の現場では、工作機械を人が付きっきりで操作することはまれです。工作物の出し入れ、段取り、計測、切りくず処理を自動化する周辺機器と、その組み合わせ方をまとめています。") + "</p></div>" +
-    "<div class=\"grid-cards\">" + list.map(function(c){ return mtCard(c, kind, comp ? "COMPONENT" : "AUTOMATION"); }).join("") + "</div>" +
+    "<h2 class=\"sr\">" + (comp ? "構成部品の一覧" : "自動化・周辺機器の一覧") + "</h2><div class=\"grid-cards\">" + list.map(function(c){ return mtCard(c, kind, comp ? "COMPONENT" : "AUTOMATION"); }).join("") + "</div>" +
     "<div class=\"list\" style=\"margin-top:56px\">" + list.map(function(c){ return "<a class=\"li\" href=\"" + mtU(kind, c.slug) + "\"><span class=\"t\">" + esc(c.name) + "</span><span class=\"n\">" + esc(c.lead.slice(0, 44)) + "…</span></a>"; }).join("") + "</div></div></section>";
   show(h, [["工作機械図鑑", "/machine-tools/"], [comp ? "構成部品" : "自動化・周辺機器"]], "mt");
 }

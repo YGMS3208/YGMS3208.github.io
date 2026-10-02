@@ -487,7 +487,7 @@ for r in ROUTES:
         r["eyebrow"], r["name"], r["stats"] = "MACHINE TOOL COMPONENT", it["name"], "仕組み・種類・点検のポイント"
     elif t == "mtauto":
         it = r["o"]
-        r["title"] = "%sとは｜仕組み・種類と導入のポイント" % it["name"]
+        r["title"] = ("%sとは｜仕組み・種類と導入のポイント" if len(it["name"]) <= 12 else "%s｜仕組みと導入のポイント") % it["name"]
         r["desc"] = clip(it["lead"])
         r["eyebrow"], r["name"], r["stats"] = "AUTOMATION", it["name"], "仕組み・種類・導入のポイント"
     elif t == "mtcomps":
@@ -529,7 +529,7 @@ def sig(r):
         return jdump([r["p"]["name"], o["no"], o["n"], o["d"], o["kp"], o["m"] and [[cats[x[0]]["n"], x[1], x[2]] for x in o["m"]], [[cats[x[0]]["n"], x[1], x[2]] for x in o["x"]]])
     if t == "eq":
         c = r["o"]
-        return jdump([c["n"], c["d"], c.get("body"), groups[c["g"]], [[x[0]["name"], x[1]["n"], x[2][1], x[2][2]] for x in use[r["ci"]]]])
+        return jdump([c["n"], c["d"], c.get("body"), groups[c["g"]], [[x[0]["name"], x[1]["n"], x[2][1], x[2][2]] for x in use[r["ci"]]]] + ([c["mt"]] if c.get("mt") else []))
     if t == "method":
         k = r["o"]
         return jdump([k.get("title"), k.get("lead"), k.get("body"), k["d"], [[p["name"], o["n"]] for p in parts for o in p["ops"] if o["k"] == r["ki"]]])
@@ -538,7 +538,9 @@ def sig(r):
     if t == "sys":
         s = r["o"]
         return jdump([s["name"], s["desc"], [p["name"] for p in s["parts"]]])
-    if t in ("home", "pt"):
+    if t == "home":
+        return jdump([data["pt"], MET, [p["name"] for p in parts], [c["n"] for c in cats], len(MT_TYPES)])
+    if t == "pt":
         return jdump([data["pt"], MET, [p["name"] for p in parts], [c["n"] for c in cats]])
     if t == "about":
         return jdump([CFG["handle"], CFG["bio"], CFG["issues"]])
@@ -932,8 +934,10 @@ for r in ROUTES:
 os.makedirs(OUT + "/machine-tools/img", exist_ok=True)
 _svgcss = mincss(open(B + "/il.css", encoding="utf-8").read()) + "text,.bal,.balt,.leadl,.leadd,.a,.af{display:none}"
 for sl, f in MT_ILL.items():
+    body_ = re.sub(r'<text[^>]*>.*?</text>', "", f["svg"], flags=re.S)
+    body_ = re.sub(r'<(?:line|circle|path|polygon|ellipse)[^>]*class="(?:leadl|leadd|bal|balt|a|af)"[^>]*/>', "", body_)
     doc = ('<svg xmlns="http://www.w3.org/2000/svg" class="ilu" viewBox="%s"><style>%s</style>%s%s</svg>'
-           % (f["vb"], _svgcss, re.sub(r'<svg class="ildefs"[^>]*>', "<svg>", DEFS), f["svg"]))
+           % (f["vb"], _svgcss, re.sub(r'<svg class="ildefs"[^>]*>', "<svg>", DEFS), body_))
     open(OUT + "/machine-tools/img/%s.svg" % sl, "w", encoding="utf-8").write(doc)
 
 # redirects: tiny pages that forward old URLs
@@ -952,7 +956,7 @@ open(OUT + "/sitemap.xml", "w", encoding="utf-8").write("\n".join(sm) + "\n")
 BLOCK = ["GPTBot", "Google-Extended", "CCBot", "ClaudeBot", "anthropic-ai", "Applebot-Extended", "Bytespider", "meta-externalagent", "Meta-ExternalAgent", "cohere-training-data-crawler", "Diffbot", "Omgilibot", "Amazonbot", "cohere-ai", "AI2Bot", "FacebookBot", "Timpibot", "PanguBot", "ImagesiftBot"]
 robots = "# 検索エンジンとAI検索は歓迎します。AIの学習用クローラーはお断りしています。\n\n" + "".join("User-agent: %s\nDisallow: /\n\n" % b for b in BLOCK) + "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE
 open(OUT + "/robots.txt", "w", encoding="utf-8").write(robots)
-L = ["# %s（AUTOMOTIVE ATLAS）" % SITE, "", "> 自動車の部品がどんな工程と工作機械・検査機でつくられるかを図解で解説する日本語の図鑑。%d部品・%d工程・%d設備（数はこの図鑑の分類による）と、パワートレイン別の比較を収録。運営：%s。文章と図解は CC BY-NC 4.0。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats), CFG["handle"]), ""]
+L = ["# %s（AUTOMOTIVE ATLAS）" % SITE, "", "> 自動車の部品がどんな工程と工作機械・検査機でつくられるかを図解で解説する日本語の図鑑。%d部品・%d工程・%d設備（数はこの図鑑の分類による）と、パワートレイン別の比較、工作機械図鑑（機種・構成部品・自動化・選び方）を収録。運営：%s。文章と図解は CC BY-NC 4.0。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats), CFG["handle"]), ""]
 for head_, ts in (("主要ページ", ("home", "systems", "pt", "map", "methods", "eqi", "about")), ("加工法", ("method",)), ("系統", ("sys",)), ("部品", ("part",)), ("設備の分類", ("eqg",)), ("設備", ("eq",)), ("工作機械図鑑", ("mthome", "mtselect", "mtcomps", "mtautos")), ("工作機械の機種", ("mttype",)), ("工作機械の構成部品", ("mtcomp",)), ("自動化・周辺機器", ("mtauto",)), ("比較ガイド", ("mtguide",))):
     L.append("## " + head_)
     for r in idx:

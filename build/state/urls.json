@@ -1,8 +1,8 @@
 {
 "/": {
-"h": "1818654831bad5b0",
+"h": "8a76fc4ad51f7efb",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/404.html": {
@@ -24,9 +24,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/5-axis-machining-center/": {
-"h": "89692cee1ad09671",
+"h": "b3b85e8ee70d63c4",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/active-alignment-system/": {
@@ -210,9 +210,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/centerless-grinder/": {
-"h": "9dc9f286f6950609",
+"h": "075342eeecbfc45b",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/ceramic-firing-kiln/": {
@@ -228,9 +228,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/cnc-lathe/": {
-"h": "b14ebff5fb64a39d",
+"h": "e578c36a225321f6",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/coating-machine/": {
@@ -354,9 +354,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/cylindrical-grinder/": {
-"h": "703aa147250cf82d",
+"h": "135c247bd2767009",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/damper-tester/": {
@@ -420,9 +420,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/double-column-machining-center/": {
-"h": "e574fea77cc5f6d4",
+"h": "bed56ffce66f489b",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/double-disc-grinder/": {
@@ -468,9 +468,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/electrical-discharge-machine/": {
-"h": "0439b029039030a8",
+"h": "60b81b379b2991ae",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/electrocoating-line/": {
@@ -630,15 +630,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/gear-grinding-machine/": {
-"h": "95ffb44a5043a607",
+"h": "a8173d5f3fdd1e90",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/gear-hobbing-machine/": {
-"h": "24fbf9ba0dc1f194",
+"h": "01320b65dfb718b8",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/gear-honing-machine/": {
@@ -672,9 +672,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/gear-skiving-machine/": {
-"h": "4f6f724279ea5296",
+"h": "59e771df68db7710",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/glass-bending-tempering-furnace/": {
@@ -858,9 +858,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/horizontal-machining-center/": {
-"h": "4a6110503c6fd7ef",
+"h": "2a4aec7290ce4fdf",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/hot-forging-press/": {
@@ -894,9 +894,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/in-process-gauge/": {
-"h": "40eeb0c858f52c99",
+"h": "a859fefb21b5f26b",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/incoming-material-inspection/": {
@@ -948,9 +948,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/internal-grinder/": {
-"h": "18965e5c5c86e3cc",
+"h": "073eed3a9b1350a0",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/internal-mixer/": {
@@ -978,9 +978,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/laser-processing-machine/": {
-"h": "1b32e10da71b895b",
+"h": "703a64e47b35e129",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/laser-welding-machine/": {
@@ -1032,9 +1032,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/material-handling-robot/": {
-"h": "b164ec13a57109b0",
+"h": "b35ef9e4ac8cc691",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/mechanical-joining-system/": {
@@ -1410,9 +1410,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/surface-grinder/": {
-"h": "bc8a91508d4d84cf",
+"h": "d6d650da3a61e8c2",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/surface-profilometer/": {
@@ -1422,9 +1422,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/swiss-type-lathe/": {
-"h": "3a6b71e036b9c8f2",
+"h": "3b37ba46cd11b226",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/tandem-press-line/": {
@@ -1482,9 +1482,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/transfer-machine/": {
-"h": "44053f3a8ea75fbe",
+"h": "3a84c5a291f1740b",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/transfer-molding-machine/": {
@@ -1566,15 +1566,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/vertical-machining-center/": {
-"h": "2edb697f11325872",
+"h": "ea15ceb3fa9649eb",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/vertical-turning-lathe/": {
-"h": "04d466a10add0926",
+"h": "ce748cde18927cad",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/equipment/vision-inspection-system/": {
@@ -5598,9 +5598,9 @@
 "pub": "2026-09-29"
 },
 "/parts/turbocharger/": {
-"h": "cdab4f591042f1ae",
+"h": "04e11d1ab6488dfb",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-02",
 "pub": "2026-09-29"
 },
 "/parts/turbocharger/op10/": {
