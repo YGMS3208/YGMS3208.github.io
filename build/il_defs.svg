@@ -14,6 +14,8 @@
 <linearGradient id="g-cu" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#FBDCC0"/><stop offset=".25" stop-color="#F2B687"/><stop offset=".7" stop-color="#C77F4E"/><stop offset="1" stop-color="#9B5B2F"/></linearGradient>
 <linearGradient id="g-cu2" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#DA9764"/><stop offset="1" stop-color="#9C5C30"/></linearGradient>
 <linearGradient id="g-cu3" x1="0" y1="0" x2=".3" y2="1"><stop offset="0" stop-color="#A9693B"/><stop offset="1" stop-color="#6F3E1E"/></linearGradient>
+<linearGradient id="g-pt" x1="0" y1="0" x2=".25" y2="1"><stop offset="0" stop-color="#FAFAF7"/><stop offset=".55" stop-color="#EDECE7"/><stop offset="1" stop-color="#D9D8D1"/></linearGradient>
+<linearGradient id="g-dk" x1="0" y1="0" x2=".25" y2="1"><stop offset="0" stop-color="#6A7078"/><stop offset=".6" stop-color="#4A4F56"/><stop offset="1" stop-color="#35393E"/></linearGradient>
 <linearGradient id="g-m" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset=".55" stop-color="#EEF0F2"/><stop offset="1" stop-color="#D5D9DD"/></linearGradient>
 <linearGradient id="g-m2" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#E1E5E9"/><stop offset="1" stop-color="#B5BBC1"/></linearGradient>
 <linearGradient id="g-m3" x1="0" y1="0" x2=".2" y2="1"><stop offset="0" stop-color="#626970"/><stop offset=".5" stop-color="#3C4249"/><stop offset="1" stop-color="#2A2F35"/></linearGradient>

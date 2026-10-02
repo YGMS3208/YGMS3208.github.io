@@ -263,3 +263,36 @@
 .ilu .chip{stroke:#C1A060}
 .ilu .rgh{fill:#9FA8B1}
 .ilu .hotgrp .w,.ilu .hotgrp .w2,.ilu .hotgrp .w3,.ilu .hotgrp .rb,.ilu .hotgrp .m{fill:url(#g-hot);stroke:var(--il-hot)}
+
+/* machine-tool atlas: painted castings (pt), dark parts (dk) */
+:root{--pt1:#F6F5F1;--pt2:#E1E0DA;--pt3:#C3C2BB;--pt4:#9E9D96;--dk1:#6C727A;--dk2:#50555C;--dk3:#3B3F45;--dk4:#2A2D31}
+.ilu .pt{fill:url(#g-pt);stroke:var(--il-edge)} .ilu .dk{fill:url(#g-dk);stroke:var(--il-edge)}
+.ilu .pts1{fill:var(--pt1);stroke:var(--pt1)} .ilu .pts2{fill:var(--pt2);stroke:var(--pt2)} .ilu .pts3{fill:var(--pt3);stroke:var(--pt3)} .ilu .pts4{fill:var(--pt4);stroke:var(--pt4)}
+.ilu .dks1{fill:var(--dk1);stroke:var(--dk1)} .ilu .dks2{fill:var(--dk2);stroke:var(--dk2)} .ilu .dks3{fill:var(--dk3);stroke:var(--dk3)} .ilu .dks4{fill:var(--dk4);stroke:var(--dk4)}
+.ilu .pts1,.ilu .pts2,.ilu .pts3,.ilu .pts4,.ilu .dks1,.ilu .dks2,.ilu .dks3,.ilu .dks4{stroke-width:.5}
+.ilu .thread{fill:none;stroke:rgba(18,22,27,.35);stroke-width:.7}
+.ilu .wire{fill:none}
+.ilu .tslot{fill:none;stroke:rgba(18,22,27,.45);stroke-width:1.6}
+.ilu .mgrid{fill:none;stroke:rgba(255,255,255,.18);stroke-width:1}
+.ilu .hobt{fill:none;stroke:rgba(80,60,20,.55);stroke-width:1}
+.ilu .gwt{fill:none;stroke:rgba(110,95,70,.45);stroke-width:1}
+.ilu .spark{stroke:#FF8A3D;stroke-width:1.4;stroke-linecap:round}
+.ilu .kerf{fill:none;stroke:#3A3F46;stroke-width:1.6}
+.ilu path.wire{stroke:#B97540;stroke-width:1.4}
+.ilu .fl{fill:var(--il-fl);fill-opacity:.35}
+.ilu .fls1,.ilu .fls2,.ilu .fls3,.ilu .fls4{fill:var(--il-fl);fill-opacity:.25;stroke:none}
+.ilu .cutw{fill:#2B2F35;opacity:.85}
+.ilu .ball{fill:url(#g-ball);stroke:rgba(18,22,27,.45);stroke-width:.5}
+.ilu .scr{fill:none;stroke:rgba(18,22,27,.35);stroke-width:.8}
+.ilu .scrn{fill:#13232E;stroke:#0B0D10} .ilu .scrl{fill:#3FA7D6;opacity:.7} .ilu .scrg{fill:none;stroke:#7FD3A8;stroke-width:1.2}
+.ilu .key{fill:#2C3036;stroke:#6E757D;stroke-width:.6} .ilu .kbtn{fill:#E6E6E2;stroke:#555;stroke-width:.6}
+.ilu .mpg{fill:#2C3036;stroke:#9AA1A8} .ilu .mpg2{fill:#4A5058;stroke:#9AA1A8} .ilu .estop{fill:#D8332A;stroke:#F2C230;stroke-width:3} .ilu .knob{fill:#C9CDD2;stroke:#555}
+.ilu .pipe{fill:none;stroke:#7E8790;stroke-width:5;stroke-linejoin:round;stroke-linecap:round}
+.ilu .spray{stroke:#3F9FD1;stroke-width:1.4;opacity:.8}
+.ilu .chipc{fill:none;stroke:#B98A3E;stroke-width:1.6}
+.ilu .heatg{fill:#FF7A3D;opacity:.28} .ilu .heatg2{fill:#FF9A55;opacity:.18}
+.ilu .ghost{fill:none;stroke:#E4602A;stroke-width:1.4;stroke-dasharray:5 4}
+.ilu .sensor{fill:#2D5BFF;stroke:#fff;stroke-width:1.2}
+.ilu .win{fill:#1E2A33;opacity:.75;stroke:rgba(255,255,255,.4);stroke-width:.8}
+.ilu .fence{fill:none;stroke:#E8B931;stroke-width:3}
+.ilu .probeball{fill:#C8302A;stroke:#7A1A16;stroke-width:.6}

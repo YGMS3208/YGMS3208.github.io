@@ -1643,6 +1643,288 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/machine-tools/": {
+"h": "61c671ca5cd89c72",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/5-axis-machining-center/": {
+"h": "2d6e6175392a3dce",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/": {
+"h": "a59f5ace9655b56e",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/bar-feeder/": {
+"h": "47e15572700b41fc",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/chip-conveyor/": {
+"h": "0fb25f11270e513a",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/fms-cell/": {
+"h": "e9275d18eeefa177",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/gantry-loader/": {
+"h": "d41d968686f10d62",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/in-process-gauging/": {
+"h": "b525f6ea788c8eb7",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/pallet-changer/": {
+"h": "3a16f97ed9f5416f",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/automation/robot-loading/": {
+"h": "573ab4a4122aa203",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/centerless-grinder/": {
+"h": "e5c996dd543aca2d",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/cnc-lathe/": {
+"h": "d60366f9bd05b4bc",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/": {
+"h": "1e79e0a0579192e4",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/atc/": {
+"h": "36eca7c0d83e6269",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/ball-screw/": {
+"h": "0a6d81fea6a94ab6",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/bed/": {
+"h": "e8a4c98260351afb",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/chuck/": {
+"h": "6eb12bc4531fd681",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/cnc/": {
+"h": "a5be28b705e775ba",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/coolant/": {
+"h": "1fc74207b2497552",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/linear-guide/": {
+"h": "00c929c82be17315",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/servo-motor/": {
+"h": "d415c0ed4f1e357c",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/slideway/": {
+"h": "8c30faceea7cab1f",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/spindle/": {
+"h": "be771dca960646be",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/thermal-displacement/": {
+"h": "24d401af9f88cc36",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/tool-holder/": {
+"h": "829d69167c6c462a",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/components/turret/": {
+"h": "338ccd3a505b9a7a",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/cylindrical-grinder/": {
+"h": "f988bebe2b703e18",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/double-column-machining-center/": {
+"h": "49c7fe881af08f72",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/edm/": {
+"h": "1d8b39b481d95bf9",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/gear-grinding-machine/": {
+"h": "2255572719fde420",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/gear-hobbing-machine/": {
+"h": "c9f4716de64f24ec",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/gear-skiving-machine/": {
+"h": "afbc5d0949201f4c",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/guide/": {
+"h": "a22427259474c6fb",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/guide/3-axis-vs-5-axis/": {
+"h": "03680efb5f86ef9a",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/guide/lathe-vs-machining-center/": {
+"h": "7d02c32b154228f8",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/guide/machine-accuracy/": {
+"h": "f3fc487be99670c0",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/guide/nc-vs-conventional/": {
+"h": "2e93e37ee0a27772",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/guide/vertical-vs-horizontal-mc/": {
+"h": "c2d538839ffd79b8",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/horizontal-machining-center/": {
+"h": "5b68f73d24ad0c2e",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/internal-grinder/": {
+"h": "9da08bceae9bfa70",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/laser-machine/": {
+"h": "15441f574e0eac83",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/surface-grinder/": {
+"h": "de8419b73f5b560e",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/swiss-type-lathe/": {
+"h": "54b8e1dbf7d8fee4",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/transfer-machine/": {
+"h": "64e2055e14990739",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/turn-mill/": {
+"h": "92b6c96f0dd93695",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/vertical-machining-center/": {
+"h": "cc48512c98ebfad6",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
+"/machine-tools/vertical-turning-lathe/": {
+"h": "4b6666ab412c1397",
+"idx": true,
+"mod": "2026-10-02",
+"pub": "2026-10-02"
+},
 "/map/": {
 "h": "41987f9a6ec21f0d",
 "idx": true,

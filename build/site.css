@@ -75,3 +75,30 @@ h1,h2,h3,h4,.d1,.d2,.d3,.brand b,.foot b{font-family:var(--f-head)}
 .night .kicker{color:#D2D2D7}
 .page>.crumbs:has(+ .hero.night){background:var(--night);box-shadow:0 0 0 100vmax var(--night);clip-path:inset(0 -100vmax);color:#8E8E93}
 .page>.crumbs:has(+ .hero.night) a:hover{color:#F5F5F7}
+/* machine-tool atlas */
+.hero .v.mtv{max-width:860px}
+.hero .v.mtv .ilu .bal,.hero .v.mtv .ilu .balt,.hero .v.mtv .ilu .leadl,.hero .v.mtv .ilu .leadd,.tile .vis .ilu .bal,.tile .vis .ilu .balt,.tile .vis .ilu .leadl,.tile .vis .ilu .leadd,.tile .vis .ilu text{display:none}
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(32px,4vw,56px)}
+.vsi{display:flex;flex-direction:column;gap:10px;background:var(--paper);border-radius:22px;overflow:hidden;padding-bottom:16px;text-align:center}
+.vsi b{font-size:16px}
+.vsi:hover b{color:var(--accent)}
+@media (max-width:640px){.vs{grid-template-columns:1fr}}
+.selector{display:grid;gap:22px}
+.selector fieldset{border:0;margin:0;padding:0}
+.selector legend{font-weight:700;font-size:15px;margin-bottom:10px}
+.selector .opts{display:flex;flex-wrap:wrap;gap:8px}
+.selector label{position:relative}
+.selector input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
+.selector label span{display:inline-block;padding:9px 16px;border-radius:999px;border:1px solid var(--hair);background:var(--bg);font-size:14px;transition:background .2s,color .2s}
+.selector input:checked+span{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.selector input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+.selres{margin-top:36px}
+.selres .selh{font-weight:700;margin-bottom:10px}
+.selres .li.top .t{color:var(--accent)}
+.selres .selnote{margin-top:14px;font-size:13px;color:var(--muted)}
+.mtlink{display:grid;gap:6px;padding:24px 28px;border-radius:22px;background:var(--paper);border:1px solid var(--hair)}
+.mtlink b{font-size:20px}
+.mtlink>span:last-child{color:var(--muted);font-size:14px}
+.mtlink:hover b{color:var(--accent)}
+.mtpromo .vis .ilu{max-width:100%}
+.stage.thumb img,.vsi img,.mtpromo .vis img{display:block;width:100%;height:auto}

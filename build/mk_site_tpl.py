@@ -170,7 +170,7 @@ i1 = out.index("})();\n</script>")
 out = out[:i0] + "/*__API__*/\n" + out[i1:]
 
 rep('<h2 class=\\"d3\\">" + esc(s.name) + "の部品</h2></div><div class=\\"grid-cards\\">" + s.parts.map(partCard).join("")', '<h2 class=\\"d3\\">" + esc(s.name) + "の部品</h2></div><div class=\\"grid-cards\\">" + s.parts.map(partCardD).join("")')
-extra = open(_B + "/site_views.js", encoding="utf-8").read()
+extra = open(_B + "/site_views.js", encoding="utf-8").read() + "\n" + open(_B + "/site_views_mt.js", encoding="utf-8").read()
 out = out.replace("/*__EQINDEX__*/", "").replace("/*__API__*/", extra)
 open(_B + "/site_tpl.html", "w", encoding="utf-8").write(out)
 left = re.findall(r'href=\\"#[a-z]', out)

@@ -63,7 +63,7 @@ function searchShell(){
 
 /* ---------- shell parts shared by every page ---------- */
 function shellParts(){
-  var mm = "<a href=\"/\">トップ</a><a href=\"/systems/\">系統</a><a href=\"/powertrain/\">パワートレイン比較</a><a href=\"/map/\">工程マップ</a><a href=\"/methods/\">加工法</a><a href=\"/equipment/\">設備</a><a href=\"/about/\">この図鑑について</a><div class=\"sys\">" + D.systems.map(function(s, si){ return "<a href=\"" + hs(s) + "\"><span>" + pad(si + 1) + "</span>" + esc(s.name) + "</a>"; }).join("") + "</div>";
+  var mm = "<a href=\"/\">トップ</a><a href=\"/systems/\">系統</a><a href=\"/powertrain/\">パワートレイン比較</a><a href=\"/map/\">工程マップ</a><a href=\"/methods/\">加工法</a><a href=\"/equipment/\">設備</a><a href=\"/machine-tools/\">工作機械図鑑</a><a href=\"/about/\">この図鑑について</a><div class=\"sys\">" + D.systems.map(function(s, si){ return "<a href=\"" + hs(s) + "\"><span>" + pad(si + 1) + "</span>" + esc(s.name) + "</a>"; }).join("") + "</div>";
   var qs = "<p lang=\"en\">QUICK LINKS</p>" + D.site.quick.map(function(x){ return "<a href=\"/search/?q=" + encodeURIComponent(x) + "\">" + esc(x) + "</a>"; }).join("");
   return { mm: mm, qs: qs };
 }
@@ -87,6 +87,7 @@ window.__render = function(r){
   else if(t === "method") kindView(K.map(function(c){ return c.slug; }).indexOf(k));
   else if(t === "about") aboutView();
   else if(t === "search") searchShell();
+  else if(t.indexOf("mt") === 0) mtRender(r);
   else notFoundView();
   return CUR;
 };
