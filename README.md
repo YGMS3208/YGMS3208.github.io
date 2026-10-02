@@ -11,6 +11,8 @@
 | `data/01_plant.txt` 〜 `10_misc.txt` | 系統・部品・工程・設備のデータ |
 | `data/cats.txt` | 設備（253分類）と説明 |
 | `data/content/` | 加工法の解説（methods_*.md）と設備の解説（equipment_*.md） |
+| `data/mt/` | 工作機械図鑑（/machine-tools/）の本文：機種（types_*.md）・構成部品・自動化・ガイド |
+| `build/il_mt.py` | 工作機械図鑑の図解（構造図・部品図・自動化の図） |
 | `data/slugs.tsv` | すべてのページの英語URL（**一度公開したら変えない**） |
 | `build/state/urls.json` | 公開済みURL・公開日・更新日（内容のハッシュが変わった日だけ更新日が進む） |
 | `build/state/opnums.json` | 工程番号（OP10など）。並び順から計算し直さない |
