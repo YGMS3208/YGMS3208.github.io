@@ -93,9 +93,10 @@ if(selF && selD){
     var a = { shape: val("shape"), prec: val("prec"), vol: val("vol"), size: val("size") }, res = [];
     Object.keys(SD.t).forEach(function(slug){
       var t = SD.t[slug], sc = 0;
-      if(t[0].indexOf(a.shape) < 0) return;
-      sc += 4;
-      if(a.prec === "high") sc += t[1].indexOf("high") >= 0 ? 2 : -3; else if(t[1].indexOf("std") < 0) sc -= 1;
+      var si = t[0].indexOf(a.shape);
+      if(si < 0) return;
+      sc += si === 0 ? 4 : 2;                                   // primary shape counts more
+      if(a.prec === "high") sc += t[1].indexOf("high") >= 0 ? 2 : -3; else if(t[1].indexOf("std") < 0) sc -= 3;
       sc += t[2].indexOf(a.vol) >= 0 ? 2 : -1;
       sc += t[3].indexOf(a.size) >= 0 ? 1 : -2;
       if(sc >= 2) res.push([sc, slug]);
