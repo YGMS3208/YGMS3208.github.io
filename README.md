@@ -14,7 +14,7 @@
 | `data/mt/` | 工作機械図鑑（/machine-tools/）の本文：機種（types_*.md）・構成部品・自動化・ガイド |
 | `build/il_mt.py` | 工作機械図鑑の図解（構造図・部品図・自動化の図） |
 | `data/mt/sim/` | 操作トレーニング（/machine-tools/{機種}/training/）のシナリオ。1機種1ファイルのJSON。書き方は `data/mt/sim/README.md`、検査は `python3 build/sim_check.py` |
-| `build/site_views_sim.js` / `site_sim.js` / `site_sim.css` | トレーニングの機械の図・静的な解説（ビルド時）／ゲーム本体（訪問者のブラウザで動く）／スタイル |
+| `build/site_views_sim.js` / `site_sim.js` / `site_sim.css`・`site_sim_static.css` | トレーニングの機械の図・静的な解説（ビルド時）／ゲーム本体（訪問者のブラウザで動く）／スタイル |
 | `data/slugs.tsv` | すべてのページの英語URL（**一度公開したら変えない**） |
 | `build/state/urls.json` | 公開済みURL・公開日・更新日（内容のハッシュが変わった日だけ更新日が進む） |
 | `build/state/opnums.json` | 工程番号（OP10など）。並び順から計算し直さない |
