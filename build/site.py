@@ -917,7 +917,7 @@ FOOT = ('<footer class="foot"><div class="wrap in"><div><b>自動車製造工程
         '</div></div></footer>') % (CFG["published"][:4], html.escape(CFG["handle"]))
 
 _cft = re.sub(r"[^0-9a-fA-F]", "", CFG.get("cf_analytics_token", ""))
-CFBEACON = ('<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "%s"}\'></script>' % _cft) if _cft else ""
+CFBEACON = ('<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "%s"}\'></script>' % _cft) if _cft else ""
 VERIFY = "".join('<meta name="%s" content="%s">' % (k, html.escape(v)) for k, v in CFG.get("verify", {}).items() if v)
 
 
