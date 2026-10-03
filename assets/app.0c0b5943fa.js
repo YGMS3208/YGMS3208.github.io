@@ -163,4 +163,12 @@ if(od) od.addEventListener("change", function(){ $("#matrix").classList.toggle("
 /* ---------- operation rail: keep the current step in view ---------- */
 var cur = $(".steps [aria-current]");
 if(cur){ var r = cur.closest(".steps"); r.scrollLeft = Math.max(0, cur.parentNode.offsetLeft - r.clientWidth / 2 + 56); }
+
+/* ---------- training hub: show the visitor's own best score ---------- */
+$$("[data-simbest]").forEach(function(a){
+  try {
+    var b = JSON.parse(localStorage.getItem("mts-sim-" + a.getAttribute("data-simbest")) || "null"), el = a.querySelector(".best");
+    if(b && el){ el.textContent = "BEST " + b.p + " · " + b.g; el.hidden = false; }
+  } catch(e){}
+});
 })();
