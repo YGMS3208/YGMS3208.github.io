@@ -38,6 +38,7 @@ function aboutView(){
   var h = "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">ABOUT</p><h1 class=\"d2\">この図鑑について</h1><p class=\"sub lead\">自動車製造工程図鑑は、クルマの部品がどんな工程と設備でつくられているかを、図解で一つずつ説明する個人運営の図鑑です。</p></div>" +
     "<article class=\"prose\">" +
     "<h2 id=\"author\">運営者</h2><p><b>" + esc(S.handle) + "</b></p><p>" + esc(S.bio) + "</p><p>本サイトは所属する企業とは関係のない、個人のサイトです。特定の企業や製品を推奨・宣伝するものではなく、広告やアフィリエイトリンクも掲載していません。</p>" +
+    (S.analytics ? "<h2 id=\"analytics\">アクセス解析</h2><p>閲覧数を把握するため、Cookieを使わないアクセス解析（Cloudflare Web Analytics）を利用しています。個人を特定する情報は取得せず、広告配信や行動の追跡には使いません。</p>" : "") +
     "<h2 id=\"policy\">編集方針</h2><ul>" +
     "<li>内容は、公開されている技術資料・規格・一般的な技術知識をもとにまとめています。取引先や顧客の現場で知り得た情報は掲載しません。</li>" +
     "<li>工程・設備・数値は乗用車の量産で一般的な構成と目安です。実際の工程はメーカー・車種・生産量によって異なります。</li>" +

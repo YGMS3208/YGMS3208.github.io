@@ -326,6 +326,7 @@ data["site"] = {
     "handle": CFG["handle"], "bio": CFG["bio"], "license": "CC BY-NC 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.ja", "base": BASE + "/",
     "issues": CFG["issues"], "publishedJa": ja_date(CFG["published"]), "quick": CFG["quick"],
+    "analytics": bool(CFG.get("cf_analytics_token", "")),
 }
 
 # ============================================================ 2. render every route in headless Chromium
@@ -915,6 +916,8 @@ FOOT = ('<footer class="foot"><div class="wrap in"><div><b>自動車製造工程
         '<p class="lic">© %s %s ・ 文章と図解は <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja" rel="license">CC BY-NC 4.0</a> で提供しています</p>'
         '</div></div></footer>') % (CFG["published"][:4], html.escape(CFG["handle"]))
 
+_cft = re.sub(r"[^0-9a-fA-F]", "", CFG.get("cf_analytics_token", ""))
+CFBEACON = ('<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon=\'{"token": "%s"}\'></script>' % _cft) if _cft else ""
 VERIFY = "".join('<meta name="%s" content="%s">' % (k, html.escape(v)) for k, v in CFG.get("verify", {}).items() if v)
 
 
@@ -972,6 +975,7 @@ def page(r):
              '<meta name="twitter:card" content="summary_large_image">',
              '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">',
              VERIFY,
+             CFBEACON,
              '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="%s"></noscript>' % (FCSS, FCSS),
              "<style>%s</style>" % CSS + ("<style>%s</style>" % (SIMCSS if r["t"] == "mtsim" else SIMCSS_ST) if r["t"] in SIMT else ""),
              '<script type="application/ld+json">%s</script>' % json.dumps({"@context": "https://schema.org", "@graph": ld(r)}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
