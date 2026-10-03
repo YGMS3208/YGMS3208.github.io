@@ -13,6 +13,8 @@
 | `data/content/` | 加工法の解説（methods_*.md）と設備の解説（equipment_*.md） |
 | `data/mt/` | 工作機械図鑑（/machine-tools/）の本文：機種（types_*.md）・構成部品・自動化・ガイド |
 | `build/il_mt.py` | 工作機械図鑑の図解（構造図・部品図・自動化の図） |
+| `data/mt/sim/` | 操作トレーニング（/machine-tools/{機種}/training/）のシナリオ。1機種1ファイルのJSON。書き方は `data/mt/sim/README.md`、検査は `python3 build/sim_check.py` |
+| `build/site_views_sim.js` / `site_sim.js` / `site_sim.css` | トレーニングの機械の図・静的な解説（ビルド時）／ゲーム本体（訪問者のブラウザで動く）／スタイル |
 | `data/slugs.tsv` | すべてのページの英語URL（**一度公開したら変えない**） |
 | `build/state/urls.json` | 公開済みURL・公開日・更新日（内容のハッシュが変わった日だけ更新日が進む） |
 | `build/state/opnums.json` | 工程番号（OP10など）。並び順から計算し直さない |
@@ -24,6 +26,8 @@
 1. `data/` の内容を直す（部品や工程の追加・修正、解説文の加筆）。
 2. 新しい部品・設備を足したら `data/slugs.tsv` に英語URLを1行追加する。
 3. `./deploy.sh "変更の要約"` を実行する（ビルド → 検査 → `source` と `main` に push）。
+
+操作トレーニングのシナリオを直したら、`python3 build/sim_check.py` で形式を確かめてからデプロイします（ビルドでも同じ検査が走ります）。
 
 ビルドは次の場合に止まります。公開済みURLが転送なしで消えた／内部リンク切れ／h1が1つでない／title重複／内容が薄いページを検索対象にした／CSSが大きすぎる。
 
