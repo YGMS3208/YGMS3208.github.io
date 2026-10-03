@@ -1656,7 +1656,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/5-axis-machining-center/training/": {
-"h": "9535f6a3f1a46ee9",
+"h": "18b07e67f62730e4",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1716,7 +1716,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/centerless-grinder/training/": {
-"h": "cf4a5363c70185fd",
+"h": "f3663d0665cb0be7",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1728,7 +1728,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/cnc-lathe/training/": {
-"h": "8b19079c75653190",
+"h": "b789f0f5b4f329b8",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1824,7 +1824,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/cylindrical-grinder/training/": {
-"h": "59ae4cc37f24fdb3",
+"h": "4954cd42e3e7333b",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1836,7 +1836,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/double-column-machining-center/training/": {
-"h": "734d2b56bf7dd76b",
+"h": "ce890e281e787d94",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1848,7 +1848,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/edm/training/": {
-"h": "57c92e43be314ef0",
+"h": "634858b3add67a2c",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1860,7 +1860,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/gear-grinding-machine/training/": {
-"h": "3555815eac8355cb",
+"h": "d546a9a16b1fb869",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1872,7 +1872,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/gear-hobbing-machine/training/": {
-"h": "894963d715270870",
+"h": "ec61fd781f80c9c2",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1884,7 +1884,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/gear-skiving-machine/training/": {
-"h": "239916bbe38b2d0f",
+"h": "c6ad10d7269ab26d",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1932,7 +1932,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/horizontal-machining-center/training/": {
-"h": "26ab88290e2aeb96",
+"h": "17843affbec5e680",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1944,7 +1944,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/internal-grinder/training/": {
-"h": "f0a01376745684ca",
+"h": "ba260b5e3b08c25f",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1956,7 +1956,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/laser-machine/training/": {
-"h": "94b016fa964f8a1d",
+"h": "ed42d40430b4bc66",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1968,7 +1968,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/surface-grinder/training/": {
-"h": "8bf193c7cff6fd05",
+"h": "f14d16b74edae6f9",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1980,13 +1980,13 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/swiss-type-lathe/training/": {
-"h": "dc3a63abe68bea05",
+"h": "e4dcf4386abec8a7",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
 },
 "/machine-tools/training/": {
-"h": "34241c9e9b6f5ccf",
+"h": "202094802746a345",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -1998,13 +1998,13 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/transfer-machine/training/": {
-"h": "db88f7812bb99f16",
+"h": "076a6fa6fe99a57b",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
 },
 "/machine-tools/troubles/": {
-"h": "b6aa8f621cc679e8",
+"h": "f2ac0f71c07fa1a0",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -2016,7 +2016,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/turn-mill/training/": {
-"h": "fb006a441ea31d50",
+"h": "62857fc969d55c90",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -2028,7 +2028,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/vertical-machining-center/training/": {
-"h": "9206c128b8646b88",
+"h": "9d863aaada6edf67",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"
@@ -2040,7 +2040,7 @@
 "pub": "2026-10-02"
 },
 "/machine-tools/vertical-turning-lathe/training/": {
-"h": "419ef35cf55bc68c",
+"h": "de5f02831e0e6515",
 "idx": true,
 "mod": "2026-10-03",
 "pub": "2026-10-03"

@@ -14,6 +14,8 @@
   };
   var TOGGLE = { coolant: "coolant", door: "door", chuck: "clamp", magnet: "clamp", tail: "tail", wspin: "wspin", gas: "gas", line: "line", apc: "pallet", single: "single", dress: "dress" };
   var MODES = { mode_edit: "EDIT", mode_mem: "MEM", mode_mdi: "MDI", mode_jog: "JOG", mode_handle: "HANDLE" };
+  var RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches, FINE = window.matchMedia && window.matchMedia("(pointer: fine)").matches;
+  var snapNc = "—", clrT = null;
   var st = {}, snap = null, mode = "practice", si = -1, score = 100, seen = {}, hist = [], ngs = 0, stepNg = 0, t0 = 0, busy = false, nc = "—", jog = null, pos = 0;
   var store = (function(){ try { var k = "__t"; localStorage.setItem(k, k); localStorage.removeItem(k); return localStorage; } catch(e){ return null; } })();
   var bestKey = "mts-sim-" + S.slug;
@@ -92,7 +94,7 @@
       Array.prototype.forEach.call(card.querySelectorAll(".seq i"), function(el, i){ el.classList.toggle("on", i < pos); });
       root.querySelectorAll(".key.hint").forEach(function(k){ k.classList.remove("hint"); });
       draw(); leds();
-      if(pos >= s.seq.length) setTimeout(success, 350);
+      if(pos >= s.seq.length){ card.setAttribute("data-phase", "wait"); setTimeout(success, 350); }
       else fb(S.keys[b][0] + " ✓", "good");
       return;
     }
@@ -115,7 +117,7 @@
   /* ---------- step card */
   function fb(t, kind){ var el = card.querySelector(".fb"); if(el){ el.className = "fb " + (kind || ""); el.textContent = t; } }
   function head(s){
-    return "<div class=\"sh\"><span class=\"ph\">" + esc(s.phase) + "</span><span class=\"no\" lang=\"en\">STEP " + (si + 1) + " / " + S.steps.length + "</span></div><h3>" + esc(s.title) + "</h3><p class=\"stx\">" + esc(s.text) + "</p>";
+    return "<div class=\"sh\"><span class=\"ph\">" + esc(s.phase) + "</span><span class=\"no\" lang=\"en\">STEP " + (si + 1) + " / " + S.steps.length + "</span></div><h3 tabindex=\"-1\">" + esc(s.title) + "</h3><p class=\"stx\">" + esc(s.text) + "</p>";
   }
   function foot(s){
     return "<p class=\"fb\" role=\"status\" aria-live=\"polite\"></p>" + (mode === "practice" && s.hint ? "<details class=\"hint\"><summary>ヒント</summary><p>" + esc(s.hint) + "</p></details>" : "");
@@ -123,18 +125,18 @@
   function startStep(){
     jog = null; pos = 0; stepNg = 0;
     var s = S.steps[si];
-    set(s.pre); snap = clone(st); draw(); leds(); bar();
+    set(s.pre); snap = clone(st); snapNc = nc; draw(); leds(); bar();
     card.setAttribute("data-phase", "q");
     root.classList.toggle("panelmode", s.type === "panel");
     var h = head(s), i;
     if(s.type === "check"){
       h += "<div class=\"chk\">" + shuffle(s.items.map(function(x, j){ return j; })).map(function(j){ return "<button type=\"button\" class=\"opt\" aria-pressed=\"false\" data-i=\"" + j + "\"><i></i>" + esc(s.items[j].t) + "</button>"; }).join("") + "</div><button type=\"button\" class=\"cta go\">確認完了</button>";
     } else if(s.type === "panel"){
-      h += "<p class=\"seq\">" + s.seq.map(function(){ return "<i></i>"; }).join("") + "</p><p class=\"pnote\">" + (window.matchMedia("(max-width: 979px)").matches ? "下の" : "左の") + "操作盤のボタンを、正しい順に押してください。</p>";
+      h += "<p class=\"seq\">" + s.seq.map(function(){ return "<i></i>"; }).join("") + "</p><p class=\"pnote\">" + (window.matchMedia("(max-width: 979px)").matches ? "下の" : "左下の") + "操作盤のボタンを、正しい順に押してください。</p>";
     } else if(s.type === "choice"){
       h += "<div class=\"chs\">" + shuffle(s.options.map(function(o, j){ return j; })).map(function(j){ return "<button type=\"button\" class=\"opt\" data-i=\"" + j + "\">" + esc(s.options[j].t) + "</button>"; }).join("") + "</div>";
     } else if(s.type === "input"){
-      h += "<form class=\"inp\" novalidate><label for=\"simin\">" + esc(s.label) + "</label><div><input id=\"simin\" type=\"text\" inputmode=\"decimal\" autocomplete=\"off\" spellcheck=\"false\"><span>" + esc(s.unit) + "</span></div><button type=\"submit\" class=\"cta\">入力する</button></form>";
+      h += "<form class=\"inp\" novalidate><label for=\"simin\">" + esc(s.label) + "</label><div><button type=\"button\" class=\"pm\" aria-label=\"プラスとマイナスを切り替える\">±</button><input id=\"simin\" type=\"text\" inputmode=\"decimal\" autocomplete=\"off\" spellcheck=\"false\"><span>" + esc(s.unit) + "</span></div><button type=\"submit\" class=\"cta\">入力する</button></form>";
     } else if(s.type === "order"){
       var it = s.items.map(function(x, j){ return j; }), sh = shuffle(it);
       for(i = 0; i < 6 && sh.join() === it.join(); i++) sh = shuffle(it);
@@ -143,7 +145,7 @@
       var off = Math.round((s.tol + 0.017) * 1000) / 1000;
       jog = { axis: s.axis, from: s.from + off, gap: s.from + off, step: 0.1, deg: 0 };
       h += "<div class=\"jog\"><div class=\"gap\"><div class=\"gbar\"><i></i><b></b></div><div class=\"gl\"><span>10mm</span><span>1</span><span>0.1</span><span>0.01</span><span>接触</span></div></div>" +
-        "<div class=\"jrow\"><div class=\"mul\" role=\"radiogroup\" aria-label=\"ハンドルの倍率\">" + [["0.001", "×1"], ["0.01", "×10"], ["0.1", "×100"]].map(function(m){ return "<button type=\"button\" role=\"radio\" aria-checked=\"" + (m[0] === "0.1") + "\" data-m=\"" + m[0] + "\"><b>" + m[1] + "</b><small>" + m[0] + "mm</small></button>"; }).join("") + "</div>" +
+        "<div class=\"jrow\"><div class=\"mul\" role=\"group\" aria-label=\"ハンドルの倍率\">" + [["0.001", "×1"], ["0.01", "×10"], ["0.1", "×100"]].map(function(m){ return "<button type=\"button\" aria-pressed=\"" + (m[0] === "0.1") + "\" data-m=\"" + m[0] + "\"><b>" + m[1] + "</b><small>" + m[0] + "mm</small></button>"; }).join("") + "</div>" +
         "<div class=\"mpg\"><button type=\"button\" class=\"jb\" data-d=\"1\" aria-label=\"離す（＋）\">＋</button><span class=\"dial\" aria-hidden=\"true\"><i></i></span><button type=\"button\" class=\"jb\" data-d=\"-1\" aria-label=\"近づける（−）\">−</button></div></div>" +
         "<button type=\"button\" class=\"cta go\">位置を決定</button></div>";
     }
@@ -161,13 +163,13 @@
         var miss = [], bad = [];
         s.items.forEach(function(x, j){ if(x.req && !sel[j]) miss.push(j); if(!x.req && sel[j]) bad.push(j); });
         if(miss.length){
-          miss.forEach(function(j){ var b = card.querySelector(".chk .opt[data-i=\"" + j + "\"]"); if(b) b.classList.add("miss"); });
+          if(mode === "practice") miss.forEach(function(j){ var b = card.querySelector(".chk .opt[data-i=\"" + j + "\"]"); if(b) b.classList.add("miss"); });
           var withInc = miss.filter(function(j){ return s.items[j].inc; })[0];
           if(withInc !== undefined) return incident(s.items[withInc].inc);
           if(s.miss) return incident(s.miss);
-          return ng("確認が足りない項目があります。");
+          return ng(mode === "practice" ? "確認が足りない項目があります（オレンジの枠）。" : "確認が足りない項目があります。");
         }
-        if(bad.length){ bad.forEach(function(j){ var b = card.querySelector(".chk .opt[data-i=\"" + j + "\"]"); if(b) b.classList.add("bad"); }); return ng(s.items[bad[0]].ng); }
+        if(bad.length){ if(mode === "practice"){ bad.forEach(function(j){ var b = card.querySelector(".chk .opt[data-i=\"" + j + "\"]"); if(b) b.classList.add("bad"); }); return ng(s.items[bad[0]].ng); } return ng("しなくてよい項目、してはいけない項目が混ざっています。"); }
         success();
       });
     } else if(s.type === "choice"){
@@ -180,36 +182,39 @@
       }); });
     } else if(s.type === "input"){
       var f = card.querySelector(".inp"), inp = f.querySelector("input");
+      f.querySelector(".pm").addEventListener("click", function(){ var v = inp.value.trim(); inp.value = /^[-−ー－]/.test(v) ? v.replace(/^[-−ー－]\s*/, "") : "-" + v; try { inp.focus({ preventScroll: true }); } catch(e){} });
       f.addEventListener("submit", function(e){
         e.preventDefault(); if(busy) return;
-        var raw = inp.value.replace(/[０-９．－]/g, function(c){ return c === "．" ? "." : c === "－" ? "-" : String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).replace(/[−ーｰ―‐]/g, "-").replace(/[,，\s]/g, "");
+        var raw = inp.value.replace(/[０-９．－＋，]/g, function(c){ return c === "．" ? "." : c === "－" ? "-" : c === "＋" ? "+" : c === "，" ? "," : String.fromCharCode(c.charCodeAt(0) - 0xFEE0); }).replace(/[−ーｰ―‐]/g, "-").replace(/\s/g, "");
+        raw = raw.indexOf(".") < 0 && /^[-+]?\d+,\d{1,2}$|^[-+]?\d*,\d{4,}$|^[-+]?0,\d+$/.test(raw) ? raw.replace(",", ".") : raw.replace(/,/g, "");
         var v = parseFloat(raw);
         if(!/^[-+]?(\d+\.?\d*|\.\d+)$/.test(raw) || isNaN(v)){ fb("数値を入力してください。", "info"); return; }
         if(v >= s.ok[0] - 1e-9 && v <= s.ok[1] + 1e-9){ success(); return; }
         var cs = s.cases || [];
         for(var i = 0; i < cs.length; i++){
           var c = cs[i];
-          if(("lt" in c && v < c.lt) || ("gt" in c && v > c.gt)){ if(c.inc) return incident(c.inc); return ng(c.ng); }
+          if(("lt" in c && v < c.lt) || ("gt" in c && v > c.gt)){ if(c.inc) return incident(c.inc); return ng(mode === "practice" ? c.ng : "値が違います。条件を読み直して、もう一度。"); }
         }
-        ng(s.ng);
+        ng(mode === "practice" ? s.ng : "値が違います。条件を読み直して、もう一度。");
       });
-      setTimeout(function(){ try { inp.focus({ preventScroll: true }); } catch(e){} }, 50);
+      if(FINE) setTimeout(function(){ try { inp.focus({ preventScroll: true }); } catch(e){} }, 50);
     } else if(s.type === "order"){
       var picked = [];
       card.querySelectorAll(".ord .opt").forEach(function(b){ b.addEventListener("click", function(){
         if(busy || b.classList.contains("pk")) return;
+        if(clrT){ clearTimeout(clrT); clrT = null; clear(); }
         picked.push(+b.getAttribute("data-i")); b.classList.add("pk"); b.querySelector("em").textContent = picked.length;
         if(picked.length === s.items.length){
           var ok = picked.every(function(x, i){ return x === i; });
           if(ok) success();
           else if(s.inc) incident(s.inc);
-          else { ng(s.ng); setTimeout(clear, 900); }
+          else { ng(s.ng); clrT = setTimeout(function(){ clrT = null; clear(); }, 900); }
         }
       }); });
       var clear = function(){ picked = []; card.querySelectorAll(".ord .opt").forEach(function(b){ b.classList.remove("pk"); b.querySelector("em").textContent = ""; }); };
       card.querySelector(".clr").addEventListener("click", clear);
     } else if(s.type === "jog"){
-      card.querySelectorAll(".mul button").forEach(function(b){ b.addEventListener("click", function(){ jog.step = +b.getAttribute("data-m"); card.querySelectorAll(".mul button").forEach(function(x){ x.setAttribute("aria-checked", String(x === b)); }); }); });
+      card.querySelectorAll(".mul button").forEach(function(b){ b.addEventListener("click", function(){ jog.step = +b.getAttribute("data-m"); card.querySelectorAll(".mul button").forEach(function(x){ x.setAttribute("aria-pressed", String(x === b)); }); }); });
       card.querySelectorAll(".jb").forEach(function(b){
         var timer = null, d = +b.getAttribute("data-d");
         var stop = function(){ clearTimeout(timer); clearInterval(timer); timer = null; };
@@ -252,29 +257,45 @@
   }
 
   /* ---------- outcomes */
+  function open(){ return card.getAttribute("data-phase") === "q"; }
   function ng(t){
+    if(!open()) return;
     stepNg++; ngs++;
     if(stepNg <= 2){ score -= NG; bar(); }
     fb(t + (stepNg <= 2 ? "（−" + NG + "）" : ""), "warn");
     card.classList.remove("shake"); void card.offsetWidth; card.classList.add("shake");
   }
   function success(){
+    var ph = card.getAttribute("data-phase");
+    if(ph !== "q" && ph !== "wait") return;
     var s = S.steps[si];
     jog = null; set(s.set); draw(); leds(); bar();
     card.setAttribute("data-phase", "ok");
     root.classList.remove("panelmode");
     root.querySelectorAll(".key.hint").forEach(function(k){ k.classList.remove("hint"); });
     var ia = card.querySelectorAll(".chk,.chs,.inp,.ord,.jog,.seq,.pnote,.go,.clr,.hint,.fb");
-    Array.prototype.forEach.call(ia, function(el){ if(!el.classList.contains("chs")) el.remove(); else el.classList.add("done"); });
+    Array.prototype.forEach.call(ia, function(el){ if(!el.classList.contains("chs")) el.remove(); else { el.classList.add("done"); el.querySelectorAll(".opt").forEach(function(o){ o.disabled = true; }); } });
     card.insertAdjacentHTML("beforeend", "<div class=\"okp\"><p class=\"okh\"><i></i>OK</p><p>" + esc(s.explain) + "</p><button type=\"button\" class=\"cta nx\">" + (si + 1 < S.steps.length ? "次のステップへ" : "結果を見る") + "</button></div>");
     var nx = card.querySelector(".nx");
     nx.addEventListener("click", next);
     try { nx.focus({ preventScroll: true }); } catch(e){}
   }
-  function next(){ si++; if(si >= S.steps.length) return finish(); startStep(); scrollCard(); }
-  function scrollCard(){ var r = card.getBoundingClientRect(); if(r.top < 60 || r.top > window.innerHeight * .7) card.scrollIntoView({ behavior: "smooth", block: "start" }); }
+  function next(){ si++; if(si >= S.steps.length) return finish(); startStep(); scrollCard(); focusHead(); }
+  function focusHead(){ var h = card.querySelector("h3"); if(h && !(S.steps[si] && S.steps[si].type === "input" && FINE)) try { h.focus({ preventScroll: true }); } catch(e){} }
+  function topGap(){
+    var v = root.querySelector(".vis"), cs = v && getComputedStyle(v);
+    return cs && cs.position === "sticky" ? (parseFloat(cs.top) || 0) + v.offsetHeight + 10 : 68;
+  }
+  function scrollCard(){
+    var gap = topGap(), r = card.getBoundingClientRect(), beh = RM ? "auto" : "smooth";
+    if(r.top < gap - 2 || r.top > window.innerHeight * .7) window.scrollTo({ top: Math.max(0, window.pageYOffset + r.top - gap), behavior: beh });
+    var s = S.steps[si];
+    if(s && s.type === "panel" && card.getAttribute("data-phase") === "q" && gap < 100){
+      setTimeout(function(){ var c = root.querySelector(".ctrl"); if(c && c.getBoundingClientRect().bottom > window.innerHeight) c.scrollIntoView({ behavior: beh, block: "nearest" }); }, RM ? 0 : 450);
+    }
+  }
   function incident(id){
-    var I = S.incidents[id]; if(!I || busy) return;
+    var I = S.incidents[id]; if(!I || busy || !open()) return;
     busy = true;
     var first = !seen[id];
     if(first){ seen[id] = 1; score -= PEN[I.sev]; hist.push(id); }
@@ -294,27 +315,34 @@
       "<button type=\"button\" class=\"cta\">状態を戻して、やり直す</button></div>";
     modal.hidden = false;
     document.documentElement.classList.add("simlock");
+    var mainEl = root.querySelector(".sim-main"); if(mainEl) mainEl.inert = true;
     var b = modal.querySelector("button");
     b.addEventListener("click", closeModal);
     try { b.focus({ preventScroll: true }); } catch(e){}
   }
   function closeModal(){
+    if(modal.hidden) return;
     modal.hidden = true; modal.innerHTML = "";
     document.documentElement.classList.remove("simlock");
+    var mainEl = root.querySelector(".sim-main"); if(mainEl) mainEl.inert = false;
     root.removeAttribute("data-fx"); $("simtag").textContent = ""; msg("");
     busy = false;
-    st = clone(snap);
+    st = clone(snap); nc = snapNc;
     startStep();
-    scrollCard();
+    scrollCard(); focusHead();
   }
-  document.addEventListener("keydown", function(e){ if(e.key === "Escape" && !modal.hidden) closeModal(); });
+  document.addEventListener("keydown", function(e){
+    if(modal.hidden) return;
+    if(e.key === "Escape") closeModal();
+    else if(e.key === "Tab"){ var b = modal.querySelector("button"); if(b){ e.preventDefault(); b.focus(); } }
+  });
 
   /* ---------- start / finish */
   function begin(m){
     mode = m; si = 0; score = 100; seen = {}; hist = []; ngs = 0; nc = "—"; t0 = Date.now();
     st = clone(S.init); st.estopOk = false; st.ran = false;
     root.setAttribute("data-mode", m); root.classList.add("live");
-    startStep(); scrollCard();
+    startStep(); scrollCard(); focusHead();
   }
   function grade(p){ return p >= 95 ? "S" : p >= 80 ? "A" : p >= 60 ? "B" : "C"; }
   function finish(){
@@ -322,7 +350,7 @@
     card.setAttribute("data-phase", "end"); bar();
     var best = null;
     if(store){ try { best = JSON.parse(store.getItem(bestKey) || "null"); if(!best || p > best.p) store.setItem(bestKey, JSON.stringify({ p: p, g: g, m: mode })); } catch(e){} }
-    var msgs = { S: "完璧です。現場の人と同じ目線で機械を見られています。", A: "よくできました。起きたトラブルの「防ぐには」を読み返しておきましょう。", B: "もう一歩。トラブルの原因を確かめて、もう一度挑戦しましょう。", C: "機械が何度も止まりました。練習モードのヒントを見ながら、手順の理由を確かめましょう。" };
+    var msgs = { S: "完璧です。現場の人と同じ目線で機械を見られています。", A: "よくできました。起きたトラブルの「対策」を読み返しておきましょう。", B: "もう一歩。トラブルの原因を確かめて、もう一度挑戦しましょう。", C: "機械が何度も止まりました。練習モードのヒントを見ながら、手順の理由を確かめましょう。" };
     card.classList.add("res");
     card.innerHTML = "<p class=\"eyebrow\" lang=\"en\">RESULT · " + (mode === "exam" ? "EXAM" : "PRACTICE") + "</p><div class=\"rs\"><div class=\"gr g" + g + "\" lang=\"en\">" + g + "</div><div><b class=\"tn\">" + p + "</b><span>点</span><p>" + Math.floor(sec / 60) + "分" + (sec % 60) + "秒　トラブル " + hist.length + "件　軽いミス " + ngs + "回</p>" + (best && best.p > p ? "<p>自己ベスト " + best.p + "点（" + best.g + "）</p>" : "") + "</div></div>" +
       "<p class=\"rm\">" + msgs[g] + "</p>" +
@@ -332,6 +360,7 @@
     root.classList.remove("live", "panelmode");
     wireStart();
     scrollCard();
+    var e0 = card.querySelector(".rs"); if(e0){ e0.setAttribute("tabindex", "-1"); try { e0.focus({ preventScroll: true }); } catch(e){} }
   }
   function wireStart(){ card.querySelectorAll("[data-start]").forEach(function(b){ b.addEventListener("click", function(){ begin(b.getAttribute("data-start")); }); }); }
 

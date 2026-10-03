@@ -70,7 +70,7 @@ function sDoor(tint){
   var s = sR(6, 6, 628, 388, tint || "url(#sgGl)", " rx=\"6\"") + sR(6, 6, 628, 388, "none", " rx=\"6\" stroke=\"#c9ccd1\" stroke-width=\"10\" opacity=\".9\"") +
     sR(612, 150, 10, 100, "#e9eaec", " rx=\"5\"") +
     sG("crk", sP("M320 170l-34-40M320 170l40-22M320 170l8 46M320 170l-42 18M286 130l-18-6M360 148l14-22M328 216l-10 24M278 188l-16 22", "none", " stroke=\"#fff\" stroke-width=\"1.4\" opacity=\".85\""));
-  return sG("door", s, "door:open=translate(-610px,0px);closed=");
+  return sG("door", s, "door:open=translate(-640px,0px);closed=");
 }
 
 /* ---------- the 18 machine drawings (viewBox 0 0 640 400). Each returns {svg, P:[x,y] trouble point, W:[x,y] wheel/rotor centre, chip, vars} */
@@ -421,7 +421,7 @@ function mtSimPage(slug){
   h += mtSec("MORE", "あわせて読む", "<div class=\"list\"><a class=\"li\" href=\"" + mtU("type", slug) + "\"><span class=\"t\">" + esc(t.name) + "の構造と仕組み</span><span class=\"n\">MACHINE</span></a>" +
     "<a class=\"li\" href=\"/machine-tools/troubles/\"><span class=\"t\">工作機械のトラブル事例集</span><span class=\"n\">CASEBOOK</span></a><a class=\"li\" href=\"/machine-tools/training/\"><span class=\"t\">ほかの機械の操作トレーニング</span><span class=\"n\">TRAINING</span></a></div>", "paper");
   var i = SIM_ORDER.indexOf(slug), p = SIM_ORDER[i - 1], n = SIM_ORDER[i + 1];
-  h += "<div class=\"wrap\"><nav class=\"next\" aria-label=\"前後のトレーニング\">" + (p ? "<a href=\"/machine-tools/" + p + "/training/\"><small>PREVIOUS</small><b>" + esc(simTypeName(p)) + "</b></a>" : "<span></span>") + (n ? "<a href=\"/machine-tools/" + n + "/training/\"><small>NEXT</small><b>" + esc(simTypeName(n)) + "</b></a>" : "") + "</nav></div><div style=\"height:40px\"></div>";
+  h += "<div class=\"wrap\"><nav class=\"next\" aria-label=\"前後のトレーニング\">" + (p ? "<a href=\"/machine-tools/" + p + "/training/\"><small>PREVIOUS</small><b>" + esc(simTypeName(p)) + "の操作トレーニング</b></a>" : "<span></span>") + (n ? "<a href=\"/machine-tools/" + n + "/training/\"><small>NEXT</small><b>" + esc(simTypeName(n)) + "の操作トレーニング</b></a>" : "") + "</nav></div><div style=\"height:40px\"></div>";
   show(h, [["工作機械図鑑", "/machine-tools/"], ["操作トレーニング", "/machine-tools/training/"], [t.name]], "mt");
 }
 
@@ -473,5 +473,5 @@ function mtTroubles(){
 }
 function mtSimLink(slug){
   var sc = SIM[slug]; if(!sc) return "";
-  return "<section class=\"sec tight\" style=\"padding-bottom:0\"><div class=\"wrap\"><a class=\"mtlink simlink\" href=\"/machine-tools/" + slug + "/training/\"><span class=\"eyebrow\" lang=\"en\">OPERATION TRAINING</span><b>" + esc(sc.title) + "</b><span>操作を1ステップずつ体験する。間違えると起きるトラブル" + Object.keys(sc.incidents).length + "件と、その原因・対策も読めます</span><span class=\"lnk\">トレーニングを始める</span></a></div></section>";
+  return "<section class=\"sec tight\" style=\"padding-bottom:0\"><div class=\"wrap\"><a class=\"mtlink simlink\" href=\"/machine-tools/" + slug + "/training/\"><span class=\"eyebrow\" lang=\"en\">OPERATION TRAINING</span><b>" + esc(sc.title) + "</b><span>操作を1ステップずつ体験する。間違えると起きるトラブル" + Object.keys(sc.incidents).length + "件と、その原因・対策も読めます</span><span class=\"lnk\">トレーニングを始める</span></a><p style=\"margin-top:14px\"><a class=\"lnk\" href=\"/machine-tools/troubles/\">ほかの機械も含めたトラブル事例集を見る</a></p></div></section>";
 }

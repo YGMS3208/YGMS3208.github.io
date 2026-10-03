@@ -527,7 +527,8 @@ for r in ROUTES:
     elif t == "mtsim":
         it, sc = r["o"], SIM[r["k"]]
         r["title"] = "%sの操作トレーニング｜段取りとトラブルを体験" % it["name"]
-        r["desc"] = clip(sc["summary"], 120)
+        top3 = [v["title"] for v in sc["incidents"].values() if v["sev"] == 3][:1]
+        r["desc"] = clip("%sの基本操作を、%dステップのゲームで体験。「%s」の手順を自分で操作し、間違えると起きるトラブル%d件（%sなど）の原因と対策も学べる。" % (it["name"], len(sc["steps"]), sc["title"], len(sc["incidents"]), "、".join(top3)), 130)
         r["eyebrow"], r["name"], r["stats"] = "OPERATION TRAINING", it["name"] + "の操作トレーニング", "%dステップ・トラブル%d件" % (len(sc["steps"]), len(sc["incidents"]))
     elif t == "mtsimhub":
         n_inc = sum(len(SIM[x["slug"]]["incidents"]) for x in SIM_TYPES)
@@ -674,7 +675,8 @@ open(OUT + FCSS, "w", encoding="utf-8").write(fcss)
 simjs = open(B + "/site_sim.js", encoding="utf-8").read()
 SIMJS = "/assets/sim.%s.js" % sha(simjs)[:10]
 open(OUT + SIMJS, "w", encoding="utf-8").write(simjs)
-SIMCSS = mincss(open(B + "/site_sim.css", encoding="utf-8").read())
+SIMCSS_ST = mincss(open(B + "/site_sim_static.css", encoding="utf-8").read())
+SIMCSS = mincss(open(B + "/site_sim.css", encoding="utf-8").read()) + SIMCSS_ST
 SIMT = ("mtsim", "mtsimhub", "mttrouble")
 appjs = open(B + "/site_app.js", encoding="utf-8").read()
 APPJS = "/assets/app.%s.js" % sha(appjs)[:10]
@@ -851,8 +853,10 @@ def ld(r):
     art = {"@type": "Article", "@id": url + "#article", "headline": r["title"].split("｜")[0][:110], "description": r["desc"], "image": [BASE + r["og"]],
            "author": {"@id": PERSON["@id"]}, "publisher": {"@id": PERSON["@id"]}, "datePublished": r["pub"], "dateModified": r["mod"],
            "inLanguage": "ja", "mainEntityOfPage": {"@id": url + "#webpage"}, "isPartOf": {"@id": WEBSITE["@id"]}, "license": LIC}
-    if r["t"] in ("part", "eq", "method", "sys", "eqg", "mttype", "mtcomp", "mtauto", "mtguide", "mtsim"):
+    if r["t"] in ("part", "eq", "method", "sys", "eqg", "mttype", "mtcomp", "mtauto", "mtguide"):
         art["about"] = {"@type": "Thing", "name": r["name"]}
+    elif r["t"] == "mtsim":
+        art["about"] = {"@type": "Thing", "name": r["o"]["name"], "url": BASE + "/machine-tools/%s/" % r["k"]}
     items = None
     if r["t"] == "systems":
         items = [(s["name"], "/systems/%s/" % s["slug"]) for s in systems]
@@ -969,7 +973,7 @@ def page(r):
              '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">',
              VERIFY,
              '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="%s"></noscript>' % (FCSS, FCSS),
-             "<style>%s</style>" % CSS + ("<style>%s</style>" % SIMCSS if r["t"] in SIMT else ""),
+             "<style>%s</style>" % CSS + ("<style>%s</style>" % (SIMCSS if r["t"] == "mtsim" else SIMCSS_ST) if r["t"] in SIMT else ""),
              '<script type="application/ld+json">%s</script>' % json.dumps({"@context": "https://schema.org", "@graph": ld(r)}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
              '<script src="%s" defer></script>' % APPJS + ('<script src="%s" defer></script>' % SIMJS if r["t"] == "mtsim" else ""),
              "</head><body>"]
