@@ -32,6 +32,7 @@ function mtHome(){
     h += "<div class=\"famh f" + (fi % 5) + "\"" + (fi ? "" : " style=\"margin-top:0\"") + "><i></i><b>" + esc(f.n) + "</b><small lang=\"en\">" + esc(f.en) + "</small></div><div class=\"grid-cards\">" + l.map(function(t){ return mtCard(t, "type", f.en); }).join("") + "</div>";
   });
   h += "</div></section>";
+  if(SIM_ORDER.length) h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><a class=\"tile full dk mtpromo\" href=\"/machine-tools/training/\"><div class=\"tx\"><p class=\"eyebrow\" lang=\"en\">OPERATION TRAINING</p><h3><span class=\"nw\">触って、</span><span class=\"nw\">失敗して、覚える。</span></h3><p>" + SIM_ORDER.length + "機種の基本操作を、1ステップずつ自分で体験する操作トレーニング。設定やワークの取付けを間違えると、衝突や飛散、不良が起きます。</p><span class=\"lnk\">操作トレーニングへ</span></div><div class=\"vis\">" + mtImg("cnc-lathe", "NC旋盤の図") + "</div></a></div></section>";
   h += "<section class=\"sec paper\"><div class=\"wrap\"><div class=\"hd row\"><div><p class=\"eyebrow\">COMPONENTS</p><h2 class=\"d2\">中身を、知る。</h2><p class=\"sub\">主軸、ボールねじ、リニアガイド、NC装置。精度と速さを決める構成部品です。</p></div><a class=\"lnk\" href=\"/machine-tools/components/\">構成部品をすべて見る</a></div><div class=\"grid-cards\">" +
     MTD.comps.map(function(c){ return mtCard(c, "comp", "COMPONENT"); }).join("") + "</div></div></section>";
   h += "<section class=\"sec\"><div class=\"wrap\"><div class=\"hd row\"><div><p class=\"eyebrow\">AUTOMATION</p><h2 class=\"d2\">止めずに、回す。</h2><p class=\"sub\">ローダ、ロボット、パレットチェンジャ。工作機械を無人で動かすための周辺機器です。</p></div><a class=\"lnk\" href=\"/machine-tools/automation/\">自動化をすべて見る</a></div><div class=\"grid-cards\">" +
@@ -57,7 +58,8 @@ function mtType(slug){
   var t = mtBy(MTD.types, slug), f = famOf(t);
   var h = "<section class=\"phero wrap\"><p class=\"eyebrow\" lang=\"en\">" + esc(f.en) + "</p><h1 class=\"d1\" style=\"font-size:clamp(36px,6vw,80px)\">" + esc(t.name) + "</h1><p class=\"sub lead\" style=\"margin:20px auto 0\">" + esc(t.lead) + "</p></section>";
   h += "<section class=\"sec tight\" style=\"padding-top:clamp(40px,5vw,64px)\"><div class=\"wrap\">" + mtAnat(slug, t.name) + "</div></section>";
-  h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><article class=\"prose\">" + t.body + "</article></div></section>";
+  h += mtSimLink(slug);
+  h += "<section class=\"sec tight\"" + (SIM[slug] ? "" : " style=\"padding-top:0\"") + "><div class=\"wrap\"><article class=\"prose\">" + t.body + "</article></div></section>";
   if(t.comps.length) h += mtSec("COMPONENTS", "この機種を構成する主な部品", mtPills(t.comps, MTD.comps, "comp"));
   if(t.autos.length) h += mtSec("AUTOMATION", "組み合わせる自動化・周辺機器", mtPills(t.autos, MTD.autos, "auto"), "") ;
   h += mtRelatedParts(t);
@@ -128,4 +130,7 @@ function mtRender(r){
   else if(t === "mtguide") mtGuide(k);
   else if(t === "mtselect") mtSelect();
   else if(t === "mtpromo") CUR = { html: mtPromo(), nav: "", crumbs: [] };
+  else if(t === "mtsim") mtSimPage(k);
+  else if(t === "mtsimhub") mtSimHub();
+  else if(t === "mttrouble") mtTroubles();
 }

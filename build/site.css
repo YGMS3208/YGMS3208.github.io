@@ -100,5 +100,8 @@ h1,h2,h3,h4,.d1,.d2,.d3,.brand b,.foot b{font-family:var(--f-head)}
 .mtlink b{font-size:20px}
 .mtlink>span:last-child{color:var(--muted);font-size:14px}
 .mtlink:hover b{color:var(--accent)}
+.simlink{background:var(--night);color:var(--nink);border-color:transparent;--accent:var(--naccent)}
+.simlink .eyebrow,.simlink>span:nth-child(3){color:var(--nmuted)}
+.mtlink.simlink>span.lnk{margin-top:8px;color:var(--naccent);font-size:15px}
 .mtpromo .vis .ilu{max-width:100%}
 .stage.thumb img,.vsi img,.mtpromo .vis img{display:block;width:100%;height:auto}

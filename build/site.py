@@ -305,6 +305,20 @@ data["mt"] = {"fam": MT_FAM, "types": [{k: v for k, v in t.items() if k != "raw"
               "ill": MT_ILL, "sel": {"q": SEL_Q, "t": SEL_T}}
 for t in MT_TYPES:
     assert t["slug"] in MT_ILL and t["slug"] in SEL_T, t["slug"]
+# operation training scenarios (data/mt/sim/*.json), validated by sim_check
+import sim_check  # noqa: E402
+_sp = []
+SIM = {}
+for _f in sorted(glob.glob(_D + "/mt/sim/*.json")):
+    _sp += sim_check.check(_f)
+    SIM[os.path.basename(_f)[:-5]] = json.load(open(_f, encoding="utf-8"))
+if _sp:
+    sys.exit("ERROR: training scenarios:\n  " + "\n  ".join(_sp))
+SIM_TYPES = [t for t in MT_TYPES if t["slug"] in SIM]
+for t in MT_TYPES:
+    t["sim"] = SIM[t["slug"]]["title"] if t["slug"] in SIM else None
+data["mt"]["types"] = [{k: v for k, v in t.items() if k != "raw"} for t in MT_TYPES]
+data["sim"] = SIM
 for c in MT_COMPS + MT_AUTOS:
     assert c["slug"] in MT_ILL, c["slug"]
 
@@ -343,6 +357,9 @@ ROUTES += [{"t": "mttype", "k": t["slug"], "u": "/machine-tools/%s/" % t["slug"]
 ROUTES += [{"t": "mtcomp", "k": c["slug"], "u": "/machine-tools/components/%s/" % c["slug"], "o": c} for c in MT_COMPS]
 ROUTES += [{"t": "mtauto", "k": c["slug"], "u": "/machine-tools/automation/%s/" % c["slug"], "o": c} for c in MT_AUTOS]
 ROUTES += [{"t": "mtguide", "k": g["slug"], "u": "/machine-tools/guide/%s/" % g["slug"], "o": g} for g in MT_GUIDES]
+if SIM_TYPES:
+    ROUTES += [{"t": "mtsimhub", "u": "/machine-tools/training/"}, {"t": "mttrouble", "u": "/machine-tools/troubles/"}]
+    ROUTES += [{"t": "mtsim", "k": t["slug"], "u": "/machine-tools/%s/training/" % t["slug"], "o": t} for t in SIM_TYPES]
 
 from playwright.sync_api import sync_playwright  # noqa: E402
 
@@ -507,6 +524,21 @@ for r in ROUTES:
         r["title"] = "%s｜比較表と選び分けの目安" % it["name"]
         r["desc"] = clip(it["lead"])
         r["eyebrow"], r["name"], r["stats"] = "GUIDE · COMPARE", it["name"], "比較表と選び分けの目安"
+    elif t == "mtsim":
+        it, sc = r["o"], SIM[r["k"]]
+        r["title"] = "%sの操作トレーニング｜段取りとトラブルを体験" % it["name"]
+        r["desc"] = clip(sc["summary"], 120)
+        r["eyebrow"], r["name"], r["stats"] = "OPERATION TRAINING", it["name"] + "の操作トレーニング", "%dステップ・トラブル%d件" % (len(sc["steps"]), len(sc["incidents"]))
+    elif t == "mtsimhub":
+        n_inc = sum(len(SIM[x["slug"]]["incidents"]) for x in SIM_TYPES)
+        r["title"] = "工作機械の操作トレーニング｜%d機種の段取りとトラブルを体験" % len(SIM_TYPES)
+        r["desc"] = "NC旋盤、マシニングセンタ、研削盤、歯車加工機など%d機種の基本操作を、1ステップずつ自分で体験。設定やワークの取付けを間違えると、衝突・飛散・不良などのトラブル（全%d件）が起き、原因と対策を学べる。" % (len(SIM_TYPES), n_inc)
+        r["eyebrow"], r["name"], r["stats"] = "OPERATION TRAINING", "工作機械の操作トレーニング", "%d機種・トラブル%d件" % (len(SIM_TYPES), n_inc)
+    elif t == "mttrouble":
+        n_inc = sum(len(SIM[x["slug"]]["incidents"]) for x in SIM_TYPES)
+        r["title"] = "工作機械のトラブル事例集｜衝突・飛散・不良の原因と対策%d件" % n_inc
+        r["desc"] = "工作機械で起きやすい衝突、ワークや工具の飛散、火災、人への危険、寸法不良などのトラブル%d件を種類別にまとめた事例集。%d機種の操作トレーニングと連動し、原因・損失・防ぎ方を解説。" % (n_inc, len(SIM_TYPES))
+        r["eyebrow"], r["name"], r["stats"] = "TROUBLE CASEBOOK", "工作機械のトラブル事例集", "%d件・%d機種" % (n_inc, len(SIM_TYPES))
     elif t == "about":
         r["title"] = "この図鑑について｜運営者・編集方針・利用条件"
         r["desc"] = "自動車製造工程図鑑の運営者（%s）、編集方針、図解と文章の利用条件（CC BY-NC 4.0）、誤りの報告方法。" % CFG["handle"]
@@ -544,9 +576,13 @@ def sig(r):
         return jdump([data["pt"], MET, [p["name"] for p in parts], [c["n"] for c in cats]])
     if t == "about":
         return jdump([CFG["handle"], CFG["bio"], CFG["issues"]])
+    if t == "mtsim":
+        return jdump([r["o"]["name"], SIM[r["k"]], [x["slug"] for x in SIM_TYPES]])
+    if t in ("mtsimhub", "mttrouble"):
+        return jdump([t, [[x["name"], SIM[x["slug"]]["title"], SIM[x["slug"]]["level"], SIM[x["slug"]]["minutes"], len(SIM[x["slug"]]["steps"]), [[k, v["title"], v["sev"], v["fx"]] for k, v in SIM[x["slug"]]["incidents"].items()]] for x in SIM_TYPES]])
     if t.startswith("mt"):
         o = r.get("o") or {}
-        return jdump([t, o.get("name"), o.get("lead"), o.get("raw"), o.get("comps"), o.get("autos"), o.get("types"),
+        return jdump([t, o.get("name"), o.get("lead"), o.get("raw"), o.get("comps"), o.get("autos"), o.get("types")] + ([o.get("sim")] if o.get("sim") else []) + ([len(SIM_TYPES)] if t == "mthome" else []) + [
                       [[x["name"], x["lead"]] for x in (MT_TYPES if t in ("mthome",) else MT_COMPS if t == "mtcomps" else MT_AUTOS if t == "mtautos" else MT_GUIDES if t == "mtselect" else [])]])
     return jdump([[p["name"], len(p["ops"])] for p in parts] + [c["n"] for c in cats] + [k["n"] for k in kinds])
 
@@ -635,6 +671,11 @@ fcss = "".join(font_css)
 FCSS = "/assets/fonts.%s.css" % sha(fcss)[:10]
 open(OUT + FCSS, "w", encoding="utf-8").write(fcss)
 
+simjs = open(B + "/site_sim.js", encoding="utf-8").read()
+SIMJS = "/assets/sim.%s.js" % sha(simjs)[:10]
+open(OUT + SIMJS, "w", encoding="utf-8").write(simjs)
+SIMCSS = mincss(open(B + "/site_sim.css", encoding="utf-8").read())
+SIMT = ("mtsim", "mtsimhub", "mttrouble")
 appjs = open(B + "/site_app.js", encoding="utf-8").read()
 APPJS = "/assets/app.%s.js" % sha(appjs)[:10]
 open(OUT + APPJS, "w", encoding="utf-8").write(appjs)
@@ -651,7 +692,9 @@ SI = {"p": [[p["name"], p["mat"], p["desc"], "/parts/%s/" % p["slug"], p["_s"]["
       "r": [[cats[x[0]]["n"], x[1], x[2], p["name"], "OP%d" % o["no"], o["n"], anchor(p, o), role] for p in parts for o in p["ops"] for role, rows in (("m", o["m"]), ("i", o["x"])) for x in rows]}
 SI["m"] = ([[t["name"], "工作機械", "/machine-tools/%s/" % t["slug"]] for t in MT_TYPES] + [[c["name"], "構成部品", "/machine-tools/components/%s/" % c["slug"]] for c in MT_COMPS] +
            [[c["name"], "自動化", "/machine-tools/automation/%s/" % c["slug"]] for c in MT_AUTOS] + [[g["name"], "ガイド", "/machine-tools/guide/%s/" % g["slug"]] for g in MT_GUIDES] +
-           [["工作機械の選び方", "ガイド", "/machine-tools/guide/"], ["工作機械とは", "工作機械図鑑", "/machine-tools/"]])
+           [["工作機械の選び方", "ガイド", "/machine-tools/guide/"], ["工作機械とは", "工作機械図鑑", "/machine-tools/"]] +
+           [[t["name"] + "の操作トレーニング", "トレーニング", "/machine-tools/%s/training/" % t["slug"]] for t in SIM_TYPES] +
+           ([["工作機械の操作トレーニング", "トレーニング", "/machine-tools/training/"], ["工作機械のトラブル事例集", "トラブル事例", "/machine-tools/troubles/"]] if SIM_TYPES else []))
 sij = json.dumps(SI, ensure_ascii=False, separators=(",", ":"))
 SIURL = "/assets/search.%s.json" % sha(sij)[:10]
 open(OUT + SIURL, "w", encoding="utf-8").write(sij)
@@ -665,6 +708,10 @@ def og_name(r):
     t = r["t"]
     if t in ("mttype", "mtcomp", "mtauto", "mtguide"):
         return "mt-%s-%s.jpg" % (t[2:], r["k"])
+    if t == "mtsim":
+        return "mt-training-%s.jpg" % r["k"]
+    if t in ("mtsimhub", "mttrouble"):
+        return {"mtsimhub": "mt-training.jpg", "mttrouble": "mt-troubles.jpg"}[t]
     if t in ("mthome", "mtcomps", "mtautos", "mtselect"):
         return {"mthome": "machine-tools.jpg", "mtcomps": "mt-components.jpg", "mtautos": "mt-automation.jpg", "mtselect": "mt-guide.jpg"}[t]
     if t in ("part", "sys", "eq", "method", "eqg"):
@@ -710,11 +757,13 @@ for r in ROUTES:
             pic = first_svg(BY_U["/"]["html"])
         elif r["t"] == "mtselect":
             pic = first_svg(BY_U["/machine-tools/"]["html"])
+        elif r["t"] in ("mtsimhub", "mttrouble"):
+            pic = first_svg(BY_U["/machine-tools/cnc-lathe/training/" if r["t"] == "mtsimhub" else "/machine-tools/vertical-machining-center/training/"]["html"])
         elif r["t"] == "eqg":
             pic = first_svg(BY_U["/equipment/%s/" % cats[r["ci0"]]["slug"]]["html"])
     if r["t"] == "eqg":
         pic = first_svg(BY_U["/equipment/%s/" % cats[r["ci0"]]["slug"]]["html"])
-    key = sha(jdump([r["eyebrow"], r["name"], r["stats"], pic, 4]))[:20]
+    key = sha(jdump([r["eyebrow"], r["name"], r["stats"], pic, 4] + ([SIMCSS] if "simv" in pic else [])))[:20]
     og_jobs.append((r, name, pic, key))
 
 need = [j for j in og_jobs if not os.path.exists(CACHE + "/og/%s.jpg" % j[3])]
@@ -744,8 +793,10 @@ if need:
         for r, name, pic, key in need:
             nm = r["name"]
             fs = 64 if len(nm) <= 8 else 54 if len(nm) <= 12 else 46 if len(nm) <= 18 else 40
+            if "simv" in pic:
+                pic = '<div class="ogsim">%s</div>' % pic
             doc = "<!doctype html><html lang=ja><head><meta charset=utf-8><style>%s%s%s%s</style></head><body>%s<div class=og><div class=tx><div class=eb>%s</div><h1 style='font-size:%dpx'>%s</h1><div class=st>%s</div><div class=br>%s<span>%s<br><small>AUTOMOTIVE ATLAS</small></span></div></div><div class=pic>%s</div></div></body></html>" % (
-                zcss, jcss, CSS_APP, OGCSS, DEFS, html.escape(r["eyebrow"]), fs, html.escape(nm), html.escape(r["stats"]), BRAND, SITE, pic)
+                zcss, jcss, CSS_APP, OGCSS + SIMCSS + ".ogsim{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#16181C}.ogsim .simv{width:100%;height:auto}", DEFS, html.escape(r["eyebrow"]), fs, html.escape(nm), html.escape(r["stats"]), BRAND, SITE, pic)
             open(CACHE + "/og_tmp.html", "w", encoding="utf-8").write(doc)
             pg.goto("file://" + CACHE + "/og_tmp.html")
             pg.evaluate("document.fonts.ready")
@@ -800,7 +851,7 @@ def ld(r):
     art = {"@type": "Article", "@id": url + "#article", "headline": r["title"].split("｜")[0][:110], "description": r["desc"], "image": [BASE + r["og"]],
            "author": {"@id": PERSON["@id"]}, "publisher": {"@id": PERSON["@id"]}, "datePublished": r["pub"], "dateModified": r["mod"],
            "inLanguage": "ja", "mainEntityOfPage": {"@id": url + "#webpage"}, "isPartOf": {"@id": WEBSITE["@id"]}, "license": LIC}
-    if r["t"] in ("part", "eq", "method", "sys", "eqg", "mttype", "mtcomp", "mtauto", "mtguide"):
+    if r["t"] in ("part", "eq", "method", "sys", "eqg", "mttype", "mtcomp", "mtauto", "mtguide", "mtsim"):
         art["about"] = {"@type": "Thing", "name": r["name"]}
     items = None
     if r["t"] == "systems":
@@ -821,6 +872,8 @@ def ld(r):
         items = [(c["name"], "/machine-tools/automation/%s/" % c["slug"]) for c in MT_AUTOS]
     elif r["t"] == "mtselect":
         items = [(g["name"], "/machine-tools/guide/%s/" % g["slug"]) for g in MT_GUIDES]
+    elif r["t"] == "mtsimhub":
+        items = [(t["name"] + "の操作トレーニング", "/machine-tools/%s/training/" % t["slug"]) for t in SIM_TYPES]
     out = g_ + [page, art]
     if items:
         out.append({"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "url": BASE + u} for i, (n, u) in enumerate(items)]})
@@ -916,9 +969,9 @@ def page(r):
              '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">',
              VERIFY,
              '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="%s"></noscript>' % (FCSS, FCSS),
-             "<style>%s</style>" % CSS,
+             "<style>%s</style>" % CSS + ("<style>%s</style>" % SIMCSS if r["t"] in SIMT else ""),
              '<script type="application/ld+json">%s</script>' % json.dumps({"@context": "https://schema.org", "@graph": ld(r)}, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/"),
-             '<script src="%s" defer></script>' % APPJS,
+             '<script src="%s" defer></script>' % APPJS + ('<script src="%s" defer></script>' % SIMJS if r["t"] == "mtsim" else ""),
              "</head><body>"]
     doc = "".join(head) + shell_top(r["nav"]) + '<main id="main">' + body + "</main>" + FOOT + "</body></html>"
     return doc
@@ -957,7 +1010,7 @@ BLOCK = ["GPTBot", "Google-Extended", "CCBot", "ClaudeBot", "anthropic-ai", "App
 robots = "# 検索エンジンとAI検索は歓迎します。AIの学習用クローラーはお断りしています。\n\n" + "".join("User-agent: %s\nDisallow: /\n\n" % b for b in BLOCK) + "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE
 open(OUT + "/robots.txt", "w", encoding="utf-8").write(robots)
 L = ["# %s（AUTOMOTIVE ATLAS）" % SITE, "", "> 自動車の部品がどんな工程と工作機械・検査機でつくられるかを図解で解説する日本語の図鑑。%d部品・%d工程・%d設備（数はこの図鑑の分類による）と、パワートレイン別の比較、工作機械図鑑（機種・構成部品・自動化・選び方）を収録。運営：%s。文章と図解は CC BY-NC 4.0。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats), CFG["handle"]), ""]
-for head_, ts in (("主要ページ", ("home", "systems", "pt", "map", "methods", "eqi", "about")), ("加工法", ("method",)), ("系統", ("sys",)), ("部品", ("part",)), ("設備の分類", ("eqg",)), ("設備", ("eq",)), ("工作機械図鑑", ("mthome", "mtselect", "mtcomps", "mtautos")), ("工作機械の機種", ("mttype",)), ("工作機械の構成部品", ("mtcomp",)), ("自動化・周辺機器", ("mtauto",)), ("比較ガイド", ("mtguide",))):
+for head_, ts in (("主要ページ", ("home", "systems", "pt", "map", "methods", "eqi", "about")), ("加工法", ("method",)), ("系統", ("sys",)), ("部品", ("part",)), ("設備の分類", ("eqg",)), ("設備", ("eq",)), ("工作機械図鑑", ("mthome", "mtselect", "mtcomps", "mtautos")), ("工作機械の機種", ("mttype",)), ("工作機械の構成部品", ("mtcomp",)), ("自動化・周辺機器", ("mtauto",)), ("比較ガイド", ("mtguide",)), ("操作トレーニングとトラブル事例", ("mtsimhub", "mttrouble", "mtsim"))):
     L.append("## " + head_)
     for r in idx:
         if r["t"] in ts:
