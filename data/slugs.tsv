@@ -387,3 +387,106 @@ part	電動コンプレッサ（スクロール）	electric-compressor
 part	高強度ボルト	high-strength-bolt
 part	焼結部品	sintered-parts
 part	転がり軸受（深溝玉軸受）	ball-bearing
+system	データセンター向け電気・制御系	data-center-power-distribution
+part	データセンター用低圧配電盤（発電機盤・閉鎖形）	data-center-low-voltage-switchgear
+part	データセンター用高圧配電盤（メタルクラッド形）	data-center-medium-voltage-switchgear
+part	データセンター用真空遮断器（VCB）	vacuum-circuit-breaker
+part	データセンター用気中遮断器（ACB）	air-circuit-breaker
+part	データセンター用自動切替開閉器（ATS）	automatic-transfer-switch
+part	データセンター用発電機並列盤（同期・負荷分担）	generator-paralleling-switchgear
+part	データセンター用大容量UPS（インバータ盤・蓄電池盤）	data-center-ups
+part	データセンター用主燃料タンク・移送ポンプユニット	data-center-main-fuel-tank
+cat	タレットパンチプレス	turret-punch-press
+cat	エポキシ注形設備（真空注形・APG）	epoxy-casting-equipment
+cat	プラズマ・ガス切断機	plasma-gas-cutting-machine
+cat	ベンディングロール（板曲げロール）	plate-bending-roll
+cat	アーク溶接機（半自動・TIG）	manual-arc-welding-machine
+system	ガスタービン・ガスエンジン発電	gas-turbine-gas-engine-power
+part	ガスタービン 圧縮機翼（動翼・静翼）	gas-turbine-compressor-blades
+part	ガスタービン タービン動翼（一方向凝固・単結晶）	gas-turbine-turbine-blade
+part	ガスタービン タービンディスク	gas-turbine-disk
+part	ガスタービン 燃焼器（ライナ・尾筒）	gas-turbine-combustor
+part	ガスタービン ケーシング	gas-turbine-casing
+part	ガスタービン ロータ組立・試運転	gas-turbine-rotor-assembly-testing
+part	ガスエンジン 副室・ガス供給弁	gas-engine-prechamber-gas-valve
+part	ガスエンジン発電設備 組立・試験	gas-engine-genset-assembly-testing
+cat	軸芯出し装置	shaft-alignment-system
+cat	材料試験機（引張・衝撃）	tensile-impact-testing-machine
+cat	油圧ボルトテンショナ	hydraulic-bolt-tensioner
+cat	スピン試験装置	spin-test-rig
+system	同期発電機	synchronous-generator
+part	同期発電機 固定子フレーム	generator-stator-frame
+part	同期発電機 固定子鉄心	generator-stator-core
+part	同期発電機 高圧形巻コイル	generator-form-wound-coil
+part	同期発電機 固定子巻線・真空加圧含浸	generator-stator-winding-vpi
+part	同期発電機 突極形回転子	generator-salient-pole-rotor
+part	同期発電機 回転子軸	generator-rotor-shaft
+part	同期発電機 ブラシレス励磁機・AVR	generator-brushless-exciter-avr
+part	同期発電機 組立・試験	generator-assembly-testing
+cat	鉄心試験装置（ループ試験）	stator-core-loop-tester
+system	データセンター向け発電機セット	data-center-generator-set
+part	発電機セット用高速ディーゼル機関（組立・試運転）	genset-high-speed-diesel-engine
+part	発電機セット共通台床（ベースフレーム）	genset-base-frame
+part	発電機セット用大型ラジエータ	genset-radiator
+part	発電機セット防音パッケージ（エンクロージャ）	genset-acoustic-enclosure
+part	発電機セット燃料デイタンク（小出槽）	genset-fuel-day-tank
+part	発電機セット排気系（サイレンサ・伸縮継手）	genset-exhaust-silencer
+part	発電機セット組立（芯出し・連結）	genset-assembly-alignment
+part	発電機セット工場負荷試験	genset-factory-load-test
+system	舶用2ストローク低速主機	marine-two-stroke-engine
+part	主機台板（溶接構造）	low-speed-engine-bedplate
+part	架構（フレームボックス）	low-speed-engine-frame-box
+part	シリンダフレーム（掃気室一体）	low-speed-engine-cylinder-frame
+part	舶用クランク軸（組立式）	marine-crankshaft-semi-built
+part	低速機関シリンダライナ	low-speed-engine-cylinder-liner
+part	低速機関ピストン（クラウン・ピストン棒）	low-speed-engine-piston
+part	クロスヘッド（ピン・シュー）	low-speed-engine-crosshead
+part	低速機関排気弁（油圧駆動）	low-speed-engine-exhaust-valve
+part	低速機関シリンダカバー	low-speed-engine-cylinder-cover
+part	低速主機の組立・陸上運転	low-speed-engine-assembly-shop-test
+cat	水圧試験装置	hydrostatic-test-equipment
+system	舶用4ストローク中速機関	marine-medium-speed-engine
+part	中速機関シリンダブロック	medium-speed-engine-block
+part	中速機関クランク軸（一体鍛造）	medium-speed-engine-crankshaft
+part	中速機関シリンダヘッド	medium-speed-engine-cylinder-head
+part	中速機関コンロッド（斜め割り・マリン形）	medium-speed-engine-connecting-rod
+part	中速機関ピストン（組立式）	medium-speed-engine-piston
+part	中速機関シリンダライナ	medium-speed-engine-cylinder-liner
+part	中速機関カム軸	medium-speed-engine-camshaft
+part	中速機関主軸受メタル	medium-speed-engine-main-bearing
+part	中速機関組立・試運転	medium-speed-engine-assembly-test
+system	大型過給機・燃料噴射・排ガス処理	large-engine-turbo-injection-aftertreatment
+part	舶用過給機タービン翼車・ロータ	marine-turbocharger-turbine-rotor
+part	舶用過給機コンプレッサ羽根車	marine-turbocharger-compressor-wheel
+part	舶用過給機（ケーシング・組立・試験）	marine-turbocharger-assembly-test
+part	中速機関燃料噴射ポンプ（プランジャ・バレル）	medium-speed-fuel-injection-pump
+part	中速機関燃料弁（ノズル・電子制御噴射弁）	medium-speed-fuel-injection-valve
+part	中速機関高圧燃料管・コモンレール	medium-speed-high-pressure-fuel-line
+part	舶用SCR脱硝装置（反応器・触媒）	marine-scr-denox-system
+part	舶用排ガススクラバ（SOx洗浄塔）	marine-exhaust-gas-scrubber
+system	舶用推進系	marine-propulsion
+part	舶用減速機歯車	marine-reduction-gear
+part	舶用減速機（ケース・組立試験）	marine-gearbox-assembly
+part	固定ピッチプロペラ	fixed-pitch-propeller
+part	可変ピッチプロペラ（ハブ・翼・油圧機構）	controllable-pitch-propeller
+part	プロペラ軸・中間軸	propeller-shaft-intermediate-shaft
+part	船尾管軸受・シール	stern-tube-bearing-seal
+part	軸系の据付け・アライメント	shafting-installation-alignment
+cat	可搬式中ぐり機（現地加工）	portable-line-boring-machine
+cat	大型旋盤（重切削）	heavy-duty-lathe
+cat	横中ぐりフライス盤	horizontal-boring-mill
+cat	自由鍛造プレス（大型）	open-die-forging-press
+cat	自硬性砂型造型設備（大型鋳物）	no-bake-sand-molding
+cat	遠心鋳造機	centrifugal-casting-machine
+cat	一方向凝固・単結晶鋳造炉	directional-solidification-furnace
+cat	熱間等方圧加圧装置（HIP）	hot-isostatic-press
+cat	サブマージアーク溶接機	submerged-arc-welding
+cat	プレスブレーキ（曲げ加工機）	press-brake
+cat	ブスバー加工機	busbar-processing-machine
+cat	形巻コイル成形機	form-wound-coil-spreader
+cat	天井クレーン（大型）	overhead-crane
+cat	レーザトラッカ	laser-tracker
+cat	負荷試験装置（ロードバンク）	load-bank
+industry	自動車	automotive
+industry	舶用エンジン	marine
+industry	データセンター向け非常用発電	datacenter-power

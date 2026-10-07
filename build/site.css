@@ -104,4 +104,4 @@ h1,h2,h3,h4,.d1,.d2,.d3,.brand b,.foot b{font-family:var(--f-head)}
 .simlink .eyebrow,.simlink>span:nth-child(3){color:var(--nmuted)}
 .mtlink.simlink>span.lnk{margin-top:8px;color:var(--naccent);font-size:15px}
 .mtpromo .vis .ilu{max-width:100%}
-.stage.thumb img,.vsi img,.mtpromo .vis img{display:block;width:100%;height:auto}
+.stage.thumb img,.vsi img,.tile .vis img{display:block;width:100%;height:auto}

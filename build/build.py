@@ -5,6 +5,7 @@ _D = _os.path.join(_os.path.dirname(_B), "data")
 import json, glob
 from parse import parse, KINDS
 import il_parts, il_pictos, il_pictos_gear
+import il_parts_marine, il_parts_marine4, il_parts_power, il_parts_power2, il_pictos_ind, il_pictos_ind2  # noqa: F401 (register drawings)
 from il_map import CATMAP, SYS_HERO, OPPIC
 from il_dmap import build as dbuild
 import pt
@@ -40,6 +41,15 @@ MATS = [
  {"n": "電子・電池材料", "s": "半導体・電子部品・電池材料・電磁鋼板・銅線", "a": "電", "kw": ["電子部品", "半導体", "NCM", "電磁鋼板", "銅", "LED", "イメージセンサ", "セル"]},
 ]
 
+# industries: every system belongs to one. Automotive-only figures (powertrain comparison) use "auto" only.
+INDUSTRIES = [
+    {"id": "auto", "n": "自動車", "en": "AUTOMOTIVE", "sub": "量産部品を、毎分の速さでつくる。"},
+    {"id": "marine", "n": "舶用エンジン", "en": "MARINE ENGINES", "sub": "数百tの機関を、1台ずつつくる。"},
+    {"id": "power", "n": "データセンター向け非常用発電", "short": "DC向け非常用発電", "en": "DATA CENTER POWER", "sub": "停電の数秒後に、電気を届ける。"},
+]
+SYS_IND = {"marine2": "marine", "marine4": "marine", "marineaux": "marine", "propulsion": "marine",
+           "genset": "power", "generator": "power", "dcpower": "power", "gasgen": "power"}
+
 systems = parse(sorted(glob.glob(_D + "/[0-9]*.txt")))
 cats, groups, cidx = [], [], {}
 for l in open(_D + "/cats.txt", encoding="utf-8"):
@@ -55,7 +65,7 @@ used = set()
 kidx = {k: i for i, k in enumerate(KINDS)}
 out_sys = []
 for s in systems:
-    os_ = {"id": s["id"], "name": s["name"], "sub": s["sub"], "desc": s["desc"], "hero": SYS_HERO[s["id"]], "parts": []}
+    os_ = {"id": s["id"], "name": s["name"], "sub": s["sub"], "desc": s["desc"], "hero": SYS_HERO[s["id"]], "ind": SYS_IND.get(s["id"], "auto"), "parts": []}
     for p in s["parts"]:
         op = {"id": p["id"], "name": p["name"], "mat": p["mat"], "desc": p["desc"], "ops": []}
         for o in p["ops"]:
@@ -90,7 +100,7 @@ import il_gscene as GS
 HERO = {"hob": GS.sc_hobbing(318, 228, 1.42, lab=False), "grind": GS.sc_gear_grind(318, 222, 1.42, lab=False),
         "pair": GS.sc_hypoid_pair(372, 212, 1.2, lab=False), "mesh": GS.sc_mesh(318, 226, 1.3, lab=False)}
 ill = {"h": HERO, "p": {k: f() for k, f in il_parts.PARTS.items()}, "q": {k: f() for k, f in il_pictos.PICTOS.items()}, "d": DET, "o": OIDX, "pool": pool}
-data = {"kinds": kinds, "cats": cats, "groups": groups, "mats": MATS, "systems": out_sys, "ill": ill, "pt": pt.build(systems)}
+data = {"kinds": kinds, "cats": cats, "groups": groups, "mats": MATS, "systems": out_sys, "ill": ill, "pt": pt.build([s for s in systems if SYS_IND.get(s["id"], "auto") == "auto"]), "inds": INDUSTRIES}
 js = json.dumps(data, ensure_ascii=False, separators=(",", ":")).replace("</", "<\\/")
 tpl = open(_B + "/template.html", encoding="utf-8").read().replace("/*__ILCSS__*/", open(_B + "/il.css", encoding="utf-8").read())
 tpl = tpl.replace("<!--ILDEFS-->", open(_B + "/il_defs.svg", encoding="utf-8").read())

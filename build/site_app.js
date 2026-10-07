@@ -1,4 +1,4 @@
-/* 自動車製造工程図鑑 — runtime for the static site: menu, search, tabs, carousels. */
+/* 製造工程図鑑 — runtime for the static site: menu, search, tabs, carousels. */
 (function(){
 "use strict";
 var d = document, RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -61,7 +61,7 @@ if(sres){
   var si = $("#sq"); if(si) si.value = raw;
   if(q){
     $("#sh1").textContent = "「" + raw + "」";
-    d.title = "「" + raw + "」の検索結果｜自動車製造工程図鑑";
+    d.title = "「" + raw + "」の検索結果｜製造工程図鑑";
     sres.innerHTML = "<p class=\"sub\">検索しています…</p>";
     loadIdx(function(){
       var rp = IDX.p.filter(function(p){ return has(p[0], q) || has(p[1], q) || has(p[2], q); });

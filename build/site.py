@@ -1,4 +1,4 @@
-"""Static site generator for 自動車製造工程図鑑.
+"""Static site generator for 製造工程図鑑 (formerly 自動車製造工程図鑑).
 
   python3 site.py            build into ../out
   BUILD_DATE=2026-10-01 python3 site.py   (override the date used for new/changed pages)
@@ -31,7 +31,10 @@ CACHE = B + "/.cache"
 CFG = json.load(open(B + "/site_config.json", encoding="utf-8"))
 BASE = CFG["base"].rstrip("/")
 TODAY = os.environ.get("BUILD_DATE") or datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).date().isoformat()
-SITE = "自動車製造工程図鑑"
+SITE = "製造工程図鑑"
+SITE_EN = "MANUFACTURING ATLAS"
+SITE_OLD = "自動車製造工程図鑑"
+NAVS = [("ind-auto", "/automotive/", "自動車"), ("ind-marine", "/marine/", "舶用エンジン"), ("ind-power", "/datacenter-power/", "DC非常用発電"), ("kinds", "/methods/", "加工法"), ("eq", "/equipment/", "設備"), ("mt", "/machine-tools/", "工作機械")]
 FONTS = "/tmp/claude-0/-home-claude/d64aa5d8-91f8-5c74-a54e-ffbc453c9481/scratchpad/fonts/node_modules/@fontsource"
 FONTS = os.environ.get("FONTSOURCE", FONTS if os.path.isdir(FONTS) else B + "/node_modules/@fontsource")
 os.makedirs(STATE, exist_ok=True)
@@ -78,6 +81,11 @@ for c in cats:
 data["gslug"] = [SL[("group", x)] for x in groups]
 for k in kinds:
     k["slug"] = SL[("method", k["n"])]
+inds = data["inds"]
+for d_ in inds:
+    d_["slug"] = SL[("industry", d_["n"])]
+IND_BY = {d_["id"]: d_ for d_ in inds}
+IND_SHORT = {"auto": "自動車", "marine": "舶用エンジン", "power": "発電設備"}
 for lst, key in ((systems, "slug"), (parts, "slug"), (cats, "slug"), (kinds, "slug")):
     dup = [x for x, n in Counter(o[key] for o in lst).items() if n > 1]
     assert not dup, dup
@@ -199,6 +207,30 @@ for f in sorted(glob.glob(_D + "/content/equipment_*.md")):
         c = CBYN[name.strip()]
         c["body"] = md(rest.strip(), set(), skip=(c["n"],))
         c["idx"] = True
+
+SBYID = {s_["id"]: s_ for s_ in systems}
+for f in sorted(glob.glob(_D + "/content/systems_*.md")):
+    for blk in re.split(r"^@sys ", open(f, encoding="utf-8").read(), flags=re.M)[1:]:
+        sid, rest = blk.split("\n", 1)
+        s_ = SBYID[sid.strip()]
+        m = re.match(r"lead:\s*(.+)\n", rest)
+        s_["lead"] = m.group(1).strip()
+        s_["body"] = md(rest[m.end():], set(), skip=(s_["name"],))
+for f in sorted(glob.glob(_D + "/content/industry_*.md")):
+    for blk in re.split(r"^@industry ", open(f, encoding="utf-8").read(), flags=re.M)[1:]:
+        iid, rest = blk.split("\n", 1)
+        d_ = IND_BY[iid.strip()]
+        m = re.match(r"lead:\s*(.+)\n", rest)
+        d_["lead"] = m.group(1).strip()
+        d_["body"] = md(rest[m.end():], set())
+for d_ in inds:
+    assert d_.get("body"), ("industry without prose", d_["id"])
+
+
+def inds_of_ci(ci):
+    seen = {p["_s"]["ind"] for p in parts for o in p["ops"] for x in o["m"] + o["x"] if x[0] == ci}
+    return [d_["id"] for d_ in inds if d_["id"] in seen]
+
 
 # ---- machine-tool atlas (/machine-tools/)
 import il_mt
@@ -327,6 +359,7 @@ data["site"] = {
     "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.ja", "base": BASE + "/",
     "issues": CFG["issues"], "publishedJa": ja_date(CFG["published"]), "quick": CFG["quick"],
     "analytics": bool(CFG.get("cf_analytics_token", "")),
+    "history": ["%s　%s" % (ja_date(h_["date"]), h_["text"]) for h_ in CFG.get("history", [])],
 }
 
 # ============================================================ 2. render every route in headless Chromium
@@ -346,6 +379,7 @@ for s in systems:
 ROUTES = [{"t": "home", "u": "/"}, {"t": "systems", "u": "/systems/"}, {"t": "pt", "u": "/powertrain/"}, {"t": "map", "u": "/map/"},
           {"t": "eqi", "u": "/equipment/"}, {"t": "methods", "u": "/methods/"}, {"t": "about", "u": "/about/"},
           {"t": "search", "u": "/search/"}, {"t": "404", "u": "/404.html"}]
+ROUTES += [{"t": "ind", "k": d_["slug"], "u": "/%s/" % d_["slug"], "o": d_} for d_ in inds]
 ROUTES += [{"t": "sys", "k": s["slug"], "u": "/systems/%s/" % s["slug"], "o": s} for s in systems]
 ROUTES += [{"t": "part", "k": p["slug"], "u": "/parts/%s/" % p["slug"], "o": p} for p in parts]
 ROUTES += [{"t": "op", "k": p["slug"], "no": o["no"], "u": "/parts/%s/op%d/" % (p["slug"], o["no"]), "o": o, "p": p} for p in parts for o in p["ops"]]
@@ -426,12 +460,19 @@ for r in ROUTES:
     t = r["t"]
     r["index"] = True
     if t == "home":
-        r["title"], r["full"] = SITE + "｜部品・工程・工作機械を図解で知る", True
-        r["desc"] = "クルマの部品がどんな工程と工作機械・検査機でつくられるかを図解で解説。%d部品・%d工程・%d設備と、EV・ハイブリッド・エンジン車の違いまで。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats))
-        r["eyebrow"], r["name"], r["stats"] = "AUTOMOTIVE MANUFACTURING ATLAS", "クルマは、工程でできている。", "%d部品・%d工程・%d設備" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats))
+        r["title"], r["full"] = SITE + "｜自動車・舶用エンジン・発電設備の部品と工作機械を図解", True
+        r["desc"] = "自動車、舶用エンジン、データセンター向け非常用発電設備の部品が、どんな工程と工作機械・検査機でつくられるかを図解で解説。%d部品・%d工程・%d設備と、EV・ハイブリッド・エンジン車の違いまで。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats))
+        r["eyebrow"], r["name"], r["stats"] = "MANUFACTURING PROCESS ATLAS", "ものは、工程でできている。", "%d部品・%d工程・%d設備" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats))
+    elif t == "ind":
+        d_ = r["o"]
+        ss = [s_ for s_ in systems if s_["ind"] == d_["id"]]
+        n_p, n_o = sum(len(s_["parts"]) for s_ in ss), sum(len(p["ops"]) for s_ in ss for p in s_["parts"])
+        r["title"] = ("%sの製造工程｜%d系統・%d部品・%d工程と工作機械を図解" % ("自動車部品" if d_["id"] == "auto" else d_["n"], len(ss), n_p, n_o))
+        r["desc"] = clip(d_["lead"] + " 収録系統：" + "、".join(s_["name"] for s_ in ss), 130)
+        r["eyebrow"], r["name"], r["stats"] = "INDUSTRY · " + d_["en"], d_["n"], "%d系統・%d部品・%d工程" % (len(ss), n_p, n_o)
     elif t == "systems":
-        r["title"] = "自動車の部品一覧（系統別）｜%d部品の製造工程" % len(parts)
-        r["desc"] = "自動車を%d系統に分け、エンジン・駆動系・シャシー・電動化ユニットなど%d部品の製造工程と使う設備をまとめた一覧。" % (len(systems), len(parts))
+        r["title"] = "部品一覧（業界・系統別）｜%d部品の製造工程" % len(parts)
+        r["desc"] = "自動車・舶用エンジン・データセンター向け非常用発電の%d系統、エンジン・駆動系・電動化ユニット・舶用主機・発電機セットなど%d部品の製造工程と使う設備をまとめた一覧。" % (len(systems), len(parts))
         r["eyebrow"], r["name"], r["stats"] = "SYSTEMS", "系統から、部品へ。", "%d系統・%d部品" % (len(systems), len(parts))
     elif t == "sys":
         s = r["o"]
@@ -456,30 +497,32 @@ for r in ROUTES:
         r["eyebrow"], r["name"], r["stats"] = "POWERTRAIN", "EVとエンジン車、つくり方の違い", "ガソリン %d工程 → EV %d工程" % (m0["ops"], m4["ops"])
     elif t == "map":
         n_ops = sum(len(p["ops"]) for p in parts)
-        r["title"] = "自動車部品の全工程マップ｜%d部品・%d工程を一覧" % (len(parts), n_ops)
+        r["title"] = "全工程マップ｜自動車・舶用・発電の%d部品・%d工程を一覧" % (len(parts), n_ops)
         r["desc"] = "%d部品・%d工程を1枚に。部品ごとに加工の順番と工法（鋳造・鍛造・切削・研削・熱処理・検査など）を色分けして一覧できる工程マップ。" % (len(parts), n_ops)
         r["eyebrow"], r["name"], r["stats"] = "PROCESS MAP", "全工程を、一枚に。", "%d部品・%d工程" % (len(parts), n_ops)
     elif t == "eqi":
-        r["title"] = "自動車部品の生産設備・検査装置一覧｜%d種類を%d分類で解説" % (len(cats), len(groups))
-        r["desc"] = "旋盤・マシニングセンタ・研削盤・歯車加工機から、鋳造・プレス・溶接設備、三次元測定機やX線検査装置まで。自動車部品の工場で使う%d種類の設備を分類して解説。" % len(cats)
+        r["title"] = "生産設備・検査装置一覧｜%d種類を%d分類で解説" % (len(cats), len(groups))
+        r["desc"] = "旋盤・マシニングセンタ・研削盤・歯車加工機から、鋳造・プレス・溶接設備、三次元測定機やX線検査装置まで。自動車・舶用エンジン・発電設備の部品工場で使う%d種類の設備を分類して解説。" % len(cats)
         r["eyebrow"], r["name"], r["stats"] = "EQUIPMENT", "%dの設備。" % len(cats), "%d分類" % len(groups)
     elif t == "eqg":
         gi = r["gi"]
         lst = [ci for ci, c in enumerate(cats) if c["g"] == gi]
         lst.sort(key=lambda ci: (-len(use[ci]), ci))
         r["title"] = "%sの設備の種類｜%sなど%d種類" % (groups[gi], "・".join(cats[ci]["n"] for ci in lst[:2]), len(lst))
-        r["desc"] = clip("%sに分類される%d種類の設備（%sなど）の仕組みと、自動車部品のどの工程で使われるかを解説。" % (groups[gi], len(lst), "、".join(cats[ci]["n"] for ci in lst[:3])))
+        r["desc"] = clip("%sに分類される%d種類の設備（%sなど）の仕組みと、どの部品のどの工程で使われるかを解説。" % (groups[gi], len(lst), "、".join(cats[ci]["n"] for ci in lst[:3])))
         r["eyebrow"], r["name"], r["stats"] = "EQUIPMENT GROUP", groups[gi], "%d種類" % len(lst)
         r["ci0"] = lst[0]
     elif t == "eq":
         c, ci = r["o"], r["ci"]
         r["index"] = bool(c.get("idx"))
-        r["title"] = ("%sの自動車部品での使われ方｜工程と使用例" if c.get("mt") else "%sとは｜仕組みと自動車部品での使われ方" if r["index"] else "%s｜使われる自動車部品と工程") % c["n"]
+        wi = inds_of_ci(ci)
+        where = "自動車部品" if wi == ["auto"] else "・".join(IND_SHORT[x] for x in wi) + "の部品"
+        r["title"] = ("%sの" + where + "での使われ方｜工程と使用例" if c.get("mt") else "%sとは｜仕組みと" + where + "での使われ方" if r["index"] else "%s｜使われる" + where + "と工程") % c["n"]
         r["desc"] = clip(c["d"])
         r["eyebrow"], r["name"], r["stats"] = "EQUIPMENT · " + groups[c["g"]], c["n"], "%d工程・%d部品で使用" % (len(use[ci]), len({x[0]["slug"] for x in use[ci]}))
     elif t == "methods":
         r["title"] = "加工法一覧｜自動車部品をつくる%dの工法" % len(kinds)
-        r["desc"] = "鋳造・鍛造・プレス・切削・研削・歯切り・熱処理・溶接など、自動車部品をつくる%dの加工法を、仕組み・種類・使う設備と一緒に解説。" % len(kinds)
+        r["desc"] = "鋳造・鍛造・プレス・切削・研削・歯切り・熱処理・溶接など、自動車・舶用エンジン・発電設備の部品をつくる%dの加工法を、仕組み・種類・使う設備と一緒に解説。" % len(kinds)
         r["eyebrow"], r["name"], r["stats"] = "PROCESSES", "加工法から探す。", "%dの工法" % len(kinds)
     elif t == "method":
         k = r["o"]
@@ -543,7 +586,7 @@ for r in ROUTES:
         r["eyebrow"], r["name"], r["stats"] = "TROUBLE CASEBOOK", "工作機械のトラブル事例集", "%d件・%d機種" % (n_inc, len(SIM_TYPES))
     elif t == "about":
         r["title"] = "この図鑑について｜運営者・編集方針・利用条件"
-        r["desc"] = "自動車製造工程図鑑の運営者（%s）、編集方針、図解と文章の利用条件（CC BY-NC 4.0）、誤りの報告方法。" % CFG["handle"]
+        r["desc"] = "製造工程図鑑（旧・自動車製造工程図鑑）の運営者（%s）、編集方針、図解と文章の利用条件（CC BY-NC 4.0）、誤りの報告方法。" % CFG["handle"]
         r["eyebrow"], r["name"], r["stats"] = "ABOUT", "この図鑑について", CFG["handle"]
     elif t == "search":
         r["index"], r["title"], r["desc"] = False, "検索", "部品・工程・設備・メーカー・材料を検索。"
@@ -571,7 +614,10 @@ def sig(r):
         return jdump([groups[r["gi"]], [[c["n"], c["d"]] for c in cats if c["g"] == r["gi"]]])
     if t == "sys":
         s = r["o"]
-        return jdump([s["name"], s["desc"], [p["name"] for p in s["parts"]]])
+        return jdump([s["name"], s["desc"], [p["name"] for p in s["parts"]]] + ([s.get("lead"), s.get("body")] if s.get("body") else []))
+    if t == "ind":
+        d_ = r["o"]
+        return jdump([d_["n"], d_.get("lead"), d_.get("body"), [[s_["name"], [p["name"] for p in s_["parts"]]] for s_ in systems if s_["ind"] == d_["id"]]])
     if t == "home":
         return jdump([data["pt"], MET, [p["name"] for p in parts], [c["n"] for c in cats], len(MT_TYPES)])
     if t == "pt":
@@ -647,7 +693,7 @@ def ranges(ur):
 
 
 font_css, nfiles, fbytes = [], 0, 0
-HEAD_TXT = "".join(re.findall(r"<h[1-4][^>]*>(.*?)</h[1-4]>", "".join(r["html"] for r in ROUTES), re.S)) + "工程図鑑自動車製造工程図鑑"
+HEAD_TXT = "".join(re.findall(r"<h[1-4][^>]*>(.*?)</h[1-4]>", "".join(r["html"] for r in ROUTES), re.S)) + "工程図鑑自動車製造工程図鑑" + SITE + "".join(n for _, _, n in NAVS)
 HEAD_USED = set(ord(ch) for ch in html.unescape(re.sub(r"<[^>]+>", "", HEAD_TXT))) | set(range(0x20, 0x7F))
 for fam, fdir, weights in (("Zen Kaku Gothic New", "zen-kaku-gothic-new", (700,)), ("Jost", "jost", (200, 300, 400, 500))):
     need_cp = HEAD_USED if fam != "Jost" else USED
@@ -717,8 +763,8 @@ def og_name(r):
         return {"mtsimhub": "mt-training.jpg", "mttrouble": "mt-troubles.jpg"}[t]
     if t in ("mthome", "mtcomps", "mtautos", "mtselect"):
         return {"mthome": "machine-tools.jpg", "mtcomps": "mt-components.jpg", "mtautos": "mt-automation.jpg", "mtselect": "mt-guide.jpg"}[t]
-    if t in ("part", "sys", "eq", "method", "eqg"):
-        return "%s-%s.jpg" % ({"part": "part", "sys": "system", "eq": "equipment", "method": "method", "eqg": "group"}[t], r["k"])
+    if t in ("part", "sys", "eq", "method", "eqg", "ind"):
+        return "%s-%s.jpg" % ({"part": "part", "sys": "system", "eq": "equipment", "method": "method", "eqg": "group", "ind": "industry"}[t], r["k"])
     return {"home": "site.jpg", "systems": "systems.jpg", "pt": "powertrain.jpg", "map": "map.jpg", "eqi": "equipment.jpg", "methods": "methods.jpg", "about": "about.jpg"}.get(t)
 
 
@@ -766,7 +812,7 @@ for r in ROUTES:
             pic = first_svg(BY_U["/equipment/%s/" % cats[r["ci0"]]["slug"]]["html"])
     if r["t"] == "eqg":
         pic = first_svg(BY_U["/equipment/%s/" % cats[r["ci0"]]["slug"]]["html"])
-    key = sha(jdump([r["eyebrow"], r["name"], r["stats"], pic, 4] + ([SIMCSS] if "simv" in pic else [])))[:20]
+    key = sha(jdump([r["eyebrow"], r["name"], r["stats"], pic, 5, SITE, SITE_EN] + ([SIMCSS] if "simv" in pic else [])))[:20]
     og_jobs.append((r, name, pic, key))
 
 need = [j for j in og_jobs if not os.path.exists(CACHE + "/og/%s.jpg" % j[3])]
@@ -798,8 +844,8 @@ if need:
             fs = 64 if len(nm) <= 8 else 54 if len(nm) <= 12 else 46 if len(nm) <= 18 else 40
             if "simv" in pic:
                 pic = '<div class="ogsim">%s</div>' % pic
-            doc = "<!doctype html><html lang=ja><head><meta charset=utf-8><style>%s%s%s%s</style></head><body>%s<div class=og><div class=tx><div class=eb>%s</div><h1 style='font-size:%dpx'>%s</h1><div class=st>%s</div><div class=br>%s<span>%s<br><small>AUTOMOTIVE ATLAS</small></span></div></div><div class=pic>%s</div></div></body></html>" % (
-                zcss, jcss, CSS_APP, OGCSS + SIMCSS + ".ogsim{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#16181C}.ogsim .simv{width:100%;height:auto}", DEFS, html.escape(r["eyebrow"]), fs, html.escape(nm), html.escape(r["stats"]), BRAND, SITE, pic)
+            doc = "<!doctype html><html lang=ja><head><meta charset=utf-8><style>%s%s%s%s</style></head><body>%s<div class=og><div class=tx><div class=eb>%s</div><h1 style='font-size:%dpx'>%s</h1><div class=st>%s</div><div class=br>%s<span>%s<br><small>%s</small></span></div></div><div class=pic>%s</div></div></body></html>" % (
+                zcss, jcss, CSS_APP, OGCSS + SIMCSS + ".ogsim{width:100%;height:100%;display:flex;align-items:center;justify-content:center;background:#16181C}.ogsim .simv{width:100%;height:auto}", DEFS, html.escape(r["eyebrow"]), fs, html.escape(nm), html.escape(r["stats"]), BRAND, SITE, SITE_EN, pic)
             open(CACHE + "/og_tmp.html", "w", encoding="utf-8").write(doc)
             pg.goto("file://" + CACHE + "/og_tmp.html")
             pg.evaluate("document.fonts.ready")
@@ -828,14 +874,15 @@ open(OUT + "/site.webmanifest", "w").write(json.dumps({"name": SITE, "short_name
 
 # ============================================================ 7. structured data
 PERSON = {"@type": "Person", "@id": BASE + "/about/#author", "name": CFG["handle"], "url": BASE + "/about/", "description": CFG["bio"]}
-WEBSITE = {"@type": "WebSite", "@id": BASE + "/#website", "name": SITE, "alternateName": "AUTOMOTIVE ATLAS", "url": BASE + "/", "inLanguage": "ja", "publisher": {"@id": PERSON["@id"]}}
+WEBSITE = {"@type": "WebSite", "@id": BASE + "/#website", "name": SITE, "alternateName": [SITE_EN, SITE_OLD], "url": BASE + "/", "inLanguage": "ja", "publisher": {"@id": PERSON["@id"]}}
 LIC = "https://creativecommons.org/licenses/by-nc/4.0/"
 
 
 def crumbs_ld(r):
     items = [("トップ", "/")] + [(c[0], c[1] if len(c) > 1 else r["u"]) for c in r["crumbs"]]
     if r["t"] == "part":
-        items = [("トップ", "/"), ("系統", "/systems/"), (r["o"]["_s"]["name"], "/systems/%s/" % r["o"]["_s"]["slug"]), (r["o"]["name"], r["u"])]
+        d_ = IND_BY[r["o"]["_s"]["ind"]]
+        items = [("トップ", "/"), (d_["n"], "/%s/" % d_["slug"]), (r["o"]["_s"]["name"], "/systems/%s/" % r["o"]["_s"]["slug"]), (r["o"]["name"], r["u"])]
     return {"@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "item": BASE + u} for i, (n, u) in enumerate(items)]}
 
 
@@ -854,7 +901,7 @@ def ld(r):
     art = {"@type": "Article", "@id": url + "#article", "headline": r["title"].split("｜")[0][:110], "description": r["desc"], "image": [BASE + r["og"]],
            "author": {"@id": PERSON["@id"]}, "publisher": {"@id": PERSON["@id"]}, "datePublished": r["pub"], "dateModified": r["mod"],
            "inLanguage": "ja", "mainEntityOfPage": {"@id": url + "#webpage"}, "isPartOf": {"@id": WEBSITE["@id"]}, "license": LIC}
-    if r["t"] in ("part", "eq", "method", "sys", "eqg", "mttype", "mtcomp", "mtauto", "mtguide"):
+    if r["t"] in ("part", "eq", "method", "sys", "eqg", "mttype", "mtcomp", "mtauto", "mtguide", "ind"):
         art["about"] = {"@type": "Thing", "name": r["name"]}
     elif r["t"] == "mtsim":
         art["about"] = {"@type": "Thing", "name": r["o"]["name"], "url": BASE + "/machine-tools/%s/" % r["k"]}
@@ -863,6 +910,8 @@ def ld(r):
         items = [(s["name"], "/systems/%s/" % s["slug"]) for s in systems]
     elif r["t"] == "sys":
         items = [(p["name"], "/parts/%s/" % p["slug"]) for p in r["o"]["parts"]]
+    elif r["t"] == "ind":
+        items = [(s_["name"], "/systems/%s/" % s_["slug"]) for s_ in systems if s_["ind"] == r["o"]["id"]]
     elif r["t"] == "eqi":
         items = [(gname, "/equipment/group/%s/" % gs) for gname, gs in zip(groups, data["gslug"])]
     elif r["t"] == "eqg":
@@ -883,7 +932,7 @@ def ld(r):
     if items:
         out.append({"@type": "ItemList", "itemListElement": [{"@type": "ListItem", "position": i + 1, "name": n, "url": BASE + u} for i, (n, u) in enumerate(items)]})
     if r["t"] == "pt":
-        out.append({"@type": "Dataset", "name": "パワートレイン別の部品構成・工程数・設備需要（自動車製造工程図鑑）",
+        out.append({"@type": "Dataset", "name": "パワートレイン別の部品構成・工程数・設備需要（%s）" % SITE,
                     "description": "ガソリン車・ディーゼル車・ハイブリッド車・軽自動車・電気自動車の5つの代表仕様について、本図鑑に収録した部品ごとの搭載数量と、そこから積み上げた工程数・機械加工の工程数の目安をまとめたデータ。",
                     "url": url, "license": LIC, "creator": {"@id": PERSON["@id"]}, "inLanguage": "ja", "dateModified": r["mod"],
                     "distribution": [{"@type": "DataDownload", "encodingFormat": "text/csv", "contentUrl": BASE + "/powertrain/powertrain-comparison.csv"}]})
@@ -891,7 +940,7 @@ def ld(r):
 
 
 # ============================================================ 8. write pages
-NAVS = [("systems", "/systems/", "系統"), ("pt", "/powertrain/", "パワートレイン比較"), ("map", "/map/", "工程マップ"), ("kinds", "/methods/", "加工法"), ("eq", "/equipment/", "設備"), ("mt", "/machine-tools/", "工作機械")]
+assert [u for _, u, _ in NAVS[:3]] == ["/%s/" % d_["slug"] for d_ in inds]
 BRANDSVG = '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 3v26M3 16h26" stroke="currentColor" stroke-width="1" opacity=".5"/><path d="M16 16V3a13 13 0 0 1 13 13Z" fill="currentColor"/><path d="M16 16v13A13 13 0 0 1 3 16Z" fill="currentColor"/></svg>'
 X = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>'
 
@@ -899,7 +948,7 @@ X = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.
 def shell_top(nav):
     links = "".join('<a href="%s"%s>%s</a>' % (u, ' aria-current="page"' if k == nav else "", n) for k, u, n in NAVS)
     return ('<a class="skip" href="#main">本文へスキップ</a>' + DEFS +
-            '<header class="gn"><div class="in"><a class="brand" href="/" aria-label="自動車製造工程図鑑 トップへ">%s<span><b>工程図鑑</b><small lang="en">AUTOMOTIVE ATLAS</small></span></a>'
+            '<header class="gn"><div class="in"><a class="brand" href="/" aria-label="製造工程図鑑 トップへ">%s<span><b>工程図鑑</b><small lang="en">MANUFACTURING ATLAS</small></span></a>'
             '<nav aria-label="メイン">%s</nav><div class="icons">'
             '<button class="ib" id="sbtn" type="button" aria-label="検索" aria-controls="sov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.6-3.6"/></svg></button>'
             '<button class="ib menu" id="mbtn" type="button" aria-label="メニュー" aria-controls="mov"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 9h16M4 15h16"/></svg></button>'
@@ -909,10 +958,10 @@ def shell_top(nav):
             '<div class="spacer"></div>') % (BRANDSVG, links, X, SHELL["qs"], X, SHELL["mm"])
 
 
-FOOT = ('<footer class="foot"><div class="wrap in"><div><b>自動車製造工程図鑑</b><span class="en" lang="en" style="letter-spacing:.3em;font-size:10.5px">AUTOMOTIVE MANUFACTURING ATLAS</span></div><div>'
-        '<p>工程・設備・数値は乗用車の量産で一般的な構成と目安をまとめたもので、実際の工程はメーカー・車種・生産量によって異なります。部品・工程・設備の数はこの図鑑の分類で数えたものです。パワートレイン比較の数量は代表的な仕様を仮定した目安です。図はすべて模式図です。</p>'
+FOOT = ('<footer class="foot"><div class="wrap in"><div><b>製造工程図鑑</b><span class="en" lang="en" style="letter-spacing:.3em;font-size:10.5px">MANUFACTURING PROCESS ATLAS</span></div><div>'
+        '<p>工程・設備・数値は、自動車は乗用車の量産、舶用エンジンと発電設備は受注生産で一般的な構成と目安をまとめたもので、実際の工程は製品・メーカー・生産量によって異なります。部品・工程・設備の数はこの図鑑の分類で数えたものです。パワートレイン比較の数量は代表的な仕様を仮定した目安です。図はすべて模式図です。</p>'
         '<p>代表メーカーは各設備分野でよく知られる例示で、網羅や推奨ではありません。社名・製品ラインアップは変わることがあるため、個別の案件では最新情報を確認してください。</p>'
-        '<nav aria-label="フッター"><a href="/">トップ</a><a href="/systems/">系統</a><a href="/powertrain/">パワートレイン比較</a><a href="/map/">工程マップ</a><a href="/methods/">加工法</a><a href="/equipment/">設備</a><a href="/machine-tools/">工作機械図鑑</a><a href="/about/">この図鑑について</a></nav>'
+        '<nav aria-label="フッター"><a href="/">トップ</a><a href="/automotive/">自動車</a><a href="/marine/">舶用エンジン</a><a href="/datacenter-power/">DC向け非常用発電</a><a href="/systems/">系統の一覧</a><a href="/powertrain/">パワートレイン比較</a><a href="/map/">工程マップ</a><a href="/methods/">加工法</a><a href="/equipment/">設備</a><a href="/machine-tools/">工作機械図鑑</a><a href="/about/">この図鑑について</a></nav>'
         '<p class="lic">© %s %s ・ 文章と図解は <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja" rel="license">CC BY-NC 4.0</a> で提供しています</p>'
         '</div></div></footer>') % (CFG["published"][:4], html.escape(CFG["handle"]))
 
@@ -925,9 +974,9 @@ def esc_a(s):
     return html.escape(s, quote=True)
 
 
-HUB_H1 = {"/systems/": "自動車の部品一覧（系統別）", "/map/": "自動車部品の全工程マップ", "/equipment/": "自動車部品の生産設備・検査装置一覧",
-          "/methods/": "自動車部品の加工法一覧", "/powertrain/": "パワートレイン別 部品・工程・設備の比較"}
-HUB_H2 = {"/systems/": ('<div class="grid-cards">', "系統の一覧"), "/map/": ('<div class="msys">', "部品ごとの工程")}
+HUB_H1 = {"/systems/": "部品一覧（業界・系統別）", "/map/": "全工程マップ", "/equipment/": "生産設備・検査装置一覧",
+          "/methods/": "加工法一覧", "/powertrain/": "パワートレイン別 部品・工程・設備の比較（自動車）"}
+HUB_H2 = {}
 
 
 def page(r):
@@ -1001,6 +1050,33 @@ for sl, f in MT_ILL.items():
            % (f["vb"], _svgcss, re.sub(r'<svg class="ildefs"[^>]*>', "<svg>", DEFS), body_))
     open(OUT + "/machine-tools/img/%s.svg" % sl, "w", encoding="utf-8").write(doc)
 
+# part drawings as standalone SVG files (card thumbnails, lazy-loaded)
+MTK = [("mt-al", ["アルミ", "ADC", "A6", "AC2"]), ("mt-fe", ["鋳鉄", "FC2", "FCD"]), ("mt-pl", ["樹脂", "PP", "PA6", "PBT", "ABS", "ゴム", "ウレタン", "EPDM", "ポリ", "ナイロン", "フェノール"]), ("mt-cu", ["銅"])]
+
+
+def mcls(p):
+    t, best, bi = p["mat"], "", 10 ** 9
+    for cl, ws in MTK:
+        for w in ws:
+            i = t.find(w)
+            if 0 <= i < bi:
+                bi, best = i, cl
+    for w in ("鋼", "SCM", "SCr", "S45C", "SUJ", "ステンレス", "鉄"):
+        i = t.find(w)
+        if 0 <= i < bi:
+            bi, best = i, ""
+    return best
+
+
+os.makedirs(OUT + "/parts/img", exist_ok=True)
+_pcss = _svgcss + "svg{--accent:#2D5BFF;--ink2:#3A3A3F}@media (prefers-color-scheme:dark){svg{--accent:#86A0FF;--ink2:#D2D2D7}}"
+_pdefs = re.sub(r'<svg class="ildefs"[^>]*>', "<svg>", DEFS)
+for s_ in systems:
+    for p in s_["parts"]:
+        body_ = data["ill"]["p"][s_["id"] + "." + p["id"]]
+        open(OUT + "/parts/img/%s.svg" % p["slug"], "w", encoding="utf-8").write(
+            '<svg xmlns="http://www.w3.org/2000/svg" class="ilu %s" viewBox="0 0 320 200"><style>%s</style>%s%s</svg>' % (mcls(p), _pcss, _pdefs, body_))
+
 # redirects: tiny pages that forward old URLs
 for a, b in REDIR.items():
     fn = OUT + (a + "index.html" if a.endswith("/") else a)
@@ -1017,8 +1093,8 @@ open(OUT + "/sitemap.xml", "w", encoding="utf-8").write("\n".join(sm) + "\n")
 BLOCK = ["GPTBot", "Google-Extended", "CCBot", "ClaudeBot", "anthropic-ai", "Applebot-Extended", "Bytespider", "meta-externalagent", "Meta-ExternalAgent", "cohere-training-data-crawler", "Diffbot", "Omgilibot", "Amazonbot", "cohere-ai", "AI2Bot", "FacebookBot", "Timpibot", "PanguBot", "ImagesiftBot"]
 robots = "# 検索エンジンとAI検索は歓迎します。AIの学習用クローラーはお断りしています。\n\n" + "".join("User-agent: %s\nDisallow: /\n\n" % b for b in BLOCK) + "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE
 open(OUT + "/robots.txt", "w", encoding="utf-8").write(robots)
-L = ["# %s（AUTOMOTIVE ATLAS）" % SITE, "", "> 自動車の部品がどんな工程と工作機械・検査機でつくられるかを図解で解説する日本語の図鑑。%d部品・%d工程・%d設備（数はこの図鑑の分類による）と、パワートレイン別の比較、工作機械図鑑（機種・構成部品・自動化・選び方）を収録。運営：%s。文章と図解は CC BY-NC 4.0。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats), CFG["handle"]), ""]
-for head_, ts in (("主要ページ", ("home", "systems", "pt", "map", "methods", "eqi", "about")), ("加工法", ("method",)), ("系統", ("sys",)), ("部品", ("part",)), ("設備の分類", ("eqg",)), ("設備", ("eq",)), ("工作機械図鑑", ("mthome", "mtselect", "mtcomps", "mtautos")), ("工作機械の機種", ("mttype",)), ("工作機械の構成部品", ("mtcomp",)), ("自動化・周辺機器", ("mtauto",)), ("比較ガイド", ("mtguide",)), ("操作トレーニングとトラブル事例", ("mtsimhub", "mttrouble", "mtsim"))):
+L = ["# %s（%s）" % (SITE, SITE_EN), "", "> 自動車・舶用エンジン・データセンター向け非常用発電設備の部品が、どんな工程と工作機械・検査機でつくられるかを図解で解説する日本語の図鑑（旧称：自動車製造工程図鑑）。%d部品・%d工程・%d設備（数はこの図鑑の分類による）と、パワートレイン別の比較、工作機械図鑑（機種・構成部品・自動化・選び方）を収録。運営：%s。文章と図解は CC BY-NC 4.0。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats), CFG["handle"]), ""]
+for head_, ts in (("主要ページ", ("home", "systems", "pt", "map", "methods", "eqi", "about")), ("業界", ("ind",)), ("加工法", ("method",)), ("系統", ("sys",)), ("部品", ("part",)), ("設備の分類", ("eqg",)), ("設備", ("eq",)), ("工作機械図鑑", ("mthome", "mtselect", "mtcomps", "mtautos")), ("工作機械の機種", ("mttype",)), ("工作機械の構成部品", ("mtcomp",)), ("自動化・周辺機器", ("mtauto",)), ("比較ガイド", ("mtguide",)), ("操作トレーニングとトラブル事例", ("mtsimhub", "mttrouble", "mtsim"))):
     L.append("## " + head_)
     for r in idx:
         if r["t"] in ts:
@@ -1028,12 +1104,14 @@ open(OUT + "/llms.txt", "w", encoding="utf-8").write("\n".join(L))
 # powertrain CSV (Dataset)
 rows = ["系統,部品," + ",".join(t["n"] for t in data["pt"]["types"])]
 for s in systems:
+    if s["ind"] != "auto":
+        continue
     for p in s["parts"]:
         q = data["pt"]["q"][s["id"] + "." + p["id"]]
         rows.append('"%s","%s",%s' % (s["name"], p["name"], ",".join(str(v) for v in q)))
 rows += ["", "指標," + ",".join(t["n"] for t in data["pt"]["types"]), "部品の種類," + ",".join(str(m["parts"]) for m in MET), "工程," + ",".join(str(m["ops"]) for m in MET),
          "機械加工の工程," + ",".join(str(m["mops"]) for m in MET), "機械加工のボリューム（ガソリン車=100）," + ",".join(str(m["vol"]) for m in MET),
-         "", "出典：自動車製造工程図鑑（%s） %s/powertrain/  CC BY-NC 4.0。代表的な仕様を仮定した目安。" % (CFG["handle"], BASE)]
+         "", "出典：%s（%s） %s/powertrain/  CC BY-NC 4.0。代表的な仕様を仮定した目安。" % (SITE, CFG["handle"], BASE)]
 open(OUT + "/powertrain/powertrain-comparison.csv", "w", encoding="utf-8-sig").write("\n".join(rows) + "\n")
 open(OUT + "/.nojekyll", "w").write("")
 if CFG.get("cname"):

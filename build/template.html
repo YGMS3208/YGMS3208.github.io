@@ -551,6 +551,11 @@ function kchip(ki){ return "<span class=\"kchip f" + KF[ki] + "\"><i></i>" + esc
 
 /* ---------- indexes ---------- */
 var sysById = {}, parts = [], ops = [], partByKey = {};
+var INDS = D.inds || [], indById = {};
+INDS.forEach(function(d){ indById[d.id] = d; });
+function indOf(s){ return indById[s.ind] || INDS[0]; }
+function sysIn(id){ return D.systems.filter(function(s){ return s.ind === id; }); }
+function indName(d){ return d.short || d.n; }
 D.systems.forEach(function(s, si){
   s.si = si; sysById[s.id] = s;
   s.parts.forEach(function(p){ p.s = s; parts.push(p); partByKey[s.id + "." + p.id] = p; p.ops.forEach(function(o, i){ o.p = p; o.i = i; ops.push(o); }); });
@@ -602,6 +607,7 @@ var LEG = (function(){
 
 /* ---------- links ---------- */
 function hs(s){ return "#s-" + s.id; }
+function hi(d){ return "#i-" + d.id; }
 function hp(p){ return "#p-" + p.s.id + "-" + p.id; }
 function ho(o){ return "#o-" + o.p.s.id + "-" + o.p.id + "-" + (o.i + 1); }
 function he(ci){ return "#e-" + ci; }
@@ -632,7 +638,7 @@ function wireCarousels(){
 
 /* ---------- powertrain metrics ---------- */
 var TY = PT.types;
-function qOf(p, ti){ var q = PT.q[pkey(p)]; return q ? q[ti] : 1; }
+function qOf(p, ti){ var q = PT.q[pkey(p)]; return q ? q[ti] : 0; }
 var MET = TY.map(function(t, ti){
   var pres = parts.filter(function(p){ return qOf(p, ti) > 0; });
   var nops = 0, mops = 0, vol = 0, eq = {}, grp = {}, fam = [0, 0, 0, 0, 0];
@@ -700,15 +706,17 @@ function renderPtHome(){
 
 /* ---------- home ---------- */
 function home(){
-  var h = "<section class=\"hero night\"><div class=\"wrap t\"><p class=\"eyebrow\">AUTOMOTIVE MANUFACTURING ATLAS</p><h1 class=\"d1\"><span class=\"nw\">クルマは、</span><br><span class=\"nw\">工程で</span><span class=\"nw\">できている。</span></h1>" +
-    "<p class=\"sub\">素材から一台の完成車まで。部品をつくる工程と、そこで働く工作機械・検査機を、ひとつずつ解き明かす図鑑。</p>" +
-    "<p class=\"ctas\"><a class=\"cta\" href=\"#systems\">部品を見る</a><a class=\"lnk\" href=\"#pt\">パワートレインを比べる</a></p></div>" +
+  var h = "<section class=\"hero night\"><div class=\"wrap t\"><p class=\"eyebrow\">MANUFACTURING PROCESS ATLAS</p><h1 class=\"d1\"><span class=\"nw\">ものは、</span><br><span class=\"nw\">工程で</span><span class=\"nw\">できている。</span></h1>" +
+    "<p class=\"sub\">クルマ、船のエンジン、データセンターの非常用発電機。部品をつくる工程と、そこで働く工作機械・検査機を、ひとつずつ解き明かす図鑑。</p>" +
+    "<p class=\"ctas\"><a class=\"cta\" href=\"#industries\">業界から見る</a><a class=\"lnk\" href=\"#systems\">部品を見る</a></p></div>" +
     "<div class=\"v\">" + bigPic("hob", "ホブと歯車を同期回転させて歯を削る様子") + "<div class=\"sweep\"></div></div>" +
     "<div class=\"wrap\"><div class=\"hstats\"><div><b class=\"tn\">" + D.systems.length + "</b><span>系統</span></div><div><b class=\"tn\">" + parts.length + "</b><span>部品</span></div><div><b class=\"tn\">" + ops.length + "</b><span>工程</span></div><div><b class=\"tn\">" + C.length + "</b><span>設備</span></div></div></div></section>";
 
-  h += "<section class=\"sec\"><div class=\"wrap\"><div class=\"hd\" style=\"align-items:center;text-align:center\"><p class=\"eyebrow\">POWERTRAIN</p><h2 class=\"d2\"><span class=\"nw\">パワートレインが</span><span class=\"nw\">変われば、</span><br><span class=\"nw\">工場が変わる。</span></h2><p class=\"sub center\">ガソリン、ディーゼル、ハイブリッド、軽自動車、電気自動車。必要な部品と工程、そして工作機械の顔ぶれを比べます。</p>" + ptSeg("seg1") + "</div><div id=\"ptbox\"></div><p style=\"margin-top:48px;text-align:center\"><a class=\"lnk\" href=\"#pt\">すべての比較を見る</a></p></div></section>";
+  h += "<section class=\"sec\" id=\"industries\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">INDUSTRIES</p><h2 class=\"d2\">" + INDS.length + "つの業界を、工程で読む。</h2><p class=\"sub\">同じ旋盤やマシニングセンタでも、業界が変われば、部品の大きさも、つくる数も、品質の確かめ方も変わります。</p></div><div class=\"grid-cards\">" + INDS.map(indCard).join("") + "</div></div></section>";
 
-  h += "<section class=\"sec paper\"><div class=\"hd row wrap\"><div><p class=\"eyebrow\">SYSTEMS</p><h2 class=\"d2\">系統から、部品へ。</h2><p class=\"sub\">" + D.systems.length + "の系統、" + parts.length + "の部品。気になるところから開いてください。</p></div>" + arrowsFor("car1") + "</div>" +
+  h += "<section class=\"sec paper\"><div class=\"wrap\"><div class=\"hd\" style=\"align-items:center;text-align:center\"><p class=\"eyebrow\">AUTOMOTIVE · POWERTRAIN</p><h2 class=\"d2\"><span class=\"nw\">パワートレインが</span><span class=\"nw\">変われば、</span><br><span class=\"nw\">工場が変わる。</span></h2><p class=\"sub center\">ガソリン、ディーゼル、ハイブリッド、軽自動車、電気自動車。必要な部品と工程、そして工作機械の顔ぶれを比べます。</p>" + ptSeg("seg1") + "</div><div id=\"ptbox\"></div><p style=\"margin-top:48px;text-align:center\"><a class=\"lnk\" href=\"#pt\">すべての比較を見る</a></p></div></section>";
+
+  h += "<section class=\"sec\"><div class=\"hd row wrap\"><div><p class=\"eyebrow\">SYSTEMS</p><h2 class=\"d2\">系統から、部品へ。</h2><p class=\"sub\">" + D.systems.length + "の系統、" + parts.length + "の部品。気になるところから開いてください。</p></div>" + arrowsFor("car1") + "</div>" +
     "<div class=\"carousel\"><div class=\"track\" id=\"car1\">" + D.systems.map(sysCard).join("") + "</div></div></section>";
 
   var feat = [
@@ -716,7 +724,9 @@ function home(){
     ["", "p:ev.batcase", "ELECTRIFICATION", "電池を、守る箱。", "長さ2m級のアルミ押出材を、溶かさずに接合する。衝突と水から電池を守る筐体です。", "#p-ev-batcase"],
     ["", "p:ev.stator", "MOTOR", "銅線を、ヘアピンで。", "平角線をU字に曲げて差し込み、数百か所を溶接する。モータの効率を決める工程です。", "#p-ev-stator"],
     ["dk", "pair", "DRIVE", "曲がった歯で、力を曲げる。", "リングギヤとピニオンをペアで仕上げる、ハイポイドギヤ。", "#p-drivetrain-hypoid"],
-    ["dk", "mesh", "QUALITY", "音で、確かめる。", "マスタギヤとかみ合わせ、伝達誤差と騒音を全数判定する。", "#o-drivetrain-gear-12"]
+    ["dk", "mesh", "QUALITY", "音で、確かめる。", "マスタギヤとかみ合わせ、伝達誤差と騒音を全数判定する。", "#o-drivetrain-gear-12"],
+    ["", "p:marine2.m2crank", "MARINE", "クランク軸を、熱ではめる。", "長さ10m超、数十t以上の軸を、熱で広げた穴にはめて組み立てる。キーを使わず、締め代の摩擦だけで力を伝えます。", "#p-marine2-m2crank"],
+    ["", "p:gasgen.gtblade", "POWER", "結晶をそろえて、熱に耐える。", "1,000℃を大きく超えるガスの中で回るタービン動翼。結晶の向きをそろえた超合金を鋳造し、冷却孔と遮熱コーティングで守ります。", "#p-gasgen-gtblade"]
   ];
   h += "<section class=\"sec\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">HIGHLIGHTS</p><h2 class=\"d2\">工程の、見どころ。</h2></div><div class=\"tiles\">";
   feat.forEach(function(f){
@@ -733,6 +743,13 @@ function home(){
   show(h, null, "top");
   renderPtHome();
 }
+var IND_PIC = { auto: "engine.engineassy", marine: "marine2.m2assy", power: "genset.gsassy" };
+function indStats(id){ var ss = sysIn(id), np = 0, no = 0; ss.forEach(function(s){ np += s.parts.length; no += sysOps(s); }); return { s: ss.length, p: np, o: no }; }
+function indPic(d){ var k = IND_PIC[d.id]; return ILL.p[k] ? svgw(ILL.p[k], d.n + "の代表部品", mcls(partByKey[k])) : ""; }
+function indCard(d){
+  var st = indStats(d.id);
+  return "<a class=\"card\" href=\"" + hi(d) + "\"><div class=\"stage thumb\">" + indPic(d) + "</div><div class=\"tx\"><p class=\"eyebrow\">" + d.en + "</p><h3>" + esc(d.n) + "</h3><p>" + esc(d.sub) + "</p><span class=\"ft\"><span>" + st.s + " SYSTEMS</span><span>" + st.p + " PARTS</span><span>" + st.o + " OPS</span></span></div></a>";
+}
 function sysCard(s){
   return "<a class=\"card\" href=\"" + hs(s) + "\"><div class=\"stage thumb\">" + heroPic(s) + "</div><div class=\"tx\"><p class=\"eyebrow\">" + pad(s.si + 1) + "</p><h3>" + esc(s.name) + "</h3><p>" + esc(s.sub) + "</p><span class=\"ft\"><span>" + s.parts.length + " PARTS</span><span>" + sysOps(s) + " OPS</span></span></div></a>";
 }
@@ -742,7 +759,12 @@ function partCard(p){
 
 /* ---------- systems index / system ---------- */
 function systemsView(){
-  var h = "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">SYSTEMS</p><h1 class=\"d2\">系統から、部品へ。</h1><p class=\"sub\">クルマを" + D.systems.length + "の系統に分け、" + parts.length + "の部品・工場の工程をまとめています。</p></div><div class=\"grid-cards\">" + D.systems.map(sysCard).join("") + "</div></div></section>";
+  var h = "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">SYSTEMS</p><h1 class=\"d2\">系統から、部品へ。</h1><p class=\"sub\">" + INDS.length + "つの業界を" + D.systems.length + "の系統に分け、" + parts.length + "の部品と、その工程をまとめています。</p></div>";
+  INDS.forEach(function(d, di){
+    var ss = sysIn(d.id); if(!ss.length) return;
+    h += "<div class=\"hd\" style=\"margin:" + (di ? "72px" : "8px") + " 0 24px\"><p class=\"eyebrow\">" + d.en + "</p><h2 class=\"d3\"><a href=\"" + hi(d) + "\">" + esc(d.n) + "</a></h2></div><div class=\"grid-cards\">" + ss.map(sysCard).join("") + "</div>";
+  });
+  h += "</div></section>";
   show(h, [["系統"]], "systems");
 }
 function sysView(s){
@@ -751,7 +773,30 @@ function sysView(s){
     "<div class=\"wrap pvis\"><div class=\"stage\">" + heroPic(s) + "</div></div>" +
     "<div class=\"wrap\"><div class=\"specs\"><div><b>" + s.parts.length + "</b><span>部品</span></div><div><b>" + list.length + "</b><span>工程</span></div><div><b>" + list.filter(function(o){ return MACH[K[o.k].n]; }).length + "</b><span>機械加工の工程</span></div><div><b>" + s.parts.filter(hasD).length + "</b><span>詳細工程図のある部品</span></div></div></div>";
   h += "<section class=\"sec\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">PARTS</p><h2 class=\"d3\">" + esc(s.name) + "の部品</h2></div><div class=\"grid-cards\">" + s.parts.map(partCard).join("") + "</div></div></section>";
-  show(h, [["系統", "#systems"], [s.name]], "systems");
+  if(s.body) h += "<section class=\"sec tight paper\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">INSIGHT</p><h2 class=\"d3\">" + esc(s.name) + "を知る</h2></div><article class=\"prose\">" + (s.lead ? "<p>" + esc(s.lead) + "</p>" : "") + s.body + "</article></div></section>";
+  var sib = sysIn(s.ind).filter(function(x){ return x !== s; });
+  if(sib.length) h += "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">" + indOf(s).en + "</p><h2 class=\"d3\">" + esc(indOf(s).n) + "のほかの系統</h2></div><div class=\"pills\">" + sib.map(function(x){ return "<a class=\"pill\" href=\"" + hs(x) + "\">" + esc(x.name) + "</a>"; }).join("") + "</div></div></section>";
+  show(h, [[indOf(s).n, hi(indOf(s))], [s.name]], "ind-" + s.ind);
+}
+
+/* ---------- industry hub ---------- */
+function indEq(id, mach, n){
+  var cnt = {};
+  ops.forEach(function(o){ if(o.p.s.ind !== id) return; o.m.concat(o.x).forEach(function(r){ if(isMachineGroup(C[r[0]].g) === mach) cnt[r[0]] = (cnt[r[0]] || 0) + 1; }); });
+  var keys = Object.keys(cnt).map(Number).sort(function(a, b){ return cnt[b] - cnt[a] || a - b; });
+  return { n: keys.length, html: "<div class=\"list\">" + keys.slice(0, n).map(function(ci){ return "<a class=\"li\" href=\"" + he(ci) + "\"><span class=\"t\">" + esc(C[ci].n) + "</span><span class=\"n\">" + cnt[ci] + " 工程</span></a>"; }).join("") + "</div>" };
+}
+function industryView(d){
+  var ss = sysIn(d.id), st = indStats(d.id), em = indEq(d.id, true, 10), ei = indEq(d.id, false, 10);
+  var h = "<section class=\"phero wrap\"><p class=\"eyebrow\">INDUSTRY · " + d.en + "</p><h1 class=\"d1\" style=\"font-size:clamp(34px,5.6vw,80px)\">" + esc(d.n) + "</h1><p class=\"sub\">" + esc(d.lead || d.sub) + "</p>" +
+    (d.id === "auto" ? "<p class=\"ctas\"><a class=\"cta\" href=\"#pt\">パワートレインを比べる</a><a class=\"lnk\" href=\"#map\">工程マップを見る</a></p>" : "") + "</section>" +
+    "<div class=\"wrap pvis\"><div class=\"stage\">" + indPic(d) + "</div></div>" +
+    "<div class=\"wrap\"><div class=\"specs\"><div><b>" + st.s + "</b><span>系統</span></div><div><b>" + st.p + "</b><span>部品</span></div><div><b>" + st.o + "</b><span>工程</span></div><div><b>" + (em.n + ei.n) + "</b><span>設備・検査機の種類</span></div></div></div>";
+  h += "<section class=\"sec\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">SYSTEMS</p><h2 class=\"d3\">" + esc(d.n) + "の系統</h2></div><div class=\"grid-cards\">" + ss.map(sysCard).join("") + "</div></div></section>";
+  if(d.body) h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><article class=\"prose\">" + d.body + "</article></div></section>";
+  h += "<section class=\"sec paper\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">EQUIPMENT</p><h2 class=\"d3\">" + esc(d.n) + "でよく使う設備</h2><p class=\"sub\" style=\"font-size:16px\">この図鑑に収録した" + st.p + "部品の工程で、使われる回数が多い順に並べています。</p></div><div class=\"cols2\"><div><p class=\"h4\">加工・生産設備</p>" + em.html + "</div><div><p class=\"h4\">検査・測定・試験機</p>" + ei.html + "</div></div></div></section>";
+  h += "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">OTHER INDUSTRIES</p><h2 class=\"d3\">ほかの業界</h2></div><div class=\"grid-cards\">" + INDS.filter(function(x){ return x !== d; }).map(indCard).join("") + "</div></div></section>";
+  show(h, [[d.n]], "ind-" + d.id);
 }
 
 /* ---------- part ---------- */
@@ -763,7 +808,7 @@ function partView(p){
   p.ops.forEach(function(o){ o.m.forEach(function(r){ mc[r[0]] = (mc[r[0]] || 0) + 1; }); o.x.forEach(function(r){ ic[r[0]] = (ic[r[0]] || 0) + 1; }); });
   var h = "<section class=\"phero wrap\"><p class=\"eyebrow\"><a href=\"" + hs(s) + "\">" + esc(s.name) + "</a></p><h1 class=\"d1\" style=\"font-size:clamp(36px,6vw,84px)\">" + esc(p.name) + "</h1><p class=\"mat\">" + esc(p.mat) + "</p></section>" +
     "<div class=\"wrap pvis\"><div class=\"stage\">" + partPic(p) + "</div></div>" +
-    "<div class=\"wrap\"><div class=\"specs\"><div><b>" + p.ops.length + "</b><span>工程</span></div><div><b>" + Object.keys(mc).length + "</b><span>加工・生産設備</span></div><div><b>" + Object.keys(ic).length + "</b><span>検査・測定</span></div><div><span>搭載するパワートレイン</span>" + fitBadges(p) + "</div></div>" +
+    "<div class=\"wrap\"><div class=\"specs\"><div><b>" + p.ops.length + "</b><span>工程</span></div><div><b>" + Object.keys(mc).length + "</b><span>加工・生産設備</span></div><div><b>" + Object.keys(ic).length + "</b><span>検査・測定</span></div>" + (PT.q[pkey(p)] ? "<div><span>搭載するパワートレイン</span>" + fitBadges(p) + "</div>" : "<div><span>業界</span><div class=\"fit\"><i class=\"on\">" + esc(indOf(s).n) + "</i></div></div>") + "</div>" +
     "<p class=\"desc\" style=\"margin-top:clamp(40px,5vw,64px)\">" + esc(p.desc) + "</p></div>";
   if(hasD(p)){
     var nt = ILL.d[pkey(p)].notes;
@@ -790,7 +835,7 @@ function partView(p){
   h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">EQUIPMENT</p><h2 class=\"d3\">この部品で使う設備</h2></div><div class=\"cols2\"><div><p class=\"h4\">加工・生産設備</p>" + lst(mc) + "</div><div><p class=\"h4\">検査・測定・試験機</p>" + lst(ic) + "</div></div></div></section>";
   var idx = s.parts.indexOf(p), prev = s.parts[idx - 1], next = s.parts[idx + 1];
   h += "<div class=\"wrap\"><nav class=\"next\" aria-label=\"前後の部品\">" + (prev ? "<a href=\"" + hp(prev) + "\"><small>PREVIOUS</small><b>" + esc(prev.name) + "</b></a>" : "<span></span>") + (next ? "<a href=\"" + hp(next) + "\"><small>NEXT</small><b>" + esc(next.name) + "</b></a>" : "") + "</nav></div><div style=\"height:40px\"></div>";
-  show(h, [["系統", "#systems"], [s.name, hs(s)], [p.name]], "systems");
+  show(h, [[indOf(s).n, hi(indOf(s))], [s.name, hs(s)], [p.name]], "ind-" + s.ind);
 }
 
 /* ---------- op ---------- */
@@ -818,7 +863,7 @@ function opView(o){
   var prev = p.ops[o.i - 1], next = p.ops[o.i + 1];
   h += "<div class=\"wrap\"><nav class=\"next\" aria-label=\"前後の工程\">" + (prev ? "<a href=\"" + ho(prev) + "\"><small>" + opNo(prev) + "</small><b>" + esc(prev.n) + "</b></a>" : "<a href=\"" + hp(p) + "\"><small>PART</small><b>" + esc(p.name) + "</b></a>") +
     (next ? "<a href=\"" + ho(next) + "\"><small>" + opNo(next) + "</small><b>" + esc(next.n) + "</b></a>" : "<a href=\"" + hp(p) + "\"><small>PART</small><b>" + esc(p.name) + "</b></a>") + "</nav></div><div style=\"height:40px\"></div>";
-  show(h, [["系統", "#systems"], [s.name, hs(s)], [p.name, hp(p)], [opNo(o)]], "systems");
+  show(h, [[indOf(s).n, hi(indOf(s))], [s.name, hs(s)], [p.name, hp(p)], [opNo(o)]], "ind-" + s.ind);
   var cur = view.querySelector(".steps [aria-current]");
   if(cur){ var r = cur.closest(".steps"); r.scrollLeft = Math.max(0, cur.parentNode.offsetLeft - r.clientWidth / 2 + 56); }
 }
@@ -868,6 +913,7 @@ function renderMatrix(){
   var h = "<table><thead><tr><th>部品</th>" + TY.map(function(t){ return "<th>" + esc(t.s) + "</th>"; }).join("") + "</tr></thead><tbody>";
   D.systems.forEach(function(s){
     var rows = "";
+    if(s.ind !== "auto") return;
     s.parts.forEach(function(p){
       var q = TY.map(function(t, ti){ return qOf(p, ti); });
       var diff = q.some(function(v){ return v !== q[0]; });
@@ -899,7 +945,7 @@ function eqView(ci){
   var sysN = uniq(u.map(function(x){ return x.o.p.s.id; })).length;
   var ptv = TY.map(function(t, ti){ return MET[ti].eq[ci] || 0; });
   var h = "<section class=\"wrap ehero\"><div><p class=\"eyebrow\">" + esc(G[c.g]) + "</p><h1 class=\"d2" + (c.n.length > 7 ? " long" : "") + "\" style=\"margin:14px 0 20px\">" + esc(c.n) + "</h1><p class=\"desc\">" + esc(c.d) + "</p><div class=\"stats\" style=\"margin-top:32px\"><div><b>" + u.length + "</b><span>工程で使用</span></div><div><b>" + partsOf(ci) + "</b><span>部品</span></div><div><b>" + sysN + "</b><span>系統</span></div></div></div><div class=\"stage\">" + catPic(ci) + "</div></section>";
-  if(isMachineGroup(c.g)){
+  if(isMachineGroup(c.g) && ptv.some(function(v){ return v > 0; })){
     var mx = Math.max.apply(null, ptv) || 1;
     h += "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">BY POWERTRAIN</p><h2 class=\"d3\">パワートレイン別の必要量</h2><p class=\"sub\" style=\"font-size:16px\">使用する工程の数に、部品の搭載数量を掛けた目安です。</p></div>" +
       TY.map(function(t, ti){ var v = ptv[ti], b = ptv[0]; var cl = ti ? dcls(v, b) : ""; return "<div class=\"brow " + cl + "\" style=\"grid-template-columns:9em minmax(0,1fr) 88px\"><span>" + esc(t.n) + "</span><span class=\"b\"><i style=\"width:" + (v / mx * 100).toFixed(1) + "%\"></i></span><span class=\"n\">" + v + (ti && v !== b ? " <small>(" + (v > b ? "+" : "−") + Math.abs(v - b) + ")</small>" : "") + "</span></div>"; }).join("") + "</div></section>";
@@ -935,8 +981,10 @@ function kindsView(){
 
 /* ---------- map ---------- */
 function mapView(){
-  var h = "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">PROCESS MAP</p><h1 class=\"d2\">全工程を、一枚に。</h1><p class=\"sub\">" + parts.length + "部品・" + ops.length + "工程。1マスが1工程で、左から加工順に並びます。色は系列、文字は工法です。</p><div class=\"mlegend\" style=\"margin:8px 0 0\">" + FAM.map(function(f, fi){ return "<span class=\"f" + fi + "\"><i></i>" + f.n + "</span>"; }).join("") + "</div></div>";
+  var h = "<section class=\"sec tight\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">PROCESS MAP</p><h1 class=\"d2\">全工程を、一枚に。</h1><p class=\"sub\">" + INDS.length + "業界・" + parts.length + "部品・" + ops.length + "工程。1マスが1工程で、左から加工順に並びます。色は系列、文字は工法です。</p><div class=\"mlegend\" style=\"margin:8px 0 0\">" + FAM.map(function(f, fi){ return "<span class=\"f" + fi + "\"><i></i>" + f.n + "</span>"; }).join("") + "</div></div>";
+  var lastInd = null;
   D.systems.forEach(function(s){
+    if(s.ind !== lastInd){ lastInd = s.ind; h += "<div class=\"hd\" style=\"margin:64px 0 0\"><p class=\"eyebrow\">" + indOf(s).en + "</p><h2 class=\"d3\"><a href=\"" + hi(indOf(s)) + "\">" + esc(indOf(s).n) + "</a></h2></div>"; }
     h += "<div class=\"msys\"><h3><a href=\"" + hs(s) + "\">" + esc(s.name) + "</a><small>" + s.parts.length + " PARTS · " + sysOps(s) + " OPS</small></h3>";
     s.parts.forEach(function(p){
       h += "<div class=\"mrow\"><a href=\"" + hp(p) + "\">" + esc(p.name) + "</a><div class=\"cells\">" + p.ops.map(function(o){ return "<a class=\"f" + KF[o.k] + "\" href=\"" + ho(o) + "\" title=\"" + esc(opNo(o) + " " + o.n + "（" + K[o.k].n + "）") + "\" aria-label=\"" + esc(opNo(o) + " " + o.n) + "\">" + K[o.k].a + "</a>"; }).join("") + "</div></div>";
@@ -1017,7 +1065,7 @@ function closeOv(){ var was = sov.classList.contains("on") || mov.classList.cont
 document.getElementById("sbtn").addEventListener("click", function(){ openOv(sov); });
 document.getElementById("mbtn").addEventListener("click", function(){ openOv(mov); });
 document.querySelectorAll("[data-close]").forEach(function(b){ b.addEventListener("click", closeOv); });
-document.getElementById("mm").innerHTML = "<a href=\"#top\">トップ</a><a href=\"#systems\">系統</a><a href=\"#pt\">パワートレイン比較</a><a href=\"#map\">工程マップ</a><a href=\"#kinds\">加工法</a><a href=\"#eq\">設備</a><div class=\"sys\">" + D.systems.map(function(s, si){ return "<a href=\"" + hs(s) + "\"><span>" + pad(si + 1) + "</span>" + esc(s.name) + "</a>"; }).join("") + "</div>";
+document.getElementById("mm").innerHTML = "<a href=\"#top\">トップ</a>" + INDS.map(function(d){ return "<a href=\"" + hi(d) + "\">" + esc(d.n) + "</a>"; }).join("") + "<a href=\"#systems\">系統</a><a href=\"#pt\">パワートレイン比較</a><a href=\"#map\">工程マップ</a><a href=\"#kinds\">加工法</a><a href=\"#eq\">設備</a><div class=\"sys\">" + D.systems.map(function(s, si){ return "<a href=\"" + hs(s) + "\"><span>" + pad(si + 1) + "</span>" + esc(s.name) + "</a>"; }).join("") + "</div>";
 document.getElementById("qs").innerHTML = "<p>QUICK LINKS</p>" + ["ホブ盤", "バッテリケース", "ヘアピン", "レゾルバ", "オークマ", "ライスハウアー", "三井精機工業", "ギガキャスト", "浸炭"].map(function(x){ return "<a href=\"#q\" data-q=\"" + esc(x) + "\">" + esc(x) + "</a>"; }).join("");
 
 /* ---------- router ---------- */
@@ -1033,6 +1081,7 @@ function routeTo(){
   else if(h === "kinds") kindsView();
   else if(h === "q") searchView();
   else if((m = h.match(/^s-(\w+)$/)) && sysById[m[1]]) sysView(sysById[m[1]]);
+  else if((m = h.match(/^i-(\w+)$/)) && indById[m[1]]) industryView(indById[m[1]]);
   else if((m = h.match(/^p-(\w+?)-(\w+)$/)) && findPart(m[1], m[2])) partView(findPart(m[1], m[2]));
   else if((m = h.match(/^o-(\w+?)-(\w+?)-(\d+)$/)) && findPart(m[1], m[2]) && findPart(m[1], m[2]).ops[+m[3] - 1]) opView(findPart(m[1], m[2]).ops[+m[3] - 1]);
   else if((m = h.match(/^e-(\d+)$/)) && C[+m[1]]) eqView(+m[1]);

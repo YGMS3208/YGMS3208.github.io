@@ -27,12 +27,14 @@ rep("animation:sweep 7s var(--ease) 1.2s infinite}", "animation:sweep 7s var(--e
 
 # ---------------------------------------------------------------- links → real paths
 rep('''function hs(s){ return "#s-" + s.id; }
+function hi(d){ return "#i-" + d.id; }
 function hp(p){ return "#p-" + p.s.id + "-" + p.id; }
 function ho(o){ return "#o-" + o.p.s.id + "-" + o.p.id + "-" + (o.i + 1); }
 function he(ci){ return "#e-" + ci; }
 function hk(ki){ return "#k-" + ki; }
 function opNo(o){ return "OP" + ((o.i + 1) * 10); }''',
     '''function hs(s){ return "/systems/" + s.slug + "/"; }
+function hi(d){ return "/" + d.slug + "/"; }
 function hp(p){ return "/parts/" + p.slug + "/"; }
 function ho(o){ return "/parts/" + o.p.slug + "/op" + o.no + "/"; }
 function hoa(o){ return "/parts/" + o.p.slug + "/#op" + o.no; }
@@ -56,6 +58,13 @@ rep('<span class=\\"big\\">" + ((o.i + 1) * 10) + "</span>', '<span class=\\"big
 rep('''  var cur = view.querySelector(".steps [aria-current]");
   if(cur){ var r = cur.closest(".steps"); r.scrollLeft = Math.max(0, cur.parentNode.offsetLeft - r.clientWidth / 2 + 56); }
 ''', "")
+
+# ---------------------------------------------------------------- card thumbnails: standalone SVG files, lazy-loaded
+rep('function partPic(p){', 'function partImg(p){ return p ? "<img src=\\"/parts/img/" + p.slug + ".svg\\" alt=\\"" + esc(p.name) + "のイメージ\\" loading=\\"lazy\\" decoding=\\"async\\" width=\\"320\\" height=\\"200\\">" : ""; }\nfunction partPic(p){')
+rep('<a class=\\"card\\" href=\\"" + hp(p) + "\\"><div class=\\"stage thumb\\">" + partPic(p) + "</div>', '<a class=\\"card\\" href=\\"" + hp(p) + "\\"><div class=\\"stage thumb\\">" + partImg(p) + "</div>')
+rep('<div class=\\"stage thumb\\">" + heroPic(s) + "</div>', '<div class=\\"stage thumb\\">" + partImg(partByKey[s.hero]) + "</div>')
+rep('<div class=\\"stage thumb\\">" + indPic(d) + "</div>', '<div class=\\"stage thumb\\">" + partImg(partByKey[IND_PIC[d.id]]) + "</div>')
+rep('partPic(partByKey[f[1].slice(2)])', 'partImg(partByKey[f[1].slice(2)])')
 
 # ---------------------------------------------------------------- tabs: every state rendered, hidden unless selected
 rep('''function ptSeg(id){ return "<div class=\\"seg\\" role=\\"tablist\\" aria-label=\\"パワートレイン\\" id=\\"" + id + "\\">" + TY.map(function(t, ti){ return "<button type=\\"button\\" role=\\"tab\\" data-pt=\\"" + ti + "\\" aria-selected=\\"" + (ti === state.pt) + "\\">" + esc(t.n) + "</button>"; }).join("") + "</div>"; }''',
@@ -119,7 +128,7 @@ rep('<li>電池セルは工程の数え方をそろえるため、1ロットと�
     '<li>電池セルは工程の数え方をそろえるため、1ロットとして数えています（搭載数は約60〜100セル）。</li></ul><p class=\\"dl\\"><a class=\\"lnk\\" href=\\"/powertrain/powertrain-comparison.csv\\" download>比較データをCSVでダウンロード</a></p></div></section>";')
 rep('''  show(h, null, "pt");
   renderShift(); renderMatrix();
-}''', '''  show(h, [["パワートレイン比較"]], "pt");
+}''', '''  show(h, [[INDS[0].n, hi(INDS[0])], ["パワートレイン比較"]], "ind-auto");
 }''')
 rep('''function renderMatrix(){
   var box = document.getElementById("matrix"); if(!box) return;

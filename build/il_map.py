@@ -51,10 +51,19 @@ CATMAP = {
 "カメラ校正装置":"calib","展開試験設備":"deploy","軸受音響検査機":"bnoise","タイヤユニフォミティマシン":"uniformity",
 "ホイールアライメントテスタ":"alignment","配光・光軸検査装置":"aim","ADASエーミング装置":"adas","ドラムテスタ（速度・ブレーキ）":"drum",
 "排出ガス分析計":"emission","シャワーテスト設備":"shower","異音・振動診断装置":"noise",
+# heavy industry (marine engines / data-center power)
+"大型旋盤（重切削）":"hvlathe","横中ぐりフライス盤":"hbm","自由鍛造プレス（大型）":"openforge","自硬性砂型造型設備（大型鋳物）":"nobake","遠心鋳造機":"centrifugal",
+"一方向凝固・単結晶鋳造炉":"dsfurnace","熱間等方圧加圧装置（HIP）":"hip","サブマージアーク溶接機":"subarc","プレスブレーキ（曲げ加工機）":"pressbrake","ブスバー加工機":"busbar",
+"プラズマ・ガス切断機":"plasma","ベンディングロール（板曲げロール）":"rollbend","タレットパンチプレス":"turretpunch","可搬式中ぐり機（現地加工）":"portbore",
+"形巻コイル成形機":"coilspread","天井クレーン（大型）":"ohcrane","レーザトラッカ":"lasertrack","負荷試験装置（ロードバンク）":"loadbank","アーク溶接機（半自動・TIG）":"mig_tig",
+"油圧ボルトテンショナ":"tensioner","材料試験機（引張・衝撃）":"tensile_charpy","水圧試験装置":"hydrotest","スピン試験装置":"spinpit","軸芯出し装置":"shaftalign",
+"エポキシ注形設備（真空注形・APG）":"epoxycast","鉄心試験装置（ループ試験）":"coreloop",
 }
 SYS_HERO = {"plant": "plant.assembly", "body": "body.gigacast", "engine": "engine.engineassy", "drivetrain": "drivetrain.gear",
             "chassis": "chassis.disc", "ev": "ev.stator", "electrical": "electrical.headlamp", "interior": "interior.seat",
-            "exterior": "exterior.bumper", "wheel": "wheel.alwheel", "thermal": "thermal.radiator", "common": "common.bearing"}
+            "exterior": "exterior.bumper", "wheel": "wheel.alwheel", "thermal": "thermal.radiator", "common": "common.bearing",
+            "marine2": "marine2.m2assy", "marine4": "marine4.m4assy", "marineaux": "marineaux.mxtcassy", "propulsion": "propulsion.prfpp",
+            "genset": "genset.gsassy", "generator": "generator.genrotor", "dcpower": "dcpower.dcmvswgr", "gasgen": "gasgen.gtblade"}
 
 OPPIC = {"chassis.lowerarm.3": "ed_part", "chassis.subframe.4": "ed_part", "interior.seat.5": "ed_part",
          "chassis.disc.6": "dip_part", "exterior.bumper.3": "paintpart"}

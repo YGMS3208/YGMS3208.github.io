@@ -1,14 +1,14 @@
 {
 "/": {
-"h": "8a76fc4ad51f7efb",
+"h": "a58400465e994482",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/404.html": {
-"h": "41987f9a6ec21f0d",
+"h": "6d77e5814f859138",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/about/": {
@@ -17,16 +17,28 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
-"/equipment/": {
-"h": "41987f9a6ec21f0d",
+"/automotive/": {
+"h": "6c64a087cfc7050a",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/datacenter-power/": {
+"h": "aa3667cc26c389dc",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/": {
+"h": "6d77e5814f859138",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/5-axis-machining-center/": {
-"h": "b3b85e8ee70d63c4",
+"h": "2826eab69e18c2d0",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/active-alignment-system/": {
@@ -60,15 +72,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/annealing-normalizing-furnace/": {
-"h": "cda0b5a8757c8663",
+"h": "f7405013203578d8",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/arc-welding-robot/": {
-"h": "3cc8823e49283415",
+"h": "2ed65c765829d433",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/assembly-conveyor/": {
@@ -78,21 +90,21 @@
 "pub": "2026-09-29"
 },
 "/equipment/autoclave/": {
-"h": "01bb9068578943a9",
+"h": "ad3bc5719bd9cbdc",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/autofrettage-machine/": {
-"h": "b9400a96dc764094",
+"h": "bb13a75a3c1acd0d",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/automated-optical-inspection/": {
-"h": "d277e1c3e3751683",
+"h": "89b110d09a320b62",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/automatic-cutting-machine/": {
@@ -102,15 +114,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/automatic-gauging-system/": {
-"h": "838def363c954f1f",
+"h": "75fc5e87e30b8947",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/balancing-machine/": {
-"h": "71cc1e0f985adfb1",
+"h": "e1b9fd58b55e6fc5",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/ball-track-grinder/": {
@@ -120,15 +132,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/battery-cell-tester/": {
-"h": "2a0c5106ad359450",
+"h": "ddf30b5286f80053",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/battery-formation-system/": {
-"h": "11a8b25a49baaeed",
+"h": "f18067bc21812266",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/bead-winding-machine/": {
@@ -144,15 +156,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/billet-cutting-machine/": {
-"h": "c45e64eceb6529c6",
+"h": "ce73b9a5f8fcb59e",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/blanking-line/": {
-"h": "c7dad3c54049d197",
+"h": "0c9c70be9d139b2d",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/blow-molding-machine/": {
@@ -168,16 +180,22 @@
 "pub": "2026-09-29"
 },
 "/equipment/brazing-furnace/": {
-"h": "19c3c6f170159f32",
+"h": "92476193959a370c",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/broaching-machine/": {
-"h": "9da68dad09b49b72",
+"h": "dbf902639155079f",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
+},
+"/equipment/busbar-processing-machine/": {
+"h": "23ad14f70c28ff51",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/camera-calibration-system/": {
 "h": "2f0e6fce6944c691",
@@ -186,15 +204,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/camshaft-grinder/": {
-"h": "5c4e21d51aaf93a3",
+"h": "16bad6540998b90f",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/carburizing-furnace/": {
-"h": "477aa477874f0f76",
+"h": "46f04797d15b2cef",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/catalyst-canning-machine/": {
@@ -210,39 +228,45 @@
 "pub": "2026-09-29"
 },
 "/equipment/centerless-grinder/": {
-"h": "075342eeecbfc45b",
+"h": "f0035d2446685b9a",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
+"/equipment/centrifugal-casting-machine/": {
+"h": "aa6a94930803d0f2",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/ceramic-firing-kiln/": {
-"h": "7d9b0a4e65119d28",
+"h": "e581a92eceabcbd5",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/cleanliness-analysis-system/": {
-"h": "66f3910e86020177",
+"h": "412d6c8fb060307b",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/cnc-lathe/": {
-"h": "e578c36a225321f6",
+"h": "8e4872eac636ae52",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/coating-machine/": {
-"h": "7751bc6edafafd7d",
+"h": "84214c12583b6c2f",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/coating-thickness-gauge/": {
-"h": "14e17dbfc496194e",
+"h": "c7aff43870fa5702",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/coating-weight-gauge/": {
@@ -258,15 +282,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/coil-winding-machine/": {
-"h": "5ce48cae8cbd5531",
+"h": "2fdc426815f3bf50",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/cold-forging-press/": {
-"h": "f75b24f8a347890f",
+"h": "3522f5b263376ee4",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/cold-former/": {
@@ -288,9 +312,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/compression-molding-press/": {
-"h": "3dc39cfa52f0b41c",
+"h": "112acdc5ddde197c",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/conduction-hardening-machine/": {
@@ -300,9 +324,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/continuity-tester/": {
-"h": "a031346a720fa04b",
+"h": "c06f01154088d86a",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/continuous-hardening-furnace/": {
@@ -318,33 +342,33 @@
 "pub": "2026-09-29"
 },
 "/equipment/conversion-coating-line/": {
-"h": "751b994c4da5a064",
+"h": "1bc8b0a0a7b1499b",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/coordinate-measuring-machine/": {
-"h": "989d5bd83b012392",
+"h": "cbaab13e7d6c1219",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/core-shooter/": {
-"h": "c831d53084bcd9ed",
+"h": "6674f48d14c2c6db",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/crankshaft-grinder/": {
-"h": "0dd1bb6c1f277cb9",
+"h": "6382159ec6f42bfc",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/crankshaft-milling-machine/": {
-"h": "29f1d567f09fb7c2",
+"h": "18f233d87eb26eac",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/crimp-force-monitor/": {
@@ -354,9 +378,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/cylindrical-grinder/": {
-"h": "135c247bd2767009",
+"h": "a11c33bfdd083d7e",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/damper-tester/": {
@@ -366,21 +390,21 @@
 "pub": "2026-09-29"
 },
 "/equipment/deburring-machine/": {
-"h": "f4a5589095c5da79",
+"h": "974978a36046c469",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/dedicated-assembly-machine/": {
-"h": "3834d18385f1505a",
+"h": "f84e4906ac5170df",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/deep-hole-drilling-machine/": {
-"h": "4317f09fd088fb27",
+"h": "2e86226c2c420263",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/destructive-weld-testing/": {
@@ -419,10 +443,16 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
-"/equipment/double-column-machining-center/": {
-"h": "bed56ffce66f489b",
+"/equipment/directional-solidification-furnace/": {
+"h": "51ed65a956167bc5",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/double-column-machining-center/": {
+"h": "645b646911efd8fa",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/double-disc-grinder/": {
@@ -432,9 +462,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/drivetrain-nvh-test-bench/": {
-"h": "956a0639bb464f05",
+"h": "11dd3061046de4f5",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/dry-room/": {
@@ -444,9 +474,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/dye-penetrant-inspection/": {
-"h": "1dba2fe35f5cfd8d",
+"h": "76ec4680c5926045",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/dyeing-heat-setting-line/": {
@@ -456,21 +486,21 @@
 "pub": "2026-09-29"
 },
 "/equipment/eddy-current-tester/": {
-"h": "892943cbba6afcd4",
+"h": "f13284faac6646c3",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/electric-upsetter/": {
-"h": "d7da70b54a5f8894",
+"h": "5e69d27090f780b9",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/electrical-discharge-machine/": {
-"h": "60b81b379b2991ae",
+"h": "634d892b3e9121b8",
 "idx": false,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/electrocoating-line/": {
@@ -510,15 +540,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/electron-beam-welding-machine/": {
-"h": "6aadb1a8cf840194",
+"h": "e9cbdab6b09c50c7",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/engine-test-bench/": {
-"h": "3bf71e39e27ba1d4",
+"h": "fd8c64a7d2335c9b",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/environmental-test-chamber/": {
@@ -527,22 +557,28 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/equipment/epoxy-casting-equipment/": {
+"h": "a25664beb6dc54bd",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/exhaust-gas-analyzer/": {
-"h": "6477b095b5b4038b",
+"h": "69737f99098574cc",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/extruder/": {
-"h": "2e5f84d59fd56426",
+"h": "148c37f3d2804acd",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/fatigue-testing-machine/": {
-"h": "476c10882459572f",
+"h": "212e9379d0a8fdff",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/fillet-rolling-machine/": {
@@ -552,9 +588,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/fin-forming-machine/": {
-"h": "923731b1ff489128",
+"h": "844a006c82826468",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/fine-blanking-press/": {
@@ -564,9 +600,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/fine-boring-machine/": {
-"h": "d1489efaaaf4d36d",
+"h": "1b19308f827de0b1",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/flame-plasma-treatment-system/": {
@@ -576,15 +612,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/flow-test-bench/": {
-"h": "cb32eb1e33758a29",
+"h": "5bce434e8754d628",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/fluid-filling-machine/": {
-"h": "0e6451a73e071297",
+"h": "ec17fc8d49b5521d",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/form-rolling-machine/": {
@@ -592,6 +628,12 @@
 "idx": true,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/equipment/form-wound-coil-spreader/": {
+"h": "0c7bb2d5d5d1a6e6",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/fracture-splitting-machine/": {
 "h": "df2720e72425a48e",
@@ -606,15 +648,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/friction-welding-machine/": {
-"h": "4aaa5ee3b28755b0",
+"h": "30bd7eaa14c304f1",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/functional-tester/": {
-"h": "e10db22676684869",
+"h": "58b9b9c44ae2e1d8",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/gap-flush-measuring-system/": {
@@ -630,15 +672,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/gear-grinding-machine/": {
-"h": "a8173d5f3fdd1e90",
+"h": "50ce584737dc5229",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/gear-hobbing-machine/": {
-"h": "01320b65dfb718b8",
+"h": "debbac6d9984b40f",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/gear-honing-machine/": {
@@ -648,9 +690,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/gear-measuring-machine/": {
-"h": "51bcd8ac11260d9b",
+"h": "460931e67d12f3d1",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/gear-rolling-tester/": {
@@ -696,39 +738,39 @@
 "pub": "2026-09-29"
 },
 "/equipment/green-sand-molding-line/": {
-"h": "24df8374c011365a",
+"h": "035bc2eda358593a",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/assembly-handling/": {
-"h": "c593a407d223f460",
+"h": "66df577506b6593b",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/dimensional-metrology/": {
-"h": "a5bcbce437680eed",
+"h": "26540c5a525991b3",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/electronics-battery-motor/": {
-"h": "c87148e97458377d",
+"h": "ed4c98a7f86f603a",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/forging-forming/": {
-"h": "c9bcedb1101c18c8",
+"h": "3b114f240bc54c6c",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/foundry/": {
-"h": "30b69c2745cd7312",
+"h": "6a80ec6fe61dcb91",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/gear-machining/": {
@@ -744,21 +786,21 @@
 "pub": "2026-09-29"
 },
 "/equipment/group/heat-treatment-equipment/": {
-"h": "05b56816b97d9183",
+"h": "cd467eadc0797df0",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/machining-centers/": {
-"h": "d1d49e4887434ead",
+"h": "07d4d73917792e7b",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/ndt-material-testing/": {
-"h": "0f7878b44bea59b0",
+"h": "6127fdf50abd8c12",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/painting-equipment/": {
@@ -768,21 +810,21 @@
 "pub": "2026-09-29"
 },
 "/equipment/group/performance-testing/": {
-"h": "f73a330ffbe69d83",
+"h": "419d7bcfc0df12d2",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/plastics-rubber-glass/": {
-"h": "43b92df914e8e9a3",
+"h": "690c7ef3c423fe66",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/presses-sheet-metal/": {
-"h": "d23a08b0791702f9",
+"h": "c55aa2ba4037a715",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/surface-treatment-cleaning/": {
@@ -792,15 +834,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/group/turning/": {
-"h": "638191b5b6517d1b",
+"h": "668e903128b0d3b7",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/group/welding-joining/": {
-"h": "98384ba7c03a2f8d",
+"h": "448b9481d086fe4c",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/hairpin-winding-line/": {
@@ -816,9 +858,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/hardness-tester/": {
-"h": "e934aa0e0b037595",
+"h": "db062f820b074fde",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/harness-assembly-board/": {
@@ -833,10 +875,16 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/equipment/heavy-duty-lathe/": {
+"h": "d5d36751591c1ac2",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/helium-leak-detector/": {
-"h": "603c67e5b1ccf168",
+"h": "3cb2185dbc9fe83d",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/hemming-machine/": {
@@ -846,34 +894,58 @@
 "pub": "2026-09-29"
 },
 "/equipment/high-speed-press/": {
-"h": "0b9c87d9dc92143d",
+"h": "d02b482dd5918420",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/honing-machine/": {
-"h": "8831fc2e6329094b",
+"h": "b9349c035e3061cb",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
-"/equipment/horizontal-machining-center/": {
-"h": "2a4aec7290ce4fdf",
+"/equipment/horizontal-boring-mill/": {
+"h": "c03c064cef4ec3a4",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/horizontal-machining-center/": {
+"h": "0ca272a4870a51b4",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/hot-forging-press/": {
-"h": "bc0f6ad541e9bf2f",
+"h": "a9957b8e74a30f55",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
+},
+"/equipment/hot-isostatic-press/": {
+"h": "ec52383eb767e867",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/hot-stamping-line/": {
 "h": "41b08d367ce31886",
 "idx": true,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/equipment/hydraulic-bolt-tensioner/": {
+"h": "1ec2081954f451bf",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/hydrostatic-test-equipment/": {
+"h": "e2b4c48b0f373b77",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/hypoid-gear-cutting-machine/": {
 "h": "7a8b19a56d74834d",
@@ -888,33 +960,33 @@
 "pub": "2026-09-29"
 },
 "/equipment/in-circuit-tester/": {
-"h": "27fb5ce3c8b0e6a7",
+"h": "f7487b24b584b8d0",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/in-process-gauge/": {
-"h": "a859fefb21b5f26b",
+"h": "f00001d6d4ddfbfb",
 "idx": false,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/incoming-material-inspection/": {
-"h": "35130b9efc8cab30",
+"h": "3b6dcf2f4875340f",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/induction-hardening-machine/": {
-"h": "467b0ec154c14944",
+"h": "41e16054797f9d9a",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/induction-heater/": {
-"h": "6119a5349772aeed",
+"h": "36ce7ede4ae40ec8",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/industrial-ct-scanner/": {
@@ -930,9 +1002,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/injection-molding-machine/": {
-"h": "f963e7d3678e613a",
+"h": "faf57475d219c21b",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/inline-body-measuring-system/": {
@@ -942,15 +1014,15 @@
 "pub": "2026-09-29"
 },
 "/equipment/insulation-hipot-tester/": {
-"h": "3aaf49b8d6a26596",
+"h": "2a37bc7d32d6fdb9",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/internal-grinder/": {
-"h": "073eed3a9b1350a0",
+"h": "21b165d59d1a6d5d",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/internal-mixer/": {
@@ -960,45 +1032,57 @@
 "pub": "2026-09-29"
 },
 "/equipment/investment-casting-equipment/": {
-"h": "b55ab59bf81d27d6",
+"h": "65354b6479a24c2e",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/lapping-machine/": {
-"h": "fe4470575c3c968f",
+"h": "b3b2fd99c607682d",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/laser-cladding-system/": {
-"h": "d570424cc183b09c",
+"h": "ddd68711ac2e9fbb",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/laser-processing-machine/": {
-"h": "703a64e47b35e129",
+"h": "8a7bc5bbebf285f9",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
-"/equipment/laser-welding-machine/": {
-"h": "796358f09af495e3",
+"/equipment/laser-tracker/": {
+"h": "7175aa6d7209de4e",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/laser-welding-machine/": {
+"h": "92eb41dce12c47e1",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/leak-tester/": {
-"h": "120f3236648437b3",
+"h": "55ea79a9055e3dbb",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
+"/equipment/load-bank/": {
+"h": "9857f16807707a67",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/load-testing-machine/": {
-"h": "91fa300e6e408e8c",
+"h": "e753e3c731d8b8b1",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/low-pressure-casting-machine/": {
@@ -1008,9 +1092,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/magnetic-particle-inspection/": {
-"h": "d25bb88d282f55b2",
+"h": "9d1c2950e38ceb76",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/magnetization-inspection-system/": {
@@ -1020,10 +1104,16 @@
 "pub": "2026-09-29"
 },
 "/equipment/magnetizer/": {
-"h": "23d4d3f3de62beca",
+"h": "6ec9259c4ffcd11a",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
+},
+"/equipment/manual-arc-welding-machine/": {
+"h": "595f10fe1ea7572d",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/mass-centering-machine/": {
 "h": "947f9ecd9c3a8543",
@@ -1044,45 +1134,51 @@
 "pub": "2026-09-29"
 },
 "/equipment/melt-quality-testing/": {
-"h": "85226b003cef6dc8",
+"h": "01fc6e978bd40609",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/melt-treatment-equipment/": {
-"h": "9a36326d1a82aaaf",
+"h": "fa41c9354d37d07c",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/melting-furnace/": {
-"h": "68ecf2554a01bcb7",
+"h": "27c8967e60ad4ca9",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/metallographic-microscope/": {
-"h": "70df625eae18ce4a",
+"h": "047009ac2041655c",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/motor-test-bench/": {
-"h": "0ae971113fd45c8e",
+"h": "2aef87338fc07d32",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/nitriding-furnace/": {
-"h": "7bff245547f42992",
+"h": "7269b27c4f457ef1",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
+"/equipment/no-bake-sand-molding/": {
+"h": "9c43c93688146e9a",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/noise-vibration-analyzer/": {
-"h": "2eeb8eaa2f686f33",
+"h": "f8a9b34c04f7dd52",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/non-circular-turning-lathe/": {
@@ -1092,15 +1188,21 @@
 "pub": "2026-09-29"
 },
 "/equipment/nutrunner/": {
-"h": "a83f7cf8767d66ef",
+"h": "f59466498e7f6ade",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
+"/equipment/open-die-forging-press/": {
+"h": "a6277e1cfbb43538",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/optical-3d-scanner/": {
-"h": "6b801a7736526126",
+"h": "d00bc930f4d14de4",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/optical-distortion-inspection/": {
@@ -1109,16 +1211,22 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/equipment/overhead-crane/": {
+"h": "2eac3a9e4437c2cb",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/paint-booth/": {
-"h": "3d800f3cfcbd2390",
+"h": "973a51cbfb2d9c91",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/paint-curing-oven/": {
-"h": "4198a3c8613ed2df",
+"h": "32b7541a19b26b60",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/paint-inspection-system/": {
@@ -1146,16 +1254,22 @@
 "pub": "2026-09-29"
 },
 "/equipment/parts-washer/": {
-"h": "a19d78193ee33d18",
+"h": "9a35ce8e5c39fc9b",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/pick-and-place-machine/": {
-"h": "c4d4a441f5557371",
+"h": "27b18e91a8741eff",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
+},
+"/equipment/plasma-gas-cutting-machine/": {
+"h": "46dadfca7f314859",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/plastic-welding-machine/": {
 "h": "d2750d8d7c3db5f3",
@@ -1163,10 +1277,16 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/equipment/plate-bending-roll/": {
+"h": "d7fa2b169a7bba98",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/plating-line/": {
-"h": "7a8f914ef93704d0",
+"h": "4b69a395dfeef3e3",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/polyurethane-foaming-machine/": {
@@ -1175,16 +1295,22 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/equipment/portable-line-boring-machine/": {
+"h": "14b4ec003512fbef",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/post-curing-oven/": {
-"h": "ff1477d2a6be6a58",
+"h": "1534a8a094ca96b6",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/powder-coating-line/": {
-"h": "3aeafcf1699c98c2",
+"h": "204c91b512a100e9",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/powder-compacting-press/": {
@@ -1200,27 +1326,33 @@
 "pub": "2026-09-29"
 },
 "/equipment/power-semiconductor-tester/": {
-"h": "4220b19d32cd1a57",
+"h": "e79d9a1414a6886f",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
-"/equipment/press-fit-machine/": {
-"h": "c6da9d2c5ed751dc",
+"/equipment/press-brake/": {
+"h": "43739e74b47360dc",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/press-fit-machine/": {
+"h": "31cf81d1a411988a",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/progressive-die-press/": {
-"h": "dd645f2c7e66943e",
+"h": "d8dbbb1c23866fb5",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/pta-hardfacing-machine/": {
-"h": "4d5a1da73aa556a4",
+"h": "0eb1b41168ad481b",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/quench-press/": {
@@ -1230,33 +1362,33 @@
 "pub": "2026-09-29"
 },
 "/equipment/reflow-oven/": {
-"h": "e83ed992dd189933",
+"h": "1298c8d6f25b0103",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/resin-dispensing-system/": {
-"h": "14ed4b1034c92231",
+"h": "68601e75a363f177",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/resistance-welding-machine/": {
-"h": "f98c0f73fc71f89a",
+"h": "0c213ec3d2dfd0bb",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/ring-rolling-mill/": {
-"h": "c845fd22fcaa8790",
+"h": "0da1ee6633e3c073",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/roll-forming-machine/": {
-"h": "b1bd5777614ab32f",
+"h": "f4e44319e6ed957f",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/roller-brake-tester/": {
@@ -1266,9 +1398,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/roundness-measuring-machine/": {
-"h": "157052e514070b28",
+"h": "09e923126e622071",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/rubber-calender/": {
@@ -1284,9 +1416,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/sealer-adhesive-dispenser/": {
-"h": "f970ad97297bea57",
+"h": "3769a66383b36bde",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/selective-soldering-machine/": {
@@ -1296,39 +1428,45 @@
 "pub": "2026-09-29"
 },
 "/equipment/servo-press/": {
-"h": "33b54539cf981d8b",
+"h": "a06c1bd6473410ab",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
+"/equipment/shaft-alignment-system/": {
+"h": "6971d4256f6d3057",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/shaft-measuring-machine/": {
-"h": "6641186b44f69ec6",
+"h": "62be569ae086b9ed",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/shakeout-degating-machine/": {
-"h": "bda4430db2ef6ace",
+"h": "48dc62f6d82b9185",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/shot-blasting-machine/": {
-"h": "15575d109685fd3a",
+"h": "5346d6da22a60d92",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/shot-peening-machine/": {
-"h": "f100477df2a23d4f",
+"h": "8303fb7c97eb590b",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/sintering-furnace/": {
-"h": "d13251d8941a2357",
+"h": "70c9f1f68c190979",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/skin-forming-machine/": {
@@ -1356,10 +1494,16 @@
 "pub": "2026-09-29"
 },
 "/equipment/solution-aging-furnace/": {
-"h": "ca24f203819bf304",
+"h": "129e29411d9db084",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
+},
+"/equipment/spin-test-rig/": {
+"h": "3696612313fe3318",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/spot-welding-robot/": {
 "h": "c10113916a5db0e0",
@@ -1380,16 +1524,22 @@
 "pub": "2026-09-29"
 },
 "/equipment/staking-machine/": {
-"h": "17fc73c9ecefb3c4",
+"h": "177b96fc213e64a5",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/stamping-die/": {
-"h": "d57cc6e0853be306",
+"h": "21d0ec49b011d241",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
+},
+"/equipment/stator-core-loop-tester/": {
+"h": "9a60f23acb0c901d",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/equipment/steel-ball-grinder/": {
 "h": "b259e26cf769b7e9",
@@ -1398,33 +1548,39 @@
 "pub": "2026-09-29"
 },
 "/equipment/straightening-machine/": {
-"h": "388826c05cb18011",
+"h": "6c3688d08ada1774",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
-"/equipment/superfinishing-machine/": {
-"h": "edc7f5ac31b820bf",
+"/equipment/submerged-arc-welding/": {
+"h": "cf23a9262644cadd",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/superfinishing-machine/": {
+"h": "eba290ea610f8c15",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/surface-grinder/": {
-"h": "d6d650da3a61e8c2",
+"h": "9d4c2a7677ceaf08",
 "idx": false,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/surface-profilometer/": {
-"h": "1894c5d039005ae0",
+"h": "41d0c830b44ba3cb",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/swiss-type-lathe/": {
-"h": "3b37ba46cd11b226",
+"h": "3a6ec0495f29eced",
 "idx": false,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/tandem-press-line/": {
@@ -1434,21 +1590,27 @@
 "pub": "2026-09-29"
 },
 "/equipment/taping-machine/": {
-"h": "649371389ff76207",
+"h": "775c16d1c600a4cb",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/tempering-furnace/": {
-"h": "38498988854d4bda",
+"h": "cce1b75c150bea09",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
+"/equipment/tensile-impact-testing-machine/": {
+"h": "7547f07dfbce2b4c",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/equipment/thermal-spray-system/": {
-"h": "ca2a73813593f90e",
+"h": "6c763ee1e0798c55",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/thin-ring-rolling-mill/": {
@@ -1500,33 +1662,39 @@
 "pub": "2026-09-29"
 },
 "/equipment/trim-press/": {
-"h": "c19be2e29c095222",
+"h": "6f9bb598693d1c88",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/tube-bender/": {
-"h": "84a0becfd0bc3726",
+"h": "42a76842dfd4ffe8",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/tube-drawing-machine/": {
-"h": "67f0d13f43efb2aa",
+"h": "dcda598262a1c089",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/turbocharger-test-bench/": {
-"h": "a35890a386e90b42",
+"h": "cb54ffd3b6dbe6a6",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
-"/equipment/ultrasonic-flaw-detector/": {
-"h": "1ece808c21922a3b",
+"/equipment/turret-punch-press/": {
+"h": "26c49f0ab99a0812",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/equipment/ultrasonic-flaw-detector/": {
+"h": "29e11eae00703755",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/ultrasonic-waterjet-cutter/": {
@@ -1542,9 +1710,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/vacuum-carburizing-furnace/": {
-"h": "b9cd701b5b8e6e33",
+"h": "4653d4d088b942f3",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/vacuum-drying-oven/": {
@@ -1554,45 +1722,45 @@
 "pub": "2026-09-29"
 },
 "/equipment/vacuum-impregnation-system/": {
-"h": "287c7d83784089b2",
+"h": "7122ddfcfd0c4885",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/vacuum-metallizing-system/": {
-"h": "374493da81e519dd",
+"h": "dde844626f5ca39d",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/vertical-machining-center/": {
-"h": "ea15ceb3fa9649eb",
+"h": "c739311875957d08",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/vertical-turning-lathe/": {
-"h": "ce748cde18927cad",
+"h": "ed1e549a1ee9de43",
 "idx": true,
-"mod": "2026-10-02",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/vision-inspection-system/": {
-"h": "c7fbb3b37203ca74",
+"h": "615c9613a90cf7e3",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/vulcanizing-equipment/": {
-"h": "9f3b2934d98e11e7",
+"h": "c30622766b211cc9",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/water-leak-test-booth/": {
-"h": "0313724490b4a940",
+"h": "3f8c5070bdb6fbe2",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/weaving-machine/": {
@@ -1602,9 +1770,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/weight-sorting-machine/": {
-"h": "1ca8abf4bfbb9507",
+"h": "03f591ae9e46fa30",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/wheel-alignment-tester/": {
@@ -1620,9 +1788,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/wire-cutting-crimping-machine/": {
-"h": "9ffee0015eab9c28",
+"h": "1962694e0a595120",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/wire-drawing-machine/": {
@@ -1632,9 +1800,9 @@
 "pub": "2026-09-29"
 },
 "/equipment/x-ray-inspection-system/": {
-"h": "d9b7304f9e3ac889",
+"h": "9bf09e4690099a54",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/equipment/x-ray-residual-stress-analyzer/": {
@@ -2046,27 +2214,33 @@
 "pub": "2026-10-03"
 },
 "/map/": {
-"h": "41987f9a6ec21f0d",
+"h": "6d77e5814f859138",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
-"/methods/": {
-"h": "41987f9a6ec21f0d",
+"/marine/": {
+"h": "ff2e5dd088d58661",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/methods/": {
+"h": "6d77e5814f859138",
+"idx": true,
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/assembly/": {
-"h": "91afe1aa8ac0ce46",
+"h": "8a7bb963f5927a63",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/casting/": {
-"h": "8e3f1d5e765ce8ca",
+"h": "595b65f09cc56927",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/chemical-processing/": {
@@ -2076,63 +2250,63 @@
 "pub": "2026-09-29"
 },
 "/methods/coil-winding/": {
-"h": "5e39e8bc89208cf2",
+"h": "72fa0df334e6e159",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/electronics-assembly/": {
-"h": "e3fa978be16a0ac8",
+"h": "44aaf7214cf31ead",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/forging/": {
-"h": "1b5ef8944a3c3dd2",
+"h": "eaa528a8235ac2fe",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/gear-cutting/": {
-"h": "669fc54e7dd98bb0",
+"h": "d186c637961d3db6",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/grinding/": {
-"h": "fe7aa396cafbb1d6",
+"h": "1c21e1a930cc6e99",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/heat-treatment/": {
-"h": "0f02c8d4bf2ffbe2",
+"h": "5f9a739f6a85afe4",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/inspection/": {
-"h": "1576628e160d2320",
+"h": "a678ea3cc4bc0af9",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/joining/": {
-"h": "c5f0df57f73f82af",
+"h": "90e347bed30d115b",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/logistics/": {
-"h": "0d2cbfc06b9a3d40",
+"h": "2b9cc1106b746816",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/machining/": {
-"h": "82ce0da4d4098a1f",
+"h": "470cc2392db59d8c",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/maintenance/": {
@@ -2142,33 +2316,33 @@
 "pub": "2026-09-29"
 },
 "/methods/material-preparation/": {
-"h": "6b74ae45db6f629c",
+"h": "03c5aba75f8f54aa",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/molding/": {
-"h": "94fada688ec87bd0",
+"h": "aed5e7557bf774dd",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/painting/": {
-"h": "86a24328f421a333",
+"h": "5586112f5906da57",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/stamping/": {
-"h": "96e9ef3fd003a18b",
+"h": "ac3a02151bfa5b75",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/methods/surface-treatment/": {
-"h": "7a56e86025d52b48",
+"h": "ddacd31c1338ace6",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/parts/abs-esc-hydraulic-unit/": {
@@ -2248,6 +2422,66 @@
 "idx": false,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/parts/air-circuit-breaker/": {
+"h": "7175c8ab320df3f8",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op10/": {
+"h": "1f2fac5b559478a5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op20/": {
+"h": "300c8fccfadd4f3c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op30/": {
+"h": "11fe4782b3bb347b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op40/": {
+"h": "c35ebe89a68cd7fb",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op50/": {
+"h": "b191867ec238ceed",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op60/": {
+"h": "3de2e4e51e7942fe",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op70/": {
+"h": "e17b6c208ae63de9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op80/": {
+"h": "35d89b2fcd446f72",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/air-circuit-breaker/op90/": {
+"h": "86e448000718d735",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/parts/airbag/": {
 "h": "a5045523534fbad2",
@@ -2386,6 +2620,66 @@
 "idx": false,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/parts/automatic-transfer-switch/": {
+"h": "9468c94cc0087466",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op10/": {
+"h": "fdef3a5778797d8d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op20/": {
+"h": "8fd28acae07c56f1",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op30/": {
+"h": "104e3f0fd45fb470",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op40/": {
+"h": "e5be72516a39d819",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op50/": {
+"h": "8686c398bd26129e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op60/": {
+"h": "6c913c40fa8952af",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op70/": {
+"h": "af9e196f5773fa27",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op80/": {
+"h": "75d4b2ec51364aa2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/automatic-transfer-switch/op90/": {
+"h": "8a165336b5aaa7b5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/parts/ball-bearing/": {
 "h": "4e85dc48ac01b6e9",
@@ -3011,6 +3305,66 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/parts/controllable-pitch-propeller/": {
+"h": "67a06819ecbb3719",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op10/": {
+"h": "4055372289a9286e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op20/": {
+"h": "7ff04c41b81e018b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op30/": {
+"h": "07c45f175103147e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op40/": {
+"h": "ca94881646374d32",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op50/": {
+"h": "87111cca68a77c38",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op60/": {
+"h": "0266875c29a3d32d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op70/": {
+"h": "1a092238d0aabc42",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op80/": {
+"h": "98f7368887a496ff",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/controllable-pitch-propeller/op90/": {
+"h": "9ce8795eb9b18ebc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/parts/crankshaft/": {
 "h": "adf3babed2aa70c6",
 "idx": true,
@@ -3358,6 +3712,306 @@
 "idx": false,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/parts/data-center-low-voltage-switchgear/": {
+"h": "fab8b43645cccbb3",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op10/": {
+"h": "2ebf2c9c9d44a2ff",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op100/": {
+"h": "4177a22942920c9d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op110/": {
+"h": "57d53936bc05e1a6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op20/": {
+"h": "d04b5ca521fbb462",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op30/": {
+"h": "4243947b4f01d825",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op40/": {
+"h": "40d6b9c5a7e4b380",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op50/": {
+"h": "4c814ebdee3ef8fa",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op60/": {
+"h": "7552c6358ebc1386",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op70/": {
+"h": "698a1888e41c8b77",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op80/": {
+"h": "864c0d05d007a352",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-low-voltage-switchgear/op90/": {
+"h": "3fc964c2c6a1b5b4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/": {
+"h": "cd8a678a006df1cc",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op10/": {
+"h": "35628d1f8af4119c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op100/": {
+"h": "1a86d26523f499bc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op110/": {
+"h": "a8ff14735d428b42",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op120/": {
+"h": "98a2ebc493b82c6d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op20/": {
+"h": "78a3136e4f7ab617",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op30/": {
+"h": "f0d04681e4f99ec9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op40/": {
+"h": "3cad725b332b9e31",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op50/": {
+"h": "c7b0e151b7629cb3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op60/": {
+"h": "697d078c5d162a92",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op70/": {
+"h": "2fb32dfbf6e7e6f3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op80/": {
+"h": "6ecbf3ca786d5e2c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-main-fuel-tank/op90/": {
+"h": "52404ed01e2b4f6a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/": {
+"h": "722fd71cfaba4fb8",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op10/": {
+"h": "eb79b72e91bdef1f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op100/": {
+"h": "f4bd7458263a1bda",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op110/": {
+"h": "3915a0e9ef76e38b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op20/": {
+"h": "f5e52f5cfe061012",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op30/": {
+"h": "95a2dcb0f68b206e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op40/": {
+"h": "446695ddc7b54699",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op50/": {
+"h": "1b195dd4d9a6e761",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op60/": {
+"h": "9aac031e09c7bc27",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op70/": {
+"h": "26747ba546ff4fb0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op80/": {
+"h": "1c435f932ffeabbc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-medium-voltage-switchgear/op90/": {
+"h": "213062f055f79303",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/": {
+"h": "cd591111cc055cfe",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op10/": {
+"h": "abad1fa7d5328fd4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op100/": {
+"h": "c80d72cc4e1fc510",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op110/": {
+"h": "0e73f2e9ab378a01",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op120/": {
+"h": "ed4e0fe2b38cb040",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op20/": {
+"h": "1f38debeab1f6b67",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op30/": {
+"h": "2d0a96e4283c9fa1",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op40/": {
+"h": "5266b6c19f8f5aa2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op50/": {
+"h": "b94be78fafcf9024",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op60/": {
+"h": "6f1bd3e1fe5ecea3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op70/": {
+"h": "4cdd725f4fcc5f78",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op80/": {
+"h": "536b3bb3b17414e6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/data-center-ups/op90/": {
+"h": "ad0de29be65d28bf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/parts/diesel-common-rail/": {
 "h": "1be870f30cda1a6c",
@@ -4019,6 +4673,72 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/parts/fixed-pitch-propeller/": {
+"h": "b07bc3e3d61b46c1",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op10/": {
+"h": "39d6837df16a2146",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op100/": {
+"h": "dbc3e1b5877642da",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op20/": {
+"h": "92d2471e9448dfdb",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op30/": {
+"h": "c5546854daad4f4d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op40/": {
+"h": "b4b73561a5819391",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op50/": {
+"h": "15d23354d863904d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op60/": {
+"h": "93f568bfb2136252",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op70/": {
+"h": "0c42a407f2b53795",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op80/": {
+"h": "7a8e33fc26676708",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/fixed-pitch-propeller/op90/": {
+"h": "36418ad6f74084c3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/parts/forged-aluminum-control-arm/": {
 "h": "4e6a598d5619f990",
 "idx": true,
@@ -4102,6 +4822,1524 @@
 "idx": false,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/parts/gas-engine-genset-assembly-testing/": {
+"h": "78b24f50949de274",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-genset-assembly-testing/op10/": {
+"h": "b4a34f0b282e9d33",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-genset-assembly-testing/op20/": {
+"h": "122d0fcece237168",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-genset-assembly-testing/op30/": {
+"h": "2742d7e3db20c549",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-genset-assembly-testing/op40/": {
+"h": "d364be788a057b86",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-genset-assembly-testing/op50/": {
+"h": "55a1708bd0a21b07",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-genset-assembly-testing/op60/": {
+"h": "15f88d7b4044d352",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-genset-assembly-testing/op70/": {
+"h": "0c3a6f04f6440c59",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/": {
+"h": "fe5e6bfeeea605ad",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op10/": {
+"h": "6b743817e3df3114",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op20/": {
+"h": "c496866a6ff7c9b3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op30/": {
+"h": "54292bbffbaadce0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op40/": {
+"h": "a5f9118abd29509f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op50/": {
+"h": "bea599ee10f4fe79",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op60/": {
+"h": "48a2fcf7a67eca0a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op70/": {
+"h": "0006e645b2097a5a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-engine-prechamber-gas-valve/op80/": {
+"h": "08a10877ec9e96a7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/": {
+"h": "7152cb073ad67323",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/op10/": {
+"h": "2e4049a578b4800b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/op20/": {
+"h": "5e3d0b1a14f9e2ea",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/op30/": {
+"h": "4594733f120d0c01",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/op40/": {
+"h": "bab5155fd314df9b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/op50/": {
+"h": "5b2ec8f4db1d283e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/op60/": {
+"h": "e746d88a841ed99f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-casing/op70/": {
+"h": "07ebb0262e5ce36d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/": {
+"h": "993a13042b97090c",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op10/": {
+"h": "10fd9e0b9d21a7b3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op20/": {
+"h": "0b798e37b93d4f37",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op30/": {
+"h": "ca41208c14e850a7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op40/": {
+"h": "8273debfa8b11603",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op50/": {
+"h": "812c022074bdbd85",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op60/": {
+"h": "2c5660f9f380cfda",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op70/": {
+"h": "63cc9c04295dc7e8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-combustor/op80/": {
+"h": "8ee24bc555874f26",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/": {
+"h": "c800097224b58fe2",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op10/": {
+"h": "68c6ba6d49368cea",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op20/": {
+"h": "c4ad1a89c8d4bf33",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op30/": {
+"h": "51a34d437bf33de2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op40/": {
+"h": "caf622a721f6008a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op50/": {
+"h": "522ea79a0ae3a4a5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op60/": {
+"h": "a5f2baa59c25938c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op70/": {
+"h": "b760f61d8ee91b7d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op80/": {
+"h": "2530af700696251e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-compressor-blades/op90/": {
+"h": "93a79dea56b9efa7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/": {
+"h": "2538314157f85b90",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op10/": {
+"h": "f86b8708018cde12",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op100/": {
+"h": "82d72e5d5394d7cf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op20/": {
+"h": "bc55fdb8dd4db3f7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op30/": {
+"h": "c751078a8b39fe05",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op40/": {
+"h": "7014984fa9216954",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op50/": {
+"h": "00a11e2f1610d890",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op60/": {
+"h": "44fedb1aacd1ed2b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op70/": {
+"h": "e903e6fdfc4241f3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op80/": {
+"h": "5b1362ff05e7bebd",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-disk/op90/": {
+"h": "2267dbe2627c0d3e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/": {
+"h": "70ee2b5bae9f1ea1",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op10/": {
+"h": "22e811373d6347d2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op20/": {
+"h": "124cb5f2919ac730",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op30/": {
+"h": "0e038c2eef535539",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op40/": {
+"h": "40424f2bd96dd2cf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op50/": {
+"h": "4b7cde657fc51b3d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op60/": {
+"h": "b7739435b9e4c322",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op70/": {
+"h": "561d0ecd6a32a9bc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op80/": {
+"h": "1e70bb8904850923",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-rotor-assembly-testing/op90/": {
+"h": "5d1f6f723957aec0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/": {
+"h": "edea6d4dbe3e4821",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op10/": {
+"h": "53ba27e5e224cee4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op100/": {
+"h": "7d61bf1f727452b3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op110/": {
+"h": "8f45629c43360ba4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op120/": {
+"h": "9e94884f4694ad20",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op130/": {
+"h": "f9b7c1118f3ce65a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op20/": {
+"h": "fa6b8d5657d6b625",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op30/": {
+"h": "4fa4796d7fa3d239",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op40/": {
+"h": "b4ac4525e69c9887",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op50/": {
+"h": "a57eca2132574994",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op60/": {
+"h": "45d75452c4721ff3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op70/": {
+"h": "4df7cd96310f4744",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op80/": {
+"h": "32844094a0487324",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/gas-turbine-turbine-blade/op90/": {
+"h": "aa68c61dd12b4e44",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/": {
+"h": "eae593bd1363ad68",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op10/": {
+"h": "1b8de26f6efce70d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op20/": {
+"h": "0599f8928a3266e0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op30/": {
+"h": "2a8dd25617a43c23",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op40/": {
+"h": "9ccd581c611779e7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op50/": {
+"h": "56d707ccb0325ae8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op60/": {
+"h": "bca06368596472a6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op70/": {
+"h": "834056328352ae48",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-assembly-testing/op80/": {
+"h": "924af7562b81bf59",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/": {
+"h": "e55bc9a6384949ab",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op10/": {
+"h": "eeca36d398d09d45",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op20/": {
+"h": "7998603624236c89",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op30/": {
+"h": "b44613f9a7bfe6de",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op40/": {
+"h": "30777256366bf433",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op50/": {
+"h": "e2c3cad3b20364df",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op60/": {
+"h": "39cf0c51e9db1eb1",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op70/": {
+"h": "88e7b7bc56335006",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op80/": {
+"h": "11e1f1c41340ec22",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-brushless-exciter-avr/op90/": {
+"h": "f692bc8e2aeb33b2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/": {
+"h": "7c62676a415fdc0b",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/op10/": {
+"h": "6c549cb9c7d0e28d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/op20/": {
+"h": "cb903094fd4d6d43",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/op30/": {
+"h": "e4bc7761ce2e4711",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/op40/": {
+"h": "916cf7345dc56842",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/op50/": {
+"h": "b6a96b400c78ab4c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/op60/": {
+"h": "0d69de7f5970da9a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-form-wound-coil/op70/": {
+"h": "b3e5911f2f5d834f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/": {
+"h": "22f943a3ed81d1f4",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op10/": {
+"h": "0a3008009e36d30f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op100/": {
+"h": "878a203e903bf6ab",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op110/": {
+"h": "0e09c2295059f56b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op20/": {
+"h": "bc1a72fdd57d9388",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op30/": {
+"h": "02f721f61ef36a38",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op40/": {
+"h": "5dc5c606aaf561c2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op50/": {
+"h": "e776bb97b0b428cb",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op60/": {
+"h": "dac2660960eeb92a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op70/": {
+"h": "a58b90c29406082d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op80/": {
+"h": "bf5cce62d58fab1e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-paralleling-switchgear/op90/": {
+"h": "1d2dd7bee2c8457e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/": {
+"h": "5d036b08e0e0dfd5",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/op10/": {
+"h": "d3f45bd8da369a68",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/op20/": {
+"h": "55bca3bf087b779f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/op30/": {
+"h": "686ea346ade3b62c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/op40/": {
+"h": "d49388f28aa147f4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/op50/": {
+"h": "6504baf6556362c5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/op60/": {
+"h": "d43a769261f454e8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-rotor-shaft/op70/": {
+"h": "44ad7cb36e252675",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/": {
+"h": "19c938b910de69c5",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op10/": {
+"h": "31b0a899cba3823c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op20/": {
+"h": "b045c8862915f7ee",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op30/": {
+"h": "748a5bfc55577fb0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op40/": {
+"h": "3aa6eeb9c24b207f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op50/": {
+"h": "c3c90892406ef5f6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op60/": {
+"h": "802e8e6d0a087ab9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op70/": {
+"h": "44ec3d9311806aac",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op80/": {
+"h": "b10324eac57db91d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-salient-pole-rotor/op90/": {
+"h": "f748373f474213c2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/": {
+"h": "1c865c434019e9f3",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op10/": {
+"h": "14b3ba0f2e05976f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op20/": {
+"h": "75c4b827e7c488c5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op30/": {
+"h": "b797c0f96cc76f7d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op40/": {
+"h": "b067713aafa37071",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op50/": {
+"h": "e00d8ade1080e94b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op60/": {
+"h": "85b755c0811db420",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op70/": {
+"h": "30e25eefdc96dea3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-core/op80/": {
+"h": "b93ea7bc11ffd131",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/": {
+"h": "74e0563f0b995a16",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op10/": {
+"h": "707050f91f5e9440",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op20/": {
+"h": "ab26b0c66acad381",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op30/": {
+"h": "acd69d11f1acd62b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op40/": {
+"h": "82fe1b3676f57a84",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op50/": {
+"h": "204a550cce3f9c5a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op60/": {
+"h": "84f931fa4f5924e8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op70/": {
+"h": "0713ee6690848171",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-frame/op80/": {
+"h": "870a5ef035f6d717",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/": {
+"h": "5a2292550d12d57c",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op10/": {
+"h": "b12b4c9098670fea",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op100/": {
+"h": "23e8f58c685c1d79",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op20/": {
+"h": "6393c2c27f81117f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op30/": {
+"h": "ef663f16100cdd37",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op40/": {
+"h": "92390f5981ccfa37",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op50/": {
+"h": "e1f9f3665ac543b3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op60/": {
+"h": "7f1b583709ef3ba2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op70/": {
+"h": "6a73eafa855b0f17",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op80/": {
+"h": "297b3c83c3392aab",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/generator-stator-winding-vpi/op90/": {
+"h": "82a4e7bf56edd888",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/": {
+"h": "060ce1132b4e2c41",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op10/": {
+"h": "07228b37094d09b9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op100/": {
+"h": "1a560b48da610683",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op110/": {
+"h": "c870a243ae8726c2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op20/": {
+"h": "2e5e0e3ed228e287",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op30/": {
+"h": "795bc544c7814a64",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op40/": {
+"h": "9c934950a8bbaa4c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op50/": {
+"h": "ad85f0de4e3f6ced",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op60/": {
+"h": "ac3c2d4ca357db8a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op70/": {
+"h": "ca3db93f2b6471a8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op80/": {
+"h": "d48c306d5c94641f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-acoustic-enclosure/op90/": {
+"h": "af5175db2feb9b43",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/": {
+"h": "7ef8bac082c03252",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op10/": {
+"h": "d1aba90c5148000f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op20/": {
+"h": "ae9295198a1c9aee",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op30/": {
+"h": "a9429ef51dc37440",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op40/": {
+"h": "6923d98002190f20",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op50/": {
+"h": "8d31e594db309e3c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op60/": {
+"h": "d3beb91de5fc2318",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op70/": {
+"h": "4cdbd012cc2750c2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op80/": {
+"h": "b81e087d794d17b7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-assembly-alignment/op90/": {
+"h": "5b9eb329111d7b8d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/": {
+"h": "c7b0be8342815e0f",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op10/": {
+"h": "1a262e0685e47601",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op100/": {
+"h": "47ff64570d1c8b27",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op20/": {
+"h": "d4dc7915f2fa15e2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op30/": {
+"h": "453f9114477b9be6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op40/": {
+"h": "ad5eb3f1df493054",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op50/": {
+"h": "a55fc9ec1b918953",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op60/": {
+"h": "30362ea1000ae267",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op70/": {
+"h": "a2e98085ebc860d7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op80/": {
+"h": "410ee9df0d7c50c7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-base-frame/op90/": {
+"h": "8550f4f777519199",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/": {
+"h": "96538d8fe0a74d65",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op10/": {
+"h": "1ec7974da5323ecd",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op20/": {
+"h": "c4d71b67d1bc3987",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op30/": {
+"h": "4c4888a082dacc3d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op40/": {
+"h": "7095015191bfbb6f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op50/": {
+"h": "81768b8fe585cde1",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op60/": {
+"h": "86fc370c10c15863",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op70/": {
+"h": "5ec778507e9d865d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op80/": {
+"h": "fac28f5003514c1e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-exhaust-silencer/op90/": {
+"h": "b793a675b022dde6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/": {
+"h": "4aa92d543ef97383",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op10/": {
+"h": "ee9f4052dd4df986",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op100/": {
+"h": "550895f80491fb2a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op20/": {
+"h": "e88566513afbe7dc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op30/": {
+"h": "460b5eb9dcb63ef7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op40/": {
+"h": "46ba154856a87ea3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op50/": {
+"h": "f68c1069d1415fd2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op60/": {
+"h": "b482e3f79750d68a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op70/": {
+"h": "0c7b5301d76f18e6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op80/": {
+"h": "fa8cca1458d6e5ab",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-factory-load-test/op90/": {
+"h": "7c1fbfca44c50a19",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/": {
+"h": "c7554e903197e560",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op10/": {
+"h": "0b0210bbbb958a83",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op20/": {
+"h": "f521d43c59a29ae8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op30/": {
+"h": "3951500869439a8a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op40/": {
+"h": "96f8a88d42985f80",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op50/": {
+"h": "ec263343510c294f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op60/": {
+"h": "66b0aac0a812f109",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op70/": {
+"h": "f88ef05c70c4b808",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-fuel-day-tank/op80/": {
+"h": "e9c3ef23010c69a1",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/": {
+"h": "a951ef6ec767526e",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op10/": {
+"h": "9a923d76ce3c730e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op100/": {
+"h": "e9a0be84397556bc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op110/": {
+"h": "780659c4d34361c0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op120/": {
+"h": "fd62753e8d428209",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op20/": {
+"h": "492b5b4e67bb84c7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op30/": {
+"h": "ca4c27afc072815d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op40/": {
+"h": "fa20c87b4197a9ef",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op50/": {
+"h": "6586e2350a9e47e3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op60/": {
+"h": "fc7551db87f0e457",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op70/": {
+"h": "b50ac19b023acd4a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op80/": {
+"h": "c58e15c75e3bea3e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-high-speed-diesel-engine/op90/": {
+"h": "49a01c5af3b9a96e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/": {
+"h": "6e1f4cfa9c357a59",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op10/": {
+"h": "1428833401ff90dd",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op100/": {
+"h": "d9bc6d07921a11e4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op110/": {
+"h": "2b47223d58c1cd37",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op20/": {
+"h": "0777499b9e317e38",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op30/": {
+"h": "dcbd7b08e8fad8a4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op40/": {
+"h": "93ce1d960901d575",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op50/": {
+"h": "35bd3ec7d7c3cdff",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op60/": {
+"h": "2ba20bf54af24e50",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op70/": {
+"h": "e8cf28d4468a54bb",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op80/": {
+"h": "2de2e9b594dab45a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/genset-radiator/op90/": {
+"h": "1ef99d37b07ddabf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/parts/gigacast-underbody/": {
 "h": "356010429bbbbff6",
@@ -4450,6 +6688,1830 @@
 "idx": false,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/parts/low-speed-engine-assembly-shop-test/": {
+"h": "df349d80d7ad9a38",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op10/": {
+"h": "b290f057b4bd7bde",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op100/": {
+"h": "919726b5f9d0af7e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op20/": {
+"h": "6e1cb14458f558ff",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op30/": {
+"h": "3ca3c254743afc99",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op40/": {
+"h": "b45aeb32abb27522",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op50/": {
+"h": "fe16e2486f8beaea",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op60/": {
+"h": "d03954ca80af14d0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op70/": {
+"h": "8da856cbd2d25b85",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op80/": {
+"h": "de522e9efb2ea8d4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-assembly-shop-test/op90/": {
+"h": "6b83593b2b4c3c8a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/": {
+"h": "4a510249d7107b73",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op10/": {
+"h": "e5d4c10f931c8bc5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op100/": {
+"h": "680ae3cfbf673c1a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op20/": {
+"h": "d76bf8832ca9845e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op30/": {
+"h": "5c2270a68755b068",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op40/": {
+"h": "c95b12968069a0bd",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op50/": {
+"h": "8697de268d004d92",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op60/": {
+"h": "e9a634067add440f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op70/": {
+"h": "ce902bfcb06187c4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op80/": {
+"h": "d903a7f29f50f3c4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-bedplate/op90/": {
+"h": "7d3b0d6373368bed",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/": {
+"h": "c329613ceaf8dcf4",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op10/": {
+"h": "cbfd41c74d6b3150",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op100/": {
+"h": "527ad5d685ae0c95",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op20/": {
+"h": "7f8f16ebe0d9e5d3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op30/": {
+"h": "816c994b7da42cc2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op40/": {
+"h": "602c9854edb5781e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op50/": {
+"h": "54d396d329d2eb66",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op60/": {
+"h": "3037881dbc14418f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op70/": {
+"h": "3bd59998cf4190ab",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op80/": {
+"h": "a8080d6593756a52",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-crosshead/op90/": {
+"h": "cd101ef878bcfce2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/": {
+"h": "ee8b1df1637e7290",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op10/": {
+"h": "d6939c2e202e88bf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op20/": {
+"h": "4baedc0df3175897",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op30/": {
+"h": "a2b13689a107491b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op40/": {
+"h": "dbd758a642a369c0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op50/": {
+"h": "2ccd432fcd2aef4b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op60/": {
+"h": "53b321f0f27adb05",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op70/": {
+"h": "4395f5ecf0c64dbc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-cover/op80/": {
+"h": "3a99de366a6cb5e4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/": {
+"h": "351e53546f71eab6",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op10/": {
+"h": "af6a47f6a7301462",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op20/": {
+"h": "4953b94d4c9a6a42",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op30/": {
+"h": "054ca640d8868916",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op40/": {
+"h": "8b9d1868620470b9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op50/": {
+"h": "a083a5ffbf513233",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op60/": {
+"h": "b9567728dfcac7b0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op70/": {
+"h": "4fecfa62aa5eac7b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op80/": {
+"h": "804b807f8d11dd51",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-frame/op90/": {
+"h": "334224ef71f138b2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/": {
+"h": "fa8b9e924078d7d7",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op10/": {
+"h": "a56b804b81699f08",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op100/": {
+"h": "b7cb2ec620a0e5d6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op20/": {
+"h": "aa7ebadd0a27fffc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op30/": {
+"h": "c2f4a8125c5e3650",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op40/": {
+"h": "f3b44de79cfe7ba4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op50/": {
+"h": "da60ceeb92194654",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op60/": {
+"h": "5338704cb4b99daf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op70/": {
+"h": "64eb5fd67269837b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op80/": {
+"h": "bee1e6972a3b9948",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-cylinder-liner/op90/": {
+"h": "2bcd400336dd1067",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/": {
+"h": "376d886c7afdaff0",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op10/": {
+"h": "0c7cea7faf58a020",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op100/": {
+"h": "6aff265f14af19b1",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op20/": {
+"h": "314be10c9efc98ec",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op30/": {
+"h": "b0b00d6cd3254ee9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op40/": {
+"h": "41e2886e2c8e5004",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op50/": {
+"h": "b18d5bad69e56803",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op60/": {
+"h": "942f5894e93cc0f6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op70/": {
+"h": "4ac3772912aac961",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op80/": {
+"h": "0142447db25f16bc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-exhaust-valve/op90/": {
+"h": "84e044d5bf15f76e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/": {
+"h": "cc0723f8fd4d5c5d",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op10/": {
+"h": "0ef3f735ac3b38ed",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op20/": {
+"h": "cb7d4ba28cfab349",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op30/": {
+"h": "13d4c357c5860d4f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op40/": {
+"h": "7ecb706ae3f566e8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op50/": {
+"h": "aeecca59b3f1776d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op60/": {
+"h": "a1f1cf8ea9814dd6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op70/": {
+"h": "3b8019a9085bea6e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op80/": {
+"h": "8080f7602ddb71ad",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-frame-box/op90/": {
+"h": "60bef2701369f197",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/": {
+"h": "5715055960e92d81",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op10/": {
+"h": "12216506f475f527",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op100/": {
+"h": "1cf468800b944b47",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op110/": {
+"h": "eaecbd6e97e31cc5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op20/": {
+"h": "8f5843cd77645407",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op30/": {
+"h": "2d1426dad326c329",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op40/": {
+"h": "58137f569d5fe697",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op50/": {
+"h": "296ca0566cbd6239",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op60/": {
+"h": "74aad49a0f1193cd",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op70/": {
+"h": "01688010b7006e1c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op80/": {
+"h": "b8b61223b934a9f5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/low-speed-engine-piston/op90/": {
+"h": "e49e476b116cc964",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/": {
+"h": "f4da0de6b81b1016",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op10/": {
+"h": "339d68f1760463fb",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op100/": {
+"h": "fb9661e83cf2e780",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op110/": {
+"h": "24a479028fa2f033",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op20/": {
+"h": "1a4045a021f64cc6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op30/": {
+"h": "f8229bfb5fd2afa4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op40/": {
+"h": "5bb404c7cdd01d50",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op50/": {
+"h": "12de571fc42a50ae",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op60/": {
+"h": "4f09c5144485abb3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op70/": {
+"h": "22f46616ec7d8e74",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op80/": {
+"h": "8216f9406dc76f48",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-crankshaft-semi-built/op90/": {
+"h": "349f05bc6381444a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/": {
+"h": "80c14c34a26ac7eb",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op10/": {
+"h": "798ebd8b248152ed",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op20/": {
+"h": "85fb6b98c6b84726",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op30/": {
+"h": "3c930cea5db06223",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op40/": {
+"h": "4b6f8ce7b9505b4e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op50/": {
+"h": "de13e0e02b697af7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op60/": {
+"h": "ca6431de392a71f9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op70/": {
+"h": "177f6acf0a5517a8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-exhaust-gas-scrubber/op80/": {
+"h": "36a65988df5a74ae",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/": {
+"h": "e3ee55975fe4d952",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op10/": {
+"h": "32a268da2ab46080",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op20/": {
+"h": "c01a77daa17cfc6e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op30/": {
+"h": "e83b837058edb08d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op40/": {
+"h": "e2d18d48b1630d74",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op50/": {
+"h": "7dd2e2556c125c76",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op60/": {
+"h": "c0d65788c678a819",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op70/": {
+"h": "2493c59102af54d8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-gearbox-assembly/op80/": {
+"h": "dd228c0330a7b610",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/": {
+"h": "6bdf42d2e7d61eca",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op10/": {
+"h": "ce129416da3ebc49",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op20/": {
+"h": "8c40ca3ab6c4c2cc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op30/": {
+"h": "8513513fa7e152a7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op40/": {
+"h": "2f47484711a061db",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op50/": {
+"h": "1d8a1a94873163da",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op60/": {
+"h": "9dd2d35c6654f3ee",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op70/": {
+"h": "29f453ce0e701e19",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op80/": {
+"h": "f620c6cfba26ab61",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-reduction-gear/op90/": {
+"h": "b9171e279b2a7e6b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/": {
+"h": "0edfdb025b606da8",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op10/": {
+"h": "96585de253331a39",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op20/": {
+"h": "df1182e404c8382e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op30/": {
+"h": "75b35956e53a658c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op40/": {
+"h": "b97768752aee9c18",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op50/": {
+"h": "2f9a398afbfe1960",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op60/": {
+"h": "acdff4de602a4899",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op70/": {
+"h": "03664206e5736695",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-scr-denox-system/op80/": {
+"h": "8626c3a4dfe573e4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/": {
+"h": "051db3d4327d6a28",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op10/": {
+"h": "e839a1ddbbcc78a3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op20/": {
+"h": "3890152ee288c53a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op30/": {
+"h": "dc07134ff0090390",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op40/": {
+"h": "19b5363c31a741c4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op50/": {
+"h": "8d22172f06ac224a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op60/": {
+"h": "e706ffca459338fa",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op70/": {
+"h": "939485a604a1ba08",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-assembly-test/op80/": {
+"h": "ef9ae260b1d1ce21",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/": {
+"h": "26cc52c9eb01699e",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op10/": {
+"h": "b8c6b4827f302af3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op20/": {
+"h": "7d31d2f38507f8f5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op30/": {
+"h": "36c48c0619266d3b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op40/": {
+"h": "bafbdb60b8298819",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op50/": {
+"h": "0cef52d5bc5fe2a9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op60/": {
+"h": "6627ba842e34552c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op70/": {
+"h": "b84c542a2d41755c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-compressor-wheel/op80/": {
+"h": "4cb8ce3660522a9d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/": {
+"h": "345b955c8a1d6916",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op10/": {
+"h": "d51db029e4849905",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op100/": {
+"h": "17de9d12a36ee3e9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op110/": {
+"h": "866211bd71a2b325",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op20/": {
+"h": "56c2691ce4e14ee7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op30/": {
+"h": "0d3ba982156bfc7f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op40/": {
+"h": "682f7bab8d2738d5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op50/": {
+"h": "a1ed05015028a51e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op60/": {
+"h": "a388f30ddd51faf7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op70/": {
+"h": "6d300efe87ca7b34",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op80/": {
+"h": "85b4992beb96e9d8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/marine-turbocharger-turbine-rotor/op90/": {
+"h": "607ca8a5f72c5b04",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/": {
+"h": "3ed1759a97e858ea",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op10/": {
+"h": "bcff7a50c94f7245",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op100/": {
+"h": "f9439a40defb5953",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op20/": {
+"h": "0da324d71e0c8c41",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op30/": {
+"h": "f141b7a984ba9ad3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op40/": {
+"h": "e8e814193eca2550",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op50/": {
+"h": "d84727dd1808113b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op60/": {
+"h": "0cd83b8eb069d06a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op70/": {
+"h": "3cbf984f8eba7378",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op80/": {
+"h": "558ccb49c966a3fb",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-assembly-test/op90/": {
+"h": "97a58419d2df84d4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/": {
+"h": "a3c97581b893cfb6",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op10/": {
+"h": "1654d57334ab0b8e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op100/": {
+"h": "ffae247b52aed5ea",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op110/": {
+"h": "0407ef561bb72849",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op120/": {
+"h": "6c595634e77ff0da",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op20/": {
+"h": "a6879e72da2a1611",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op30/": {
+"h": "76f36f0c8625ded4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op40/": {
+"h": "d58410aac48e483c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op50/": {
+"h": "b839ac65fec973d3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op60/": {
+"h": "37d8106bbbb0215a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op70/": {
+"h": "e46a8db022c21046",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op80/": {
+"h": "c249155317240720",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-block/op90/": {
+"h": "de4b53710d0b11f4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/": {
+"h": "30900a2a542bfd94",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op10/": {
+"h": "60c03fde7c952bd6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op20/": {
+"h": "27bc976fa01cde12",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op30/": {
+"h": "2e679800242b8e63",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op40/": {
+"h": "2156666b014ef60d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op50/": {
+"h": "e64053104a25be9e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op60/": {
+"h": "20860674561dda69",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op70/": {
+"h": "8a35237288511288",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op80/": {
+"h": "1ac4c7f768bb0382",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-camshaft/op90/": {
+"h": "e06fd695739c65f9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/": {
+"h": "fac575972eea866f",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op10/": {
+"h": "ac8fb6199c9be84c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op20/": {
+"h": "23991a394a4088d9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op30/": {
+"h": "ee9bce0527fecb69",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op40/": {
+"h": "c0309e5873af8384",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op50/": {
+"h": "63d3b0698ae3f60b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op60/": {
+"h": "634347b5adf28322",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op70/": {
+"h": "1c40b0a444ffb226",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op80/": {
+"h": "36d71c0bc8556581",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-connecting-rod/op90/": {
+"h": "f38449148f489fd0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/": {
+"h": "861b0d85fbe0a3f5",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op10/": {
+"h": "8ae6398df86a4ece",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op100/": {
+"h": "283a8fdb7e4f41ad",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op110/": {
+"h": "9ae65d3552f70078",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op120/": {
+"h": "ff2f0eb257930860",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op130/": {
+"h": "802666c752571250",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op20/": {
+"h": "e4b5bcff17d223f4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op30/": {
+"h": "dadcf6f5ded2ee27",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op40/": {
+"h": "5944e6085fb3de0c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op50/": {
+"h": "1a6e6fe34a13e6ca",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op60/": {
+"h": "45065cac31bba324",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op70/": {
+"h": "e7de3ba783a2c84f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op80/": {
+"h": "24462b8b48998aed",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-crankshaft/op90/": {
+"h": "1688e76a76e4095b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/": {
+"h": "7d4eeacac0998207",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op10/": {
+"h": "fe8f5d3dd84f658a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op100/": {
+"h": "ae19db7e09bb7134",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op110/": {
+"h": "2a6836863cffbd36",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op20/": {
+"h": "a74372f18aa2ed89",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op30/": {
+"h": "ac23af4c2187d701",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op40/": {
+"h": "1ef881979eb14182",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op50/": {
+"h": "e75123a64112e58d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op60/": {
+"h": "55d808ec87e40acf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op70/": {
+"h": "60de75b15ecae8c8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op80/": {
+"h": "3ce9f43bb93b3a1b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-head/op90/": {
+"h": "32f5e60c0d23ed7c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/": {
+"h": "81ba3dc2bcbe4cd5",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op10/": {
+"h": "c8fa776e2e5935a0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op100/": {
+"h": "a0281eff0036c24d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op110/": {
+"h": "8be1488d22c2547d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op20/": {
+"h": "882e2b62c19ae071",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op30/": {
+"h": "e9e827fcac68af62",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op40/": {
+"h": "d27022bd348b5384",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op50/": {
+"h": "548e7ff7945cd741",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op60/": {
+"h": "0497d3622e1cead7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op70/": {
+"h": "34e33c481108afbf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op80/": {
+"h": "021fc99c42bf65e5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-cylinder-liner/op90/": {
+"h": "db65166c707d59b3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/": {
+"h": "cacaccfb745245d9",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/op10/": {
+"h": "ff30ecf63c2bf9ed",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/op20/": {
+"h": "b6552a72c147323e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/op30/": {
+"h": "30128d42c4d3a675",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/op40/": {
+"h": "4e143f7702534fd9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/op50/": {
+"h": "8c56ee754dce4bad",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/op60/": {
+"h": "1c2717484356dd5e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-main-bearing/op70/": {
+"h": "87e69549ff81e4bc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/": {
+"h": "d3351a3ddf110ac4",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op10/": {
+"h": "5d969ff5d0814dc3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op20/": {
+"h": "276ae5e30d0098ac",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op30/": {
+"h": "3b39d8efe1d1ff9c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op40/": {
+"h": "4c2f19dfb7af1160",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op50/": {
+"h": "0801fdd45826d151",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op60/": {
+"h": "a6a801da01292246",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op70/": {
+"h": "6907be0e3f92f2b7",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op80/": {
+"h": "44ad13f0d4932c9c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-engine-piston/op90/": {
+"h": "c095a555bb5fc175",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/": {
+"h": "48ef6fcb91c75979",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op10/": {
+"h": "9e92299faa4b428d",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op20/": {
+"h": "e4f152efac77739e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op30/": {
+"h": "078611e059658f8a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op40/": {
+"h": "0238a48fcac745e1",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op50/": {
+"h": "f4c9f06d9da1c257",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op60/": {
+"h": "81ea7abde11a3639",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op70/": {
+"h": "615e51c73610cbcd",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op80/": {
+"h": "1bf50ec88cb25712",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-pump/op90/": {
+"h": "2fdbebc26d647228",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/": {
+"h": "95cff403d0cd67fb",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op10/": {
+"h": "d6b8d79d7ffcf977",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op20/": {
+"h": "90f31fd2a1a59b7a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op30/": {
+"h": "91e24bb141e10107",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op40/": {
+"h": "b5ef066a5b56c58e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op50/": {
+"h": "390a030639370c77",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op60/": {
+"h": "099b3b314445590f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op70/": {
+"h": "7d9613b636771b4a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op80/": {
+"h": "abe71a90d3bb0805",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-fuel-injection-valve/op90/": {
+"h": "c598e285ad3393f5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/": {
+"h": "7971d26e96842aeb",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op10/": {
+"h": "60c0d1caa514b5a5",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op20/": {
+"h": "64931db519c64c2c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op30/": {
+"h": "635dd8c47bef8884",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op40/": {
+"h": "b2e19ef311e23bb2",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op50/": {
+"h": "e0b6f0e95492ad67",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op60/": {
+"h": "9f7d1c93b440681b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op70/": {
+"h": "30e1e8f3b0ed84a9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/medium-speed-high-pressure-fuel-line/op80/": {
+"h": "aa14595504e12fef",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/parts/motor-shaft-resolver/": {
 "h": "ab7981346e99ea65",
@@ -4853,6 +8915,72 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/parts/propeller-shaft-intermediate-shaft/": {
+"h": "1a0cc98a71e3c47c",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op10/": {
+"h": "37049eaa62b17bf8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op100/": {
+"h": "8cbfe51874674eb9",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op20/": {
+"h": "79eeb234c036b34b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op30/": {
+"h": "6a2f843cba9410ae",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op40/": {
+"h": "15efe753fd7b74cc",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op50/": {
+"h": "576e4ae62e688cac",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op60/": {
+"h": "b39b6a9471a212eb",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op70/": {
+"h": "e72ac6425a287656",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op80/": {
+"h": "193f8231e4fbbbe4",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/propeller-shaft-intermediate-shaft/op90/": {
+"h": "17cf0b869a5fc05c",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/parts/radiator-grille/": {
 "h": "e41433dbfe8918a6",
 "idx": true,
@@ -5026,6 +9154,60 @@
 "idx": false,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/parts/shafting-installation-alignment/": {
+"h": "23d733c2352a2211",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op10/": {
+"h": "58a332756491c1cf",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op20/": {
+"h": "c03b4d7ee868273e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op30/": {
+"h": "7c6a23c639c0ca98",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op40/": {
+"h": "fda82be060da8fb6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op50/": {
+"h": "92ed06395e8431d0",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op60/": {
+"h": "0b45eea661f26432",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op70/": {
+"h": "adcb0aa064f135a6",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/shafting-installation-alignment/op80/": {
+"h": "d2b8deae862b8b8f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/parts/shock-absorber/": {
 "h": "241ab242ff82ad97",
@@ -5260,6 +9442,60 @@
 "idx": false,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/parts/stern-tube-bearing-seal/": {
+"h": "328205ed5f6c5524",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op10/": {
+"h": "05fff504e5f6c4e3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op20/": {
+"h": "be17ac5c4fb81e3f",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op30/": {
+"h": "2f8a69d32b1649fd",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op40/": {
+"h": "0d837a516b6e674a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op50/": {
+"h": "a749b09974450b92",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op60/": {
+"h": "ae1499a4198bef61",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op70/": {
+"h": "bd25ebaa896d1899",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/stern-tube-bearing-seal/op80/": {
+"h": "6febae92f04c22ee",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/parts/subframe/": {
 "h": "ef33375e5ed218fb",
@@ -5765,6 +10001,96 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/parts/vacuum-circuit-breaker/": {
+"h": "4747cb76d2e4a208",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op10/": {
+"h": "94b87ea97b7b015b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op100/": {
+"h": "3f4b643f5ca34f9e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op110/": {
+"h": "beaf77133be3783a",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op120/": {
+"h": "82e0e360f6e1aef8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op130/": {
+"h": "ffc81434f061cba8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op140/": {
+"h": "d8965a41aa442cb8",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op20/": {
+"h": "542dc908f9ad2233",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op30/": {
+"h": "368b8cb4dfa67802",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op40/": {
+"h": "9a1e0c6d31e88fec",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op50/": {
+"h": "234c7f7e8b8537d3",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op60/": {
+"h": "b4ec9fc15242875b",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op70/": {
+"h": "5629a4a020961814",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op80/": {
+"h": "ddcf9a634efc553e",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/parts/vacuum-circuit-breaker/op90/": {
+"h": "45d3d3451f884445",
+"idx": false,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/parts/valve-body/": {
 "h": "2b959a2951662bf1",
 "idx": true,
@@ -5946,21 +10272,21 @@
 "pub": "2026-09-29"
 },
 "/powertrain/": {
-"h": "1818654831bad5b0",
+"h": "fdeea16669e6d8ab",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/search/": {
-"h": "41987f9a6ec21f0d",
+"h": "6d77e5814f859138",
 "idx": false,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/systems/": {
-"h": "41987f9a6ec21f0d",
+"h": "6d77e5814f859138",
 "idx": true,
-"mod": "2026-09-29",
+"mod": "2026-10-07",
 "pub": "2026-09-29"
 },
 "/systems/body/": {
@@ -5974,6 +10300,18 @@
 "idx": true,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/systems/data-center-generator-set/": {
+"h": "569667239933d56c",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/systems/data-center-power-distribution/": {
+"h": "82ba79cf55b1e71c",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/systems/drivetrain/": {
 "h": "403f627d550d6ead",
@@ -6011,11 +10349,47 @@
 "mod": "2026-09-29",
 "pub": "2026-09-29"
 },
+"/systems/gas-turbine-gas-engine-power/": {
+"h": "9b19ac1af4a0e219",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
 "/systems/interior-safety/": {
 "h": "891e0e6eb10574a8",
 "idx": true,
 "mod": "2026-09-29",
 "pub": "2026-09-29"
+},
+"/systems/large-engine-turbo-injection-aftertreatment/": {
+"h": "ae9296b86a002072",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/systems/marine-medium-speed-engine/": {
+"h": "54bc9d0cb9c42652",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/systems/marine-propulsion/": {
+"h": "cf467b3e6b280edb",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/systems/marine-two-stroke-engine/": {
+"h": "736557b0e29b5bd8",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
+},
+"/systems/synchronous-generator/": {
+"h": "b615cf0b53a4dc0c",
+"idx": true,
+"mod": "2026-10-07",
+"pub": "2026-10-07"
 },
 "/systems/thermal-management/": {
 "h": "50d293af12b4f94f",

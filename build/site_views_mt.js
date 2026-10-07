@@ -44,13 +44,14 @@ function mtHome(){
   show(h, [["工作機械図鑑"]], "mt");
 }
 
+function indsUsing(ci){ var seen = {}; use[ci].forEach(function(u){ seen[u.o.p.s.ind] = 1; }); return INDS.filter(function(d){ return seen[d.id]; }).map(indName).join("・"); }
 function mtRelatedParts(t){
   if(t.eq < 0) return "";
   var ci = t.eq, ps = [], seen = {};
   use[ci].forEach(function(u){ var p = u.o.p; if(!seen[p.slug]){ seen[p.slug] = 1; ps.push(p); } });
   if(!ps.length) return "";
-  return mtSec("IN THE CAR", "自動車部品での使われ方",
-    "<p class=\"sub\" style=\"font-size:16px;margin:-24px 0 28px\">自動車製造工程図鑑では、" + esc(C[ci].n) + "が" + use[ci].length + "の工程・" + ps.length + "の部品で使われています。</p>" +
+  return mtSec("IN THE ATLAS", "部品工場での使われ方",
+    "<p class=\"sub\" style=\"font-size:16px;margin:-24px 0 28px\">製造工程図鑑では、" + esc(C[ci].n) + "が" + indsUsing(ci) + "の" + use[ci].length + "の工程・" + ps.length + "の部品で使われています。</p>" +
     "<div class=\"grid-cards\">" + ps.slice(0, 6).map(partCard).join("") + "</div>" +
     "<p style=\"margin-top:28px\"><a class=\"lnk\" href=\"" + he(ci) + "\">" + esc(C[ci].n) + "が使われる工程をすべて見る</a></p>", "paper");
 }
@@ -83,7 +84,7 @@ function mtAuto(slug){
   h += "<section class=\"sec tight\" style=\"padding-top:clamp(40px,5vw,64px)\"><div class=\"wrap\">" + mtAnat(slug, c.name, c.name + "の構成例（模式図）") + "</div></section>";
   h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><article class=\"prose\">" + c.body + "</article></div></section>";
   if(c.types.length) h += mtSec("WORKS WITH", "よく組み合わせる機種", mtPills(c.types, MTD.types, "type"), "paper");
-  if(c.eq >= 0) h += mtSec("IN THE CAR", "自動車部品の工場では", "<p class=\"sub\" style=\"font-size:16px;margin:-24px 0 24px\">自動車製造工程図鑑では、" + esc(C[c.eq].n) + "が" + use[c.eq].length + "の工程で使われています。</p><p><a class=\"lnk\" href=\"" + he(c.eq) + "\">" + esc(C[c.eq].n) + "が使われる工程を見る</a></p>");
+  if(c.eq >= 0) h += mtSec("IN THE ATLAS", "部品工場では", "<p class=\"sub\" style=\"font-size:16px;margin:-24px 0 24px\">製造工程図鑑では、" + esc(C[c.eq].n) + "が" + indsUsing(c.eq) + "の" + use[c.eq].length + "の工程で使われています。</p><p><a class=\"lnk\" href=\"" + he(c.eq) + "\">" + esc(C[c.eq].n) + "が使われる工程を見る</a></p>");
   h += mtNext(MTD.autos, c, "auto", "自動化・周辺機器");
   show(h, [["工作機械図鑑", "/machine-tools/"], ["自動化・周辺機器", "/machine-tools/automation/"], [c.name]], "mt");
 }
