@@ -1,6 +1,6 @@
 # Notes for Claude
 
-This repo builds https://ygms3208.github.io/ (自動車製造工程図鑑). Work on the `source` branch; `main` holds only generated files and is written by `deploy.sh`.
+This repo builds https://ygms3208.github.io/ (製造工程図鑑, formerly 自動車製造工程図鑑). Work on the `source` branch; `main` holds only generated files and is written by `deploy.sh`.
 
 - Build: `cd build && npm install && python3 mk_site_tpl.py && python3 site.py` → `../out`. Publish: `./deploy.sh "summary"`.
 - Never change an existing slug in `data/slugs.tsv` or an OP number in `build/state/opnums.json`. If a URL must change, add `old new` to `build/state/redirects.txt`.
@@ -10,3 +10,4 @@ This repo builds https://ygms3208.github.io/ (自動車製造工程図鑑). Work
 - Content rules: public, general knowledge only; no customer or employer information; maker names are examples only; no ads.
 - Machine-tool atlas (/machine-tools/): prose in `data/mt/*.md` (`@type/@component/@automation/@guide slug` blocks), drawings in `build/il_mt.py` (`@mt(slug)`), views in `build/site_views_mt.js`. Slugs there are URLs too — never rename.
 - Operation training (/machine-tools/{type}/training/, hub /machine-tools/training/, casebook /machine-tools/troubles/): one JSON scenario per machine in `data/mt/sim/` (spec in `data/mt/sim/README.md`, validate with `python3 build/sim_check.py`). Drawings and static sections in `build/site_views_sim.js`; the game runs from `build/site_sim.js` (+ `site_sim.css`, inlined only on training pages; `site_sim_static.css` holds the static-section styles shared with the hub and casebook). Incident ids are URL anchors (`#t_xxx`) linked from the casebook — don't rename them casually.
+- Industries: automotive (data/01–10), marine engines (11–14), data-center emergency power (15–18). `SYS_IND` in `build/build.py` maps systems to industries; hubs /automotive/ /marine/ /datacenter-power/ (slugs type `industry`). Prose: `data/content/industry_*.md` and `systems_*.md`. The powertrain comparison (`pt.py`) counts automotive systems only. Card thumbnails are external SVGs at /parts/img/.

@@ -1,4 +1,4 @@
-# 自動車製造工程図鑑（AUTOMOTIVE ATLAS）— ソース
+# 製造工程図鑑（MANUFACTURING ATLAS、旧・自動車製造工程図鑑）— ソース
 
 公開サイト: https://ygms3208.github.io/
 
@@ -8,9 +8,13 @@
 
 | 場所 | 中身 |
 |---|---|
-| `data/01_plant.txt` 〜 `10_misc.txt` | 系統・部品・工程・設備のデータ |
-| `data/cats.txt` | 設備（253分類）と説明 |
-| `data/content/` | 加工法の解説（methods_*.md）と設備の解説（equipment_*.md） |
+| `data/01_plant.txt` 〜 `10_misc.txt` | 自動車の系統・部品・工程・設備のデータ |
+| `data/11_marine2.txt` 〜 `14_propulsion.txt` | 舶用エンジン（2ストローク主機・4ストローク中速機関・過給機ほか・推進系） |
+| `data/15_genset.txt` 〜 `18_gasgen.txt` | データセンター向け非常用発電（発電機セット・同期発電機・盤／UPS・ガスタービン／ガスエンジン） |
+| `data/cats.txt` | 設備（279分類）と説明 |
+| `data/content/` | 加工法の解説（methods_*.md）、設備の解説（equipment_*.md）、業界ページの本文（industry_*.md、`@industry auto/marine/power`）、系統ページの本文（systems_*.md、`@sys 系統id`） |
+| `build/build.py` の `INDUSTRIES`・`SYS_IND` | 業界の定義と、系統→業界の対応（未登録の系統は自動車）。業界ページは /automotive/・/marine/・/datacenter-power/ |
+| `build/il_parts*.py`・`build/il_pictos*.py`・`build/il_map.py` | 部品図・設備の原理図と、その対応（CATMAP・SYS_HERO）。カードのサムネイルは /parts/img/{slug}.svg として書き出す |
 | `data/mt/` | 工作機械図鑑（/machine-tools/）の本文：機種（types_*.md）・構成部品・自動化・ガイド |
 | `build/il_mt.py` | 工作機械図鑑の図解（構造図・部品図・自動化の図） |
 | `data/mt/sim/` | 操作トレーニング（/machine-tools/{機種}/training/）のシナリオ。1機種1ファイルのJSON。書き方は `data/mt/sim/README.md`、検査は `python3 build/sim_check.py` |
@@ -24,7 +28,7 @@
 ## 更新のしかた
 
 1. `data/` の内容を直す（部品や工程の追加・修正、解説文の加筆）。
-2. 新しい部品・設備を足したら `data/slugs.tsv` に英語URLを1行追加する。
+2. 新しい部品・設備を足したら `data/slugs.tsv` に英語URLを1行追加し、部品図（`il_parts*.py` の `@part("系統id.部品id")`）と設備の原理図（`il_map.py` の CATMAP）を登録する。新しい系統は `SYS_HERO` と、自動車以外なら `SYS_IND` にも足す。パワートレイン比較は自動車の系統だけで集計する。
 3. `./deploy.sh "変更の要約"` を実行する（ビルド → 検査 → `source` と `main` に push）。
 
 操作トレーニングのシナリオを直したら、`python3 build/sim_check.py` で形式を確かめてからデプロイします（ビルドでも同じ検査が走ります）。
