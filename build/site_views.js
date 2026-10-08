@@ -65,7 +65,12 @@ function searchShell(){
 
 /* ---------- shell parts shared by every page ---------- */
 function shellParts(){
-  var mm = "<a href=\"/\">トップ</a>" + INDS.map(function(d){ return "<a href=\"" + hi(d) + "\">" + esc(d.n) + "</a>"; }).join("") + "<a href=\"/systems/\">系統の一覧</a><a href=\"/powertrain/\">パワートレイン比較</a><a href=\"/map/\">工程マップ</a><a href=\"/methods/\">加工法</a><a href=\"/equipment/\">設備</a><a href=\"/machine-tools/\">工作機械図鑑</a><a href=\"/about/\">この図鑑について</a><div class=\"sys\">" + D.systems.map(function(s, si){ return "<a href=\"" + hs(s) + "\"><span>" + pad(si + 1) + "</span>" + esc(s.name) + "</a>"; }).join("") + "</div>";
+  function grp(t, links){ return "<div class=\"grp\"><p lang=\"en\">" + t + "</p>" + links.map(function(l){ return "<a href=\"" + l[0] + "\">" + esc(l[1]) + "</a>"; }).join("") + "</div>"; }
+  var mm = "<a href=\"/\">トップ</a>" +
+    grp("INDUSTRIES & PARTS", INDS.map(function(d){ return [hi(d), d.n]; }).concat([["/systems/", "業界と部品の一覧"]])) +
+    grp("EXPLORE", [["/methods/", "加工法"], ["/equipment/", "設備・検査機"], ["/map/", "全工程マップ"], ["/powertrain/", "パワートレイン比較"]]) +
+    grp("MACHINE TOOLS", [["/machine-tools/", "工作機械図鑑"], ["/machine-tools/guide/", "工作機械の選び方"], ["/machine-tools/training/", "操作トレーニング"], ["/machine-tools/troubles/", "トラブル事例集"]]) +
+    "<a href=\"/about/\">この図鑑について</a>";
   var qs = "<p lang=\"en\">QUICK LINKS</p>" + D.site.quick.map(function(x){ return "<a href=\"/search/?q=" + encodeURIComponent(x) + "\">" + esc(x) + "</a>"; }).join("");
   return { mm: mm, qs: qs };
 }

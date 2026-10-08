@@ -105,3 +105,5 @@ h1,h2,h3,h4,.d1,.d2,.d3,.brand b,.foot b{font-family:var(--f-head)}
 .mtlink.simlink>span.lnk{margin-top:8px;color:var(--naccent);font-size:15px}
 .mtpromo .vis .ilu{max-width:100%}
 .stage.thumb img,.vsi img,.tile .vis img{display:block;width:100%;height:auto}
+.mm .grp{margin:18px 0 6px;padding-top:16px;border-top:1px solid rgba(255,255,255,.14)}.mm .grp p{font:500 11px var(--f-en);letter-spacing:.28em;color:#8E8E93;margin-bottom:6px}.mm .grp a{font-size:clamp(20px,3vw,26px);padding:5px 0}
+.foot .cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px 28px;margin-top:22px}.foot .cols p{font:500 10.5px var(--f-en);letter-spacing:.24em;color:#8E8E93;margin:0 0 6px}.foot .cols a{display:block;color:#D2D2D7;padding:3px 0}.foot .cols a:hover{color:#FFFFFF}

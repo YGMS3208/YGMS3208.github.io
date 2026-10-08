@@ -6,6 +6,10 @@ import json, glob
 from parse import parse, KINDS
 import il_parts, il_pictos, il_pictos_gear
 import il_parts_marine, il_parts_marine4, il_parts_power, il_parts_power2, il_pictos_ind, il_pictos_ind2  # noqa: F401 (register drawings)
+import importlib  # noqa: E402
+# v3 drawings (shaded 3D style): every build/il3_*.py registers into il_parts.PARTS / il_pictos.PICTOS and overrides older drawings of the same key
+for _f in sorted(glob.glob(_B + "/il3_*.py")):
+    importlib.import_module(_os.path.basename(_f)[:-3])
 from il_map import CATMAP, SYS_HERO, OPPIC
 from il_dmap import build as dbuild
 import pt

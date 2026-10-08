@@ -34,7 +34,7 @@ TODAY = os.environ.get("BUILD_DATE") or datetime.datetime.now(datetime.timezone(
 SITE = "製造工程図鑑"
 SITE_EN = "MANUFACTURING ATLAS"
 SITE_OLD = "自動車製造工程図鑑"
-NAVS = [("ind-auto", "/automotive/", "自動車"), ("ind-marine", "/marine/", "舶用エンジン"), ("ind-power", "/datacenter-power/", "DC非常用発電"), ("kinds", "/methods/", "加工法"), ("eq", "/equipment/", "設備"), ("mt", "/machine-tools/", "工作機械")]
+NAVS = [("parts", "/systems/", "業界と部品"), ("kinds", "/methods/", "加工法"), ("eq", "/equipment/", "設備"), ("mt", "/machine-tools/", "工作機械図鑑"), ("train", "/machine-tools/training/", "操作トレーニング")]
 FONTS = "/tmp/claude-0/-home-claude/d64aa5d8-91f8-5c74-a54e-ffbc453c9481/scratchpad/fonts/node_modules/@fontsource"
 FONTS = os.environ.get("FONTSOURCE", FONTS if os.path.isdir(FONTS) else B + "/node_modules/@fontsource")
 os.makedirs(STATE, exist_ok=True)
@@ -413,6 +413,8 @@ with sync_playwright() as pw:
         res = pg.evaluate("(r) => window.__render(r)", {k: v for k, v in r.items() if k in ("t", "k", "no")})
         assert res and res["html"], r["u"]
         r["html"], r["nav"], r["crumbs"] = res["html"], res["nav"], res["crumbs"]
+        if r["t"] in ("mtsim", "mtsimhub", "mttrouble"):
+            r["nav"] = "train"
     assert not errs, errs
     br.close()
 
@@ -471,7 +473,7 @@ for r in ROUTES:
         r["desc"] = clip(d_["lead"] + " 収録系統：" + "、".join(s_["name"] for s_ in ss), 130)
         r["eyebrow"], r["name"], r["stats"] = "INDUSTRY · " + d_["en"], d_["n"], "%d系統・%d部品・%d工程" % (len(ss), n_p, n_o)
     elif t == "systems":
-        r["title"] = "部品一覧（業界・系統別）｜%d部品の製造工程" % len(parts)
+        r["title"] = "業界と部品の一覧｜自動車・舶用エンジン・発電設備の%d部品の製造工程" % len(parts)
         r["desc"] = "自動車・舶用エンジン・データセンター向け非常用発電の%d系統、エンジン・駆動系・電動化ユニット・舶用主機・発電機セットなど%d部品の製造工程と使う設備をまとめた一覧。" % (len(systems), len(parts))
         r["eyebrow"], r["name"], r["stats"] = "SYSTEMS", "系統から、部品へ。", "%d系統・%d部品" % (len(systems), len(parts))
     elif t == "sys":
@@ -940,7 +942,6 @@ def ld(r):
 
 
 # ============================================================ 8. write pages
-assert [u for _, u, _ in NAVS[:3]] == ["/%s/" % d_["slug"] for d_ in inds]
 BRANDSVG = '<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 3v26M3 16h26" stroke="currentColor" stroke-width="1" opacity=".5"/><path d="M16 16V3a13 13 0 0 1 13 13Z" fill="currentColor"/><path d="M16 16v13A13 13 0 0 1 3 16Z" fill="currentColor"/></svg>'
 X = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></svg>'
 
@@ -961,7 +962,10 @@ def shell_top(nav):
 FOOT = ('<footer class="foot"><div class="wrap in"><div><b>製造工程図鑑</b><span class="en" lang="en" style="letter-spacing:.3em;font-size:10.5px">MANUFACTURING PROCESS ATLAS</span></div><div>'
         '<p>工程・設備・数値は、自動車は乗用車の量産、舶用エンジンと発電設備は受注生産で一般的な構成と目安をまとめたもので、実際の工程は製品・メーカー・生産量によって異なります。部品・工程・設備の数はこの図鑑の分類で数えたものです。パワートレイン比較の数量は代表的な仕様を仮定した目安です。図はすべて模式図です。</p>'
         '<p>代表メーカーは各設備分野でよく知られる例示で、網羅や推奨ではありません。社名・製品ラインアップは変わることがあるため、個別の案件では最新情報を確認してください。</p>'
-        '<nav aria-label="フッター"><a href="/">トップ</a><a href="/automotive/">自動車</a><a href="/marine/">舶用エンジン</a><a href="/datacenter-power/">DC向け非常用発電</a><a href="/systems/">系統の一覧</a><a href="/powertrain/">パワートレイン比較</a><a href="/map/">工程マップ</a><a href="/methods/">加工法</a><a href="/equipment/">設備</a><a href="/machine-tools/">工作機械図鑑</a><a href="/about/">この図鑑について</a></nav>'
+        '<nav class="cols" aria-label="フッター"><div><p lang="en">INDUSTRIES &amp; PARTS</p><a href="/automotive/">自動車</a><a href="/marine/">舶用エンジン</a><a href="/datacenter-power/">データセンター向け非常用発電</a><a href="/systems/">業界と部品の一覧</a></div>'
+        '<div><p lang="en">EXPLORE</p><a href="/methods/">加工法</a><a href="/equipment/">設備・検査機</a><a href="/map/">全工程マップ</a><a href="/powertrain/">パワートレイン比較</a></div>'
+        '<div><p lang="en">MACHINE TOOLS</p><a href="/machine-tools/">工作機械図鑑</a><a href="/machine-tools/guide/">工作機械の選び方</a><a href="/machine-tools/training/">操作トレーニング</a><a href="/machine-tools/troubles/">トラブル事例集</a></div>'
+        '<div><p lang="en">ABOUT</p><a href="/">トップ</a><a href="/about/">この図鑑について</a><a href="/search/">検索</a></div></nav>'
         '<p class="lic">© %s %s ・ 文章と図解は <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.ja" rel="license">CC BY-NC 4.0</a> で提供しています</p>'
         '</div></div></footer>') % (CFG["published"][:4], html.escape(CFG["handle"]))
 
@@ -974,7 +978,7 @@ def esc_a(s):
     return html.escape(s, quote=True)
 
 
-HUB_H1 = {"/systems/": "部品一覧（業界・系統別）", "/map/": "全工程マップ", "/equipment/": "生産設備・検査装置一覧",
+HUB_H1 = {"/systems/": "業界と部品の一覧", "/map/": "全工程マップ", "/equipment/": "生産設備・検査装置一覧",
           "/methods/": "加工法一覧", "/powertrain/": "パワートレイン別 部品・工程・設備の比較（自動車）"}
 HUB_H2 = {}
 
