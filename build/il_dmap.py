@@ -15,9 +15,25 @@ DMAP = {
 }
 
 
+# v3 (shaded 3D) redraws: build/il3_d*.py register replacements with @dpart("system.part")
+DOVR = {}
+
+
+def dpart(key, part="both"):
+    """decorate detail_fn (part="detail") or ops_fn (part="ops") to override DMAP[key]."""
+    assert key in DMAP, key
+
+    def deco(fn):
+        d, o = DOVR.get(key, DMAP[key])
+        DOVR[key] = (fn, o) if part == "detail" else (d, fn)
+        return fn
+    return deco
+
+
 def build():
     det, ops = {}, {}
-    for k, (fd, fo) in DMAP.items():
+    for k in DMAP:
+        fd, fo = DOVR.get(k, DMAP[k])
         body, notes = fd()
         det[k] = {"svg": body, "notes": notes}
         ops[k] = fo()
