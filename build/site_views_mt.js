@@ -63,6 +63,8 @@ function mtType(slug){
   h += "<section class=\"sec tight\"" + (SIM[slug] ? "" : " style=\"padding-top:0\"") + "><div class=\"wrap\"><article class=\"prose\">" + t.body + "</article></div></section>";
   if(t.comps.length) h += mtSec("COMPONENTS", "この機種を構成する主な部品", mtPills(t.comps, MTD.comps, "comp"));
   if(t.autos.length) h += mtSec("AUTOMATION", "組み合わせる自動化・周辺機器", mtPills(t.autos, MTD.autos, "auto"), "") ;
+  var gds = MTD.guides.filter(function(g){ return (g.pics || []).indexOf(slug) >= 0; });
+  if(gds.length) h += mtSec("COMPARE", "ほかの機種との違い", "<div class=\"pills\">" + gds.map(function(g){ return "<a class=\"pill\" href=\"/machine-tools/guide/" + g.slug + "/\">" + esc(g.name) + "</a>"; }).join("") + "</div>");
   h += mtRelatedParts(t);
   var sib = MTD.types.filter(function(x){ return x.fam === t.fam && x !== t; });
   if(sib.length) h += mtSec("SAME FAMILY", f.n + "のほかの機種", "<div class=\"grid-cards\">" + sib.map(function(x){ return mtCard(x, "type", f.en); }).join("") + "</div>");

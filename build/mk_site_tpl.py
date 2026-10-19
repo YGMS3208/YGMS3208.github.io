@@ -65,7 +65,7 @@ rep('["#kinds", "加工法"', '["/methods/", "加工法"')
 rep('["#eq", "設備・検査機"', '["/equipment/", "設備・検査機"')
 
 # ---------------------------------------------------------------- card thumbnails: standalone SVG files, lazy-loaded
-rep('function partPic(p){', 'function partImg(p){ return p ? "<img src=\\"/parts/img/" + p.slug + ".svg\\" alt=\\"" + esc(p.name) + "のイメージ\\" loading=\\"lazy\\" decoding=\\"async\\" width=\\"320\\" height=\\"200\\">" : ""; }\nfunction partPic(p){')
+rep('function partPic(p){', 'function partImg(p){ return p ? "<img src=\\"/parts/img/" + p.slug + ".svg\\" alt=\\"" + esc(p.name) + "の模式図（製造工程図鑑）\\" loading=\\"lazy\\" decoding=\\"async\\" width=\\"320\\" height=\\"200\\">" : ""; }\nfunction partPic(p){')
 rep('<a class=\\"card\\" href=\\"" + hp(p) + "\\"><div class=\\"stage thumb\\">" + partPic(p) + "</div>', '<a class=\\"card\\" href=\\"" + hp(p) + "\\"><div class=\\"stage thumb\\">" + partImg(p) + "</div>')
 rep('<div class=\\"stage thumb\\">" + heroPic(s) + "</div>', '<div class=\\"stage thumb\\">" + partImg(partByKey[s.hero]) + "</div>')
 rep('<div class=\\"stage thumb\\">" + indPic(d) + "</div>', '<div class=\\"stage thumb\\">" + partImg(partByKey[IND_PIC[d.id]]) + "</div>')

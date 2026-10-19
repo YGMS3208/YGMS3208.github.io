@@ -841,6 +841,11 @@ function partView(p){
     return "<div class=\"list\">" + keys.map(function(ci){ return "<a class=\"li\" href=\"" + he(ci) + "\"><span class=\"t\">" + esc(C[ci].n) + "</span><span class=\"n\">" + (obj[ci] > 1 ? "×" + obj[ci] : "") + "</span></a>"; }).join("") + "</div>";
   }
   h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">EQUIPMENT</p><h2 class=\"d3\">この部品で使う設備</h2></div><div class=\"cols2\"><div><p class=\"h4\">加工・生産設備</p>" + lst(mc) + "</div><div><p class=\"h4\">検査・測定・試験機</p>" + lst(ic) + "</div></div></div></section>";
+  var kset = uniq(p.ops.map(function(o){ return o.k; })).filter(function(ki){ return K[ki].idx; });
+  var mts = uniq([].concat.apply([], p.ops.map(function(o){ return o.m.map(function(r){ return r[0]; }); }))).filter(function(ci){ return C[ci].mt; });
+  if(kset.length || mts.length) h += "<section class=\"sec tight\" style=\"padding-top:0\"><div class=\"wrap\"><div class=\"hd\"><p class=\"eyebrow\">LEARN MORE</p><h2 class=\"d3\">" + esc(p.name) + "の加工法と工作機械を詳しく</h2></div><div class=\"pills\">" +
+    kset.map(function(ki){ return "<a class=\"pill\" href=\"" + hk(ki) + "\">" + esc(K[ki].title || K[ki].n) + "とは</a>"; }).join("") +
+    mts.map(function(ci){ return "<a class=\"pill\" href=\"" + C[ci].mt + "\">" + esc(C[ci].mtn || C[ci].n) + "の構造と仕組み</a>"; }).join("") + "</div></div></section>";
   var idx = s.parts.indexOf(p), prev = s.parts[idx - 1], next = s.parts[idx + 1];
   h += "<div class=\"wrap\"><nav class=\"next\" aria-label=\"前後の部品\">" + (prev ? "<a href=\"" + hp(prev) + "\"><small>PREVIOUS</small><b>" + esc(prev.name) + "</b></a>" : "<span></span>") + (next ? "<a href=\"" + hp(next) + "\"><small>NEXT</small><b>" + esc(next.name) + "</b></a>" : "") + "</nav></div><div style=\"height:40px\"></div>";
   show(h, [[indOf(s).n, hi(indOf(s))], [s.name, hs(s)], [p.name]], "parts");

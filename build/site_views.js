@@ -71,7 +71,7 @@ function shellParts(){
     grp("EXPLORE", [["/methods/", "加工法"], ["/equipment/", "設備・検査機"], ["/map/", "全工程マップ"], ["/powertrain/", "パワートレイン比較"]]) +
     grp("MACHINE TOOLS", [["/machine-tools/", "工作機械図鑑"], ["/machine-tools/guide/", "工作機械の選び方"], ["/machine-tools/training/", "操作トレーニング"], ["/machine-tools/troubles/", "トラブル事例集"]]) +
     "<a href=\"/about/\">この図鑑について</a>";
-  var qs = "<p lang=\"en\">QUICK LINKS</p>" + D.site.quick.map(function(x){ return "<a href=\"/search/?q=" + encodeURIComponent(x) + "\">" + esc(x) + "</a>"; }).join("");
+  var qs = "<p lang=\"en\">QUICK LINKS</p>" + D.site.quick.map(function(x, i){ var u = (D.site.quickU || [])[i] || ("/search/?q=" + encodeURIComponent(x)); return "<a href=\"" + u.replace(/\?q=(.*)$/, function(m, q){ return "?q=" + encodeURIComponent(q); }) + "\">" + esc(x) + "</a>"; }).join("");
   return { mm: mm, qs: qs };
 }
 

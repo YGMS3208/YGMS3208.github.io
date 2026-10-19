@@ -354,10 +354,26 @@ data["sim"] = SIM
 for c in MT_COMPS + MT_AUTOS:
     assert c["slug"] in MT_ILL, c["slug"]
 
+def quick_url(x):
+    for c in cats:
+        if c["n"] == x or c["n"].startswith(x):
+            return "/equipment/%s/" % c["slug"]
+    for p in parts:
+        if p["name"] == x or p["name"].startswith(x):
+            return "/parts/%s/" % p["slug"]
+    for k in kinds:
+        if x in (k.get("title") or "") and k.get("idx"):
+            return "/methods/%s/" % k["slug"]
+    for p in parts:
+        if x in p["name"]:
+            return "/parts/%s/" % p["slug"]
+    return "/search/?q=" + x
+
+
 data["site"] = {
     "handle": CFG["handle"], "bio": CFG["bio"], "license": "CC BY-NC 4.0",
     "licenseUrl": "https://creativecommons.org/licenses/by-nc/4.0/deed.ja", "base": BASE + "/",
-    "issues": CFG["issues"], "publishedJa": ja_date(CFG["published"]), "quick": CFG["quick"],
+    "issues": CFG["issues"], "publishedJa": ja_date(CFG["published"]), "quick": CFG["quick"], "quickU": [quick_url(x) for x in CFG["quick"]],
     "analytics": bool(CFG.get("cf_analytics_token", "")),
     "history": ["%s　%s" % (ja_date(h_["date"]), h_["text"]) for h_ in CFG.get("history", [])],
 }
@@ -440,22 +456,31 @@ def clip(s, n=118):
     return (cut[:j] if j > n * .6 else cut[:n - 1]) + "…"
 
 
+def part_kinds(p):
+    out = []
+    for o in p["ops"]:
+        k = kinds[o["k"]]["n"]
+        if k in KT and k not in SKIPK and KT[k] not in out:
+            out.append(KT[k])
+    return out
+
+
 def part_title(p):
-    ks = [kinds[o["k"]]["n"] for o in p["ops"] if kinds[o["k"]]["n"] in KT and kinds[o["k"]]["n"] not in SKIPK]
-    pick = []
+    ks, n = part_kinds(p), len(p["ops"])
+    mach = [k for k in ks[1:] if k in ("切削", "研削", "歯切り")]
+    last = mach[-1] if mach else (ks[-1] if len(ks) >= 2 else None)
+    if last:
+        return "%sの製造工程｜%sから%sまで%d工程を図解" % (p["name"], ks[0], last, n)
     if ks:
-        pick.append(ks[0])
-        rest = Counter(k for k in ks if k != ks[0] and k not in ("熱処理", "表面処理", "塗装")) or Counter(k for k in ks if k != ks[0])
-        if rest:
-            top = max(rest.values())
-            pick.append([k for k in ks if rest.get(k) == top][0])
-    lead = "・".join(KT[k] for k in pick)
-    return "%sの製造工程｜%s%d工程と設備を図解" % (p["name"], (lead + "など") if lead else "", len(p["ops"]))
+        return "%sの製造工程｜%sなど%d工程と設備を図解" % (p["name"], ks[0], n)
+    return "%sの製造工程｜%d工程と設備を図解" % (p["name"], n)
 
 
 def part_desc(p):
-    seq = "→".join(o["n"] for o in p["ops"][:5]) + ("→…" if len(p["ops"]) > 5 else "")
-    return clip("%sは%sの%d工程でつくられる。使う工作機械・検査機と管理ポイントを図解で解説。" % (p["name"], seq, len(p["ops"])), 130)
+    ks = part_kinds(p)
+    kp = next((o["kp"].split("、")[0] for o in p["ops"] if o.get("kp")), "")
+    flow = ("→".join(ks[:4]) + ("→…" if len(ks) > 4 else "")) if ks else "→".join(o["n"] for o in p["ops"][:3])
+    return clip("%sは%sの流れでつくられる。全%d工程の内容と、使う工作機械・検査機、%s管理のポイントを図解で解説。" % (p["name"], flow, len(p["ops"]), (kp + "などの") if kp else ""), 130)
 
 
 for r in ROUTES:
@@ -463,13 +488,17 @@ for r in ROUTES:
     r["index"] = True
     if t == "home":
         r["title"], r["full"] = SITE + "｜自動車・舶用エンジン・発電設備の部品と工作機械を図解", True
+        r["h1"] = SITE + "：部品の製造工程と工作機械を図解"
         r["desc"] = "自動車、舶用エンジン、データセンター向け非常用発電設備の部品が、どんな工程と工作機械・検査機でつくられるかを図解で解説。%d部品・%d工程・%d設備と、EV・ハイブリッド・エンジン車の違いまで。" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats))
         r["eyebrow"], r["name"], r["stats"] = "MANUFACTURING PROCESS ATLAS", "ものは、工程でできている。", "%d部品・%d工程・%d設備" % (len(parts), sum(len(p["ops"]) for p in parts), len(cats))
     elif t == "ind":
         d_ = r["o"]
         ss = [s_ for s_ in systems if s_["ind"] == d_["id"]]
         n_p, n_o = sum(len(s_["parts"]) for s_ in ss), sum(len(p["ops"]) for s_ in ss for p in s_["parts"])
-        r["title"] = ("%sの製造工程｜%d系統・%d部品・%d工程と工作機械を図解" % ("自動車部品" if d_["id"] == "auto" else d_["n"], len(ss), n_p, n_o))
+        r["title"] = {"auto": "自動車部品の製造工程｜エンジン・駆動系・EVなど%d部品" % n_p,
+                      "marine": "舶用エンジンの製造工程｜主機・中速機関・プロペラ%d部品" % n_p,
+                      "power": "非常用発電設備の製造工程｜発電機・盤・ガスタービン"}.get(d_["id"], "%sの製造工程" % d_["n"])
+        r["h1"] = {"auto": "自動車部品の製造工程", "marine": "舶用エンジンの製造工程", "power": "データセンター向け非常用発電設備の製造工程"}.get(d_["id"], d_["n"])
         r["desc"] = clip(d_["lead"] + " 収録系統：" + "、".join(s_["name"] for s_ in ss), 130)
         r["eyebrow"], r["name"], r["stats"] = "INDUSTRY · " + d_["en"], d_["n"], "%d系統・%d部品・%d工程" % (len(ss), n_p, n_o)
     elif t == "systems":
@@ -479,12 +508,17 @@ for r in ROUTES:
     elif t == "sys":
         s = r["o"]
         n_ops = sum(len(p["ops"]) for p in s["parts"])
-        r["title"] = "%sの部品と製造工程｜%d部品・%d工程を図解" % (s["name"], len(s["parts"]), n_ops)
+        sx = s["name"] + ("の製造工程" if s["name"].endswith("部品") else "の部品と製造工程")
+        r["title"] = "%s｜%sなど%d部品・%d工程" % (sx, "・".join(p["name"].split("（")[0] for p in s["parts"][:2]), len(s["parts"]), n_ops)
+        if len(r["title"]) > 34:
+            r["title"] = "%s｜%d部品・%d工程を図解" % (sx, len(s["parts"]), n_ops)
+        r["h1"] = sx
         r["desc"] = clip(s["desc"] + " 収録部品：" + "、".join(p["name"] for p in s["parts"]))
         r["eyebrow"], r["name"], r["stats"] = "SYSTEM", s["name"], "%d部品・%d工程" % (len(s["parts"]), n_ops)
     elif t == "part":
         p = r["o"]
         r["title"], r["desc"] = part_title(p), part_desc(p)
+        r["h1"] = p["name"] + "の製造工程"
         mc = {x[0] for o in p["ops"] for x in o["m"]}
         r["eyebrow"], r["name"], r["stats"] = "PART · " + p["_s"]["name"], p["name"], "%d工程・設備%d・検査%d" % (len(p["ops"]), len(mc), len({x[0] for o in p["ops"] for x in o["x"]}))
     elif t == "op":
@@ -518,19 +552,21 @@ for r in ROUTES:
         c, ci = r["o"], r["ci"]
         r["index"] = bool(c.get("idx"))
         wi = inds_of_ci(ci)
-        where = "自動車部品" if wi == ["auto"] else "・".join(IND_SHORT[x] for x in wi) + "の部品"
-        r["title"] = ("%sの" + where + "での使われ方｜工程と使用例" if c.get("mt") else "%sとは｜仕組みと" + where + "での使われ方" if r["index"] else "%s｜使われる" + where + "と工程") % c["n"]
+        where = "・".join({"auto": "自動車", "marine": "舶用", "power": "発電"}[x] for x in wi)
+        r["title"] = ("%%sで加工する部品と工程｜%sの%d例" % (where, len(use[ci])) if c.get("mt") else "%sとは｜仕組みと使われる部品・工程" if r["index"] else "%s｜使われる部品と工程") % c["n"]
         r["desc"] = clip(c["d"])
         r["eyebrow"], r["name"], r["stats"] = "EQUIPMENT · " + groups[c["g"]], c["n"], "%d工程・%d部品で使用" % (len(use[ci]), len({x[0]["slug"] for x in use[ci]}))
     elif t == "methods":
-        r["title"] = "加工法一覧｜自動車部品をつくる%dの工法" % len(kinds)
+        r["title"] = "加工法一覧｜部品をつくる%dの工法を図解（鋳造・鍛造・切削…）" % len(kinds)
         r["desc"] = "鋳造・鍛造・プレス・切削・研削・歯切り・熱処理・溶接など、自動車・舶用エンジン・発電設備の部品をつくる%dの加工法を、仕組み・種類・使う設備と一緒に解説。" % len(kinds)
         r["eyebrow"], r["name"], r["stats"] = "PROCESSES", "加工法から探す。", "%dの工法" % len(kinds)
     elif t == "method":
         k = r["o"]
         r["index"] = bool(k.get("idx"))
         nm = k.get("title") or k["n"]
-        r["title"] = ("%sとは｜種類・仕組みと自動車部品での使われ方" if r["index"] else "%s｜自動車部品の工程と設備") % nm
+        r["title"] = {"塗装": "自動車の塗装工程｜電着・中塗り・上塗りを図解", "検査": "部品の検査方法｜寸法・非破壊・機能検査を図解",
+                      "巻線": "ヘアピン巻線とは｜EVモータの巻線方式と工程"}.get(k["n"]) if r["index"] else None
+        r["title"] = r["title"] or (("%sとは｜種類・工程と部品の例を図解" if r["index"] else "%s｜部品の工程と設備") % nm)
         r["desc"] = clip(k.get("lead") or k["d"])
         n = sum(1 for p in parts for o in p["ops"] if o["k"] == r["ki"])
         r["eyebrow"], r["name"], r["stats"] = "PROCESS", nm, "%d工程" % n
@@ -572,7 +608,7 @@ for r in ROUTES:
         r["eyebrow"], r["name"], r["stats"] = "GUIDE · COMPARE", it["name"], "比較表と選び分けの目安"
     elif t == "mtsim":
         it, sc = r["o"], SIM[r["k"]]
-        r["title"] = "%sの操作トレーニング｜段取りとトラブルを体験" % it["name"]
+        r["title"] = "%sの段取り・操作手順｜体験と失敗例%d件の対策" % (it["name"], len(sc["incidents"]))
         top3 = [v["title"] for v in sc["incidents"].values() if v["sev"] == 3][:1]
         r["desc"] = clip("%sの基本操作を、%dステップのゲームで体験。「%s」の手順を自分で操作し、間違えると起きるトラブル%d件（%sなど）の原因と対策も学べる。" % (it["name"], len(sc["steps"]), sc["title"], len(sc["incidents"]), "、".join(top3)), 130)
         r["eyebrow"], r["name"], r["stats"] = "OPERATION TRAINING", it["name"] + "の操作トレーニング", "%dステップ・トラブル%d件" % (len(sc["steps"]), len(sc["incidents"]))
@@ -583,7 +619,7 @@ for r in ROUTES:
         r["eyebrow"], r["name"], r["stats"] = "OPERATION TRAINING", "工作機械の操作トレーニング", "%d機種・トラブル%d件" % (len(SIM_TYPES), n_inc)
     elif t == "mttrouble":
         n_inc = sum(len(SIM[x["slug"]]["incidents"]) for x in SIM_TYPES)
-        r["title"] = "工作機械のトラブル事例集｜衝突・飛散・不良の原因と対策%d件" % n_inc
+        r["title"] = "工作機械のトラブル事例%d件｜衝突・飛散・不良の原因と対策" % n_inc
         r["desc"] = "工作機械で起きやすい衝突、ワークや工具の飛散、火災、人への危険、寸法不良などのトラブル%d件を種類別にまとめた事例集。%d機種の操作トレーニングと連動し、原因・損失・防ぎ方を解説。" % (n_inc, len(SIM_TYPES))
         r["eyebrow"], r["name"], r["stats"] = "TROUBLE CASEBOOK", "工作機械のトラブル事例集", "%d件・%d機種" % (n_inc, len(SIM_TYPES))
     elif t == "about":
@@ -651,7 +687,7 @@ lost = [u for u in URLS if u not in new_urls and u not in REDIR]
 if lost:
     sys.exit("ERROR: published URLs disappeared without a redirect (add them to state/redirects.txt):\n  " + "\n  ".join(lost))
 for r in ROUTES:
-    h = sha(sig(r))[:16]
+    h = sha(sig(r) + r["title"] + r.get("h1", ""))[:16]
     rec = URLS.get(r["u"])
     if not rec:
         rec = {"h": h, "pub": TODAY, "mod": TODAY}
@@ -876,6 +912,9 @@ open(OUT + "/site.webmanifest", "w").write(json.dumps({"name": SITE, "short_name
 
 # ============================================================ 7. structured data
 PERSON = {"@type": "Person", "@id": BASE + "/about/#author", "name": CFG["handle"], "url": BASE + "/about/", "description": CFG["bio"]}
+if CFG.get("same_as"):
+    PERSON["sameAs"] = CFG["same_as"]
+LIST_T = ("systems", "map", "eqi", "methods", "eqg", "mtcomps", "mtautos", "mtsimhub", "ind")
 WEBSITE = {"@type": "WebSite", "@id": BASE + "/#website", "name": SITE, "alternateName": [SITE_EN, SITE_OLD], "url": BASE + "/", "inLanguage": "ja", "publisher": {"@id": PERSON["@id"]}}
 LIC = "https://creativecommons.org/licenses/by-nc/4.0/"
 
@@ -895,7 +934,10 @@ def ld(r):
         g_.append(crumbs_ld(r))
     if not r["index"]:
         return g_
-    page = {"@type": "WebPage", "@id": url + "#webpage", "url": url, "name": r["title"], "isPartOf": {"@id": WEBSITE["@id"]}, "inLanguage": "ja"}
+    page = {"@type": "CollectionPage" if r["t"] in LIST_T else "WebPage", "@id": url + "#webpage", "url": url, "name": r["title"], "isPartOf": {"@id": WEBSITE["@id"]}, "inLanguage": "ja",
+            "description": r["desc"], "dateModified": r["mod"]}
+    if r["t"] == "home":
+        return g_ + [page]
     if r["t"] == "about":
         page = {"@type": "ProfilePage", "@id": url + "#webpage", "url": url, "name": r["title"], "mainEntity": {"@id": PERSON["@id"]}, "isPartOf": {"@id": WEBSITE["@id"]}, "inLanguage": "ja",
                 "dateCreated": r["pub"], "dateModified": r["mod"]}
@@ -983,14 +1025,26 @@ HUB_H1 = {"/systems/": "業界と部品の一覧", "/map/": "全工程マップ"
 HUB_H2 = {}
 
 
+_rd = [("/methods/%s/" % k["slug"], (k.get("title") or k["n"]) + ("とは" if not (k.get("title") or "").endswith(("工程", "検査")) else "")) for k in kinds if k.get("idx")]
+_rd += [("/machine-tools/guide/%s/" % g["slug"], g["name"]) for g in MT_GUIDES]
+_rd += [("/powertrain/", "EVとエンジン車の製造工程の違い"), ("/machine-tools/troubles/", "工作機械のトラブル事例と対策"), ("/machine-tools/guide/", "工作機械の選び方")]
+HOME_READ = ('<section class="sec tight"><div class="wrap"><div class="hd"><p class="eyebrow" lang="en">GUIDES</p><h2 class="d3">解説を読む</h2>'
+             '<p class="sub" style="font-size:16px">加工法の基本と、工作機械の違い・選び方をまとめた解説です。</p></div><div class="pills">%s</div></div></section>') % "".join(
+    '<a class="pill" href="%s">%s</a>' % (u, html.escape(n)) for u, n in _rd)
+
+
 def page(r):
     url = BASE + (r["u"] if r["u"] != "/404.html" else "/404.html")
     body = r["html"]
+    if r.get("h1") and r["u"] not in HUB_H1:
+        body = re.sub(r'<h1 class="(d[12])"([^>]*)>(.*?)</h1>', lambda m: '<h1 class="kicker">%s</h1><p class="%s"%s>%s</p>' % (html.escape(r["h1"]), m.group(1), m.group(2), m.group(3)), body, count=1, flags=re.S)
     if r["u"] in HUB_H1:
         # the subject name is the h1; the tagline stays as the big display line
         body = re.sub(r'<h1 class="(d[12])"([^>]*)>(.*?)</h1>', lambda m: '<h1 class="kicker">%s</h1><p class="%s"%s>%s</p>' % (HUB_H1[r["u"]], m.group(1), m.group(2), m.group(3)), body, count=1, flags=re.S)
     if r["t"] == "home":
         body = body.replace('<section class="sec paper"><div class="wrap"><div class="hd row"><div><p class="eyebrow">EQUIPMENT</p>', MTPROMO + '<section class="sec paper"><div class="wrap"><div class="hd row"><div><p class="eyebrow">EQUIPMENT</p>', 1)
+    if r["t"] == "home":
+        body += HOME_READ
     if r["t"] == "eq" and r["o"].get("mt"):
         c = r["o"]
         blk = ('<section class="sec tight" style="padding-bottom:0"><div class="wrap"><a class="mtlink" href="%s"><span class="eyebrow" lang="en">MACHINE TOOL ATLAS</span>'
@@ -1028,6 +1082,7 @@ def page(r):
              '<meta name="twitter:card" content="summary_large_image">',
              '<link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="icon" href="/favicon-48.png" sizes="48x48" type="image/png"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><link rel="manifest" href="/site.webmanifest">',
              VERIFY,
+             '<link rel="alternate" type="application/atom+xml" title="%s 更新情報" href="/feed.xml">' % SITE,
              CFBEACON,
              '<link rel="preload" href="%s" as="style" onload="this.onload=null;this.rel=\'stylesheet\'"><noscript><link rel="stylesheet" href="%s"></noscript>' % (FCSS, FCSS),
              "<style>%s</style>" % CSS + ("<style>%s</style>" % (SIMCSS if r["t"] == "mtsim" else SIMCSS_ST) if r["t"] in SIMT else ""),
@@ -1089,11 +1144,29 @@ for a, b in REDIR.items():
 
 # ============================================================ 9. sitemap, robots, llms.txt, csv, misc
 idx = [r for r in ROUTES if r["index"]]
-sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
-for r in idx:
-    sm.append("<url><loc>%s</loc><lastmod>%s</lastmod></url>" % (BASE + r["u"], r["mod"]))
-sm.append("</urlset>")
-open(OUT + "/sitemap.xml", "w", encoding="utf-8").write("\n".join(sm) + "\n")
+SM_SEC = [("pages", lambda r: r["t"] in ("home", "systems", "pt", "map", "eqi", "methods", "about", "ind")), ("parts", lambda r: r["t"] in ("sys", "part", "op")),
+          ("equipment", lambda r: r["t"] in ("eq", "eqg")), ("methods", lambda r: r["t"] == "method"), ("machine-tools", lambda r: r["t"].startswith("mt"))]
+smi = ['<?xml version="1.0" encoding="UTF-8"?>', '<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+_left = list(idx)
+for nm, f in SM_SEC:
+    rs = [r for r in _left if f(r)]
+    _left = [r for r in _left if not f(r)]
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    sm += ["<url><loc>%s</loc><lastmod>%s</lastmod></url>" % (BASE + r["u"], r["mod"]) for r in rs]
+    sm.append("</urlset>")
+    open(OUT + "/sitemap-%s.xml" % nm, "w", encoding="utf-8").write("\n".join(sm) + "\n")
+    smi.append("<sitemap><loc>%s/sitemap-%s.xml</loc><lastmod>%s</lastmod></sitemap>" % (BASE, nm, max(r["mod"] for r in rs)))
+assert not _left, [r["u"] for r in _left]
+smi.append("</sitemapindex>")
+open(OUT + "/sitemap.xml", "w", encoding="utf-8").write("\n".join(smi) + "\n")
+_feed = sorted(idx, key=lambda r: (r["mod"], r["u"]), reverse=True)[:50]
+_fe = ['<?xml version="1.0" encoding="utf-8"?>', '<feed xmlns="http://www.w3.org/2005/Atom">', "<title>%s</title>" % SITE, '<link href="%s/"/>' % BASE,
+       '<link rel="self" href="%s/feed.xml"/>' % BASE, "<id>%s/</id>" % BASE, "<updated>%sT00:00:00+09:00</updated>" % _feed[0]["mod"], "<author><name>%s</name></author>" % html.escape(CFG["handle"])]
+for r in _feed:
+    _fe.append("<entry><title>%s</title><link href=\"%s\"/><id>%s</id><updated>%sT00:00:00+09:00</updated><summary>%s</summary></entry>" % (
+        html.escape(r["title"]), BASE + r["u"], BASE + r["u"], r["mod"], html.escape(r["desc"])))
+_fe.append("</feed>")
+open(OUT + "/feed.xml", "w", encoding="utf-8").write("\n".join(_fe) + "\n")
 BLOCK = ["GPTBot", "Google-Extended", "CCBot", "ClaudeBot", "anthropic-ai", "Applebot-Extended", "Bytespider", "meta-externalagent", "Meta-ExternalAgent", "cohere-training-data-crawler", "Diffbot", "Omgilibot", "Amazonbot", "cohere-ai", "AI2Bot", "FacebookBot", "Timpibot", "PanguBot", "ImagesiftBot"]
 robots = "# 検索エンジンとAI検索は歓迎します。AIの学習用クローラーはお断りしています。\n\n" + "".join("User-agent: %s\nDisallow: /\n\n" % b for b in BLOCK) + "User-agent: *\nAllow: /\n\nSitemap: %s/sitemap.xml\n" % BASE
 open(OUT + "/robots.txt", "w", encoding="utf-8").write(robots)
