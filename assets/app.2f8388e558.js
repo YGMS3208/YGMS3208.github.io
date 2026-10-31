@@ -172,3 +172,47 @@ $$("[data-simbest]").forEach(function(a){
   } catch(e){}
 });
 })();
+
+/* ---------- atlas layer: reading bar, header, reveals, statement, counters ---------- */
+(function(){
+"use strict";
+var d = document, root = d.documentElement, RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var bar = d.createElement("div"); bar.className = "rd"; bar.setAttribute("aria-hidden", "true"); d.body.appendChild(bar);
+var hero = d.querySelector(".home .hero"), fig = hero && hero.querySelector(".v"), stmt = d.querySelectorAll(".stmt .q span, .stmt .q em");
+var lastY = window.scrollY, ticking = false;
+function frame(){
+  ticking = false;
+  var y = window.scrollY, h = root.scrollHeight - window.innerHeight;
+  bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, y / h) : 0) + ")";
+  if(!d.body.style.overflow){ root.classList.toggle("gn-hide", y > 320 && y > lastY + 2); if(y < lastY - 2 || y < 320) root.classList.remove("gn-hide"); }
+  lastY = y;
+  if(RM) return;
+  if(fig && y < window.innerHeight * 1.2) fig.style.transform = "translate3d(0," + (y * .12).toFixed(1) + "px,0) rotate(" + (y * -.006).toFixed(2) + "deg)";
+  if(stmt.length){
+    var line = window.innerHeight * .62;
+    for(var i = 0; i < stmt.length; i++){ var r = stmt[i].getBoundingClientRect(); stmt[i].classList.toggle("on", r.top < line); }
+  }
+}
+window.addEventListener("scroll", function(){ if(!ticking){ ticking = true; requestAnimationFrame(frame); } }, { passive: true });
+frame();
+if(hero) requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add("in"); }); });
+
+function count(el){
+  var to = +el.getAttribute("data-n"), t0 = null;
+  if(RM || !to){ el.textContent = to.toLocaleString("ja-JP"); return; }
+  function step(ts){ if(t0 === null) t0 = ts; var k = Math.min(1, (ts - t0) / 1600), e = 1 - Math.pow(1 - k, 4); el.textContent = Math.round(to * e); if(k < 1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+var els = d.querySelectorAll("[data-r], [data-n]");
+if(!("IntersectionObserver" in window)){ Array.prototype.forEach.call(els, function(e){ e.classList.add("in"); }); return; }
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    e.target.classList.add("in");
+    if(e.target.hasAttribute("data-n")) count(e.target);
+    io.unobserve(e.target);
+  });
+}, { rootMargin: "0px 0px -8% 0px", threshold: .08 });
+Array.prototype.forEach.call(els, function(e){ io.observe(e); });
+if(stmt.length) frame();
+})();
