@@ -178,16 +178,14 @@ $$("[data-simbest]").forEach(function(a){
 "use strict";
 var d = document, root = d.documentElement, RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 var bar = d.createElement("div"); bar.className = "rd"; bar.setAttribute("aria-hidden", "true"); d.body.appendChild(bar);
-var hero = d.querySelector(".home .hero"), fig = hero && hero.querySelector(".v"), stmt = d.querySelectorAll(".stmt .q span, .stmt .q em");
+var hero = d.querySelector(".home .hero"), stmt = d.querySelectorAll(".stmt .q span, .stmt .q em");
 var lastY = window.scrollY, ticking = false;
 function frame(){
   ticking = false;
   var y = window.scrollY, h = root.scrollHeight - window.innerHeight;
   bar.style.transform = "scaleX(" + (h > 0 ? Math.min(1, y / h) : 0) + ")";
-  if(!d.body.style.overflow){ root.classList.toggle("gn-hide", y > 320 && y > lastY + 2); if(y < lastY - 2 || y < 320) root.classList.remove("gn-hide"); }
   lastY = y;
   if(RM) return;
-  if(fig && y < window.innerHeight * 1.2) fig.style.transform = "translate3d(0," + (y * .12).toFixed(1) + "px,0) rotate(" + (y * -.006).toFixed(2) + "deg)";
   if(stmt.length){
     var line = window.innerHeight * .62;
     for(var i = 0; i < stmt.length; i++){ var r = stmt[i].getBoundingClientRect(); stmt[i].classList.toggle("on", r.top < line); }
@@ -196,6 +194,32 @@ function frame(){
 window.addEventListener("scroll", function(){ if(!ticking){ ticking = true; requestAnimationFrame(frame); } }, { passive: true });
 frame();
 if(hero) requestAnimationFrame(function(){ requestAnimationFrame(function(){ hero.classList.add("in"); }); });
+
+/* process ticker: drifts on its own, but stays a normal scroller you can swipe or drag */
+var tk = d.querySelector(".tick");
+if(tk){
+  var pos = 0, hold = 0, half = 0, own = false, drag = null;
+  function measure(){ half = tk.querySelector(".row>div").offsetWidth; }
+  function wrap(){ if(!half) return; if(tk.scrollLeft >= half){ tk.scrollLeft -= half; } else if(tk.scrollLeft <= 0 && hold){ tk.scrollLeft += half; } pos = tk.scrollLeft; }
+  function pause(){ hold = Date.now() + 2600; }
+  measure(); window.addEventListener("resize", measure);
+  ["touchstart", "wheel", "keydown", "focusin"].forEach(function(ev){ tk.addEventListener(ev, pause, { passive: true }); });
+  tk.addEventListener("mouseenter", function(){ hold = Infinity; });
+  tk.addEventListener("mouseleave", function(){ if(!drag) pause(); });
+  tk.addEventListener("scroll", function(){ if(own){ own = false; return; } pos = tk.scrollLeft; pause(); wrap(); }, { passive: true });
+  tk.addEventListener("pointerdown", function(e){ if(e.pointerType !== "mouse") return; drag = { x: e.clientX, s: tk.scrollLeft, moved: false }; hold = Infinity; });
+  window.addEventListener("pointermove", function(e){ if(!drag) return; var dx = e.clientX - drag.x; if(Math.abs(dx) > 4){ drag.moved = true; tk.classList.add("drag"); } tk.scrollLeft = drag.s - dx; });
+  window.addEventListener("pointerup", function(){ if(!drag) return; var m = drag.moved; drag = null; setTimeout(function(){ tk.classList.remove("drag"); }, 0); if(!tk.matches(":hover")) pause(); if(m) pause(); });
+  tk.addEventListener("click", function(e){ if(tk.classList.contains("drag")) e.preventDefault(); }, true);
+  var seen = true;
+  if("IntersectionObserver" in window) new IntersectionObserver(function(es){ seen = es[0].isIntersecting; }).observe(tk);
+  var t0 = 0;
+  (function loop(ts){
+    var dt = t0 ? Math.min(64, ts - t0) : 16; t0 = ts;
+    if(!RM && seen && Date.now() > hold && half){ pos += dt * .04; if(pos >= half) pos -= half; own = true; tk.scrollLeft = pos; }
+    requestAnimationFrame(loop);
+  })(0);
+}
 
 function count(el){
   var to = +el.getAttribute("data-n"), t0 = null;
