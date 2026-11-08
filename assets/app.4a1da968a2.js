@@ -309,7 +309,7 @@ function show(a){
   var r = a.getBoundingClientRect(), w = tip.offsetWidth, h = tip.offsetHeight;
   var x = Math.max(16, Math.min(r.left + r.width / 2 - w / 2, window.innerWidth - w - 16));
   var y = r.top - h - 10 < 64 ? r.bottom + 10 : r.top - h - 10;
-  tip.style.left = x + "px"; tip.style.top = y + "px"; tip.classList.add("on");
+  tip.style.left = x + "px"; tip.style.top = y + "px"; tip.style.transformOrigin = (r.left + r.width / 2 - x) + "px " + (y > r.top ? "0" : "100%"); tip.classList.add("on");
 }
 function hide(){ clearTimeout(timer); cur = null; if(tip) tip.classList.remove("on"); }
 d.addEventListener("mouseover", function(e){
@@ -320,4 +320,67 @@ d.addEventListener("mouseover", function(e){
 });
 d.addEventListener("mouseout", function(e){ var a = e.target.closest && e.target.closest("a.gl, .gt .rl a"); if(a && !a.contains(e.relatedTarget)) hide(); });
 window.addEventListener("scroll", hide, { passive: true });
+})();
+
+/* ---------- motion layer ---------- */
+(function(){
+"use strict";
+var d = document, RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+/* header: highlight follows the hovered link */
+var nav = d.querySelector(".gn nav");
+if(nav){
+  var hl = d.createElement("span"); hl.className = "gn-hl"; hl.setAttribute("aria-hidden", "true"); nav.appendChild(hl);
+  nav.addEventListener("mouseover", function(e){
+    var a = e.target.closest && e.target.closest("a"); if(!a || !nav.contains(a)) return;
+    hl.style.left = a.offsetLeft + "px"; hl.style.width = a.offsetWidth + "px";
+  });
+}
+/* menu: stagger the items */
+d.querySelectorAll(".ov .mm").forEach(function(mm){
+  var k = 0; mm.querySelectorAll(":scope > a, .grp > *").forEach(function(el){ el.style.setProperty("--k", k++); });
+});
+/* tabs: a sliding indicator */
+d.querySelectorAll(".seg[role=tablist]").forEach(function(seg){
+  var ind = d.createElement("span"); ind.className = "seg-ind"; ind.setAttribute("aria-hidden", "true"); seg.insertBefore(ind, seg.firstChild); seg.classList.add("js-ind");
+  function move(){ var b = seg.querySelector("[aria-selected=true]"); if(!b) return; ind.style.left = b.offsetLeft + "px"; ind.style.width = b.offsetWidth + "px"; }
+  move(); window.addEventListener("resize", move); if(d.fonts && d.fonts.ready) d.fonts.ready.then(move);
+  new MutationObserver(move).observe(seg, { attributes: true, subtree: true, attributeFilter: ["aria-selected"] });
+});
+/* accordions open and close smoothly */
+d.querySelectorAll("details.qa").forEach(function(det){
+  var sum = det.querySelector("summary"), body = det.querySelector(".qb"); if(!sum || !body || RM) return;
+  var anim = null;
+  sum.addEventListener("click", function(e){
+    e.preventDefault(); if(anim) anim.cancel();
+    var open = det.open, h0 = det.offsetHeight;
+    if(!open){ det.open = true; }
+    var h1 = open ? sum.offsetHeight : det.offsetHeight;
+    det.style.overflow = "hidden";
+    anim = det.animate({ height: [h0 + "px", h1 + "px"] }, { duration: open ? 260 : 380, easing: "cubic-bezier(.16,1,.3,1)" });
+    if(!open) body.animate({ opacity: [0, 1], transform: ["translateY(-6px)", "none"] }, { duration: 380, easing: "cubic-bezier(.16,1,.3,1)" });
+    anim.onfinish = function(){ if(open) det.open = false; det.style.overflow = ""; anim = null; };
+  });
+});
+/* copy a link to a section */
+var toast = null, tt = 0;
+function say(msg){
+  if(!toast){ toast = d.createElement("div"); toast.className = "toast"; toast.setAttribute("role", "status"); d.body.appendChild(toast); }
+  toast.textContent = msg; toast.classList.add("on"); clearTimeout(tt); tt = setTimeout(function(){ toast.classList.remove("on"); }, 1800);
+}
+d.querySelectorAll(".gguide h2[id], .pblk[id] > header h3, .prac[id] .hd h2").forEach(function(h){
+  var id = h.id || h.closest("[id]").id; if(!id) return;
+  var b = d.createElement("button"); b.type = "button"; b.className = "hlink"; b.textContent = "#"; b.setAttribute("aria-label", "この見出しへのリンクをコピー");
+  b.addEventListener("click", function(e){
+    e.preventDefault(); e.stopPropagation();
+    var url = location.href.split("#")[0] + "#" + id;
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function(){ say("リンクをコピーしました"); }, function(){ history.replaceState(null, "", "#" + id); say("アドレス欄のリンクを使えます"); });
+  });
+  h.appendChild(b);
+});
+/* a soft light follows the pointer on dark panels */
+if(window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches && !RM){
+  d.querySelectorAll(".tile.dk").forEach(function(t){
+    t.addEventListener("pointermove", function(e){ var r = t.getBoundingClientRect(); t.style.setProperty("--mx", (e.clientX - r.left) + "px"); t.style.setProperty("--my", (e.clientY - r.top) + "px"); });
+  });
+}
 })();
