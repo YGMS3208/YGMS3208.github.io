@@ -430,6 +430,7 @@ function callouts(svg){
     [].forEach.call(svg.querySelectorAll(".co .on"), function(x){ x.classList.remove("on"); });
     Object.keys(lis).forEach(function(n){ lis[n].classList.toggle("on", n === k); });
     if(k && map[k]) map[k].forEach(function(x){ x.classList.add("on"); });
+    if(api.onpick) api.onpick(k);
   }
   Object.keys(lis).forEach(function(k){
     var li = lis[k];
@@ -441,9 +442,63 @@ function callouts(svg){
     x.addEventListener("mouseenter", function(){ pick(k); });
     x.addEventListener("mouseleave", function(){ pick(sticky); });
   }); });
-  return {
+  var api = {
+    map: map,
     show: function(){ svg.classList.add("cin"); },
     hide: function(){ svg.classList.remove("cin"); }
+  };
+  return api;
+}
+
+/* ---- teardown + callouts: each leader stays attached to its part while the parts move apart ---- */
+function link(svg, co){
+  var parts = [].slice.call(svg.querySelectorAll("g.td")), pk = {}, legs = [], resolved = false;
+  function offs(g){ var cs = getComputedStyle(g); return [parseFloat(cs.getPropertyValue("--dx")) || 0, parseFloat(cs.getPropertyValue("--dy")) || 0]; }
+  /* which part does each leader point at: the topmost part painted under its dot, else the smallest part around it */
+  function resolve(){
+    resolved = true;
+    Object.keys(co.map).forEach(function(k){
+      var dot = null, line = null;
+      co.map[k].forEach(function(x){ var c = cls(x); if(c.indexOf("leadd") === 0) dot = x; if(c.indexOf("leadl") === 0) line = x; });
+      if(!dot) return;
+      var cx = +dot.getAttribute("cx"), cy = +dot.getAttribute("cy"), g = null;
+      var m = dot.getScreenCTM(), r = svg.getBoundingClientRect();
+      if(m){
+        var px = m.a * cx + m.c * cy + m.e, py = m.b * cx + m.d * cy + m.f;
+        if(px > 0 && py > 0 && px < innerWidth && py < innerHeight && d.elementsFromPoint)
+          d.elementsFromPoint(px, py).some(function(el){ var t = el.closest && el.closest("g.td"); if(t && svg.contains(t)){ g = t; return true; } return false; });
+      }
+      if(!g){
+        var best = 0;
+        parts.forEach(function(p){ var b = p.getBBox(), a = b.width * b.height; if(cx >= b.x - 2 && cx <= b.x + b.width + 2 && cy >= b.y - 2 && cy <= b.y + b.height + 2 && (!g || a < best)){ g = p; best = a; } });
+      }
+      if(!g) return;
+      pk[k] = g;
+      var o = offs(g); dot.style.setProperty("--ldx", o[0] + "px"); dot.style.setProperty("--ldy", o[1] + "px"); dot.classList.add("tdl");
+      if(line){
+        var x1 = +line.getAttribute("x1"), y1 = +line.getAttribute("y1"), x2 = +line.getAttribute("x2"), y2 = +line.getAttribute("y2");
+        var first = Math.hypot(x1 - cx, y1 - cy) <= Math.hypot(x2 - cx, y2 - cy);
+        legs.push({ el: line, a: first ? "x1" : "x2", b: first ? "y1" : "y2", x: first ? x1 : x2, y: first ? y1 : y2, dx: o[0], dy: o[1] });
+      }
+    });
+  }
+  var raf = 0, k0 = 0;
+  function ease(t){ return 1 - Math.pow(1 - t, 4); }
+  co.onpick = function(k){
+    if(!resolved) resolve();
+    parts.forEach(function(p){ p.classList.remove("on"); });
+    svg.classList.toggle("tdpick", !!(k && pk[k]));
+    if(k && pk[k]) pk[k].classList.add("on");
+  };
+  return function(on){
+    if(!resolved) resolve();
+    cancelAnimationFrame(raf);
+    var from = k0, to = on ? 1 : 0, t0 = performance.now(), dur = RM ? 0 : 950;
+    (function step(ts){
+      var t = dur ? Math.min(1, (ts - t0) / dur) : 1; k0 = from + (to - from) * ease(t);
+      legs.forEach(function(l){ l.el.setAttribute(l.a, (l.x + l.dx * k0).toFixed(1)); l.el.setAttribute(l.b, (l.y + l.dy * k0).toFixed(1)); });
+      if(t < 1) raf = requestAnimationFrame(step);
+    })(t0);
   };
 }
 
@@ -546,17 +601,18 @@ d.querySelectorAll("svg.ilu").forEach(function(svg){
     if(td && explode(svg)){
       fig.classList.add("tdfig");
       var b = d.createElement("button"); b.type = "button"; b.className = "tdbtn"; b.setAttribute("aria-pressed", "false"); b.innerHTML = BTN;
-      fig.insertBefore(b, fig.firstChild);
+      var cap = fig.querySelector("figcaption"); if(cap && cap.parentNode === fig) fig.insertBefore(b, cap); else fig.appendChild(b);
       ctl = { fig: fig, btn: b };
     }
     co = callouts(svg);
     mo = motion(svg);
     if(ctl){
       var touched = false, t1 = 0, t2 = 0, t3 = 0;
+      var follow = co ? link(svg, co) : null;
       ctl.set = function(on){
+        if(follow) follow(on);
         fig.classList.toggle("boom", on); clearTimeout(t3);
         ctl.btn.setAttribute("aria-pressed", on ? "true" : "false"); ctl.btn.querySelector("span").textContent = on ? "元に戻す" : "分解して見る";
-        if(co){ if(on) co.hide(); else t3 = setTimeout(co.show, RM ? 0 : 650); }
       };
       ctl.btn.addEventListener("click", function(){ touched = true; clearTimeout(t1); clearTimeout(t2); ctl.set(!fig.classList.contains("boom")); });
       ctl.auto = function(){
