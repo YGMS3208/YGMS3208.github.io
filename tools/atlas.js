@@ -528,3 +528,24 @@ d.querySelectorAll(".specs > div > b, .stats > div > b").forEach(function(b){
   }, { threshold: .6 });
 });
 })();
+
+/* ---------- 3D views: figure.m3d[data-3d] loads the viewer module only when it comes near ---------- */
+(function(){
+"use strict";
+var d = document, src = d.documentElement.getAttribute("data-m3d"), figs = d.querySelectorAll("figure.m3d[data-3d]");
+if(!figs.length) return;
+function drop(f){ var s = f.closest(".m3dsec, .m3dinline") || f; s.hidden = true; }
+var gl = false;
+try { var c = d.createElement("canvas"); gl = !!(window.WebGLRenderingContext && (c.getContext("webgl2") || c.getContext("webgl"))); } catch(e){}
+if(!src || !gl || !("IntersectionObserver" in window)){ figs.forEach(drop); return; }
+var mod = null;
+function load(){ return mod || (mod = import(src)); }
+var io = new IntersectionObserver(function(es){
+  es.forEach(function(e){
+    if(!e.isIntersecting) return;
+    io.unobserve(e.target);
+    load().then(function(m){ if(!m.mount(e.target)) drop(e.target); }, function(){ drop(e.target); });
+  });
+}, { rootMargin: "600px 0px" });
+figs.forEach(function(f){ io.observe(f); });
+})();

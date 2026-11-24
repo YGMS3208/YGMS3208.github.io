@@ -1,0 +1,8 @@
+{
+  "name": "atlas-m3d",
+  "private": true,
+  "description": "3D viewers for the atlas (built into /assets by build.sh)",
+  "license": "MIT",
+  "dependencies": { "three": "0.170.0" },
+  "devDependencies": { "esbuild": "0.24.0" }
+}
