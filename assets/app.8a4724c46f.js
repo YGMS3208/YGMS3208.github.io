@@ -385,24 +385,257 @@ if(window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").
 }
 })();
 
-/* ---------- teardown: take an assembly apart, then put it back ---------- */
+/* ---------- figures: every rule here keys off the shared markup, so new pages inherit it ----------
+   .anat > figure.stage, .pvis > figure.stage (assemblies), figure[data-td]  -> teardown (exploded view)
+   svg.ilu with .a / .mfe / .hl / .cool / .cutl / .beam                      -> process motion
+   svg.ilu with .bal + .balt beside ol.notes                                 -> numbered callouts, linked to the list
+   .lab svg (charts and diagrams in the guides)                              -> lines draw in
+   .oplist                                                                   -> process rail that follows the reader
+   opt out of any of them with data-motion="off" on the figure or list */
 (function(){
 "use strict";
-var d = document, RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-var figs = d.querySelectorAll(".tdfig"); if(!figs.length) return;
-figs.forEach(function(f){
-  var b = f.querySelector(".tdbtn"), touched = false, t1 = 0, t2 = 0;
-  function set(on){ f.classList.toggle("boom", on); if(b){ b.setAttribute("aria-pressed", on ? "true" : "false"); b.querySelector("span").textContent = on ? "元に戻す" : "分解して見る"; } }
-  if(b) b.addEventListener("click", function(){ touched = true; clearTimeout(t1); clearTimeout(t2); set(!f.classList.contains("boom")); });
-  if(RM || !("IntersectionObserver" in window)) return;
-  var io = new IntersectionObserver(function(es){
-    es.forEach(function(e){
-      if(!e.isIntersecting || touched) return;
-      io.unobserve(f);
-      t1 = setTimeout(function(){ if(!touched) set(true); }, 450);
-      t2 = setTimeout(function(){ if(!touched) set(false); }, 3300);
-    });
-  }, { threshold: .55 });
-  io.observe(f);
+var d = document, RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches, HAS_IO = "IntersectionObserver" in window;
+function cls(el){ return (el.getAttribute("class") || "").trim(); }
+function off(el){ return !!(el.closest && el.closest('[data-motion="off"]')); }
+function len(el){ try { return Math.ceil(el.getTotalLength()) + 1; } catch(e){ return 0; } }
+function dashed(el){ var v = getComputedStyle(el).strokeDasharray; return v && v !== "none"; }
+/* run fn once when el comes near, and keep a "live" class while it is on screen */
+function watch(el, near, fn, opt){
+  if(!HAS_IO){ near(); fn(); return; }
+  var done = false, pre = false;
+  new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting && !pre){ pre = true; near(); } }); }, { rootMargin: "300px 0px" }).observe(el);
+  new IntersectionObserver(function(es){ es.forEach(function(e){
+    el.classList.toggle("live", e.isIntersecting);
+    if(e.isIntersecting && !done){ done = true; if(!pre){ pre = true; near(); } fn(); }
+  }); }, opt || { threshold: .35 }).observe(el);
+}
+
+/* ---- callouts: balloons and leaders appear in order; list and drawing point at each other ---- */
+function callouts(svg){
+  var ts = svg.querySelectorAll(".balt"); if(!ts.length) return null;
+  var map = {}, order = 0, pend = [];
+  [].forEach.call(svg.querySelectorAll(".leadl, .leadd, .bal, .balt"), function(el){
+    pend.push(el);
+    if(cls(el) !== "balt") return;
+    var k = el.textContent.trim(); order++;
+    pend.forEach(function(p){ p.style.setProperty("--n", order); p.setAttribute("data-k", k); if(cls(p) === "leadl") p.style.setProperty("--len", len(p)); });
+    (map[k] = map[k] || []).push.apply(map[k], pend); pend = [];
+  });
+  svg.classList.add("co");
+  var box = svg.closest(".anat"), list = box && box.querySelector("ol.notes"), lis = {};
+  if(list) [].forEach.call(list.children, function(li){ var n = li.querySelector(".no"); if(n) lis[n.textContent.trim()] = li; });
+  var sticky = null;
+  function pick(k){
+    svg.classList.toggle("pick", !!k);
+    [].forEach.call(svg.querySelectorAll(".co .on"), function(x){ x.classList.remove("on"); });
+    Object.keys(lis).forEach(function(n){ lis[n].classList.toggle("on", n === k); });
+    if(k && map[k]) map[k].forEach(function(x){ x.classList.add("on"); });
+  }
+  Object.keys(lis).forEach(function(k){
+    var li = lis[k];
+    li.addEventListener("mouseenter", function(){ pick(k); });
+    li.addEventListener("mouseleave", function(){ pick(sticky); });
+    li.addEventListener("click", function(e){ if(e.target.closest("a")) return; sticky = sticky === k ? null : k; pick(sticky); });
+  });
+  Object.keys(map).forEach(function(k){ map[k].forEach(function(x){
+    x.addEventListener("mouseenter", function(){ pick(k); });
+    x.addEventListener("mouseleave", function(){ pick(sticky); });
+  }); });
+  return {
+    show: function(){ svg.classList.add("cin"); },
+    hide: function(){ svg.classList.remove("cin"); }
+  };
+}
+
+/* ---- process motion: arrows and machined faces draw in, heat and coolant keep moving while visible ---- */
+function motion(svg){
+  var lines = [].filter.call(svg.querySelectorAll(".a, .mfe"), function(el){ return el.tagName !== "text" && !dashed(el); });
+  var loops = svg.querySelectorAll(".hl, .cool, .cutl, .cutframe, .beam, .beamf");
+  if(!lines.length && !loops.length && !svg.querySelector(".af")) return false;
+  lines.forEach(function(el){ el.style.setProperty("--len", len(el)); });
+  [].forEach.call(svg.querySelectorAll(".hl"), function(el, i){ el.style.setProperty("--n", i % 6); });
+  svg.classList.add("mo");
+  return true;
+}
+
+/* ---- teardown: split the flattened drawing at each outline (class="el") and move the parts apart ---- */
+var NOTE = /^(a|af|al|hl|lead|leadl|leadd|bal|balt|no|tol|tbg|tbl|ttl)$/;
+function explode(svg){
+  var vb = svg.viewBox && svg.viewBox.baseVal; if(!vb || !vb.width) return 0;
+  var W = vb.width, H = vb.height, kids = [].slice.call(svg.children);
+  var comps = [], cur = [], notes = [], shadow = [];
+  kids.forEach(function(el){
+    var t = el.tagName.toLowerCase(); if(t === "defs" || t === "title" || t === "desc" || t === "style") return;
+    var c = cls(el), c0 = c.split(/\s+/)[0];
+    if(c0 === "sh"){ shadow.push(el); return; }
+    if(t === "text" || NOTE.test(c)){ notes.push(el); return; }
+    cur.push(el);
+    if(c0 === "el"){ comps.push(cur); cur = []; }
+  });
+  if(cur.length) comps.push(cur);
+  if(comps.length < 6) return 0;
+  var box = comps.map(function(c){
+    var x0 = 1e9, y0 = 1e9, x1 = -1e9, y1 = -1e9;
+    c.forEach(function(e){ try { var b = e.getBBox(); if(!b.width && !b.height) return; x0 = Math.min(x0, b.x); y0 = Math.min(y0, b.y); x1 = Math.max(x1, b.x + b.width); y1 = Math.max(y1, b.y + b.height); } catch(err){} });
+    if(x0 > x1) return [0, 0, 0, 0, 0];
+    return [x0, y0, x1, y1, (x1 - x0) * (y1 - y0)];
+  });
+  var n = comps.length, amax = Math.max.apply(null, box.map(function(b){ return b[4]; }));
+  if(!amax) return 0;
+  /* the base: among the large parts, the one reaching lowest */
+  var base = -1;
+  box.forEach(function(b, i){ if(b[4] >= .18 * amax && (base < 0 || b[3] > box[base][3] || (b[3] === box[base][3] && b[4] > box[base][4]))) base = i; });
+  var bx = (box[base][0] + box[base][2]) / 2, by = (box[base][1] + box[base][3]) / 2;
+  /* small parts ride along with the part they sit on */
+  var small = .004 * W * H, parent = [];
+  for(var i = 0; i < n; i++){
+    parent[i] = i;
+    if(box[i][4] >= small) continue;
+    var cx = (box[i][0] + box[i][2]) / 2, cy = (box[i][1] + box[i][3]) / 2, best = -1;
+    for(var j = 0; j < n; j++){
+      if(j === i || box[j][4] < small) continue;
+      if(box[j][0] - 4 <= cx && cx <= box[j][2] + 4 && box[j][1] - 4 <= cy && cy <= box[j][3] + 4 && (best < 0 || box[j][4] < box[best][4])) best = j;
+    }
+    if(best >= 0) parent[i] = best;
+  }
+  var mv = {};
+  for(i = 0; i < n; i++){
+    if(parent[i] !== i) continue;
+    if(i === base){ mv[i] = [0, 0]; continue; }
+    /* spread outward in proportion to the distance from the base, with a lift, so neighbours separate */
+    var b = box[i], vx = (b[0] + b[2]) / 2 - bx, vy = (b[1] + b[3]) / 2 - by - .18 * H, L = Math.hypot(vx, vy) || 1, S = Math.max(W, H);
+    var dist = Math.max(.06 * S, Math.min(.17 * S, L * .42));
+    var dx = vx / L * dist, dy = vy / L * dist, m = 4, ex = dx, ey = dy;
+    if(b[0] + dx < m) dx = m - b[0];
+    if(b[2] + dx > W - m) dx = W - m - b[2];
+    if(b[1] + dy < m) dy = m - b[1];
+    if(b[3] + dy > H - m) dy = H - m - b[3];
+    if((dx > 0) !== (ex > 0) && Math.abs(vx) > 1) dx = 0;
+    if((dy > 0) !== (ey > 0) && Math.abs(vy) > 1) dy = 0;
+    mv[i] = [dx, dy];
+  }
+  var NS = "http://www.w3.org/2000/svg";
+  shadow.forEach(function(e){ svg.appendChild(e); });
+  comps.forEach(function(c, i){
+    var g = d.createElementNS(NS, "g"), v = mv[parent[i]] || [0, 0];
+    g.setAttribute("class", "td");
+    g.setAttribute("style", "--dx:" + v[0].toFixed(1) + "px;--dy:" + v[1].toFixed(1) + "px;--i:" + Math.min(i, 40));
+    c.forEach(function(e){ g.appendChild(e); });
+    svg.appendChild(g);
+  });
+  var gn = d.createElementNS(NS, "g"); gn.setAttribute("class", "tdn");
+  notes.forEach(function(e){ gn.appendChild(e); }); svg.appendChild(gn);
+  return n;
+}
+function assembly(){
+  var h = d.querySelector("h1.kicker");
+  return /assembl|-test\b|-unit\b/.test(location.pathname) || (h && /組立|アセンブリ|ユニット|試験/.test(h.textContent));
+}
+var BTN = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M8 2v4M8 10v4M2 8h4M10 8h4"/></svg><span>分解して見る</span>';
+
+var cands = [].slice.call(d.querySelectorAll("figure[data-td], .anat > figure.stage"));
+if(assembly()) cands = cands.concat([].slice.call(d.querySelectorAll(".pvis > figure.stage")));
+var tdSet = new Set(cands.filter(function(f){ return f.getAttribute("data-td") !== "off" && !off(f) && f.querySelector("svg.ilu"); }));
+
+/* every large drawing on the page */
+d.querySelectorAll("svg.ilu").forEach(function(svg){
+  if(svg.closest(".thumb, .tile, .hero, .card, .gtip") || off(svg)) return;
+  var fig = svg.closest("figure, .stage") || svg.parentNode;
+  var td = tdSet.has(fig), co = null, mo = false, ctl = null;
+  watch(fig, function(){
+    if(td && explode(svg)){
+      fig.classList.add("tdfig");
+      var b = d.createElement("button"); b.type = "button"; b.className = "tdbtn"; b.setAttribute("aria-pressed", "false"); b.innerHTML = BTN;
+      fig.insertBefore(b, fig.firstChild);
+      ctl = { fig: fig, btn: b };
+    }
+    co = callouts(svg);
+    mo = motion(svg);
+    if(ctl){
+      var touched = false, t1 = 0, t2 = 0, t3 = 0;
+      ctl.set = function(on){
+        fig.classList.toggle("boom", on); clearTimeout(t3);
+        ctl.btn.setAttribute("aria-pressed", on ? "true" : "false"); ctl.btn.querySelector("span").textContent = on ? "元に戻す" : "分解して見る";
+        if(co){ if(on) co.hide(); else t3 = setTimeout(co.show, RM ? 0 : 650); }
+      };
+      ctl.btn.addEventListener("click", function(){ touched = true; clearTimeout(t1); clearTimeout(t2); ctl.set(!fig.classList.contains("boom")); });
+      ctl.auto = function(){
+        if(RM) return;
+        t1 = setTimeout(function(){ if(!touched) ctl.set(true); }, (mo || co) ? 1500 : 450);
+        t2 = setTimeout(function(){ if(!touched) ctl.set(false); }, (mo || co) ? 4300 : 3300);
+      };
+    }
+    if(RM){ svg.classList.add("play"); if(co) co.show(); }
+  }, function(){
+    if(RM) return;
+    svg.classList.add("play");
+    if(co) co.show();
+    if(ctl) ctl.auto();
+  }, { threshold: td ? .55 : .35 });
+});
+
+/* ---- charts in the guides: lines draw in, areas and labels follow ---- */
+d.querySelectorAll(".lab svg").forEach(function(svg){
+  if(off(svg) || RM) return;
+  var k = 0, lines = [];
+  [].forEach.call(svg.querySelectorAll("path, polyline, line"), function(el){
+    var cs = getComputedStyle(el);
+    if(el.closest("defs") || /\bgrid\b/.test(cls(el)) || cs.stroke === "none" || dashed(el)) return;
+    if(el.tagName !== "line" && cs.fill !== "none") return;
+    var L = len(el); if(L < 40) return;
+    el.style.setProperty("--len", L); el.style.setProperty("--n", k++); lines.push(el);
+  });
+  if(!lines.length) return;
+  svg.classList.add("dr");
+  watch(svg, function(){}, function(){
+    svg.classList.add("play");
+    setTimeout(function(){ svg.classList.add("done"); lines.forEach(function(el){ el.style.removeProperty("--len"); }); }, 1800 + k * 160);
+  }, { threshold: .4 });
+});
+
+/* ---- process rail: a line runs down the operations and the one you are reading lights up ---- */
+d.querySelectorAll(".oplist").forEach(function(ol){
+  if(off(ol)) return;
+  var ops = ol.querySelectorAll(".opx"); if(ops.length < 3) return;
+  var rail = d.createElement("i"); rail.className = "oprail"; rail.setAttribute("aria-hidden", "true"); rail.innerHTML = "<b></b><s></s>"; ol.appendChild(rail); ol.classList.add("railed");
+  var fill = rail.firstChild, dot = rail.lastChild, tick = false, curI = -1;
+  function upd(){
+    tick = false;
+    var r = ol.getBoundingClientRect(), line = window.innerHeight * .45;
+    var p = Math.max(0, Math.min(1, (line - r.top) / r.height));
+    fill.style.transform = "scaleY(" + p + ")"; dot.style.transform = "translateY(" + (p * r.height) + "px)"; dot.style.opacity = p > 0 && p < 1 ? 1 : 0;
+    var now = -1;
+    for(var i = 0; i < ops.length; i++){ if(ops[i].getBoundingClientRect().top < line) now = i; }
+    if(r.bottom < line) now = -1;
+    if(now !== curI){
+      if(curI >= 0) ops[curI].classList.remove("now");
+      if(now >= 0) ops[now].classList.add("now");
+      for(i = 0; i < ops.length; i++) ops[i].classList.toggle("past", i < now);
+      curI = now;
+    }
+  }
+  window.addEventListener("scroll", function(){ if(!tick){ tick = true; requestAnimationFrame(upd); } }, { passive: true });
+  window.addEventListener("resize", upd); upd();
+});
+
+/* ---- quiet reveals for the inner pages (the home page has its own) ---- */
+if(!RM && HAS_IO && !d.querySelector(".home")){
+  var vh = window.innerHeight, rio = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add("in"); rio.unobserve(e.target); } }); }, { rootMargin: "0px 0px -6% 0px", threshold: .05 });
+  d.querySelectorAll("main .sec .hd, .opx, .notes li, .pblk, .legend li, .refs li, .grid-cards > *, .specs > div, .stats > div, details.qa").forEach(function(el){
+    if(el.closest("[data-r], [data-motion=off]") || el.getBoundingClientRect().top < vh * .92) return;
+    var sib = el.parentNode ? [].indexOf.call(el.parentNode.children, el) : 0;
+    el.style.setProperty("--k", sib % 6); el.classList.add("rv"); rio.observe(el);
+  });
+}
+
+/* ---- figures in the specs count up when they come into view ---- */
+d.querySelectorAll(".specs > div > b, .stats > div > b").forEach(function(b){
+  var t = b.textContent.trim(); if(!/^\d{1,3}(,\d{3})*$/.test(t) || RM) return;
+  var to = +t.replace(/,/g, ""); if(to < 3) return;
+  b.style.minWidth = b.offsetWidth + "px"; b.style.display = "inline-block";
+  watch(b, function(){}, function(){
+    var t0 = null;
+    (function step(ts){ if(t0 === null) t0 = ts; var k = Math.min(1, (ts - t0) / 1300), e = 1 - Math.pow(1 - k, 4); b.textContent = Math.round(to * e).toLocaleString("ja-JP"); if(k < 1) requestAnimationFrame(step); })(performance.now());
+  }, { threshold: .6 });
 });
 })();
