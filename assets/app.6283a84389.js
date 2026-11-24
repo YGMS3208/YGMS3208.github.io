@@ -454,30 +454,37 @@ function callouts(svg){
 function link(svg, co){
   var parts = [].slice.call(svg.querySelectorAll("g.td")), pk = {}, legs = [], resolved = false;
   function offs(g){ var cs = getComputedStyle(g); return [parseFloat(cs.getPropertyValue("--dx")) || 0, parseFloat(cs.getPropertyValue("--dy")) || 0]; }
-  /* which part does each leader point at: the topmost part painted under its dot, else the smallest part around it */
+  /* which parts does each number name: the figure's data-pk (checked by hand, see tools/callout_parts.json),
+     else the topmost part painted under the leader's dot */
+  var fixed = null; try { fixed = JSON.parse(svg.getAttribute("data-pk") || "null"); } catch(e){}
   function resolve(){
     resolved = true;
     Object.keys(co.map).forEach(function(k){
       var dot = null, line = null;
       co.map[k].forEach(function(x){ var c = cls(x); if(c.indexOf("leadd") === 0) dot = x; if(c.indexOf("leadl") === 0) line = x; });
       if(!dot) return;
-      var cx = +dot.getAttribute("cx"), cy = +dot.getAttribute("cy"), g = null;
-      var m = dot.getScreenCTM(), r = svg.getBoundingClientRect();
-      if(m){
-        var px = m.a * cx + m.c * cy + m.e, py = m.b * cx + m.d * cy + m.f;
-        if(px > 0 && py > 0 && px < innerWidth && py < innerHeight && d.elementsFromPoint)
-          d.elementsFromPoint(px, py).some(function(el){ var t = el.closest && el.closest("g.td"); if(t && svg.contains(t)){ g = t; return true; } return false; });
+      var gs = [];
+      if(fixed && fixed[k]) gs = fixed[k].map(function(i){ return parts[i]; }).filter(Boolean);
+      if(!gs.length){
+        var cx = +dot.getAttribute("cx"), cy = +dot.getAttribute("cy"), g = null, m = dot.getScreenCTM();
+        if(m && d.elementsFromPoint){
+          var px = m.a * cx + m.c * cy + m.e, py = m.b * cx + m.d * cy + m.f;
+          if(px > 0 && py > 0 && px < innerWidth && py < innerHeight)
+            d.elementsFromPoint(px, py).some(function(el){ var t = el.closest && el.closest("g.td"); if(t && svg.contains(t)){ g = t; return true; } return false; });
+        }
+        if(!g){
+          var best = 0;
+          parts.forEach(function(p){ var b = p.getBBox(), a = b.width * b.height; if(cx >= b.x - 2 && cx <= b.x + b.width + 2 && cy >= b.y - 2 && cy <= b.y + b.height + 2 && (!g || a < best)){ g = p; best = a; } });
+        }
+        if(g) gs = [g];
       }
-      if(!g){
-        var best = 0;
-        parts.forEach(function(p){ var b = p.getBBox(), a = b.width * b.height; if(cx >= b.x - 2 && cx <= b.x + b.width + 2 && cy >= b.y - 2 && cy <= b.y + b.height + 2 && (!g || a < best)){ g = p; best = a; } });
-      }
-      if(!g) return;
-      pk[k] = g;
-      var o = offs(g); dot.style.setProperty("--ldx", o[0] + "px"); dot.style.setProperty("--ldy", o[1] + "px"); dot.classList.add("tdl");
+      if(!gs.length) return;
+      pk[k] = gs;
+      var o = offs(gs[0]); dot.style.setProperty("--ldx", o[0] + "px"); dot.style.setProperty("--ldy", o[1] + "px"); dot.classList.add("tdl");
       if(line){
         var x1 = +line.getAttribute("x1"), y1 = +line.getAttribute("y1"), x2 = +line.getAttribute("x2"), y2 = +line.getAttribute("y2");
-        var first = Math.hypot(x1 - cx, y1 - cy) <= Math.hypot(x2 - cx, y2 - cy);
+        var dcx = +dot.getAttribute("cx"), dcy = +dot.getAttribute("cy");
+        var first = Math.hypot(x1 - dcx, y1 - dcy) <= Math.hypot(x2 - dcx, y2 - dcy);
         legs.push({ el: line, a: first ? "x1" : "x2", b: first ? "y1" : "y2", x: first ? x1 : x2, y: first ? y1 : y2, dx: o[0], dy: o[1] });
       }
     });
@@ -488,7 +495,7 @@ function link(svg, co){
     if(!resolved) resolve();
     parts.forEach(function(p){ p.classList.remove("on"); });
     svg.classList.toggle("tdpick", !!(k && pk[k]));
-    if(k && pk[k]) pk[k].classList.add("on");
+    if(k && pk[k]) pk[k].forEach(function(g){ g.classList.add("on"); });
   };
   return function(on){
     if(!resolved) resolve();

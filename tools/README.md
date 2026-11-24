@@ -26,6 +26,7 @@ bash tools/pipeline.sh
 | `gear_guide.py` | 歯車の解説ページ |
 | `guides.py` | ガイド（トルク線図、干渉図、案内面、クーラント、保全基準）とフィジカルAIのページ |
 | `glossary.py` + `glossary_data.py` | 用語辞典、用語ページ、本文中の用語リンク |
+| `callouts.py` + `callout_parts.json` | 構造図の番号ごとに、指す部品（分解の部品番号）を固定する。部品番号は図を `class="el"` で区切った順（0 始まり）。最初の部品に引出線の点が付いて動く |
 | `seo.py` | 共通 CSS の外部ファイル化、本文が変わったページだけ更新日を今日（日本時間）にする |
 | `extra_chars.txt` | 明朝体サブセットに含める追加の文字（スクリプトが更新する） |
 | `font/` | Zen Old Mincho（SIL Open Font License 1.1、`OFL-LICENSE.txt`） |
