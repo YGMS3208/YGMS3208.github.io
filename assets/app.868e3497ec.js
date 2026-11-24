@@ -384,3 +384,25 @@ if(window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").
   });
 }
 })();
+
+/* ---------- teardown: take an assembly apart, then put it back ---------- */
+(function(){
+"use strict";
+var d = document, RM = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+var figs = d.querySelectorAll(".tdfig"); if(!figs.length) return;
+figs.forEach(function(f){
+  var b = f.querySelector(".tdbtn"), touched = false, t1 = 0, t2 = 0;
+  function set(on){ f.classList.toggle("boom", on); if(b){ b.setAttribute("aria-pressed", on ? "true" : "false"); b.querySelector("span").textContent = on ? "元に戻す" : "分解して見る"; } }
+  if(b) b.addEventListener("click", function(){ touched = true; clearTimeout(t1); clearTimeout(t2); set(!f.classList.contains("boom")); });
+  if(RM || !("IntersectionObserver" in window)) return;
+  var io = new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting || touched) return;
+      io.unobserve(f);
+      t1 = setTimeout(function(){ if(!touched) set(true); }, 450);
+      t2 = setTimeout(function(){ if(!touched) set(false); }, 3300);
+    });
+  }, { threshold: .55 });
+  io.observe(f);
+});
+})();
