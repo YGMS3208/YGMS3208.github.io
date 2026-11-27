@@ -38,6 +38,8 @@ def text2(s): return text(re.sub(r"<time\b[^>]*>.*?</time>", "", s))
 def head_of(p):
     r = subprocess.run(["git", "show", f"HEAD:{p}"], capture_output=True, text=True)
     return r.stdout if r.returncode == 0 else None
+def _jp(d):
+    y, m, dd = d.split("-"); return f"{int(y)}年{int(m)}月{int(dd)}日"
 DM = re.compile(r'"dateModified":"([0-9-]+)"'); UPD = re.compile(r'(更新 <time datetime=")([0-9-]+)(">)([^<]*)(</time>)')
 prev_lastmod = {}
 for sm in subprocess.run(["git", "ls-tree", "--name-only", "HEAD"], capture_output=True, text=True).stdout.split():
@@ -59,6 +61,23 @@ for p in pages:
     s = DM.sub(f'"dateModified":"{DAY}"', s)
     s = UPD.sub(lambda m: m.group(1) + DAY + m.group(3) + DAY_J + m.group(5), s)
     open(p, "w", encoding="utf-8").write(s)
+# a page is never updated before it was published; give every article a datePublished
+PUBT = re.compile(r'公開 <time datetime="([0-9-]+)">')
+for p in pages:
+    if not p.endswith("index.html"): continue
+    s = open(p, encoding="utf-8").read(); s0 = s
+    pm = PUBT.search(s)
+    if not pm: continue
+    pub = pm.group(1)
+    up = UPD.search(s)
+    if up and up.group(2) < pub:
+        s = UPD.sub(lambda m: m.group(1) + pub + m.group(3) + _jp(pub) + m.group(5), s)
+    dm = DM.search(s)
+    if dm and dm.group(1) < pub: s = DM.sub(f'"dateModified":"{pub}"', s)
+    if dm and '"datePublished"' not in s: s = s.replace(dm.group(0), f'"datePublished":"{pub}",' + DM.search(s).group(0), 1)
+    url = B + "/" + p[:-len("index.html")]
+    if url in dates and dates[url] < pub: dates[url] = pub
+    if s != s0: open(p, "w", encoding="utf-8").write(s)
 urls = {B + "/" + p[:-len("index.html")] for p in changed}
 for sm in glob.glob("sitemap-*.xml"):
     x = open(sm, encoding="utf-8").read()

@@ -27,36 +27,7 @@ NEW = [("spindle-torque-chart", "主軸のトルク線図の見方", "HOW TO REA
        ("guideways", "案内面（すべり案内・リニアガイド・静圧案内）の比較", "COMPARE"), ("grinding-coolant", "研削盤のクーラントユニット", "GRINDING"),
        ("maintenance-standards", "保全部隊が見るところと完成立会いの指摘事項", "PRACTICE")]
 
-CSS = ("/*gx*/.gx{max-width:860px}.gx h2{scroll-margin-top:calc(var(--gn) + 20px);padding-top:28px;border-top:1px solid var(--ink);font-size:clamp(24px,2.6vw,32px)}"
-       ".gx h3{font-size:18px;margin:32px 0 10px}"
-       ".gx .note{font-size:14.5px;padding:16px 20px;border-left:2px solid var(--mark);background:var(--paper);border-radius:0 6px 6px 0;color:var(--ink2)}.gx .note b{color:var(--mark);font-weight:500;margin-right:8px}"
-       ".gx .eq{font:400 15px/2 var(--f-en);background:var(--paper);border-radius:6px;padding:16px 20px;margin:0 0 1.3em;color:var(--ink)}.gx .eq span{display:block}.gx .eq small{font-family:var(--f-jp);color:var(--muted);margin-left:10px;font-size:13px}"
-       ".lab{background:var(--paper);border-radius:8px;box-shadow:0 0 0 1px var(--hair2);padding:clamp(16px,2.4vw,28px);margin:10px 0 34px}"
-       ".lab svg{display:block;width:100%;height:auto}.lab .ax{stroke:var(--ink);stroke-width:1}.lab .grid{stroke:var(--hair);stroke-width:1}.lab text{fill:var(--ink2);font:500 12px var(--f-jp)}"
-       ".lab text.en{font-family:var(--f-en)}.lab .tq{fill:none;stroke:var(--ink);stroke-width:2.4}.lab .tq6{fill:none;stroke:var(--ink);stroke-width:1.6;stroke-dasharray:6 5}"
-       ".lab .pw{fill:none;stroke:var(--mark);stroke-width:2.4}.lab .pw6{fill:none;stroke:var(--mark);stroke-width:1.6;stroke-dasharray:6 5}"
-       ".lab .zone{fill:var(--ink);opacity:.045}.lab .zl{font-size:11px;fill:var(--muted)}.lab .cur{stroke:var(--accent);stroke-width:1.4}.lab .dot{fill:var(--accent)}"
-       ".lab .ctl{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;margin-top:14px;font-size:14px}"
-       ".lab input[type=range]{flex:1;min-width:200px;accent-color:var(--mark)}"
-       ".lab .read{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}"
-       ".lab .read div{background:var(--bg);border-radius:6px;padding:10px 14px}.lab .read b{display:block;font:300 26px var(--f-en);color:var(--ink)}.lab .read span{font-size:12px;color:var(--muted)}"
-       ".lab .msg{margin-top:12px;font-size:14.5px;line-height:1.9;color:var(--ink2)}.lab .msg strong{color:var(--mark)}"
-       ".lab form{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px 18px}.lab label{display:flex;flex-direction:column;gap:4px;font-size:13px;color:var(--ink2)}"
-       ".lab label input{height:40px;border:1px solid var(--hair);border-radius:6px;background:var(--bg);color:var(--ink);font:400 16px var(--f-en);padding:0 12px}"
-       ".lab .ok{color:#1F7A5C}.lab .ng{color:var(--mark)}"
-       ".legend2{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:12.5px;color:var(--ink2);margin-top:8px}.legend2 i{display:inline-block;width:22px;height:0;border-top:2.4px solid var(--ink);vertical-align:middle;margin-right:6px}"
-       ".legend2 i.p{border-color:var(--mark)}.legend2 i.d{border-top-style:dashed;border-top-width:1.6px}"
-       ".bars{margin:8px 0 30px}.bars .r{display:grid;grid-template-columns:10em minmax(0,1fr) 4.5em;gap:12px;align-items:center;padding:7px 0;border-bottom:1px solid var(--hair);font-size:14px}"
-       ".bars .b{height:10px;background:var(--soft);border-radius:999px;overflow:hidden}.bars .b i{display:block;height:100%;background:var(--ink);border-radius:999px}.bars .r.hi .b i{background:var(--mark)}"
-       ".bars .n{font:400 14px var(--f-en);text-align:right}"
-       ".layers{list-style:none;padding:0;counter-reset:ly}.layers>li{counter-increment:ly;position:relative;margin:0 0 18px;padding:18px 20px 18px 64px;background:var(--paper);border-radius:6px;box-shadow:0 0 0 1px var(--hair2)}"
-       ".layers>li::before{content:counter(ly,decimal-leading-zero);position:absolute;left:20px;top:16px;font:300 24px var(--f-en);color:var(--mark)}"
-       ".layers h3{margin:0 0 6px;font-size:18px}.layers p{margin:.4em 0;font-size:15px}.layers .st{display:inline-block;font-size:11.5px;letter-spacing:.1em;padding:2px 9px;border-radius:999px;margin-right:6px;border:1px solid var(--hair)}"
-       ".layers .st.now{border-color:#1F7A5C;color:#1F7A5C}.layers .st.near{border-color:var(--accent);color:var(--accent)}.layers .st.far{border-color:var(--mark);color:var(--mark)}"
-       "@media (max-width:640px){.bars .r{grid-template-columns:7em minmax(0,1fr) 3.6em}.layers>li{padding-left:20px;padding-top:48px}}"
-       "@media (max-width:760px){.gx .tw{overflow:visible}.gx table{min-width:0}.gx thead{display:none}.gx tr{display:block;padding:14px 0;border-bottom:1px solid var(--hair)}"
-       ".gx td{display:block;border:0;padding:3px 0;white-space:normal}.gx td:first-child{font-size:16px;padding-bottom:6px}"
-       ".gx td+td::before{content:attr(data-l);display:block;font-size:11px;letter-spacing:.1em;color:var(--muted);margin-top:4px}}")
+from gxstyle import CSS
 
 def guide_page(slug, title_h1, eyebrow, lead, body, title, desc, extra_js=""):
     path = f"{G}{slug}/"

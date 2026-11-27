@@ -7,6 +7,8 @@ python3 build.py | tail -2        # reset the generated site to the base commit,
 python3 practice.py                # machine pages: spec meeting items, how to use, cautions, Q&A
 python3 products.py                # machine elements and dies industry, parts / operations / equipment, menus, search, sitemaps
 python3 guides.py                  # guides (torque chart, interference, guideways, coolant, maintenance) and the physical-AI page
+python3 handbook.py                # practical handbook: 11 guides with calculators, learning path, links (handbook*.py)
+python3 corrections.py             # fixes from the expert review that live only in generated pages
 python3 glossary.py > /dev/null    # glossary, term pages, in-text term links
 python3 m3d.py                     # 3D views (bundle from m3d/m3d.bundle.js; pages listed in m3d.py)
 python3 callouts.py                # pin each callout number to the parts it names (callout_parts.json)

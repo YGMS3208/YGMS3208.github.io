@@ -549,3 +549,171 @@ var io = new IntersectionObserver(function(es){
 }, { rootMargin: "600px 0px" });
 figs.forEach(function(f){ io.observe(f); });
 })();
+
+/* ---------- calculators: <div class="lab calc" data-calc="<name>"></div> builds itself from CALC below ---------- */
+(function(){
+"use strict";
+var d = document, boxes = d.querySelectorAll(".calc[data-calc]"); if(!boxes.length) return;
+var PI = Math.PI;
+function f(x, n){ if(!isFinite(x)) return "—"; return x.toLocaleString("ja-JP", { minimumFractionDigits: n, maximumFractionDigits: n }); }
+/* inputs: [key, label, unit, default, step]; outputs: [key, label, unit, digits] */
+var CALC = {
+  turning: {
+    inputs: [["D", "工作物の直径 D", "mm", 60, 1], ["vc", "切削速度 Vc", "m/min", 200, 5], ["f", "送り f", "mm/rev", 0.2, 0.01], ["ap", "切込み ap", "mm", 2, 0.1], ["re", "ノーズR rε", "mm", 0.8, 0.1], ["L", "削る長さ L", "mm", 100, 1], ["kc", "比切削抵抗 kc", "N/mm²", 2000, 50]],
+    out: [["n", "回転数 n", "min⁻¹", 0], ["vf", "送り速度 Vf", "mm/min", 0], ["q", "除去量 Q", "cm³/min", 1], ["pc", "切削動力 Pc", "kW", 2], ["t", "加工時間", "秒", 1], ["rz", "理論粗さ Rz", "μm", 2]],
+    calc: function(v){ var n = 1000 * v.vc / (PI * v.D), vf = v.f * n;
+      return { n: n, vf: vf, q: v.vc * v.ap * v.f, pc: v.vc * v.ap * v.f * v.kc / 60000, t: v.L / vf * 60, rz: v.f * v.f / (8 * v.re) * 1000,
+        msg: "Raの目安は Rz の約1/4（" + f(v.f * v.f / (8 * v.re) * 250, 2) + " μm）。主軸の出力は、Pc を機械効率（0.8前後）で割った値に余裕を見て比べる。" }; }
+  },
+  milling: {
+    inputs: [["D", "工具径 D", "mm", 10, 1], ["z", "刃数 z", "枚", 4, 1], ["vc", "切削速度 Vc", "m/min", 120, 5], ["fz", "1刃送り fz", "mm/t", 0.05, 0.005], ["ap", "軸方向の切込み ap", "mm", 10, 0.5], ["ae", "径方向の切込み ae", "mm", 1, 0.1], ["kc", "比切削抵抗 kc", "N/mm²", 2000, 50]],
+    out: [["n", "回転数 n", "min⁻¹", 0], ["vf", "送り速度 Vf", "mm/min", 0], ["q", "除去量 Q", "cm³/min", 1], ["pc", "切削動力 Pc（目安）", "kW", 2], ["k", "チップシニングの補正倍率", "倍", 2], ["fz2", "補正後の1刃送り", "mm/t", 3]],
+    calc: function(v){ var n = 1000 * v.vc / (PI * v.D), vf = v.fz * v.z * n, r = Math.min(1, v.ae / v.D);
+      var k = r < 0.5 ? 1 / Math.sqrt(1 - Math.pow(1 - 2 * r, 2)) : 1, q = v.ap * v.ae * vf / 1000;
+      return { n: n, vf: vf, q: q, pc: q * v.kc / 60000 * 1000 / 1000, k: k, fz2: v.fz * k,
+        msg: r < 0.5 ? "径方向の切込みが直径の半分より小さいので、切りくずは1刃送りより薄くなる。刃がこすらないよう、送りを補正倍率まで上げられるか検討する（工具メーカーの推奨値の範囲で）。" : "径方向の切込みが直径の半分以上なので、チップシニングの補正は要らない。" }; }
+  },
+  drilling: {
+    inputs: [["D", "ドリル径 D", "mm", 10, 0.5], ["vc", "切削速度 Vc", "m/min", 80, 5], ["f", "送り f", "mm/rev", 0.2, 0.01], ["L", "穴の深さ L", "mm", 30, 1], ["M", "タップの呼び径 d", "mm", 10, 1], ["P", "ねじのピッチ P", "mm", 1.5, 0.05]],
+    out: [["n", "回転数 n", "min⁻¹", 0], ["vf", "送り速度 Vf", "mm/min", 0], ["t", "1穴の加工時間", "秒", 1], ["cut", "切削タップの下穴", "mm", 2], ["roll", "転造タップの下穴（目安）", "mm", 2], ["tf", "タップの送り（同期）", "mm/min", 0]],
+    calc: function(v){ var n = 1000 * v.vc / (PI * v.D), vf = v.f * n;
+      return { n: n, vf: vf, t: v.L / vf * 60, cut: v.M - v.P, roll: v.M - 0.45 * v.P, tf: v.P * n,
+        msg: "深さが直径の3倍を超えたらステップ送り（G83）や内部給油のドリルを考える。タップの送りはピッチ×回転数（上の回転数でタップした場合）。" }; }
+  },
+  taylor: {
+    inputs: [["v1", "いまの切削速度 V₁", "m/min", 200, 5], ["t1", "いまの工具寿命 T₁", "分", 30, 1], ["nn", "寿命指数 n（超硬 0.2〜0.3）", "", 0.25, 0.01], ["v2", "変えたい切削速度 V₂", "m/min", 240, 5]],
+    out: [["t2", "変えた後の寿命 T₂", "分", 1], ["r", "寿命の比", "倍", 2], ["c", "定数 C", "", 0]],
+    calc: function(v){ var t2 = v.t1 * Math.pow(v.v1 / v.v2, 1 / v.nn);
+      return { t2: t2, r: t2 / v.t1, c: v.v1 * Math.pow(v.t1, v.nn), msg: "V×Tⁿ＝C から。速度を上げると加工時間は縮むが、工具交換の回数と費用が増える。量産では、寿命を交換しやすい時間にそろえる速度を選ぶ。" }; }
+  },
+  chatter: {
+    inputs: [["n", "回転数 n", "min⁻¹", 8000, 100], ["z", "刃数 z", "枚", 3, 1], ["fn", "工具・主軸系の固有振動数 fn", "Hz", 1200, 10]],
+    out: [["ft", "刃の通過周波数", "Hz", 0], ["l0", "安定ポケット k=0", "min⁻¹", 0], ["l1", "k=1", "min⁻¹", 0], ["l2", "k=2", "min⁻¹", 0], ["l3", "k=3", "min⁻¹", 0]],
+    calc: function(v){ var lob = function(k){ return 60 * v.fn / (v.z * (k + 1)); };
+      return { ft: v.n * v.z / 60, l0: lob(0), l1: lob(1), l2: lob(2), l3: lob(3),
+        msg: "刃の通過周波数が固有振動数の整数分の1に近い回転数（安定ポケット）では、びびりが出にくく、深く切り込める。固有振動数はハンマリング試験で測る。ポケットは減衰で少し右にずれるので、表の値の少し上から試す。" }; }
+  },
+  thermal: {
+    inputs: [["L", "長さ L", "mm", 500, 10], ["dt", "温度の変化 ΔT", "℃", 3, 0.5], ["a", "線膨張係数 α", "×10⁻⁶/℃", 11.5, 0.1]],
+    out: [["dl", "伸び ΔL", "μm", 1], ["per", "1℃あたり", "μm/℃", 2]],
+    calc: function(v){ var dl = v.a * 1e-6 * v.L * v.dt * 1000;
+      return { dl: dl, per: v.a * 1e-6 * v.L * 1000, msg: "目安の線膨張係数：鋼 11.5、鋳鉄 10前後、アルミ 23、ステンレス(SUS304) 17、インバー 1前後（×10⁻⁶/℃）。部品と測定器の温度がそろっていないと、この量がそのまま測定誤差になる。" }; }
+  },
+  grinding: {
+    inputs: [["vs", "砥石の周速 vs", "m/s", 45, 1], ["vw", "工作物の周速 vw", "m/min", 25, 1], ["ae", "1回転あたりの切込み ae", "μm", 5, 0.5], ["b", "研削幅 b", "mm", 20, 1]],
+    out: [["q", "速度比 q＝vs/vw", "", 0], ["qp", "比研削量 Q'", "mm³/mm·s", 2], ["heq", "等価研削厚さ heq", "μm", 4], ["qt", "除去量 Q", "mm³/s", 1]],
+    calc: function(v){ var vw = v.vw / 60, qp = v.ae * 1e-3 * vw * 1000, heq = qp / (v.vs * 1000) * 1000;
+      return { q: v.vs / vw, qp: qp, heq: heq, qt: qp * v.b,
+        msg: "目安：円筒プランジの速度比 60〜150、比研削量は一般砥石の粗研削で1〜5、CBNで5〜30、仕上げで0.1〜1 mm³/mm·s。速度比が整数に近いと、同じ位置に同じ傷が重なってうねりが出やすい。" }; }
+  },
+  takt: {
+    inputs: [["year", "年間の必要数", "個", 240000, 1000], ["days", "年間の稼働日", "日", 240, 1], ["shift", "直数", "直", 2, 1], ["hours", "1直の実働時間", "時間", 7.5, 0.5], ["avail", "可動率", "%", 88, 1], ["yield", "良品率", "%", 98, 0.5], ["ct", "設備1台のサイクルタイム", "秒", 95, 1]],
+    out: [["takt", "タクトタイム", "秒", 1], ["need", "必要台数（計算値）", "台", 2], ["mach", "必要台数（切り上げ）", "台", 0], ["load", "1台あたりの負荷率", "%", 0]],
+    calc: function(v){ var sec = v.days * v.shift * v.hours * 3600, takt = sec / v.year;
+      var need = v.year * v.ct / (sec * v.avail / 100 * v.yield / 100), m = Math.ceil(need - 1e-9);
+      return { takt: takt, need: need, mach: m, load: need / m * 100,
+        msg: (need / m > 0.9 ? "負荷率が90%を超えている。故障や段取り替えで遅れを取り戻せないので、台数を1台増やすか、サイクルタイムを縮める案を持っておく。" : "負荷率に余裕がある。将来の増産、段取り替え、品種追加をどこまで吸収できるかも合わせて見る。") }; }
+  },
+  oee: {
+    inputs: [["plan", "計画稼働時間", "分", 900, 10], ["down", "停止時間（故障・段取り・調整）", "分", 90, 5], ["ct", "基準サイクルタイム", "秒", 60, 1], ["made", "加工した数", "個", 700, 1], ["good", "良品数", "個", 686, 1]],
+    out: [["a", "時間稼働率", "%", 1], ["p", "性能稼働率", "%", 1], ["q", "良品率", "%", 1], ["oee", "設備総合効率 OEE", "%", 1]],
+    calc: function(v){ var run = v.plan - v.down, a = run / v.plan, p = v.made * v.ct / 60 / run, q = v.good / v.made;
+      return { a: a * 100, p: p * 100, q: q * 100, oee: a * p * q * 100,
+        msg: "いちばん低い率が、まず手を付けるロス。性能稼働率が100%を超える場合は、基準サイクルタイムの設定が実力より長い。" }; }
+  },
+  payback: {
+    inputs: [["inv", "投資額（本体＋付帯費）", "万円", 6000, 100], ["life", "償却年数", "年", 8, 1], ["maint", "保全費", "万円/年", 120, 10], ["kw", "平均の消費電力", "kW", 12, 1], ["yen", "電力単価", "円/kWh", 25, 1], ["hours", "年間の稼働時間", "時間", 4000, 100], ["labor", "人件費（この設備の分）", "万円/年", 300, 10], ["parts", "年間の良品数", "個", 120000, 1000], ["save", "1個あたりの削減額（いまと比べて）", "円", 150, 5]],
+    out: [["dep", "減価償却費", "万円/年", 0], ["pw", "電力費", "万円/年", 0], ["cpp", "1個あたりの設備費", "円", 1], ["sv", "年間の削減額", "万円/年", 0], ["pb", "単純回収年数", "年", 1]],
+    calc: function(v){ var dep = v.inv / v.life, pw = v.kw * v.yen * v.hours / 10000, tot = dep + v.maint + pw + v.labor;
+      var sv = v.save * v.parts / 10000;
+      return { dep: dep, pw: pw, cpp: tot * 10000 / v.parts, sv: sv, pb: v.inv / sv,
+        msg: "単純回収年数＝投資額÷年間の削減額。付帯費（治具、初期の工具一式、ローダ、基礎・電源工事、教育）を本体と別の行で見積もると、相見積の比較がしやすい。" }; }
+  }
+};
+boxes.forEach(function(box){
+  var def = CALC[box.getAttribute("data-calc")]; if(!def) return;
+  var form = d.createElement("form"), read = d.createElement("div"), msg = d.createElement("p"), ins = {}, outs = {};
+  form.setAttribute("onsubmit", "return false"); read.className = "read"; msg.className = "msg";
+  def.inputs.forEach(function(i){
+    var lb = d.createElement("label"), sp = d.createElement("span"), inp = d.createElement("input");
+    sp.textContent = i[1] + (i[2] ? "（" + i[2] + "）" : "");
+    inp.type = "number"; inp.inputMode = "decimal"; inp.step = i[4]; inp.value = box.getAttribute("data-" + i[0].toLowerCase()) || i[3];
+    lb.appendChild(sp); lb.appendChild(inp); form.appendChild(lb); ins[i[0]] = inp;
+    inp.addEventListener("input", run);
+  });
+  def.out.forEach(function(o){
+    var dv = d.createElement("div"), b = d.createElement("b"), s = d.createElement("span");
+    s.textContent = o[1] + (o[2] ? "（" + o[2] + "）" : ""); dv.appendChild(b); dv.appendChild(s); read.appendChild(dv); outs[o[0]] = [b, o[3]];
+  });
+  box.appendChild(form); box.appendChild(read); box.appendChild(msg);
+  box.setAttribute("role", "group");
+  function run(){
+    var v = {}, ok = true;
+    Object.keys(ins).forEach(function(k){ v[k] = parseFloat(ins[k].value); if(!isFinite(v[k])) ok = false; });
+    if(!ok) return;
+    var r = def.calc(v);
+    Object.keys(outs).forEach(function(k){ var o = outs[k], prev = o[0].textContent, now = f(r[k], o[1]); o[0].textContent = now; if(prev && prev !== now){ o[0].classList.remove("tick"); void o[0].offsetWidth; o[0].classList.add("tick"); } });
+    msg.textContent = r.msg || "";
+  }
+  run();
+});
+})();
+
+/* ---------- ballbar: sliders add each error, the trace shows its signature ---------- */
+(function(){
+"use strict";
+var d = document, box = d.querySelector(".calc-bb"); if(!box) return;
+var NS = "http://www.w3.org/2000/svg", S = [
+  ["bl", "バックラッシ（段差）", 0, 10, 0], ["sp", "反転時の摩擦（象限突起）", 0, 10, 4], ["sq", "直角度の誤差", -10, 10, 0],
+  ["gn", "サーボゲインの不一致", -10, 10, 0], ["sc", "スケールの差（X軸が長い）", -10, 10, 0], ["cy", "ねじのピッチ誤差（周期）", 0, 10, 0]];
+var W = 360, C = W / 2, R0 = 120, K = 4.5, svg = d.createElementNS(NS, "svg");
+svg.setAttribute("viewBox", "0 0 " + W + " " + W); svg.setAttribute("role", "img"); svg.setAttribute("aria-label", "ボールバーの測定結果（誤差を拡大して表示）");
+function el(t, a){ var e = d.createElementNS(NS, t); for(var k in a) e.setAttribute(k, a[k]); svg.appendChild(e); return e; }
+el("circle", { cx: C, cy: C, r: R0, class: "grid" }); el("circle", { cx: C, cy: C, r: R0 - 10 * K, class: "grid" }); el("circle", { cx: C, cy: C, r: R0 + 10 * K, class: "grid" });
+el("line", { x1: C, y1: 8, x2: C, y2: W - 8, class: "grid" }); el("line", { x1: 8, y1: C, x2: W - 8, y2: C, class: "grid" });
+var tx = el("text", { x: W - 12, y: C - 6, "text-anchor": "end", class: "en" }); tx.textContent = "X";
+var ty = el("text", { x: C + 8, y: 18, class: "en" }); ty.textContent = "Y";
+var p1 = el("path", { class: "tq" }), p2 = el("path", { class: "pw6" });
+var wrap = d.createElement("div"); wrap.className = "bbwrap"; wrap.appendChild(svg);
+var ctl = d.createElement("div"); ctl.className = "bbctl"; var v = {};
+S.forEach(function(s){
+  var lb = d.createElement("label"), sp = d.createElement("span"), r = d.createElement("input");
+  sp.textContent = s[1]; r.type = "range"; r.min = s[2]; r.max = s[3]; r.step = 1; r.value = s[4]; v[s[0]] = s[4];
+  r.addEventListener("input", function(){ v[s[0]] = +r.value; draw(); });
+  lb.appendChild(sp); lb.appendChild(r); ctl.appendChild(lb);
+});
+wrap.appendChild(ctl); box.appendChild(wrap);
+var leg = d.createElement("p"); leg.className = "legend2"; leg.innerHTML = '<span><i></i>反時計回り（CCW）</span><span><i class="p d"></i>時計回り（CW）</span><span>円のずれを約' + K * 10 + '倍に拡大</span>';
+box.appendChild(leg);
+function trace(dir){
+  var pts = [];
+  for(var i = 0; i <= 360; i += 2){
+    var a = i * Math.PI / 180, c = Math.cos(a), s = Math.sin(a), e = 0;
+    /* backlash: a step on the axis that has just reversed; spikes: short bumps right after each reversal */
+    var vx = -s * dir, vy = c * dir;
+    /* each axis lags half the backlash behind its direction of travel; radial error = ex·cos + ey·sin */
+    e += -v.bl * 0.5 * ((vx > 0 ? 1 : -1) * c + (vy > 0 ? 1 : -1) * s);
+    [0, 90, 180, 270].forEach(function(q){ var dd = ((i - q) * dir + 720) % 360; if(dd < 14) e += v.sp * 0.9 * Math.exp(-dd / 3.5); });
+    e += v.sq * 0.6 * s * c;
+    e += v.gn * 0.6 * Math.sin(2 * a) * dir * 0.5;
+    e += v.sc * 0.6 * (c * c - s * s) * 0.5;
+    e += v.cy * 0.35 * Math.sin(a * 12);
+    var r = R0 + e * K;
+    pts.push((pts.length ? "L" : "M") + (C + r * c).toFixed(1) + " " + (C - r * s).toFixed(1));
+  }
+  return pts.join("");
+}
+var read = d.createElement("p"); read.className = "msg"; box.appendChild(read);
+function draw(){
+  p1.setAttribute("d", trace(1)); p2.setAttribute("d", trace(-1));
+  var t = [];
+  if(v.bl) t.push("軸の向きが変わる所（X軸は円の左右の端、Y軸は上下の端）で円が段違いになる → バックラッシ。ボールねじ・支持軸受の摩耗や予圧抜けを疑い、補正量が増えていないかも見る");
+  if(v.sp) t.push("各象限の切り替わりの直後に小さな突起 → 反転時の摩擦（象限突起）。NCの反転補正の調整、潤滑、案内面の状態を見る");
+  if(v.sq) t.push("斜め45°の楕円で、回る向きを変えても同じ形 → 2軸の直角度の誤差（幾何誤差）");
+  if(v.gn) t.push("斜め45°の楕円で、回る向きを変えると傾きが逆になる → 2軸のサーボゲイン（追従の遅れ）の不一致");
+  if(v.sc) t.push("縦か横に伸びた楕円 → 2軸のスケール（位置決めの尺度）の差。ピッチ誤差補正や熱による伸びを確かめる");
+  if(v.cy) t.push("細かい周期の波 → ねじのピッチ誤差やモータ・エンコーダの周期誤差");
+  read.innerHTML = t.length ? "<strong>読み方：</strong>" + t.join("。") + "。" : "誤差なし：理想的な円。実際の測定では、いくつもの誤差が重なった形になる。";
+}
+draw();
+})();

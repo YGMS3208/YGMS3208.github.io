@@ -372,3 +372,16 @@ a.gl:hover,.prose a.gl:hover{color:var(--mark);text-decoration-style:solid}
 .m3dlead{color:var(--ink2);font-size:15px;line-height:1.85;margin-bottom:18px}
 @media (max-width:720px){.m3d-stage{aspect-ratio:4/3;border-radius:16px}.m3d-l{font-size:11px;padding:5px 7px}}
 @media (prefers-reduced-motion:reduce){.m3d-stage canvas,.m3d-l{transition:none}.m3d-stage::after{animation:none}}
+/* ---------- calculators ---------- */
+.calc .read b{transition:color .6s}
+.calc .read b.tick{animation:tick .7s var(--out)}
+@keyframes tick{from{color:var(--accent);transform:translateY(-3px)}}
+.calc label span{line-height:1.5}
+.calc-bb .bbwrap{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px;align-items:center}
+.calc-bb svg{max-width:420px;margin:0 auto}
+.calc-bb circle,.calc-bb path{fill:none}
+.calc-bb .bbctl{display:grid;gap:12px}
+.calc-bb .bbctl label{display:grid;gap:4px;font-size:13px;color:var(--ink2)}
+.calc-bb input[type=range]{width:100%;accent-color:var(--accent)}
+@media (max-width:760px){.calc-bb .bbwrap{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){.calc .read b.tick{animation:none}}
