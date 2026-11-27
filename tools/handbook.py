@@ -184,6 +184,31 @@ sec = "\n## 実務ハンドブック（工作機械）\n" + "".join(f'- [{PAGES[
 write("llms.txt", ll.rstrip("\n") + "\n" + sec)
 # heading glyphs for the Mincho subset (picked up on the next build)
 ex = open(f"{S}/extra_chars.txt", encoding="utf-8").read()
-chars = "".join(PAGES[s]["h1"] + "".join(re.findall(r"<h[23][^>]*>([^<]*)</h[23]>", PAGES[s]["body"])) for s in ORDER) + "はじめての人へ。実務ハンドブック学びの順路" + "".join(t for t, _, _ in STEPS)
+chars = "".join(PAGES[s]["h1"] + "".join(re.findall(r"<h[23][^>]*>([^<]*)</h[23]>", PAGES[s]["body"])) for s in ORDER) + "はじめての人へ。実務ハンドブック学びの順路数字で、確かめる。" + "".join(t for t, _, _ in STEPS)
 open(f"{S}/extra_chars.txt", "w", encoding="utf-8").write("".join(sorted(set(ex) | set(chars))))
 print("handbook:", len(ORDER), "pages")
+
+# home page: a way in to the handbook, the calculators and the 3D views
+home = read("index.html")
+feat = [(G + "learning-path/", "はじめての人へ", "学びの順路（10ステップ）"),
+        (G + "cutting-conditions/#c-basic", "計算ツール", "回転数・送り・切削動力"),
+        (G + "accuracy-testing/#a-bb", "シミュレータ", "ボールバーの円の読み方"),
+        (G + "line-planning/#l-takt", "計算ツール", "タクトと必要台数・OEE"),
+        ("/machine-elements/gear-guide/", "3Dで見る", "歯車のかみ合い"),
+        ("/machine-tools/5-axis-machining-center/", "3Dで見る", "5軸のA軸・C軸")]
+HOME_CSS = (".hbfeat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:clamp(28px,4vw,44px)}"
+            ".hbfeat a{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-radius:12px;background:var(--bg);box-shadow:0 0 0 1px var(--hair);transition:box-shadow .25s,transform .45s var(--spring)}"
+            ".hbfeat a:hover{box-shadow:0 0 0 1px var(--accent);transform:translateY(-2px)}.hbfeat small{font-size:11.5px;letter-spacing:.14em;color:var(--mark)}.hbfeat b{font-size:16px;font-weight:500;line-height:1.5}"
+            "@media (max-width:760px){.hbfeat{grid-template-columns:1fr 1fr}}")
+hsec = ('<section class="sec paper"><div class="wrap"><div class="hd row" data-r><div><p class="eyebrow" lang="en">HANDBOOK</p>'
+        '<h2 class="d3">数字で、確かめる。</h2><p class="sub" style="font-size:16px">切削条件、工具、NCプログラム、精度検査、研削、設備計画、保全、安全。現場で使う判断基準を、計算ツールと3Dで確かめながら読める実務ハンドブック。</p></div>'
+        f'<a class="lnk" href="{G}">ガイドをすべて見る</a></div>'
+        '<div class="hbfeat" data-r>' + "".join(f'<a href="{u}"><small>{e(k)}</small><b>{e(t)}</b></a>' for u, k, t in feat) + "</div>"
+        '<div class="list" data-r>' + cards(HB) + "</div></div></section>")
+i0 = home.index("mtpromo")
+i1 = home.index("</section>", i0) + len("</section>")
+home = home[:i1] + hsec + home[i1:]
+pills = "".join(f'<a class="pill" href="{G}{s}/">{e(PAGES[s]["h1"])}</a>' for s in ORDER)
+home = home.replace('<a class="pill" href="/methods/material-preparation/">', pills + '<a class="pill" href="/methods/material-preparation/">', 1)
+write("index.html", home)
+print("home: handbook section added")

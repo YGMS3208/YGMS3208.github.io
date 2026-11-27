@@ -385,3 +385,5 @@ a.gl:hover,.prose a.gl:hover{color:var(--mark);text-decoration-style:solid}
 .calc-bb input[type=range]{width:100%;accent-color:var(--accent)}
 @media (max-width:760px){.calc-bb .bbwrap{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){.calc .read b.tick{animation:none}}
+/* home: handbook entry */
+.hbfeat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:clamp(28px,4vw,44px)}.hbfeat a{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-radius:12px;background:var(--bg);box-shadow:0 0 0 1px var(--hair);transition:box-shadow .25s,transform .45s var(--spring)}.hbfeat a:hover{box-shadow:0 0 0 1px var(--accent);transform:translateY(-2px)}.hbfeat small{font-size:11.5px;letter-spacing:.14em;color:var(--mark)}.hbfeat b{font-size:16px;font-weight:500;line-height:1.5}@media (max-width:760px){.hbfeat{grid-template-columns:1fr 1fr}}
