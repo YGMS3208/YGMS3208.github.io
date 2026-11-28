@@ -717,3 +717,205 @@ function draw(){
 }
 draw();
 })();
+
+/* ---------- positioning accuracy (ISO 230-2): paste deviations, get A, B, R, E, M and the error curve ---------- */
+(function(){
+"use strict";
+var d = document, box = d.querySelector(".calc-pos"); if(!box) return;
+var NS = "http://www.w3.org/2000/svg";
+/* sample data: a 600 mm axis, 7 targets, 5 runs each way (μm) with a pitch slope, backlash and scatter */
+function sample(){
+  var rows = [], seed = 7; function rnd(){ seed = (seed * 9301 + 49297) % 233280; return seed / 233280 - .5; }
+  for(var i = 0; i <= 6; i++){
+    var x = i * 100, base = 0.006 * x - 1.5 + 1.2 * Math.sin(i * 1.3), r = [x];
+    for(var k = 0; k < 5; k++) r.push((base + 1.6 + rnd() * 1.6).toFixed(1));
+    for(k = 0; k < 5; k++) r.push((base - 1.6 + rnd() * 1.6).toFixed(1));
+    rows.push(r.join(", "));
+  }
+  return "# 目標位置(mm), 正方向5回(μm), 負方向5回(μm)\n" + rows.join("\n");
+}
+var ta = d.createElement("textarea"); ta.rows = 9; ta.spellcheck = false; ta.value = sample(); ta.setAttribute("aria-label", "測定値");
+var svg = d.createElementNS(NS, "svg"); svg.setAttribute("viewBox", "0 0 640 300"); svg.setAttribute("role", "img"); svg.setAttribute("aria-label", "位置偏差の曲線");
+var read = d.createElement("div"); read.className = "read"; var msg = d.createElement("p"); msg.className = "msg";
+var lab = d.createElement("p"); lab.className = "legend2"; lab.innerHTML = '<span><i></i>正方向の平均</span><span><i class="p"></i>負方向の平均</span><span><i class="d"></i>平均±2s</span>';
+box.appendChild(ta); box.appendChild(svg); box.appendChild(lab); box.appendChild(read); box.appendChild(msg);
+var OUT = [["A", "両方向の位置決め精度 A"], ["R", "両方向の繰返し性 R"], ["B", "反転値 B"], ["E", "系統的な位置偏差 E"], ["M", "平均の位置偏差 M"], ["Ru", "一方向の繰返し性 R↑/R↓"]], outs = {};
+OUT.forEach(function(o){ var dv = d.createElement("div"), b = d.createElement("b"), s = d.createElement("span"); s.textContent = o[1] + "（μm）"; dv.appendChild(b); dv.appendChild(s); read.appendChild(dv); outs[o[0]] = b; });
+function mean(a){ return a.reduce(function(s, v){ return s + v; }, 0) / a.length; }
+function sd(a){ var m = mean(a); return Math.sqrt(a.reduce(function(s, v){ return s + (v - m) * (v - m); }, 0) / (a.length - 1)); }
+function el(t, at){ var e = d.createElementNS(NS, t); for(var k in at) e.setAttribute(k, at[k]); svg.appendChild(e); return e; }
+function run(){
+  var pts = [];
+  ta.value.split(/\n/).forEach(function(line){
+    line = line.replace(/#.*/, "").trim(); if(!line) return;
+    var v = line.split(/[\s,\t]+/).map(parseFloat).filter(function(x){ return isFinite(x); });
+    if(v.length < 5) return;
+    var n = Math.floor((v.length - 1) / 2), up = v.slice(1, 1 + n), dn = v.slice(1 + n, 1 + 2 * n);
+    if(n < 2) return;
+    pts.push({ x: v[0], mu: mean(up), su: sd(up), md: mean(dn), sd: sd(dn) });
+  });
+  if(pts.length < 2){ msg.textContent = "1行に「目標位置、正方向の値…、負方向の値…」を、2行以上入れてください（各方向2回以上）。"; return; }
+  var A = -1e9, Amin = 1e9, R = 0, Ru = 0, B = 0, Emax = -1e9, Emin = 1e9, Mmax = -1e9, Mmin = 1e9;
+  pts.forEach(function(p){
+    var Bi = p.mu - p.md;
+    B = Math.max(B, Math.abs(Bi));
+    Ru = Math.max(Ru, 4 * p.su, 4 * p.sd);
+    R = Math.max(R, 2 * p.su + 2 * p.sd + Math.abs(Bi), 4 * p.su, 4 * p.sd);
+    A = Math.max(A, p.mu + 2 * p.su, p.md + 2 * p.sd); Amin = Math.min(Amin, p.mu - 2 * p.su, p.md - 2 * p.sd);
+    Emax = Math.max(Emax, p.mu, p.md); Emin = Math.min(Emin, p.mu, p.md);
+    var m = (p.mu + p.md) / 2; Mmax = Math.max(Mmax, m); Mmin = Math.min(Mmin, m);
+  });
+  var v = { A: A - Amin, R: R, B: B, E: Emax - Emin, M: Mmax - Mmin, Ru: Ru };
+  Object.keys(outs).forEach(function(k){ outs[k].textContent = v[k].toFixed(1); });
+  /* chart */
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  var L = 56, Rr = 620, T = 16, Bt = 262, x0 = pts[0].x, x1 = pts[pts.length - 1].x, y0 = Amin - 1, y1 = A + 1;
+  var X = function(x){ return L + (Rr - L) * (x - x0) / ((x1 - x0) || 1); }, Y = function(y){ return Bt - (Bt - T) * (y - y0) / (y1 - y0); };
+  for(var g = Math.ceil(y0); g <= y1; g += Math.max(1, Math.round((y1 - y0) / 6))){ el("line", { x1: L, x2: Rr, y1: Y(g), y2: Y(g), class: "grid" }); var t = el("text", { x: L - 8, y: Y(g) + 4, "text-anchor": "end", class: "en" }); t.textContent = g; }
+  pts.forEach(function(p){ var t = el("text", { x: X(p.x), y: Bt + 22, "text-anchor": "middle", class: "en" }); t.textContent = p.x; });
+  el("line", { x1: L, x2: Rr, y1: Bt, y2: Bt, class: "ax" });
+  function path(f){ return pts.map(function(p, i){ return (i ? "L" : "M") + X(p.x).toFixed(1) + " " + Y(f(p)).toFixed(1); }).join(""); }
+  el("path", { d: path(function(p){ return p.mu + 2 * p.su; }), class: "tq6" }); el("path", { d: path(function(p){ return p.mu - 2 * p.su; }), class: "tq6" });
+  el("path", { d: path(function(p){ return p.md + 2 * p.sd; }), class: "pw6" }); el("path", { d: path(function(p){ return p.md - 2 * p.sd; }), class: "pw6" });
+  el("path", { d: path(function(p){ return p.mu; }), class: "tq" }); el("path", { d: path(function(p){ return p.md; }), class: "pw" });
+  var ty = el("text", { x: L, y: 12 }); ty.textContent = "偏差（μm）"; var tx = el("text", { x: Rr, y: 296, "text-anchor": "end" }); tx.textContent = "目標位置（mm）";
+  msg.innerHTML = "<strong>読み方：</strong>2本の平均の線の間隔が反転値B（バックラッシなど）、線の傾きとうねりが系統的な偏差E（ピッチ誤差補正で直せる）、点線の帯の幅が繰返し性（補正では直せない）。" + (v.B > v.R / 2 ? "この例では反転値が大きく、反転時のロストモーションが精度を決めている。" : "");
+}
+ta.addEventListener("input", run); run();
+})();
+
+/* ---------- stability lobes (one degree of freedom): where chatter starts ---------- */
+(function(){
+"use strict";
+var d = document, box = d.querySelector(".calc-lobes"); if(!box) return;
+var NS = "http://www.w3.org/2000/svg";
+var F = [["fn", "固有振動数 fn（Hz）", 1200, 10], ["zeta", "減衰比 ζ（%）", 3, 0.5], ["k", "剛性 k（N/μm）", 20, 1], ["ks", "比切削抵抗 Ks（N/mm²）", 2000, 100], ["z", "刃数 z", 3, 1], ["n", "いまの回転数（min⁻¹）", 9000, 100], ["b", "いまの切込み幅（mm）", 2, 0.1]];
+var form = d.createElement("form"), v = {}; form.setAttribute("onsubmit", "return false");
+F.forEach(function(f){ var lb = d.createElement("label"), sp = d.createElement("span"), i = d.createElement("input"); sp.textContent = f[1]; i.type = "number"; i.step = f[3]; i.value = f[2]; v[f[0]] = f[2];
+  i.addEventListener("input", function(){ var x = parseFloat(i.value); if(isFinite(x) && x > 0){ v[f[0]] = x; draw(); } }); lb.appendChild(sp); lb.appendChild(i); form.appendChild(lb); });
+var svg = d.createElementNS(NS, "svg"); svg.setAttribute("viewBox", "0 0 640 320"); svg.setAttribute("role", "img"); svg.setAttribute("aria-label", "安定限界線図");
+var msg = d.createElement("p"); msg.className = "msg";
+box.appendChild(form); box.appendChild(svg); box.appendChild(msg);
+function el(t, at){ var e = d.createElementNS(NS, t); for(var k in at) e.setAttribute(k, at[k]); svg.appendChild(e); return e; }
+function draw(){
+  while(svg.firstChild) svg.removeChild(svg.firstChild);
+  var wn = 2 * Math.PI * v.fn, z = v.zeta / 100, k = v.k * 1000 /* N/mm */, lobes = [], nmax = 0;
+  for(var lob = 0; lob < 6; lob++){
+    var pts = [];
+    for(var r = 1.0005; r < 1.6; r += 0.002){
+      var den = (1 - r * r) * (1 - r * r) + (2 * z * r) * (2 * z * r), re = (1 - r * r) / (k * den), im = -2 * z * r / (k * den);
+      if(re >= 0) continue;
+      var blim = -1 / (2 * v.ks * re), psi = Math.atan2(im, re), eps = 3 * Math.PI + 2 * psi, wc = r * wn;
+      var T = (eps + 2 * Math.PI * lob) / wc, n = 60 / (v.z * T);
+      pts.push([n, blim]);
+    }
+    lobes.push(pts); pts.forEach(function(p){ nmax = Math.max(nmax, p[0]); });
+  }
+  var nlo = Math.max(500, 60 * v.fn / v.z / 7), nhi = Math.min(nmax, Math.max(v.n * 1.4, 60 * v.fn / v.z * 1.25));
+  var bmin = 1e9; lobes.forEach(function(pts){ pts.forEach(function(p){ bmin = Math.min(bmin, p[1]); }); });
+  var bmax = Math.max(bmin * 6, v.b * 1.4);
+  var L = 56, R = 620, T0 = 16, Bt = 280, X = function(n){ return L + (R - L) * (n - nlo) / (nhi - nlo); }, Y = function(b){ return Bt - (Bt - T0) * Math.min(b, bmax) / bmax; };
+  el("rect", { x: L, y: T0, width: R - L, height: Bt - T0, class: "zone" });
+  for(var g = 0; g <= 5; g++){ var bb = bmax * g / 5; el("line", { x1: L, x2: R, y1: Y(bb), y2: Y(bb), class: "grid" }); var t = el("text", { x: L - 8, y: Y(bb) + 4, "text-anchor": "end", class: "en" }); t.textContent = bb.toFixed(bb < 10 ? 1 : 0); }
+  for(g = 0; g <= 5; g++){ var nn = nlo + (nhi - nlo) * g / 5, tt = el("text", { x: X(nn), y: Bt + 20, "text-anchor": "middle", class: "en" }); tt.textContent = Math.round(nn / 100) * 100; }
+  /* the stable region is under the lowest lobe at each speed */
+  var N = 220, low = [];
+  for(var i = 0; i <= N; i++){
+    var n0 = nlo + (nhi - nlo) * i / N, best = bmax;
+    lobes.forEach(function(pts){ for(var j = 1; j < pts.length; j++){ var a = pts[j - 1], c = pts[j]; if((a[0] - n0) * (c[0] - n0) <= 0){ var tt2 = (n0 - a[0]) / ((c[0] - a[0]) || 1); best = Math.min(best, a[1] + (c[1] - a[1]) * tt2); } } });
+    low.push([n0, best]);
+  }
+  el("path", { d: "M" + X(nlo) + " " + Bt + low.map(function(p){ return "L" + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); }).join("") + "L" + X(nhi) + " " + Bt + "Z", fill: "var(--accent)", opacity: ".12" });
+  el("path", { d: low.map(function(p, i){ return (i ? "L" : "M") + X(p[0]).toFixed(1) + " " + Y(p[1]).toFixed(1); }).join(""), class: "tq" });
+  el("line", { x1: L, x2: R, y1: Y(bmin), y2: Y(bmin), class: "pw6" });
+  var tl = el("text", { x: R - 4, y: Y(bmin) - 6, "text-anchor": "end", class: "zl" }); tl.textContent = "どの回転数でも安定な切込み（無条件安定限界）";
+  var px = X(v.n), py = Y(v.b);
+  el("circle", { cx: px, cy: py, r: 6, fill: "var(--mark)" });
+  var here = low.reduce(function(a, p){ return Math.abs(p[0] - v.n) < Math.abs(a[0] - v.n) ? p : a; }, low[0]);
+  var ok = v.b < here[1];
+  var ax = el("text", { x: L, y: 12 }); ax.textContent = "限界の切込み幅（mm）"; var ay = el("text", { x: R, y: 314, "text-anchor": "end" }); ay.textContent = "回転数（min⁻¹）";
+  /* the best pocket near the current speed */
+  var bestN = low.reduce(function(a, p){ return p[1] > a[1] ? p : a; }, low[0]);
+  msg.innerHTML = "<strong>" + (ok ? "安定：" : "びびりの領域：") + "</strong>いまの条件（朱の点）での限界はおよそ " + here[1].toFixed(2) + " mm。" +
+    "この範囲で最も深く切り込めるのは " + Math.round(bestN[0] / 100) * 100 + " min⁻¹ 付近（限界 " + bestN[1].toFixed(2) + " mm）。" +
+    "山の頂上より少し低い回転数側は谷が急なので、少し高めに合わせる。これは1自由度・旋削の簡単なモデルで、フライスでは目安として使う。";
+}
+draw();
+})();
+
+/* ---------- NC backplot: pick a block, see where the tool goes ---------- */
+(function(){
+"use strict";
+var d = document; d.querySelectorAll(".ncplay[data-prog]").forEach(function(box){
+  var NS = "http://www.w3.org/2000/svg", prog; try { prog = JSON.parse(box.getAttribute("data-prog")); } catch(e){ return; }
+  var rows = box.querySelectorAll("tbody tr"), svg = d.createElementNS(NS, "svg"), RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  svg.setAttribute("viewBox", "-22 -66 90 86"); svg.setAttribute("role", "img"); svg.setAttribute("aria-label", "工具の経路（上から見た図）");
+  var stage = d.createElement("div"); stage.className = "ncstage"; stage.appendChild(svg);
+  var bar = d.createElement("div"); bar.className = "m3d-ui"; var play = d.createElement("button"); play.type = "button"; play.className = "m3d-b"; play.textContent = "1行ずつ再生";
+  var z = d.createElement("span"); z.className = "nczr"; bar.appendChild(play); bar.appendChild(z); stage.appendChild(bar);
+  box.insertBefore(stage, box.firstChild);
+  function el(t, at, p){ var e = d.createElementNS(NS, t); for(var k in at) e.setAttribute(k, at[k]); (p || svg).appendChild(e); return e; }
+  /* the part: 50 mm square */
+  el("rect", { x: 0, y: -50, width: 50, height: 50, class: "zone" }); el("rect", { x: 0, y: -50, width: 50, height: 50, fill: "none", class: "ax" });
+  var t0 = el("text", { x: 0, y: 6, class: "en" }); t0.textContent = "G54 原点"; t0.setAttribute("font-size", "5");
+  /* positions after each block */
+  var pos = [], p = { x: null, y: null, z: null, m: "" };
+  prog.forEach(function(b){ var q = { x: b.x == null ? p.x : b.x, y: b.y == null ? p.y : b.y, z: b.z == null ? p.z : b.z, m: b.m || p.m }; pos.push({ from: p, to: q, m: b.m || "", t: b.tx != null ? { x: b.tx, y: b.ty } : null }); p = q; });
+  var segs = pos.map(function(s, i){
+    if(s.from.x == null || s.to.x == null || (s.from.x === s.to.x && s.from.y === s.to.y)) return null;
+    return el("line", { x1: s.from.x, y1: -s.from.y, x2: s.to.x, y2: -s.to.y, class: s.m === "G00" ? "ncr" : "ncc", "data-i": i });
+  });
+  var tool = el("circle", { r: 5, class: "nctool", cx: -10, cy: 10 });
+  function pick(i){
+    rows.forEach(function(r, k){ r.classList.toggle("on", k === i); });
+    segs.forEach(function(s, k){ if(s){ s.classList.toggle("on", k === i); s.classList.toggle("done", k < i); } });
+    var q = pos[i] && pos[i].to, c = (pos[i] && pos[i].t) || q; if(c && c.x != null){ tool.setAttribute("cx", c.x); tool.setAttribute("cy", -c.y); }
+    z.textContent = q && q.z != null ? "Z " + q.z : "";
+  }
+  rows.forEach(function(r, i){ r.tabIndex = 0; r.addEventListener("click", function(){ stop(); pick(i); }); r.addEventListener("keydown", function(e){ if(e.key === "Enter"){ stop(); pick(i); } }); });
+  var timer = 0, cur = -1;
+  function stop(){ clearInterval(timer); timer = 0; play.textContent = "1行ずつ再生"; }
+  play.addEventListener("click", function(){
+    if(timer){ stop(); return; }
+    play.textContent = "止める"; cur = -1;
+    timer = setInterval(function(){ cur++; if(cur >= prog.length){ stop(); return; } pick(cur); }, RM ? 1500 : 900);
+  });
+  pick(Math.max(0, prog.findIndex(function(b){ return b.x != null; })));
+});
+})();
+
+/* ---------- G83 peck drilling: change Q and watch the tool go in and out ---------- */
+(function(){
+"use strict";
+var d = document, box = d.querySelector(".ncpeck"); if(!box) return;
+var NS = "http://www.w3.org/2000/svg", RM = matchMedia("(prefers-reduced-motion: reduce)").matches;
+var F = [["Z", "穴の深さ Z（mm）", 30, 1], ["Q", "1回の切込み Q（mm）", 6, 0.5], ["R", "R点の高さ（mm）", 3, 0.5]], v = {};
+var form = d.createElement("form"); form.setAttribute("onsubmit", "return false");
+F.forEach(function(f){ var lb = d.createElement("label"), sp = d.createElement("span"), i = d.createElement("input"); sp.textContent = f[1]; i.type = "number"; i.step = f[3]; i.value = f[2]; v[f[0]] = f[2];
+  i.addEventListener("input", function(){ var x = parseFloat(i.value); if(isFinite(x) && x > 0){ v[f[0]] = x; build(); } }); lb.appendChild(sp); lb.appendChild(i); form.appendChild(lb); });
+var svg = d.createElementNS(NS, "svg"); svg.setAttribute("viewBox", "0 0 640 300"); svg.setAttribute("role", "img"); svg.setAttribute("aria-label", "G83の工具の動き（横から見た図）");
+var code = d.createElement("p"); code.className = "msg"; box.appendChild(form); box.appendChild(svg); box.appendChild(code);
+function el(t, at){ var e = d.createElementNS(NS, t); for(var k in at) e.setAttribute(k, at[k]); svg.appendChild(e); return e; }
+var anim = 0;
+function build(){
+  cancelAnimationFrame(anim); while(svg.firstChild) svg.removeChild(svg.firstChild);
+  var top = 70, sc = Math.min(5, 200 / (v.Z + v.R + 12)), Y = function(z){ return top - z * sc; }, X0 = 300;
+  el("rect", { x: 120, y: top, width: 360, height: 220, class: "zone" }); el("line", { x1: 120, x2: 480, y1: top, y2: top, class: "ax" });
+  el("rect", { x: X0 - 12, y: top, width: 24, height: v.Z * sc, fill: "var(--bg)" });
+  el("line", { x1: 100, x2: 520, y1: Y(v.R), y2: Y(v.R), class: "grid", "stroke-dasharray": "4 4" });
+  var tr = el("text", { x: 96, y: Y(v.R) + 4, "text-anchor": "end" }); tr.textContent = "R点";
+  var ti = el("text", { x: 96, y: Y(v.R + 10) + 4, "text-anchor": "end" }); ti.textContent = "初めの高さ";
+  /* moves: rapid to R, feed to depth, rapid back to R, rapid down to just above last depth, feed on... */
+  var mv = [{ z: v.R + 10, f: 0 }, { z: v.R, f: 0 }], depth = 0, n = 0;
+  while(depth < v.Z - 1e-6){ var nxt = Math.min(v.Z, depth + v.Q); if(depth > 0){ mv.push({ z: -(depth) + 1, f: 0 }); } mv.push({ z: -nxt, f: 1 }); mv.push({ z: v.R, f: 0 }); depth = nxt; n++; }
+  var xs = 0;
+  mv.forEach(function(m, i){ if(!i) return; var a = mv[i - 1]; xs += 6; el("line", { x1: X0 + 40 + xs - 6, x2: X0 + 40 + xs, y1: Y(a.z), y2: Y(m.z), class: m.f ? "ncc" : "ncr" }); });
+  var drill = el("rect", { x: X0 - 10, y: Y(v.R + 10) - 120, width: 20, height: 120, class: "ncdrill" });
+  code.innerHTML = "<code>G83 X0 Y0 Z-" + v.Z + ". R" + v.R + ". Q" + v.Q + ". F150 ;</code>　→ " + n + " 回に分けて削り、そのたびにR点まで戻って切りくずを出す。右の線は時間の流れ（実線：切削、点線：早送り）。";
+  if(RM){ drill.setAttribute("y", Y(-v.Z) - 120); return; }
+  var t0 = null, per = 700, tot = (mv.length - 1) * per;
+  (function step(ts){ if(t0 === null) t0 = ts; var t = Math.max(0, ts - t0) % (tot + 800), k = Math.min(mv.length - 2, Math.floor(t / per)), f = Math.min(1, (t - k * per) / per);
+    var a = mv[k], b = mv[k + 1], zz = a.z + (b.z - a.z) * (b.f ? f : Math.min(1, f * 3)); drill.setAttribute("y", Y(zz) - 120); anim = requestAnimationFrame(step); })(performance.now());
+}
+build();
+})();

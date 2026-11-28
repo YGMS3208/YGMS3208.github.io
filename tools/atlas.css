@@ -387,3 +387,25 @@ a.gl:hover,.prose a.gl:hover{color:var(--mark);text-decoration-style:solid}
 @media (prefers-reduced-motion:reduce){.calc .read b.tick{animation:none}}
 /* home: handbook entry */
 .hbfeat{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:clamp(28px,4vw,44px)}.hbfeat a{display:flex;flex-direction:column;gap:6px;padding:20px 22px;border-radius:12px;background:var(--bg);box-shadow:0 0 0 1px var(--hair);transition:box-shadow .25s,transform .45s var(--spring)}.hbfeat a:hover{box-shadow:0 0 0 1px var(--accent);transform:translateY(-2px)}.hbfeat small{font-size:11.5px;letter-spacing:.14em;color:var(--mark)}.hbfeat b{font-size:16px;font-weight:500;line-height:1.5}@media (max-width:760px){.hbfeat{grid-template-columns:1fr 1fr}}
+/* ---------- positioning, lobes, NC backplot, peck ---------- */
+.calc-pos textarea{width:100%;font:400 13.5px/1.7 var(--f-en);border:1px solid var(--hair);border-radius:6px;background:var(--bg);color:var(--ink);padding:10px 12px;margin-bottom:14px}
+.calc-pos svg,.calc-lobes svg,.ncpeck svg{display:block;width:100%;height:auto;margin-top:10px}
+.calc-pos path,.calc-lobes path{fill:none}
+.calc-lobes form,.ncpeck form{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px 16px}
+.ncplay{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:start}
+.ncstage{position:sticky;top:calc(var(--gn) + 16px);background:var(--paper);border-radius:8px;box-shadow:0 0 0 1px var(--hair2);padding:16px}
+.ncstage svg{display:block;width:100%;height:auto}
+.ncplay .ncc{stroke:var(--ink2);stroke-width:.8;opacity:.35}.ncplay .ncr{stroke:var(--ink2);stroke-width:.6;stroke-dasharray:2 2;opacity:.35}
+.ncplay .done{opacity:.8}.ncplay line.on{stroke:var(--accent);stroke-width:1.8;opacity:1}
+.ncplay .nctool{fill:color-mix(in srgb,var(--accent) 25%,transparent);stroke:var(--accent);stroke-width:.6;transition:cx .5s var(--out),cy .5s var(--out)}
+.ncplay tbody tr{cursor:pointer;transition:background .2s}.ncplay tbody tr.on{background:color-mix(in srgb,var(--accent) 10%,transparent)}.ncplay tbody tr.on code{color:var(--accent)}
+.nczr{font:400 13px var(--f-en);color:var(--muted);align-self:center}
+.ncpeck .ncc{stroke:var(--ink);stroke-width:2}.ncpeck .ncr{stroke:var(--ink2);stroke-width:1.2;stroke-dasharray:3 3}
+.ncpeck .ncdrill{fill:var(--accent);opacity:.75}
+.dmg{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:10px 0 24px}
+.dmg figure{margin:0;background:var(--paper);border-radius:8px;box-shadow:0 0 0 1px var(--hair2);padding:10px 10px 12px}
+.dmg svg{display:block;width:100%;height:auto}.dmg figcaption{font-size:12.5px;text-align:center;color:var(--ink2);margin-top:4px}
+.dmg .ins{fill:var(--steel,#cfd4da);stroke:var(--ink);stroke-width:1.2}.dmg .wk{fill:var(--paper);stroke:var(--ink2);stroke-width:1;stroke-dasharray:3 3}
+.dmg .hit{fill:var(--mark);opacity:.75}.dmg .hitl{stroke:var(--mark);stroke-width:1.6;fill:none}
+@media (max-width:860px){.ncplay{grid-template-columns:1fr}.ncstage{position:relative;top:0}.dmg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ncstage .zone{fill:var(--ink);opacity:.06}.ncstage .ax{stroke:var(--ink);stroke-width:.6;fill:none}.ncstage text{fill:var(--ink2);font-size:5px}

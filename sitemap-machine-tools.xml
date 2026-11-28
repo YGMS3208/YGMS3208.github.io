@@ -84,6 +84,11 @@
 <url><loc>https://ygms3208.github.io/machine-tools/guide/maintenance-basics/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/guide/safety/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/guide/history-industry/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/guide/conventional-machines/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/guide/hydraulics/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/guide/used-machines/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/guide/ultra-precision/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/guide/hybrid-am/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/bed/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/column/</loc><lastmod>2026-11-28</lastmod></url>
@@ -95,7 +100,7 @@
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/ball-screw/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/linear-guide/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/slideway/</loc><lastmod>2026-11-28</lastmod></url>
-<url><loc>https://ygms3208.github.io/machine-tools/glossary/servo-motor/</loc><lastmod>2026-11-08</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/servo-motor/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/linear-motor/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/nc-unit/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/atc/</loc><lastmod>2026-11-28</lastmod></url>
@@ -106,7 +111,7 @@
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/collet/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/guide-bush/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/steady-rest/</loc><lastmod>2026-11-08</lastmod></url>
-<url><loc>https://ygms3208.github.io/machine-tools/glossary/indexing/</loc><lastmod>2026-11-08</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/indexing/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/rotary-table/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/c-axis/</loc><lastmod>2026-11-08</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/b-axis/</loc><lastmod>2026-11-08</lastmod></url>
@@ -272,4 +277,13 @@
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/risk-assessment/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/enabling-switch/</loc><lastmod>2026-11-28</lastmod></url>
 <url><loc>https://ygms3208.github.io/machine-tools/glossary/export-control/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/aerostatic-bearing/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/hydrostatic-guide/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/diamond-turning/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/ded/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/hybrid-machine/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/retrofit/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/accumulator/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/relief-valve/</loc><lastmod>2026-11-28</lastmod></url>
+<url><loc>https://ygms3208.github.io/machine-tools/glossary/stability-lobe/</loc><lastmod>2026-11-28</lastmod></url>
 </urlset>

@@ -82,6 +82,24 @@ PAGES["cutting-conditions"] = dict(
 ''')
 
 # ---------------------------------------------------------------------
+def _dmg():
+    """small side-view schematics of an insert corner, one per kind of damage"""
+    base = '<path class="ins" d="M10 70 L70 70 L70 20 L30 20 Z"/>'
+    marks = [
+     ("逃げ面摩耗", '<path class="hit" d="M10 70 L22 70 L18 58 L10 62 Z"/>'),
+     ("クレータ摩耗", '<path class="hit" d="M38 20 Q46 30 56 20 Z"/>'),
+     ("境界摩耗", '<path class="hit" d="M30 20 L36 20 L33 30 Z"/><line class="hitl" x1="20" y1="30" x2="44" y2="30"/>'),
+     ("構成刃先", '<path class="hit" d="M30 20 L22 14 L18 20 L26 24 Z"/>'),
+     ("チッピング", '<path class="hit" d="M30 20 L33 24 L30 27 L27 24 Z"/><path class="hit" d="M14 60 L17 63 L13 65 Z"/>'),
+     ("欠損", '<path class="hit" d="M30 20 L44 20 L36 38 L22 36 Z"/>'),
+     ("塑性変形", '<path class="hit" d="M30 20 Q24 30 26 36 L34 30 Z"/>'),
+     ("熱き裂", '<line class="hitl" x1="36" y1="20" x2="34" y2="30"/><line class="hitl" x1="44" y1="20" x2="42" y2="30"/><line class="hitl" x1="52" y1="20" x2="50" y2="30"/>'),
+    ]
+    out = []
+    for name, m in marks:
+        out.append(f'<figure><svg viewBox="0 0 80 80" role="img" aria-label="{name}の模式図">{base}{m}</svg><figcaption>{name}</figcaption></figure>')
+    return '<div class="dmg">' + "".join(out) + "</div>"
+
 PAGES["cutting-tools"] = dict(
  h1="切削工具の種類・材種と、傷み方の見分け方", eyebrow="TOOLS",
  lead="バイト、スローアウェイチップ、エンドミル、ドリル。工具の種類と、超硬・サーメット・CBNなどの材種、コーティング、チップの記号の読み方、そして工具の傷み方から原因を見分ける方法までをまとめる。",
@@ -129,7 +147,8 @@ PAGES["cutting-tools"] = dict(
 </ul>
 
 <h2 id="t-damage">工具の傷み方から原因を見分ける</h2>
-<p>工具の刃先は、条件の良し悪しを最もよく教えてくれる。交換するときに捨てる前に刃先を見て、傷み方を記録する習慣が、条件改善の近道になる。</p>
+<p>工具の刃先は、条件の良し悪しを最もよく教えてくれる。交換するときに捨てる前に刃先を見て、傷み方を記録する習慣が、条件改善の近道になる。下の図は、刃先を横から見た模式図で、朱の部分が傷む所である。</p>
+{_dmg()}
 {T(["傷み方", "見た目", "主な原因", "対策"], [
  ["逃げ面摩耗", "刃先の下側が平らにすり減る", "正常な摩耗。速く進むなら速度が高すぎる", "速度を下げる、耐摩耗性の高い材種にする"],
  ["クレータ摩耗", "すくい面がくぼむ", "鋼の高速切削で切りくずの熱と拡散", "Al₂O₃のCVD膜、速度を下げる、送りを下げる"],
@@ -194,6 +213,16 @@ _lathe = [
 def _prog(rows):
     return ('<div class="tw"><table class="prog"><thead><tr><th>ブロック</th><th>意味</th></tr></thead><tbody>'
             + "".join(f'<tr><td data-l="ブロック"><code>{a}</code></td><td data-l="意味">{b}</td></tr>' for a, b in rows) + "</tbody></table></div>")
+
+# tool position after each block of _mc (None = unchanged), and the motion mode, for the backplot
+_mc_pos = [{}, {}, {"z": 100}, {}, {"m": "G00", "x": -10, "y": -10}, {}, {"m": "G00", "z": 50}, {"m": "G00", "z": 2},
+           {"m": "G01", "z": -5}, {"m": "G01", "x": 0, "y": -5, "tx": -5, "ty": -5}, {"m": "G01", "y": 50, "tx": -5, "ty": 55},
+           {"m": "G01", "x": 50, "tx": 55, "ty": 55}, {"m": "G01", "y": 0, "tx": 55, "ty": -5},
+           {"m": "G01", "x": -5, "tx": -5, "ty": -5}, {"m": "G00", "x": -10, "y": -10}, {"m": "G00", "z": 50}, {"z": 100}, {}]
+import json as _json
+def _play(rows, pos):
+    assert len(rows) == len(pos)
+    return f"<div class=\"ncplay\" data-prog='{_json.dumps(pos, separators=(',', ':'))}'>" + _prog(rows) + "</div>"
 
 PAGES["nc-programming"] = dict(
  h1="NCプログラムの基本：Gコード・座標系・工具補正", eyebrow="NC PROGRAM",
@@ -274,11 +303,14 @@ PAGES["nc-programming"] = dict(
  ["G73", "少し削っては少しだけ戻る（切りくずを切る）", "やや深い穴を速く"],
  ["G84", "主軸と送りを同期させてタップを立て、逆転して抜く", "めねじ（同期タップ）"],
  ["G80", "固定サイクルの取消し", "サイクルの後に必ず"]])}
+<p>深穴の G83 では、1回の切込み量 Q ごとに穴の外まで戻って切りくずを出す。数値を変えると、往復の回数が変わる。</p>
+<div class="lab ncpeck"></div>
 <p><b>R点</b>は早送りから切削送りに切り替える高さ（工作物の2〜3mm上）。穴をあけた後に戻る高さは、G98で初めの高さ（イニシャル点）、G99でR点になる。穴と穴の間にクランプや段差があるときはG98にして、ぶつけないようにする。</p>
 
 <h2 id="n-sample">プログラム例（注釈付き）</h2>
 <h3>マシニングセンタ：50mm角の外周を削る</h3>
-{_prog(_mc)}
+<p>行を選ぶ（または「1行ずつ再生」を押す）と、その行で工具がどこへ動くかを、上から見た図で示す。早送りは点線、切削は実線。円は工具（φ10）で、径補正（G41）によって輪郭の外側に寄っていることに注意。</p>
+{_play(_mc, _mc_pos)}
 <h3>旋盤：段付き軸の外径を荒削り・仕上げする</h3>
 {_prog(_lathe)}
 <p>旋盤のG71の書式（2行で書く形式など）はNC装置の系統で違う。</p>

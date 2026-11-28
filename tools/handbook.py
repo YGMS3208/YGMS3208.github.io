@@ -6,7 +6,7 @@ import glob, hashlib, html, json, os, re, sys
 S = os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0, S)
 from gxstyle import CSS
 from handbook_lib import G
-import handbook_a, handbook_b, handbook_c
+import handbook_a, handbook_b, handbook_c, handbook_d
 
 # helpers from products.py (same loader as guides.py)
 _src = open(os.path.join(S, "products.py"), encoding="utf-8").read()
@@ -19,10 +19,11 @@ exec(_helpers, _g)
 e, write, read, page, crumbs_html = _g["e"], _g["write"], _g["read"], _g["page"], _g["crumbs_html"]
 
 PAGES = {}
-for m in (handbook_a, handbook_b, handbook_c): PAGES.update(m.PAGES)
+for m in (handbook_a, handbook_b, handbook_c, handbook_d): PAGES.update(m.PAGES)
 # display order
 ORDER = ["learning-path", "cutting-conditions", "cutting-tools", "nc-programming", "accuracy-testing", "grinding-conditions",
-         "rigidity-thermal", "line-planning", "maintenance-basics", "safety", "history-industry"]
+         "rigidity-thermal", "line-planning", "maintenance-basics", "safety", "history-industry",
+         "conventional-machines", "hydraulics", "used-machines", "ultra-precision", "hybrid-am"]
 assert set(ORDER) == set(PAGES), set(ORDER) ^ set(PAGES)
 
 # ---- the learning path: each step names pages to read; handbook pages show "previous / next" along it ----
@@ -149,7 +150,7 @@ for p in glob.glob("machine-tools/*/index.html"):
     links = []
     if slug in CUT: links += [("cutting-conditions", "切削条件の計算"), ("cutting-tools", "切削工具"), ("nc-programming", "NCプログラム")]
     if slug in GRIND: links += [("grinding-conditions", "研削条件と砥石")]
-    links += [("accuracy-testing", "精度検査"), ("maintenance-basics", "保全"), ("safety", "安全")]
+    links += [("accuracy-testing", "精度検査"), ("maintenance-basics", "保全"), ("hydraulics", "油圧・空圧"), ("safety", "安全")]
     tip = ('<p class="tal hbline" style="margin-top:10px;font-size:14px">実務ハンドブック：'
            + "／".join(f'<a href="{G}{a}/">{b}</a>' for a, b in links) + "</p>")
     s = s.replace('<div class="pspec" role="table"', tip + '<div class="pspec" role="table"', 1)
